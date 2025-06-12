@@ -1,0 +1,8 @@
+[Atlas_info]
+/atlas/Floor_Lower_3.png
+64 64
+64 64
+2 2
+[ID_matrix]
+0 0
+0 0

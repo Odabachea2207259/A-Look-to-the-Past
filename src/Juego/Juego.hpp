@@ -13,6 +13,7 @@ namespace IVJ
             explicit Juego();
             void OnInit(void);
             void OnInputs(float dt ,std::optional<sf::Event>& eventos);
+            void OnInputs(float dt);
             void OnUpdate(float dt);
             void OnRender(float dt);
         private:

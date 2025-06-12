@@ -275,7 +275,9 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Font.cpp.obj
  C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/build/Debug/_deps/sfml-src/include/SFML/System/Err.hpp
  C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/build/Debug/_deps/sfml-src/include/SFML/System/Exception.hpp
  C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/build/Debug/_deps/sfml-src/include/SFML/System/Export.hpp
+ C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/build/Debug/_deps/sfml-src/include/SFML/System/FileInputStream.hpp
  C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/build/Debug/_deps/sfml-src/include/SFML/System/InputStream.hpp
+ C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/build/Debug/_deps/sfml-src/include/SFML/System/MemoryInputStream.hpp
  C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/build/Debug/_deps/sfml-src/include/SFML/System/Vector2.hpp
  C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/build/Debug/_deps/sfml-src/include/SFML/System/Vector2.inl
  C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/build/Debug/_deps/sfml-src/include/SFML/Window/Export.hpp
@@ -1015,6 +1017,7 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Image.cpp.obj
  C:/mingw64/include/c++/14.2.0/bits/fs_fwd.h
  C:/mingw64/include/c++/14.2.0/bits/fs_ops.h
  C:/mingw64/include/c++/14.2.0/bits/fs_path.h
+ C:/mingw64/include/c++/14.2.0/bits/fstream.tcc
  C:/mingw64/include/c++/14.2.0/bits/functexcept.h
  C:/mingw64/include/c++/14.2.0/bits/functional_hash.h
  C:/mingw64/include/c++/14.2.0/bits/hash_bytes.h
@@ -1102,6 +1105,7 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Image.cpp.obj
  C:/mingw64/include/c++/14.2.0/ext/string_conversions.h
  C:/mingw64/include/c++/14.2.0/ext/type_traits.h
  C:/mingw64/include/c++/14.2.0/filesystem
+ C:/mingw64/include/c++/14.2.0/fstream
  C:/mingw64/include/c++/14.2.0/initializer_list
  C:/mingw64/include/c++/14.2.0/iomanip
  C:/mingw64/include/c++/14.2.0/ios
@@ -1144,8 +1148,10 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Image.cpp.obj
  C:/mingw64/include/c++/14.2.0/utility
  C:/mingw64/include/c++/14.2.0/vector
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/atomic_word.h
+ C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/basic_file.h
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++allocator.h
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h
+ C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++locale.h
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/cpu_defines.h
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_base.h
@@ -1935,8 +1941,6 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImp
  C:/mingw64/include/c++/14.2.0/bits/basic_string.tcc
  C:/mingw64/include/c++/14.2.0/bits/char_traits.h
  C:/mingw64/include/c++/14.2.0/bits/charconv.h
- C:/mingw64/include/c++/14.2.0/bits/chrono.h
- C:/mingw64/include/c++/14.2.0/bits/codecvt.h
  C:/mingw64/include/c++/14.2.0/bits/concept_check.h
  C:/mingw64/include/c++/14.2.0/bits/cpp_type_traits.h
  C:/mingw64/include/c++/14.2.0/bits/cxxabi_forced.h
@@ -1944,23 +1948,15 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImp
  C:/mingw64/include/c++/14.2.0/bits/exception.h
  C:/mingw64/include/c++/14.2.0/bits/exception_defines.h
  C:/mingw64/include/c++/14.2.0/bits/exception_ptr.h
- C:/mingw64/include/c++/14.2.0/bits/fs_dir.h
- C:/mingw64/include/c++/14.2.0/bits/fs_fwd.h
- C:/mingw64/include/c++/14.2.0/bits/fs_ops.h
- C:/mingw64/include/c++/14.2.0/bits/fs_path.h
  C:/mingw64/include/c++/14.2.0/bits/functexcept.h
  C:/mingw64/include/c++/14.2.0/bits/functional_hash.h
  C:/mingw64/include/c++/14.2.0/bits/hash_bytes.h
  C:/mingw64/include/c++/14.2.0/bits/invoke.h
  C:/mingw64/include/c++/14.2.0/bits/ios_base.h
- C:/mingw64/include/c++/14.2.0/bits/istream.tcc
  C:/mingw64/include/c++/14.2.0/bits/locale_classes.h
  C:/mingw64/include/c++/14.2.0/bits/locale_classes.tcc
- C:/mingw64/include/c++/14.2.0/bits/locale_conv.h
  C:/mingw64/include/c++/14.2.0/bits/locale_facets.h
  C:/mingw64/include/c++/14.2.0/bits/locale_facets.tcc
- C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h
- C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc
  C:/mingw64/include/c++/14.2.0/bits/localefwd.h
  C:/mingw64/include/c++/14.2.0/bits/memory_resource.h
  C:/mingw64/include/c++/14.2.0/bits/memoryfwd.h
@@ -1969,18 +1965,15 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImp
  C:/mingw64/include/c++/14.2.0/bits/new_allocator.h
  C:/mingw64/include/c++/14.2.0/bits/ostream.tcc
  C:/mingw64/include/c++/14.2.0/bits/ostream_insert.h
- C:/mingw64/include/c++/14.2.0/bits/parse_numbers.h
  C:/mingw64/include/c++/14.2.0/bits/postypes.h
  C:/mingw64/include/c++/14.2.0/bits/predefined_ops.h
  C:/mingw64/include/c++/14.2.0/bits/ptr_traits.h
- C:/mingw64/include/c++/14.2.0/bits/quoted_string.h
  C:/mingw64/include/c++/14.2.0/bits/range_access.h
  C:/mingw64/include/c++/14.2.0/bits/refwrap.h
  C:/mingw64/include/c++/14.2.0/bits/requires_hosted.h
  C:/mingw64/include/c++/14.2.0/bits/shared_ptr.h
  C:/mingw64/include/c++/14.2.0/bits/shared_ptr_atomic.h
  C:/mingw64/include/c++/14.2.0/bits/shared_ptr_base.h
- C:/mingw64/include/c++/14.2.0/bits/sstream.tcc
  C:/mingw64/include/c++/14.2.0/bits/std_abs.h
  C:/mingw64/include/c++/14.2.0/bits/stl_algobase.h
  C:/mingw64/include/c++/14.2.0/bits/stl_construct.h
@@ -2005,13 +1998,11 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImp
  C:/mingw64/include/c++/14.2.0/cctype
  C:/mingw64/include/c++/14.2.0/cerrno
  C:/mingw64/include/c++/14.2.0/clocale
- C:/mingw64/include/c++/14.2.0/codecvt
  C:/mingw64/include/c++/14.2.0/concepts
  C:/mingw64/include/c++/14.2.0/cstddef
  C:/mingw64/include/c++/14.2.0/cstdint
  C:/mingw64/include/c++/14.2.0/cstdio
  C:/mingw64/include/c++/14.2.0/cstdlib
- C:/mingw64/include/c++/14.2.0/ctime
  C:/mingw64/include/c++/14.2.0/cwchar
  C:/mingw64/include/c++/14.2.0/cwctype
  C:/mingw64/include/c++/14.2.0/debug/assertions.h
@@ -2024,22 +2015,15 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImp
  C:/mingw64/include/c++/14.2.0/ext/numeric_traits.h
  C:/mingw64/include/c++/14.2.0/ext/string_conversions.h
  C:/mingw64/include/c++/14.2.0/ext/type_traits.h
- C:/mingw64/include/c++/14.2.0/filesystem
  C:/mingw64/include/c++/14.2.0/initializer_list
- C:/mingw64/include/c++/14.2.0/iomanip
  C:/mingw64/include/c++/14.2.0/ios
  C:/mingw64/include/c++/14.2.0/iosfwd
- C:/mingw64/include/c++/14.2.0/istream
- C:/mingw64/include/c++/14.2.0/limits
- C:/mingw64/include/c++/14.2.0/locale
  C:/mingw64/include/c++/14.2.0/memory
  C:/mingw64/include/c++/14.2.0/new
  C:/mingw64/include/c++/14.2.0/ostream
  C:/mingw64/include/c++/14.2.0/pstl/execution_defs.h
  C:/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h
  C:/mingw64/include/c++/14.2.0/pstl/pstl_config.h
- C:/mingw64/include/c++/14.2.0/ratio
- C:/mingw64/include/c++/14.2.0/sstream
  C:/mingw64/include/c++/14.2.0/stdexcept
  C:/mingw64/include/c++/14.2.0/stdlib.h
  C:/mingw64/include/c++/14.2.0/streambuf
@@ -2059,9 +2043,7 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImp
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/error_constants.h
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr-default.h
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr.h
- C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/os_defines.h
- C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h
@@ -2141,8 +2123,6 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImp
  C:/mingw64/include/c++/14.2.0/bits/basic_string.tcc
  C:/mingw64/include/c++/14.2.0/bits/char_traits.h
  C:/mingw64/include/c++/14.2.0/bits/charconv.h
- C:/mingw64/include/c++/14.2.0/bits/chrono.h
- C:/mingw64/include/c++/14.2.0/bits/codecvt.h
  C:/mingw64/include/c++/14.2.0/bits/concept_check.h
  C:/mingw64/include/c++/14.2.0/bits/cpp_type_traits.h
  C:/mingw64/include/c++/14.2.0/bits/cxxabi_forced.h
@@ -2152,10 +2132,6 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImp
  C:/mingw64/include/c++/14.2.0/bits/exception.h
  C:/mingw64/include/c++/14.2.0/bits/exception_defines.h
  C:/mingw64/include/c++/14.2.0/bits/exception_ptr.h
- C:/mingw64/include/c++/14.2.0/bits/fs_dir.h
- C:/mingw64/include/c++/14.2.0/bits/fs_fwd.h
- C:/mingw64/include/c++/14.2.0/bits/fs_ops.h
- C:/mingw64/include/c++/14.2.0/bits/fs_path.h
  C:/mingw64/include/c++/14.2.0/bits/functexcept.h
  C:/mingw64/include/c++/14.2.0/bits/functional_hash.h
  C:/mingw64/include/c++/14.2.0/bits/hash_bytes.h
@@ -2163,14 +2139,10 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImp
  C:/mingw64/include/c++/14.2.0/bits/hashtable_policy.h
  C:/mingw64/include/c++/14.2.0/bits/invoke.h
  C:/mingw64/include/c++/14.2.0/bits/ios_base.h
- C:/mingw64/include/c++/14.2.0/bits/istream.tcc
  C:/mingw64/include/c++/14.2.0/bits/locale_classes.h
  C:/mingw64/include/c++/14.2.0/bits/locale_classes.tcc
- C:/mingw64/include/c++/14.2.0/bits/locale_conv.h
  C:/mingw64/include/c++/14.2.0/bits/locale_facets.h
  C:/mingw64/include/c++/14.2.0/bits/locale_facets.tcc
- C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h
- C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc
  C:/mingw64/include/c++/14.2.0/bits/localefwd.h
  C:/mingw64/include/c++/14.2.0/bits/memory_resource.h
  C:/mingw64/include/c++/14.2.0/bits/memoryfwd.h
@@ -2180,18 +2152,15 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImp
  C:/mingw64/include/c++/14.2.0/bits/node_handle.h
  C:/mingw64/include/c++/14.2.0/bits/ostream.tcc
  C:/mingw64/include/c++/14.2.0/bits/ostream_insert.h
- C:/mingw64/include/c++/14.2.0/bits/parse_numbers.h
  C:/mingw64/include/c++/14.2.0/bits/postypes.h
  C:/mingw64/include/c++/14.2.0/bits/predefined_ops.h
  C:/mingw64/include/c++/14.2.0/bits/ptr_traits.h
- C:/mingw64/include/c++/14.2.0/bits/quoted_string.h
  C:/mingw64/include/c++/14.2.0/bits/range_access.h
  C:/mingw64/include/c++/14.2.0/bits/refwrap.h
  C:/mingw64/include/c++/14.2.0/bits/requires_hosted.h
  C:/mingw64/include/c++/14.2.0/bits/shared_ptr.h
  C:/mingw64/include/c++/14.2.0/bits/shared_ptr_atomic.h
  C:/mingw64/include/c++/14.2.0/bits/shared_ptr_base.h
- C:/mingw64/include/c++/14.2.0/bits/sstream.tcc
  C:/mingw64/include/c++/14.2.0/bits/std_abs.h
  C:/mingw64/include/c++/14.2.0/bits/stl_algobase.h
  C:/mingw64/include/c++/14.2.0/bits/stl_construct.h
@@ -2218,13 +2187,11 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImp
  C:/mingw64/include/c++/14.2.0/cctype
  C:/mingw64/include/c++/14.2.0/cerrno
  C:/mingw64/include/c++/14.2.0/clocale
- C:/mingw64/include/c++/14.2.0/codecvt
  C:/mingw64/include/c++/14.2.0/concepts
  C:/mingw64/include/c++/14.2.0/cstddef
  C:/mingw64/include/c++/14.2.0/cstdint
  C:/mingw64/include/c++/14.2.0/cstdio
  C:/mingw64/include/c++/14.2.0/cstdlib
- C:/mingw64/include/c++/14.2.0/ctime
  C:/mingw64/include/c++/14.2.0/cwchar
  C:/mingw64/include/c++/14.2.0/cwctype
  C:/mingw64/include/c++/14.2.0/debug/assertions.h
@@ -2237,22 +2204,15 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImp
  C:/mingw64/include/c++/14.2.0/ext/numeric_traits.h
  C:/mingw64/include/c++/14.2.0/ext/string_conversions.h
  C:/mingw64/include/c++/14.2.0/ext/type_traits.h
- C:/mingw64/include/c++/14.2.0/filesystem
  C:/mingw64/include/c++/14.2.0/initializer_list
- C:/mingw64/include/c++/14.2.0/iomanip
  C:/mingw64/include/c++/14.2.0/ios
  C:/mingw64/include/c++/14.2.0/iosfwd
- C:/mingw64/include/c++/14.2.0/istream
- C:/mingw64/include/c++/14.2.0/limits
- C:/mingw64/include/c++/14.2.0/locale
  C:/mingw64/include/c++/14.2.0/memory
  C:/mingw64/include/c++/14.2.0/new
  C:/mingw64/include/c++/14.2.0/ostream
  C:/mingw64/include/c++/14.2.0/pstl/execution_defs.h
  C:/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h
  C:/mingw64/include/c++/14.2.0/pstl/pstl_config.h
- C:/mingw64/include/c++/14.2.0/ratio
- C:/mingw64/include/c++/14.2.0/sstream
  C:/mingw64/include/c++/14.2.0/stdexcept
  C:/mingw64/include/c++/14.2.0/stdlib.h
  C:/mingw64/include/c++/14.2.0/streambuf
@@ -2274,9 +2234,7 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImp
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/error_constants.h
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr-default.h
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr.h
- C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/os_defines.h
- C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h
@@ -3832,7 +3790,6 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/TextureSaver.cpp
  C:/mingw64/include/c++/14.2.0/backward/binders.h
  C:/mingw64/include/c++/14.2.0/bit
  C:/mingw64/include/c++/14.2.0/bits/alloc_traits.h
- C:/mingw64/include/c++/14.2.0/bits/allocated_ptr.h
  C:/mingw64/include/c++/14.2.0/bits/allocator.h
  C:/mingw64/include/c++/14.2.0/bits/basic_ios.h
  C:/mingw64/include/c++/14.2.0/bits/basic_ios.tcc
@@ -3840,8 +3797,6 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/TextureSaver.cpp
  C:/mingw64/include/c++/14.2.0/bits/basic_string.tcc
  C:/mingw64/include/c++/14.2.0/bits/char_traits.h
  C:/mingw64/include/c++/14.2.0/bits/charconv.h
- C:/mingw64/include/c++/14.2.0/bits/chrono.h
- C:/mingw64/include/c++/14.2.0/bits/codecvt.h
  C:/mingw64/include/c++/14.2.0/bits/concept_check.h
  C:/mingw64/include/c++/14.2.0/bits/cpp_type_traits.h
  C:/mingw64/include/c++/14.2.0/bits/cxxabi_forced.h
@@ -3849,23 +3804,15 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/TextureSaver.cpp
  C:/mingw64/include/c++/14.2.0/bits/exception.h
  C:/mingw64/include/c++/14.2.0/bits/exception_defines.h
  C:/mingw64/include/c++/14.2.0/bits/exception_ptr.h
- C:/mingw64/include/c++/14.2.0/bits/fs_dir.h
- C:/mingw64/include/c++/14.2.0/bits/fs_fwd.h
- C:/mingw64/include/c++/14.2.0/bits/fs_ops.h
- C:/mingw64/include/c++/14.2.0/bits/fs_path.h
  C:/mingw64/include/c++/14.2.0/bits/functexcept.h
  C:/mingw64/include/c++/14.2.0/bits/functional_hash.h
  C:/mingw64/include/c++/14.2.0/bits/hash_bytes.h
  C:/mingw64/include/c++/14.2.0/bits/invoke.h
  C:/mingw64/include/c++/14.2.0/bits/ios_base.h
- C:/mingw64/include/c++/14.2.0/bits/istream.tcc
  C:/mingw64/include/c++/14.2.0/bits/locale_classes.h
  C:/mingw64/include/c++/14.2.0/bits/locale_classes.tcc
- C:/mingw64/include/c++/14.2.0/bits/locale_conv.h
  C:/mingw64/include/c++/14.2.0/bits/locale_facets.h
  C:/mingw64/include/c++/14.2.0/bits/locale_facets.tcc
- C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h
- C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc
  C:/mingw64/include/c++/14.2.0/bits/localefwd.h
  C:/mingw64/include/c++/14.2.0/bits/memory_resource.h
  C:/mingw64/include/c++/14.2.0/bits/memoryfwd.h
@@ -3874,17 +3821,12 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/TextureSaver.cpp
  C:/mingw64/include/c++/14.2.0/bits/new_allocator.h
  C:/mingw64/include/c++/14.2.0/bits/ostream.tcc
  C:/mingw64/include/c++/14.2.0/bits/ostream_insert.h
- C:/mingw64/include/c++/14.2.0/bits/parse_numbers.h
  C:/mingw64/include/c++/14.2.0/bits/postypes.h
  C:/mingw64/include/c++/14.2.0/bits/predefined_ops.h
  C:/mingw64/include/c++/14.2.0/bits/ptr_traits.h
- C:/mingw64/include/c++/14.2.0/bits/quoted_string.h
  C:/mingw64/include/c++/14.2.0/bits/range_access.h
  C:/mingw64/include/c++/14.2.0/bits/refwrap.h
  C:/mingw64/include/c++/14.2.0/bits/requires_hosted.h
- C:/mingw64/include/c++/14.2.0/bits/shared_ptr.h
- C:/mingw64/include/c++/14.2.0/bits/shared_ptr_base.h
- C:/mingw64/include/c++/14.2.0/bits/sstream.tcc
  C:/mingw64/include/c++/14.2.0/bits/std_abs.h
  C:/mingw64/include/c++/14.2.0/bits/stl_algobase.h
  C:/mingw64/include/c++/14.2.0/bits/stl_construct.h
@@ -3897,7 +3839,6 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/TextureSaver.cpp
  C:/mingw64/include/c++/14.2.0/bits/streambuf_iterator.h
  C:/mingw64/include/c++/14.2.0/bits/string_view.tcc
  C:/mingw64/include/c++/14.2.0/bits/stringfwd.h
- C:/mingw64/include/c++/14.2.0/bits/unique_ptr.h
  C:/mingw64/include/c++/14.2.0/bits/uses_allocator.h
  C:/mingw64/include/c++/14.2.0/bits/uses_allocator_args.h
  C:/mingw64/include/c++/14.2.0/bits/utility.h
@@ -3905,38 +3846,26 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/TextureSaver.cpp
  C:/mingw64/include/c++/14.2.0/cctype
  C:/mingw64/include/c++/14.2.0/cerrno
  C:/mingw64/include/c++/14.2.0/clocale
- C:/mingw64/include/c++/14.2.0/codecvt
  C:/mingw64/include/c++/14.2.0/concepts
  C:/mingw64/include/c++/14.2.0/cstddef
- C:/mingw64/include/c++/14.2.0/cstdint
  C:/mingw64/include/c++/14.2.0/cstdio
  C:/mingw64/include/c++/14.2.0/cstdlib
- C:/mingw64/include/c++/14.2.0/ctime
  C:/mingw64/include/c++/14.2.0/cwchar
  C:/mingw64/include/c++/14.2.0/cwctype
  C:/mingw64/include/c++/14.2.0/debug/assertions.h
  C:/mingw64/include/c++/14.2.0/debug/debug.h
  C:/mingw64/include/c++/14.2.0/exception
- C:/mingw64/include/c++/14.2.0/ext/aligned_buffer.h
  C:/mingw64/include/c++/14.2.0/ext/alloc_traits.h
  C:/mingw64/include/c++/14.2.0/ext/atomicity.h
- C:/mingw64/include/c++/14.2.0/ext/concurrence.h
  C:/mingw64/include/c++/14.2.0/ext/numeric_traits.h
  C:/mingw64/include/c++/14.2.0/ext/string_conversions.h
  C:/mingw64/include/c++/14.2.0/ext/type_traits.h
- C:/mingw64/include/c++/14.2.0/filesystem
  C:/mingw64/include/c++/14.2.0/initializer_list
- C:/mingw64/include/c++/14.2.0/iomanip
  C:/mingw64/include/c++/14.2.0/ios
  C:/mingw64/include/c++/14.2.0/iosfwd
- C:/mingw64/include/c++/14.2.0/istream
- C:/mingw64/include/c++/14.2.0/limits
- C:/mingw64/include/c++/14.2.0/locale
  C:/mingw64/include/c++/14.2.0/new
  C:/mingw64/include/c++/14.2.0/ostream
  C:/mingw64/include/c++/14.2.0/pstl/pstl_config.h
- C:/mingw64/include/c++/14.2.0/ratio
- C:/mingw64/include/c++/14.2.0/sstream
  C:/mingw64/include/c++/14.2.0/stdexcept
  C:/mingw64/include/c++/14.2.0/stdlib.h
  C:/mingw64/include/c++/14.2.0/streambuf
@@ -3956,9 +3885,7 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/TextureSaver.cpp
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/error_constants.h
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr-default.h
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr.h
- C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/os_defines.h
- C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h
@@ -4358,8 +4285,6 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/VertexBuffer.cpp
  C:/mingw64/include/c++/14.2.0/bits/basic_string.tcc
  C:/mingw64/include/c++/14.2.0/bits/char_traits.h
  C:/mingw64/include/c++/14.2.0/bits/charconv.h
- C:/mingw64/include/c++/14.2.0/bits/chrono.h
- C:/mingw64/include/c++/14.2.0/bits/codecvt.h
  C:/mingw64/include/c++/14.2.0/bits/concept_check.h
  C:/mingw64/include/c++/14.2.0/bits/cpp_type_traits.h
  C:/mingw64/include/c++/14.2.0/bits/cxxabi_forced.h
@@ -4368,23 +4293,15 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/VertexBuffer.cpp
  C:/mingw64/include/c++/14.2.0/bits/exception.h
  C:/mingw64/include/c++/14.2.0/bits/exception_defines.h
  C:/mingw64/include/c++/14.2.0/bits/exception_ptr.h
- C:/mingw64/include/c++/14.2.0/bits/fs_dir.h
- C:/mingw64/include/c++/14.2.0/bits/fs_fwd.h
- C:/mingw64/include/c++/14.2.0/bits/fs_ops.h
- C:/mingw64/include/c++/14.2.0/bits/fs_path.h
  C:/mingw64/include/c++/14.2.0/bits/functexcept.h
  C:/mingw64/include/c++/14.2.0/bits/functional_hash.h
  C:/mingw64/include/c++/14.2.0/bits/hash_bytes.h
  C:/mingw64/include/c++/14.2.0/bits/invoke.h
  C:/mingw64/include/c++/14.2.0/bits/ios_base.h
- C:/mingw64/include/c++/14.2.0/bits/istream.tcc
  C:/mingw64/include/c++/14.2.0/bits/locale_classes.h
  C:/mingw64/include/c++/14.2.0/bits/locale_classes.tcc
- C:/mingw64/include/c++/14.2.0/bits/locale_conv.h
  C:/mingw64/include/c++/14.2.0/bits/locale_facets.h
  C:/mingw64/include/c++/14.2.0/bits/locale_facets.tcc
- C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h
- C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc
  C:/mingw64/include/c++/14.2.0/bits/localefwd.h
  C:/mingw64/include/c++/14.2.0/bits/memory_resource.h
  C:/mingw64/include/c++/14.2.0/bits/memoryfwd.h
@@ -4393,18 +4310,15 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/VertexBuffer.cpp
  C:/mingw64/include/c++/14.2.0/bits/new_allocator.h
  C:/mingw64/include/c++/14.2.0/bits/ostream.tcc
  C:/mingw64/include/c++/14.2.0/bits/ostream_insert.h
- C:/mingw64/include/c++/14.2.0/bits/parse_numbers.h
  C:/mingw64/include/c++/14.2.0/bits/postypes.h
  C:/mingw64/include/c++/14.2.0/bits/predefined_ops.h
  C:/mingw64/include/c++/14.2.0/bits/ptr_traits.h
- C:/mingw64/include/c++/14.2.0/bits/quoted_string.h
  C:/mingw64/include/c++/14.2.0/bits/range_access.h
  C:/mingw64/include/c++/14.2.0/bits/refwrap.h
  C:/mingw64/include/c++/14.2.0/bits/requires_hosted.h
  C:/mingw64/include/c++/14.2.0/bits/shared_ptr.h
  C:/mingw64/include/c++/14.2.0/bits/shared_ptr_atomic.h
  C:/mingw64/include/c++/14.2.0/bits/shared_ptr_base.h
- C:/mingw64/include/c++/14.2.0/bits/sstream.tcc
  C:/mingw64/include/c++/14.2.0/bits/std_abs.h
  C:/mingw64/include/c++/14.2.0/bits/stl_algobase.h
  C:/mingw64/include/c++/14.2.0/bits/stl_construct.h
@@ -4430,7 +4344,6 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/VertexBuffer.cpp
  C:/mingw64/include/c++/14.2.0/cctype
  C:/mingw64/include/c++/14.2.0/cerrno
  C:/mingw64/include/c++/14.2.0/clocale
- C:/mingw64/include/c++/14.2.0/codecvt
  C:/mingw64/include/c++/14.2.0/compare
  C:/mingw64/include/c++/14.2.0/concepts
  C:/mingw64/include/c++/14.2.0/cstddef
@@ -4438,7 +4351,6 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/VertexBuffer.cpp
  C:/mingw64/include/c++/14.2.0/cstdio
  C:/mingw64/include/c++/14.2.0/cstdlib
  C:/mingw64/include/c++/14.2.0/cstring
- C:/mingw64/include/c++/14.2.0/ctime
  C:/mingw64/include/c++/14.2.0/cwchar
  C:/mingw64/include/c++/14.2.0/cwctype
  C:/mingw64/include/c++/14.2.0/debug/assertions.h
@@ -4451,14 +4363,9 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/VertexBuffer.cpp
  C:/mingw64/include/c++/14.2.0/ext/numeric_traits.h
  C:/mingw64/include/c++/14.2.0/ext/string_conversions.h
  C:/mingw64/include/c++/14.2.0/ext/type_traits.h
- C:/mingw64/include/c++/14.2.0/filesystem
  C:/mingw64/include/c++/14.2.0/initializer_list
- C:/mingw64/include/c++/14.2.0/iomanip
  C:/mingw64/include/c++/14.2.0/ios
  C:/mingw64/include/c++/14.2.0/iosfwd
- C:/mingw64/include/c++/14.2.0/istream
- C:/mingw64/include/c++/14.2.0/limits
- C:/mingw64/include/c++/14.2.0/locale
  C:/mingw64/include/c++/14.2.0/memory
  C:/mingw64/include/c++/14.2.0/new
  C:/mingw64/include/c++/14.2.0/optional
@@ -4466,8 +4373,6 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/VertexBuffer.cpp
  C:/mingw64/include/c++/14.2.0/pstl/execution_defs.h
  C:/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h
  C:/mingw64/include/c++/14.2.0/pstl/pstl_config.h
- C:/mingw64/include/c++/14.2.0/ratio
- C:/mingw64/include/c++/14.2.0/sstream
  C:/mingw64/include/c++/14.2.0/stdexcept
  C:/mingw64/include/c++/14.2.0/stdlib.h
  C:/mingw64/include/c++/14.2.0/streambuf
@@ -4488,9 +4393,7 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/VertexBuffer.cpp
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/error_constants.h
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr-default.h
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr.h
- C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/os_defines.h
- C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h

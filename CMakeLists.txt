@@ -36,6 +36,13 @@ FetchContent_Declare(
     GIT_REPOSITORY http://github.com/SFML/imgui-sfml.git
     GIT_TAG v3.0)
 
+message("Descargando JSON")
+
+FetchContent_Declare(json URL https://github.com/nlohmann/json/releases/download/v3.12.0/json.tar.xz)
+FetchContent_MakeAvailable(json)
+
+#target_link_libraries(foo PRIVATE nlohmann_json::nlohmann_json)
+
 set(IMGUI_DIR ${imgui_SOURCE_DIR})
 set(IMGUI_SFML_FIND_SFML OFF)
 set(IMGUI_SFML_IMGUI_DEMO ON)
@@ -54,8 +61,14 @@ add_subdirectory(src)
 target_link_libraries(
     ${PROJECT_NAME} PUBLIC
     SFML::System SFML::Window SFML::Graphics SFML::Audio
-    ImGui-SFML::ImGui-SFML
+    ImGui-SFML::ImGui-SFML nlohmann_json::nlohmann_json
 )
+
+if(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
+    add_compile_options((-ggdb -Wall -Wextra))
+else()
+    add_compile_options(-O2)
+endif()
 
 #asignar el estandar
 target_compile_features(CimaEngine3v PUBLIC cxx_std_17)

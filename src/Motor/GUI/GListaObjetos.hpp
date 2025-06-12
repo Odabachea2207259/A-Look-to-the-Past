@@ -1,5 +1,6 @@
 #pragma once
 #include "GLayer.hpp"
+#include "GPropiedades.hpp"
 
 namespace CE
 {
@@ -10,5 +11,7 @@ namespace CE
 			void OnInit(const MotorConfig& des) override;
 			void OnUpdate(float dt) override;
 			void OnRender(void) override;
+		private:
+			GPropiedades propiedades;
 	};
 }

@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "../Utils/Utils.hpp"
+#include "../Utils/Vector2D.hpp"
 #include<memory>
 namespace CE
 {
@@ -17,10 +18,18 @@ namespace CE
             void OnDisplayVentana(void);
             sf::RenderWindow& GetVentana(void);
             sf::RenderTexture& GetTextura(void);
+	    void setMousePos(Vector2D mouse)
+	    {
+	    	mousePos = mouse;
+	    }
+	    Vector2D getMousePos(){
+	    	return mousePos;
+	    }
         private:
             explicit Render()=default;
             std::unique_ptr<sf::RenderWindow> r_ventana;
             std::unique_ptr<sf::RenderTexture> r_textura;
             static inline Render* instancia =nullptr;
+	    Vector2D mousePos;
     };
 }

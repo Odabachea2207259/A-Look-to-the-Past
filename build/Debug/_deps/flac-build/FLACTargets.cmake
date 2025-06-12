@@ -55,7 +55,7 @@ set_target_properties(FLAC::FLAC PROPERTIES
   INTERFACE_LINK_LIBRARIES "\$<\$<BOOL:1>:m>;Ogg::ogg"
 )
 
-# Import target "FLAC::FLAC" for configuration "Debug"
+# Import target "FLAC::FLAC" for configuration "DEBUG"
 set_property(TARGET FLAC::FLAC APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(FLAC::FLAC PROPERTIES
   IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "C;RC"

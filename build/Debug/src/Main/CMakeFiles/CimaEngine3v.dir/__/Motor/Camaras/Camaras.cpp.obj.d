@@ -288,7 +288,10 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Camaras/Camaras.cpp.obj: \
  C:/mingw64/include/c++/14.2.0/cinttypes \
  C:/mingw64/x86_64-w64-mingw32/include/inttypes.h \
  C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Utils/Vector2D.hpp \
- C:/mingw64/include/c++/14.2.0/iostream \
+ C:/mingw64/include/c++/14.2.0/iostream C:/mingw64/include/c++/14.2.0/map \
+ C:/mingw64/include/c++/14.2.0/bits/stl_tree.h \
+ C:/mingw64/include/c++/14.2.0/bits/stl_map.h \
+ C:/mingw64/include/c++/14.2.0/bits/stl_multimap.h \
  C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/GUI/GLogger.hpp \
  C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/GUI/GLayer.hpp \
  C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Utils/Utils.hpp \
@@ -305,4 +308,5 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Camaras/Camaras.cpp.obj: \
  C:/mingw64/x86_64-w64-mingw32/include/stdarg.h \
  C:/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
  C:/mingw64/x86_64-w64-mingw32/include/string.h \
- C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h
+ C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
+ C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Utils/Lerp.hpp

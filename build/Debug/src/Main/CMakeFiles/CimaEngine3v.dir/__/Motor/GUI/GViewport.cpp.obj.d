@@ -297,6 +297,8 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GViewport.cpp.obj: \
  C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/System/InputStream.hpp \
  C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
  C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/System/Sleep.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/src/./Motor/Render/../Utils/Vector2D.hpp \
+ C:/mingw64/include/c++/14.2.0/iostream \
  C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/IMGUI-~2/imgui_internal.h \
  C:/mingw64/include/c++/14.2.0/math.h C:/mingw64/include/c++/14.2.0/cmath \
  C:/mingw64/x86_64-w64-mingw32/include/math.h \
@@ -413,5 +415,4 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GViewport.cpp.obj: \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/keylockerintrin.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/amxfp16intrin.h \
  C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/IMGUI-~2/imstb_textedit.h \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/IM6998~1/imgui-SFML.h \
- C:/mingw64/include/c++/14.2.0/iostream
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/IM6998~1/imgui-SFML.h

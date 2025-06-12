@@ -288,9 +288,11 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Sistemas/Sistemas.cpp.obj: \
  C:/mingw64/include/c++/14.2.0/cinttypes \
  C:/mingw64/x86_64-w64-mingw32/include/inttypes.h \
  C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Utils/Vector2D.hpp \
- C:/mingw64/include/c++/14.2.0/iostream \
- C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Render/Render.hpp \
- C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Utils/Utils.hpp \
+ C:/mingw64/include/c++/14.2.0/iostream C:/mingw64/include/c++/14.2.0/map \
+ C:/mingw64/include/c++/14.2.0/bits/stl_tree.h \
+ C:/mingw64/include/c++/14.2.0/bits/stl_map.h \
+ C:/mingw64/include/c++/14.2.0/bits/stl_multimap.h \
+ C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Figuras/Figuras.hpp \
  C:/mingw64/include/c++/14.2.0/cmath \
  C:/mingw64/x86_64-w64-mingw32/include/math.h \
  C:/mingw64/include/c++/14.2.0/bits/specfun.h \
@@ -305,4 +307,6 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Sistemas/Sistemas.cpp.obj: \
  C:/mingw64/include/c++/14.2.0/tr1/modified_bessel_func.tcc \
  C:/mingw64/include/c++/14.2.0/tr1/poly_hermite.tcc \
  C:/mingw64/include/c++/14.2.0/tr1/poly_laguerre.tcc \
- C:/mingw64/include/c++/14.2.0/tr1/riemann_zeta.tcc
+ C:/mingw64/include/c++/14.2.0/tr1/riemann_zeta.tcc \
+ C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Render/Render.hpp \
+ C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Utils/Utils.hpp

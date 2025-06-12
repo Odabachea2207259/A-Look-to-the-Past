@@ -1,5 +1,6 @@
 #include "Render.hpp"
 #include <iostream>
+#include "SFML/Window/ContextSettings.hpp"
 
 namespace CE
 {
@@ -19,6 +20,9 @@ namespace CE
     {
         sf::ContextSettings videosettings;
         videosettings.antiAliasingLevel=3;
+        //videosettings.majorVersion = 4;
+        //videosettings.minorVersion = 1;
+        //videosettings.attributeFlags = sf::ContextSettings::Core;
 
         r_ventana = std::make_unique<sf::RenderWindow>(
                 sf::VideoMode({motor_info.vW,motor_info.vH}, 32),
@@ -53,6 +57,9 @@ namespace CE
 
         sf::ContextSettings video;
         video.antiAliasingLevel=3;
+        //video.majorVersion = 4;
+        //video.minorVersion = 1;
+        //video.attributeFlags = sf::ContextSettings::Core;
         r_textura->clear(sf::Color::Black);
         if(!r_textura->resize(sf::Vector2u{w,h},video))
             exit(EXIT_FAILURE);

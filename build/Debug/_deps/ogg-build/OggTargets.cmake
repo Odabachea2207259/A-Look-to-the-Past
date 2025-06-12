@@ -53,7 +53,7 @@ set_target_properties(Ogg::ogg PROPERTIES
   INTERFACE_INCLUDE_DIRECTORIES "C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/build/Debug/_deps/ogg-src/include;C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/build/Debug/_deps/ogg-build/include"
 )
 
-# Import target "Ogg::ogg" for configuration "Debug"
+# Import target "Ogg::ogg" for configuration "DEBUG"
 set_property(TARGET Ogg::ogg APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(Ogg::ogg PROPERTIES
   IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "C"

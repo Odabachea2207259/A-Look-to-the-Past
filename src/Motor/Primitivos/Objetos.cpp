@@ -18,6 +18,15 @@ namespace CE
 		transform->posicion.x = x;
 		transform->posicion.y = y;
 	}
+	CE::Vector2D Objeto::getPosicion()
+	{
+		return transform->posicion;
+	}
+	void Objeto::setVelocidad(float x, float y)
+	{
+		transform->velocidad.x = x;
+		transform->velocidad.y = y;
+	}
 
 
 	Objeto& Objeto::addComponente(const std::shared_ptr<IComponentes>& componente)

@@ -11,6 +11,7 @@ namespace CE
             virtual void OnInit(void){};
             virtual bool EstaCorriendo(void){return !termino;};
             virtual void OnInputs(float dt ,std::optional<sf::Event>& eventos){};
+            virtual void OnInputs(float dt){};
             virtual void OnUpdate(float dt){};
             virtual void OnRender(float dt){};
 

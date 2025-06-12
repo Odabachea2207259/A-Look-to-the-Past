@@ -143,11 +143,26 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GLogger.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GLogger.cpp.s"
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Motor\GUI\GLogger.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Motor\GUI\GLogger.cpp.s
 
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GPropiedades.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GPropiedades.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GPropiedades.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/GUI/GPropiedades.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GPropiedades.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GPropiedades.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GPropiedades.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Motor\GUI\GPropiedades.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Motor\GUI\GPropiedades.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Motor\GUI\GPropiedades.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GPropiedades.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GPropiedades.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Motor\GUI\GPropiedades.cpp" > CMakeFiles\CimaEngine3v.dir\__\Motor\GUI\GPropiedades.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GPropiedades.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GPropiedades.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Motor\GUI\GPropiedades.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Motor\GUI\GPropiedades.cpp.s
+
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GViewport.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GViewport.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GViewport.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/GUI/GViewport.cpp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GViewport.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GViewport.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GViewport.cpp.obj"
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GViewport.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Motor\GUI\GViewport.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Motor\GUI\GViewport.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Motor\GUI\GViewport.cpp"
 
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GViewport.cpp.i: cmake_force
@@ -162,7 +177,7 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/CEPool.cpp.obj: src/Mai
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/CEPool.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/CEPool.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Primitivos/CEPool.cpp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/CEPool.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/CEPool.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/CEPool.cpp.obj"
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/CEPool.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Motor\Primitivos\CEPool.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Motor\Primitivos\CEPool.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Motor\Primitivos\CEPool.cpp"
 
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/CEPool.cpp.i: cmake_force
@@ -173,11 +188,26 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/CEPool.cpp.s: cmake_for
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/CEPool.cpp.s"
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Motor\Primitivos\CEPool.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Motor\Primitivos\CEPool.cpp.s
 
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorAssets.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorAssets.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorAssets.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Primitivos/GestorAssets.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorAssets.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorAssets.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorAssets.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Motor\Primitivos\GestorAssets.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Motor\Primitivos\GestorAssets.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Motor\Primitivos\GestorAssets.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorAssets.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorAssets.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Motor\Primitivos\GestorAssets.cpp" > CMakeFiles\CimaEngine3v.dir\__\Motor\Primitivos\GestorAssets.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorAssets.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorAssets.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Motor\Primitivos\GestorAssets.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Motor\Primitivos\GestorAssets.cpp.s
+
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorEscenas.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorEscenas.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorEscenas.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Primitivos/GestorEscenas.cpp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorEscenas.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorEscenas.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorEscenas.cpp.obj"
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorEscenas.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Motor\Primitivos\GestorEscenas.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Motor\Primitivos\GestorEscenas.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Motor\Primitivos\GestorEscenas.cpp"
 
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorEscenas.cpp.i: cmake_force
@@ -192,7 +222,7 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/Objetos.cpp.obj: src/Ma
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/Objetos.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/Objetos.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Primitivos/Objetos.cpp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/Objetos.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/Objetos.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/Objetos.cpp.obj"
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/Objetos.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Motor\Primitivos\Objetos.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Motor\Primitivos\Objetos.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Motor\Primitivos\Objetos.cpp"
 
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/Objetos.cpp.i: cmake_force
@@ -203,11 +233,26 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/Objetos.cpp.s: cmake_fo
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/Objetos.cpp.s"
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Motor\Primitivos\Objetos.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Motor\Primitivos\Objetos.cpp.s
 
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Lerp.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Lerp.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Lerp.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Utils/Lerp.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Lerp.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Lerp.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Lerp.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Motor\Utils\Lerp.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Motor\Utils\Lerp.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Motor\Utils\Lerp.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Lerp.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Lerp.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Motor\Utils\Lerp.cpp" > CMakeFiles\CimaEngine3v.dir\__\Motor\Utils\Lerp.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Lerp.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Lerp.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Motor\Utils\Lerp.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Motor\Utils\Lerp.cpp.s
+
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Vector2D.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Vector2D.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Vector2D.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Utils/Vector2D.cpp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Vector2D.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Vector2D.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Vector2D.cpp.obj"
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Vector2D.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Motor\Utils\Vector2D.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Motor\Utils\Vector2D.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Motor\Utils\Vector2D.cpp"
 
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Vector2D.cpp.i: cmake_force
@@ -222,7 +267,7 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Componentes/IComponentes.cpp.obj: 
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Componentes/IComponentes.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Componentes/IComponentes.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Componentes/IComponentes.cpp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Componentes/IComponentes.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Componentes/IComponentes.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Componentes/IComponentes.cpp.obj"
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Componentes/IComponentes.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Motor\Componentes\IComponentes.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Motor\Componentes\IComponentes.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Motor\Componentes\IComponentes.cpp"
 
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Componentes/IComponentes.cpp.i: cmake_force
@@ -237,7 +282,7 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Camaras/Camaras.cpp.obj: src/Main/
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Camaras/Camaras.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Camaras/Camaras.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Camaras/Camaras.cpp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Camaras/Camaras.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Camaras/Camaras.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Camaras/Camaras.cpp.obj"
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Camaras/Camaras.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Motor\Camaras\Camaras.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Motor\Camaras\Camaras.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Motor\Camaras\Camaras.cpp"
 
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Camaras/Camaras.cpp.i: cmake_force
@@ -252,7 +297,7 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Camaras/CamarasGestor.cpp.obj: src
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Camaras/CamarasGestor.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Camaras/CamarasGestor.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Camaras/CamarasGestor.cpp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Camaras/CamarasGestor.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Camaras/CamarasGestor.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Camaras/CamarasGestor.cpp.obj"
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Camaras/CamarasGestor.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Motor\Camaras\CamarasGestor.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Motor\Camaras\CamarasGestor.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Motor\Camaras\CamarasGestor.cpp"
 
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Camaras/CamarasGestor.cpp.i: cmake_force
@@ -267,7 +312,7 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Inputs/Botones.cpp.obj: src/Main/C
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Inputs/Botones.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Inputs/Botones.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Inputs/Botones.cpp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Inputs/Botones.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Inputs/Botones.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Inputs/Botones.cpp.obj"
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Inputs/Botones.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Motor\Inputs\Botones.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Motor\Inputs\Botones.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Motor\Inputs\Botones.cpp"
 
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Inputs/Botones.cpp.i: cmake_force
@@ -282,7 +327,7 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Motor.cpp.obj: src/Main/CMakeFiles
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Motor.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Motor.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Motor.cpp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Motor.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Motor.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Motor.cpp.obj"
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Motor.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Motor\Motor.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Motor\Motor.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Motor\Motor.cpp"
 
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Motor.cpp.i: cmake_force
@@ -297,7 +342,7 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Figuras/Figuras.cpp.obj: src/Main/
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Figuras/Figuras.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Figuras/Figuras.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Figuras/Figuras.cpp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Figuras/Figuras.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Figuras/Figuras.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Figuras/Figuras.cpp.obj"
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Figuras/Figuras.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Figuras\Figuras.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Figuras\Figuras.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Figuras\Figuras.cpp"
 
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Figuras/Figuras.cpp.i: cmake_force
@@ -312,7 +357,7 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Sistemas/Sistemas.cpp.obj: src/Mai
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Sistemas/Sistemas.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Sistemas/Sistemas.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Sistemas/Sistemas.cpp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Sistemas/Sistemas.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Sistemas/Sistemas.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Sistemas/Sistemas.cpp.obj"
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Sistemas/Sistemas.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Sistemas\Sistemas.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Sistemas\Sistemas.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Sistemas\Sistemas.cpp"
 
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Sistemas/Sistemas.cpp.i: cmake_force
@@ -323,56 +368,371 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Sistemas/Sistemas.cpp.s: cmake_for
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Sistemas/Sistemas.cpp.s"
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Sistemas\Sistemas.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Sistemas\Sistemas.cpp.s
 
-src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCirculos.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
-src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCirculos.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
-src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCirculos.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Escenas/EscenaCirculos.cpp
-src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCirculos.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCirculos.cpp.obj"
-	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCirculos.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaCirculos.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaCirculos.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaCirculos.cpp"
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaDerrota.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaDerrota.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaDerrota.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Escenas/EscenaDerrota.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaDerrota.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaDerrota.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaDerrota.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaDerrota.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaDerrota.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaDerrota.cpp"
 
-src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCirculos.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCirculos.cpp.i"
-	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaCirculos.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaCirculos.cpp.i
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaDerrota.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaDerrota.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaDerrota.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaDerrota.cpp.i
 
-src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCirculos.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCirculos.cpp.s"
-	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaCirculos.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaCirculos.cpp.s
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaDerrota.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaDerrota.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaDerrota.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaDerrota.cpp.s
 
-src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCuadro.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
-src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCuadro.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
-src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCuadro.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Escenas/EscenaCuadro.cpp
-src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCuadro.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCuadro.cpp.obj"
-	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCuadro.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaCuadro.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaCuadro.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaCuadro.cpp"
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFosiles.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFosiles.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFosiles.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Escenas/EscenaFosiles.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFosiles.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFosiles.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFosiles.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaFosiles.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaFosiles.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaFosiles.cpp"
 
-src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCuadro.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCuadro.cpp.i"
-	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaCuadro.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaCuadro.cpp.i
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFosiles.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFosiles.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaFosiles.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaFosiles.cpp.i
 
-src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCuadro.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCuadro.cpp.s"
-	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaCuadro.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaCuadro.cpp.s
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFosiles.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFosiles.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaFosiles.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaFosiles.cpp.s
 
-src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFiguras.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
-src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFiguras.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
-src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFiguras.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Escenas/EscenaFiguras.cpp
-src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFiguras.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFiguras.cpp.obj"
-	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFiguras.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaFiguras.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaFiguras.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaFiguras.cpp"
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaMejora.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaMejora.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaMejora.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Escenas/EscenaMejora.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaMejora.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaMejora.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaMejora.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaMejora.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaMejora.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaMejora.cpp"
 
-src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFiguras.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFiguras.cpp.i"
-	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaFiguras.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaFiguras.cpp.i
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaMejora.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaMejora.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaMejora.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaMejora.cpp.i
 
-src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFiguras.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFiguras.cpp.s"
-	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaFiguras.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaFiguras.cpp.s
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaMejora.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaMejora.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaMejora.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaMejora.cpp.s
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaSeleccion.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaSeleccion.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaSeleccion.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Escenas/EscenaSeleccion.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaSeleccion.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaSeleccion.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaSeleccion.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaSeleccion.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaSeleccion.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaSeleccion.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaSeleccion.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaSeleccion.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaSeleccion.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaSeleccion.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaSeleccion.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaSeleccion.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaSeleccion.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaSeleccion.cpp.s
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaShaders.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaShaders.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaShaders.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Escenas/EscenaShaders.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaShaders.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaShaders.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaShaders.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaShaders.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaShaders.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaShaders.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaShaders.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaShaders.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaShaders.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaShaders.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaShaders.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaShaders.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaShaders.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaShaders.cpp.s
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaVictoria.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaVictoria.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaVictoria.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Escenas/EscenaVictoria.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaVictoria.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaVictoria.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaVictoria.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaVictoria.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaVictoria.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaVictoria.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaVictoria.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaVictoria.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaVictoria.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaVictoria.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaVictoria.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaVictoria.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\EscenaVictoria.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\EscenaVictoria.cpp.s
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/Escena_Menu.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/Escena_Menu.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/Escena_Menu.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Escenas/Escena_Menu.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/Escena_Menu.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/Escena_Menu.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/Escena_Menu.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\Escena_Menu.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\Escena_Menu.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\Escena_Menu.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/Escena_Menu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/Escena_Menu.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\Escena_Menu.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\Escena_Menu.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/Escena_Menu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/Escena_Menu.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Escenas\Escena_Menu.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Escenas\Escena_Menu.cpp.s
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Entidad.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Entidad.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Entidad.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Objetos/Entidad.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Entidad.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Entidad.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Entidad.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Entidad.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Entidad.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Objetos\Entidad.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Entidad.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Entidad.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Objetos\Entidad.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Entidad.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Entidad.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Entidad.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Objetos\Entidad.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Entidad.cpp.s
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Equipos.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Equipos.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Equipos.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Objetos/Equipos.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Equipos.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Equipos.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Equipos.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Equipos.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Equipos.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Objetos\Equipos.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Equipos.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Equipos.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Objetos\Equipos.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Equipos.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Equipos.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Equipos.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Objetos\Equipos.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Equipos.cpp.s
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Jugador.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Jugador.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Jugador.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Objetos/Jugador.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Jugador.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Jugador.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Jugador.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Jugador.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Jugador.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Objetos\Jugador.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Jugador.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Jugador.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Objetos\Jugador.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Jugador.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Jugador.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Jugador.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Objetos\Jugador.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Jugador.cpp.s
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Pais.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Pais.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Pais.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Objetos/Pais.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Pais.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Pais.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Pais.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Pais.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Pais.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Objetos\Pais.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Pais.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Pais.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Objetos\Pais.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Pais.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Pais.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Pais.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Objetos\Pais.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Pais.cpp.s
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Recompensas.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Recompensas.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Recompensas.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Objetos/Recompensas.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Recompensas.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Recompensas.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Recompensas.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Recompensas.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Recompensas.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Objetos\Recompensas.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Recompensas.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Recompensas.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Objetos\Recompensas.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Recompensas.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Recompensas.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Recompensas.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Objetos\Recompensas.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Recompensas.cpp.s
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Texto.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Texto.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Texto.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Objetos/Texto.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Texto.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Texto.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Texto.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Texto.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Texto.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Objetos\Texto.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Texto.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Texto.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Objetos\Texto.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Texto.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Texto.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Texto.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Objetos\Texto.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\Texto.cpp.s
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/TileMap.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/TileMap.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/TileMap.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Objetos/TileMap.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/TileMap.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/TileMap.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/TileMap.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\TileMap.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\TileMap.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Objetos\TileMap.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/TileMap.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/TileMap.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Objetos\TileMap.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\TileMap.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/TileMap.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/TileMap.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Objetos\TileMap.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Objetos\TileMap.cpp.s
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/AtaqueFSM.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/AtaqueFSM.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/AtaqueFSM.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Maquinas/AtaqueFSM.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/AtaqueFSM.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/AtaqueFSM.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/AtaqueFSM.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\AtaqueFSM.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\AtaqueFSM.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Maquinas\AtaqueFSM.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/AtaqueFSM.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/AtaqueFSM.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Maquinas\AtaqueFSM.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\AtaqueFSM.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/AtaqueFSM.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/AtaqueFSM.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Maquinas\AtaqueFSM.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\AtaqueFSM.cpp.s
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/BuffFSM.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/BuffFSM.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/BuffFSM.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Maquinas/BuffFSM.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/BuffFSM.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/BuffFSM.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/BuffFSM.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\BuffFSM.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\BuffFSM.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Maquinas\BuffFSM.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/BuffFSM.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/BuffFSM.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Maquinas\BuffFSM.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\BuffFSM.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/BuffFSM.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/BuffFSM.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Maquinas\BuffFSM.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\BuffFSM.cpp.s
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/DamageFSM.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/DamageFSM.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/DamageFSM.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Maquinas/DamageFSM.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/DamageFSM.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/DamageFSM.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/DamageFSM.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\DamageFSM.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\DamageFSM.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Maquinas\DamageFSM.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/DamageFSM.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/DamageFSM.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Maquinas\DamageFSM.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\DamageFSM.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/DamageFSM.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/DamageFSM.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Maquinas\DamageFSM.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\DamageFSM.cpp.s
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/IdleFSM.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/IdleFSM.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/IdleFSM.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Maquinas/IdleFSM.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/IdleFSM.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/IdleFSM.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/IdleFSM.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\IdleFSM.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\IdleFSM.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Maquinas\IdleFSM.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/IdleFSM.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/IdleFSM.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Maquinas\IdleFSM.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\IdleFSM.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/IdleFSM.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/IdleFSM.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Maquinas\IdleFSM.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\IdleFSM.cpp.s
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MoverFSM.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MoverFSM.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MoverFSM.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Maquinas/MoverFSM.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MoverFSM.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MoverFSM.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MoverFSM.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\MoverFSM.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\MoverFSM.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Maquinas\MoverFSM.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MoverFSM.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MoverFSM.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Maquinas\MoverFSM.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\MoverFSM.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MoverFSM.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MoverFSM.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Maquinas\MoverFSM.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\MoverFSM.cpp.s
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MuerteFSM.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MuerteFSM.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MuerteFSM.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Maquinas/MuerteFSM.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MuerteFSM.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MuerteFSM.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MuerteFSM.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\MuerteFSM.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\MuerteFSM.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Maquinas\MuerteFSM.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MuerteFSM.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MuerteFSM.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Maquinas\MuerteFSM.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\MuerteFSM.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MuerteFSM.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MuerteFSM.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Maquinas\MuerteFSM.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Maquinas\MuerteFSM.cpp.s
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Componentes/IJComponentes.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Componentes/IJComponentes.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Componentes/IJComponentes.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Componentes/IJComponentes.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Componentes/IJComponentes.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Componentes/IJComponentes.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Componentes/IJComponentes.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Componentes\IJComponentes.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Componentes\IJComponentes.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Componentes\IJComponentes.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Componentes/IJComponentes.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Componentes/IJComponentes.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Componentes\IJComponentes.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Componentes\IJComponentes.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Componentes/IJComponentes.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Componentes/IJComponentes.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Componentes\IJComponentes.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Componentes\IJComponentes.cpp.s
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Dinosaurios/Dinosaurio.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Dinosaurios/Dinosaurio.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Dinosaurios/Dinosaurio.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Dinosaurios/Dinosaurio.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Dinosaurios/Dinosaurio.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Dinosaurios/Dinosaurio.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Dinosaurios/Dinosaurio.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Dinosaurios\Dinosaurio.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Dinosaurios\Dinosaurio.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Dinosaurios\Dinosaurio.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Dinosaurios/Dinosaurio.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Dinosaurios/Dinosaurio.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Dinosaurios\Dinosaurio.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Dinosaurios\Dinosaurio.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Dinosaurios/Dinosaurio.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Dinosaurios/Dinosaurio.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Dinosaurios\Dinosaurio.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Dinosaurios\Dinosaurio.cpp.s
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Habilidades/Habilidad.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Habilidades/Habilidad.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Habilidades/Habilidad.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Habilidades/Habilidad.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Habilidades/Habilidad.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Habilidades/Habilidad.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Habilidades/Habilidad.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Habilidades\Habilidad.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Habilidades\Habilidad.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Habilidades\Habilidad.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Habilidades/Habilidad.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Habilidades/Habilidad.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Habilidades\Habilidad.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Habilidades\Habilidad.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Habilidades/Habilidad.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Habilidades/Habilidad.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Habilidades\Habilidad.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Habilidades\Habilidad.cpp.s
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Estados/Estados.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Estados/Estados.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Estados/Estados.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Estados/Estados.cpp
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Estados/Estados.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Estados/Estados.cpp.obj"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Estados/Estados.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Estados\Estados.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Estados\Estados.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Estados\Estados.cpp"
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Estados/Estados.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CimaEngine3v.dir/__/Juego/Estados/Estados.cpp.i"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Estados\Estados.cpp" > CMakeFiles\CimaEngine3v.dir\__\Juego\Estados\Estados.cpp.i
+
+src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Estados/Estados.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CimaEngine3v.dir/__/Juego/Estados/Estados.cpp.s"
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Estados\Estados.cpp" -o CMakeFiles\CimaEngine3v.dir\__\Juego\Estados\Estados.cpp.s
 
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Juego.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/flags.make
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Juego.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/includes_CXX.rsp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Juego.cpp.obj: C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Juego.cpp
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Juego.cpp.obj: src/Main/CMakeFiles/CimaEngine3v.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Juego.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Juego.cpp.obj"
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Juego.cpp.obj -MF CMakeFiles\CimaEngine3v.dir\__\Juego\Juego.cpp.obj.d -o CMakeFiles\CimaEngine3v.dir\__\Juego\Juego.cpp.obj -c "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\src\Juego\Juego.cpp"
 
 src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Juego.cpp.i: cmake_force
@@ -390,10 +750,13 @@ CimaEngine3v_OBJECTS = \
 "CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GDock.cpp.obj" \
 "CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GListaObjetos.cpp.obj" \
 "CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GLogger.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GPropiedades.cpp.obj" \
 "CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GViewport.cpp.obj" \
 "CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/CEPool.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorAssets.cpp.obj" \
 "CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorEscenas.cpp.obj" \
 "CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/Objetos.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Lerp.cpp.obj" \
 "CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Vector2D.cpp.obj" \
 "CMakeFiles/CimaEngine3v.dir/__/Motor/Componentes/IComponentes.cpp.obj" \
 "CMakeFiles/CimaEngine3v.dir/__/Motor/Camaras/Camaras.cpp.obj" \
@@ -402,9 +765,30 @@ CimaEngine3v_OBJECTS = \
 "CMakeFiles/CimaEngine3v.dir/__/Motor/Motor.cpp.obj" \
 "CMakeFiles/CimaEngine3v.dir/__/Juego/Figuras/Figuras.cpp.obj" \
 "CMakeFiles/CimaEngine3v.dir/__/Juego/Sistemas/Sistemas.cpp.obj" \
-"CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCirculos.cpp.obj" \
-"CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCuadro.cpp.obj" \
-"CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFiguras.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaDerrota.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFosiles.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaMejora.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaSeleccion.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaShaders.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaVictoria.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/Escena_Menu.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Entidad.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Equipos.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Jugador.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Pais.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Recompensas.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Texto.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/TileMap.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/AtaqueFSM.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/BuffFSM.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/DamageFSM.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/IdleFSM.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MoverFSM.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MuerteFSM.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Componentes/IJComponentes.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Dinosaurios/Dinosaurio.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Habilidades/Habilidad.cpp.obj" \
+"CMakeFiles/CimaEngine3v.dir/__/Juego/Estados/Estados.cpp.obj" \
 "CMakeFiles/CimaEngine3v.dir/__/Juego/Juego.cpp.obj"
 
 # External object files for target CimaEngine3v
@@ -415,10 +799,13 @@ C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEng
 C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GDock.cpp.obj
 C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GListaObjetos.cpp.obj
 C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GLogger.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GPropiedades.cpp.obj
 C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GViewport.cpp.obj
 C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/CEPool.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorAssets.cpp.obj
 C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorEscenas.cpp.obj
 C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/Objetos.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Lerp.cpp.obj
 C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Vector2D.cpp.obj
 C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Componentes/IComponentes.cpp.obj
 C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Camaras/Camaras.cpp.obj
@@ -427,9 +814,30 @@ C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEng
 C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Motor.cpp.obj
 C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Figuras/Figuras.cpp.obj
 C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Sistemas/Sistemas.cpp.obj
-C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCirculos.cpp.obj
-C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCuadro.cpp.obj
-C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFiguras.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaDerrota.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFosiles.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaMejora.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaSeleccion.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaShaders.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaVictoria.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/Escena_Menu.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Entidad.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Equipos.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Jugador.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Pais.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Recompensas.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Texto.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/TileMap.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/AtaqueFSM.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/BuffFSM.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/DamageFSM.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/IdleFSM.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MoverFSM.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MuerteFSM.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Componentes/IJComponentes.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Dinosaurios/Dinosaurio.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Habilidades/Habilidad.cpp.obj
+C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Estados/Estados.cpp.obj
 C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Juego.cpp.obj
 C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/build.make
 C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: _deps/sfml-build/lib/libsfml-system-s-d.a
@@ -449,7 +857,7 @@ C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEng
 C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/linkLibs.rsp
 C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/objects1.rsp
 C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/bin/Debug/CimaEngine3v.exe: src/Main/CMakeFiles/CimaEngine3v.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX executable \"C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\bin\Debug\CimaEngine3v.exe\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_46) "Linking CXX executable \"C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\bin\Debug\CimaEngine3v.exe\""
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug\src\Main && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\CimaEngine3v.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

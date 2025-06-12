@@ -35,9 +35,43 @@ namespace IVJ
             explicit Rectangulo(float ancho, float largo,const sf::Color& relleno,const  sf::Color& contorno);
             ~Rectangulo() override{};
             void draw(sf::RenderTarget& target, sf::RenderStates state) const override;
-            //void setPosicion(float x, float y) override;
-	    float getArea() override;
-	    void onUpdate(float dt) override;
+            void setPosicion(float x, float y);
+			void setTam(float x, float y)
+			{
+				rect_img.setSize(sf::Vector2f{x,y});
+			}
+	    	float getArea() override;
+	    	void onUpdate(float dt) override;
+			sf::Vector2f getPosicion()
+			{
+				return sf::Vector2f({rect_img.getPosition().x,rect_img.getPosition().y});
+			}
+	    	float getWidth()
+	    	{
+	    		return w;
+	    	}
+	    	float getHeight()
+	    	{
+	    		return h;
+	    	}
+			void setColor(sf::Color color)
+			{
+				rect_img.setFillColor(color);
+			}
+			void setOutColor(sf::Color color)
+			{
+				rect_img.setOutlineColor(color);
+			}
+			void setOutThick(float thickness)
+			{
+				rect_img.setOutlineThickness(thickness);
+			}
+			sf::RectangleShape getRectangle()
+			{
+				return rect_img;
+			}
+	    	int mouse = 0;
+			sf::IntRect rect_bounding;
         private:
             sf::RectangleShape rect_img;
             float w;

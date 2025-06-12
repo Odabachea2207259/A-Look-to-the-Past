@@ -14,6 +14,8 @@ namespace CE
         private:
             unsigned int vw;
             unsigned int vh;
+	    unsigned int vw_prev;
+	    unsigned int vh_prev;
             MotorConfig motor_info;
             ImGuiID id;
     };

@@ -10,6 +10,9 @@
 #include "GUI/GLogger.hpp"
 #include "Camaras/CamarasGestor.hpp"
 #include "GUI/GListaObjetos.hpp"
+#include "../Juego/Objetos/Jugador.hpp"
+#include "../Juego/Objetos/Equipos.hpp"
+#include "../Juego/Objetos/Recompensas.hpp"
 
 namespace CE
 {
@@ -39,6 +42,9 @@ namespace CE
 
         }
         Render::Terminar();
+        IVJ::Jugador::Terminar();
+        IVJ::Equipos::Terminar();
+        IVJ::Recompensas::Terminar();
         ImGui::SFML::Shutdown();
 
         return 0;
@@ -58,21 +64,21 @@ namespace CE
 
         gui_layers.push_back(std::make_shared<GDock>());
         gui_layers.push_back(std::make_shared<GViewport>());
-	gui_layers.push_back(std::make_shared<GListaObjetos>());
+	    gui_layers.push_back(std::make_shared<GListaObjetos>());
 
-	GestorCamaras::Get().agregarCamara(
-		std::make_shared<Camara>(
-			Vector2D{540,360},Vector2D{1080,720}
-		)
-	);
-	GestorCamaras::Get().setCamaraActiva(0);
+        GestorCamaras::Get().agregarCamara(
+            std::make_shared<Camara>(
+                Vector2D{540,360},Vector2D{1080,720}
+            )
+        );
+	    GestorCamaras::Get().setCamaraActiva(0);
 
         mi_app->OnInit();
 
         for(auto &gui: gui_layers)
             gui->OnInit(motor_info);
 
-	GLogger::Get().OnInit(motor_info);
+	    GLogger::Get().OnInit(motor_info);
     }
     void Motor::OnEventFrame(float dt)
     {
@@ -81,6 +87,7 @@ namespace CE
             ImGui::SFML::ProcessEvent(Render::Get().GetVentana(),*eventos);
             mi_app->OnInputs(dt,eventos);
         }
+        mi_app->OnInputs(dt);
     }
     void Motor::OnUpdateFrame(float dt)
     {
@@ -89,22 +96,20 @@ namespace CE
         mi_app->OnUpdate(dt);
         for(auto &gui: gui_layers)
             gui->OnUpdate(dt);
-	GLogger::Get().OnUpdate(dt);
+	    GLogger::Get().OnUpdate(dt);
     }
     void Motor::OnRenderFrame(float dt)
     {
         Render::Get().OnClearColor(sf::Color(118,118,255));
 
-	GestorCamaras::Get().onRenderCamara(
+	    GestorCamaras::Get().onRenderCamara(
 		Render::Get().GetTextura());
 
         mi_app->OnRender(dt);
 
         for(auto &gui: gui_layers)
             gui->OnRender();
-	GLogger::Get().OnRender();
-        ImGui::Begin("TEST",nullptr, 0);
-        ImGui::End();
+	    GLogger::Get().OnRender();
 
         Render::Get().OnDisplayTextura();
 

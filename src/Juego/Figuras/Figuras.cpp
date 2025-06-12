@@ -14,28 +14,22 @@ namespace IVJ
     {
         rect_img.setFillColor(f_crelleno);
         rect_img.setOutlineColor(f_ccontorno);
-        rect_img.setOutlineThickness(3);
-        rect_img.setOrigin({ancho/2.f,largo/2.f});
-	//nombre->nombre = "Rectangulo "+std::to_string(CE::Objeto::getNumObjetos());
-	nombre->nombre = "Rectangulo";
+        rect_img.setOutlineThickness(2);
+        //rect_img.setOrigin({ancho/2.f,largo/2.f});
+	    //nombre->nombre = "Rectangulo "+std::to_string(CE::Objeto::getNumObjetos());
+	    nombre->nombre = "Rectangulo";
     }
 
-    //void Rectangulo::setPosicion(float x, float y)
-    //{
-    //    img.setPosition({x,y});
-    //}
+    void Rectangulo::setPosicion(float x, float y)
+    {
+        rect_img.setPosition({x,y});
+        rect_bounding = sf::IntRect({static_cast<int>(x),static_cast<int>(y)},{static_cast<int>(getWidth()),static_cast<int>(getHeight())});
+    }
 
     void Rectangulo::draw(sf::RenderTarget& target, sf::RenderStates state) const 
     {
         state.transform *= getTransform();
         target.draw(rect_img);
-        sf::CircleShape pivote{10.f};
-        pivote.setFillColor(f_ccontorno);
-        pivote.setOrigin({10.f,10.f});
-        pivote.setPosition(rect_img.getPosition());
-
-        target.draw(pivote);
-
     }
 
     float Rectangulo::getArea()
@@ -51,7 +45,7 @@ namespace IVJ
 		transform->posicion.y
 		}
 	);
-    }	
+    }
 
     Circulo::Circulo(float radio, const sf::Color& relleno, const sf::Color& contorno)
     :Figuras{1,relleno,contorno},rect_img{sf::CircleShape({radio})},r{radio}

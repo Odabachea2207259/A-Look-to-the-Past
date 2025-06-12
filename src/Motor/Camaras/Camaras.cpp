@@ -1,5 +1,6 @@
 #include "Camaras.hpp"
 #include "../GUI/GLogger.hpp"
+#include "../Utils/Lerp.hpp"
 
 namespace CE
 {
@@ -66,6 +67,24 @@ namespace CE
 			limitex += limitex;
 		}
 	}
+
+	CamaraLERP::CamaraLERP(const Vector2D& pos, const Vector2D& dim)
+		:Camara{pos,dim},vel{4.f}
+	{
+		nombre = "Camara LERP #"+std::to_string(Camara::num_camaras);
+	}
+
+	void CamaraLERP::onUpdate(float dt)
+    {
+        Camara::onUpdate(dt);
+        if(!m_lockObj.lock()) return;
+        Vector2D pos_init  = m_transform->posicion;
+        auto pos_lock = m_lockObj.lock()->getTransformada()->posicion;
+
+        m_transform->posicion = lerp(pos_init,pos_lock,vel*dt);
+        GLogger::Get().agregarLog("("+std::to_string(m_transform->posicion.x)+","+std::to_string(m_transform->posicion.y)+")",
+                GLogger::Niveles::LOG_SEVERO);
+    }
 
 	CamaraFigura::CamaraFigura(const Vector2D& pos, const Vector2D& dim)
 	:Camara{pos,dim}

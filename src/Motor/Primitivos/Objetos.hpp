@@ -11,6 +11,7 @@ namespace CE
 		explicit Objeto();
 		virtual ~Objeto()=default;
 		void draw(sf::RenderTarget& target, sf::RenderStates state) const override;
+		bool esDino = false;
 
 		Objeto& addComponente(const std::shared_ptr<IComponentes>& componente);
 		template <typename T> T* getComponente() const
@@ -39,6 +40,21 @@ namespace CE
 			return false;
 		};
 
+		template <typename T> void eliminarComponente()
+		{
+			static_assert(std::is_base_of<IComponentes,T>::value,"Solo derivados de IComponentes");
+			int i = 0;
+			for(auto& c : componentes)
+			{
+				T* comp = dynamic_cast<T*>(c.get());
+				if(comp!=nullptr)
+					break;
+				i++;
+			}
+
+			componentes.erase(componentes.begin()+i);
+		};
+
 		static int getNumObjetos()
 		{
 			return num_objetos;
@@ -53,12 +69,14 @@ namespace CE
 			return transform;
 		}
 
-		virtual std::string toString()
+		std::string toString() const
 		{
 			return nombre->nombre;
 		}
 
 		void setPosicion(float x, float y);
+		CE::Vector2D getPosicion();
+		void setVelocidad(float x, float y);
 		virtual void onUpdate(float dt){};
 
 		std::shared_ptr<IStats>& getStats()
@@ -66,13 +84,18 @@ namespace CE
 			return stats;
 		}
 
+		//std::shared_ptr<IStats>* getStats() const
+		//{
+		//	return stats;
+		//}
+
 		const bool estaVivo() const
 		{
 			return stats->hp>0;
 		}
 	private:
 		static int num_objetos;
-	protected:
+		protected:
 		std::shared_ptr<INombre> nombre;
 		std::shared_ptr<ITransform> transform;
 		std::shared_ptr<IStats> stats;

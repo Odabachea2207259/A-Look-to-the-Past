@@ -6,8 +6,12 @@
 
 namespace CE
 {
-	void GListaObjetos::OnInit(const MotorConfig& des){}
-	void GListaObjetos::OnUpdate(float dt){}
+	void GListaObjetos::OnInit(const MotorConfig& des){
+		propiedades.OnInit(des);
+	}
+	void GListaObjetos::OnUpdate(float dt){
+		propiedades.OnUpdate(dt);
+	}
 	void GListaObjetos::OnRender(void)
 	{
 		ImGui::Begin("Objetos",nullptr,0);
@@ -30,6 +34,8 @@ namespace CE
 			GestorEscenas::Get().cambiarEscena(lista[id_escena_actual]);
 			ImGui::EndCombo();
 		}
+
+		ImGui::Spacing();
 
 		if(ImGui::TreeNode("Camaras"))
 		{
@@ -66,10 +72,15 @@ namespace CE
 			for(auto &obj : lista.getPool())
 			{
 				if(ImGui::Button(obj->toString().c_str()))
+				{
 					GestorCamaras::Get().getCamaraActiva().lockEnObjeto(obj);
+					propiedades.seleccionarObjeto(obj.get());
+				}
 			}
 			ImGui::TreePop();
 		}
 		ImGui::End();
+
+		propiedades.OnRender();
 	}
 }

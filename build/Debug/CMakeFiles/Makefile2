@@ -63,18 +63,21 @@ CMAKE_BINARY_DIR = "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Vid
 
 # The main recursive "all" target.
 all: _deps/sfml-build/all
+all: _deps/json-build/all
 all: _deps/imgui-sfml-build/all
 all: src/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: _deps/sfml-build/preinstall
+preinstall: _deps/json-build/preinstall
 preinstall: _deps/imgui-sfml-build/preinstall
 preinstall: src/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: _deps/sfml-build/clean
+clean: _deps/json-build/clean
 clean: _deps/imgui-sfml-build/clean
 clean: src/clean
 .PHONY : clean
@@ -171,6 +174,21 @@ _deps/imgui-sfml-build/preinstall:
 # Recursive "clean" directory target.
 _deps/imgui-sfml-build/clean: _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/clean
 .PHONY : _deps/imgui-sfml-build/clean
+
+#=============================================================================
+# Directory level rules for directory _deps/json-build
+
+# Recursive "all" directory target.
+_deps/json-build/all:
+.PHONY : _deps/json-build/all
+
+# Recursive "preinstall" directory target.
+_deps/json-build/preinstall:
+.PHONY : _deps/json-build/preinstall
+
+# Recursive "clean" directory target.
+_deps/json-build/clean:
+.PHONY : _deps/json-build/clean
 
 #=============================================================================
 # Directory level rules for directory _deps/ogg-build
@@ -394,19 +412,67 @@ src/clean: src/Juego/clean
 src/Juego/all: src/Juego/Figuras/all
 src/Juego/all: src/Juego/Sistemas/all
 src/Juego/all: src/Juego/Escenas/all
+src/Juego/all: src/Juego/Objetos/all
+src/Juego/all: src/Juego/Maquinas/all
+src/Juego/all: src/Juego/Componentes/all
+src/Juego/all: src/Juego/Dinosaurios/all
+src/Juego/all: src/Juego/Habilidades/all
+src/Juego/all: src/Juego/Estados/all
 .PHONY : src/Juego/all
 
 # Recursive "preinstall" directory target.
 src/Juego/preinstall: src/Juego/Figuras/preinstall
 src/Juego/preinstall: src/Juego/Sistemas/preinstall
 src/Juego/preinstall: src/Juego/Escenas/preinstall
+src/Juego/preinstall: src/Juego/Objetos/preinstall
+src/Juego/preinstall: src/Juego/Maquinas/preinstall
+src/Juego/preinstall: src/Juego/Componentes/preinstall
+src/Juego/preinstall: src/Juego/Dinosaurios/preinstall
+src/Juego/preinstall: src/Juego/Habilidades/preinstall
+src/Juego/preinstall: src/Juego/Estados/preinstall
 .PHONY : src/Juego/preinstall
 
 # Recursive "clean" directory target.
 src/Juego/clean: src/Juego/Figuras/clean
 src/Juego/clean: src/Juego/Sistemas/clean
 src/Juego/clean: src/Juego/Escenas/clean
+src/Juego/clean: src/Juego/Objetos/clean
+src/Juego/clean: src/Juego/Maquinas/clean
+src/Juego/clean: src/Juego/Componentes/clean
+src/Juego/clean: src/Juego/Dinosaurios/clean
+src/Juego/clean: src/Juego/Habilidades/clean
+src/Juego/clean: src/Juego/Estados/clean
 .PHONY : src/Juego/clean
+
+#=============================================================================
+# Directory level rules for directory src/Juego/Componentes
+
+# Recursive "all" directory target.
+src/Juego/Componentes/all:
+.PHONY : src/Juego/Componentes/all
+
+# Recursive "preinstall" directory target.
+src/Juego/Componentes/preinstall:
+.PHONY : src/Juego/Componentes/preinstall
+
+# Recursive "clean" directory target.
+src/Juego/Componentes/clean:
+.PHONY : src/Juego/Componentes/clean
+
+#=============================================================================
+# Directory level rules for directory src/Juego/Dinosaurios
+
+# Recursive "all" directory target.
+src/Juego/Dinosaurios/all:
+.PHONY : src/Juego/Dinosaurios/all
+
+# Recursive "preinstall" directory target.
+src/Juego/Dinosaurios/preinstall:
+.PHONY : src/Juego/Dinosaurios/preinstall
+
+# Recursive "clean" directory target.
+src/Juego/Dinosaurios/clean:
+.PHONY : src/Juego/Dinosaurios/clean
 
 #=============================================================================
 # Directory level rules for directory src/Juego/Escenas
@@ -424,6 +490,21 @@ src/Juego/Escenas/clean:
 .PHONY : src/Juego/Escenas/clean
 
 #=============================================================================
+# Directory level rules for directory src/Juego/Estados
+
+# Recursive "all" directory target.
+src/Juego/Estados/all:
+.PHONY : src/Juego/Estados/all
+
+# Recursive "preinstall" directory target.
+src/Juego/Estados/preinstall:
+.PHONY : src/Juego/Estados/preinstall
+
+# Recursive "clean" directory target.
+src/Juego/Estados/clean:
+.PHONY : src/Juego/Estados/clean
+
+#=============================================================================
 # Directory level rules for directory src/Juego/Figuras
 
 # Recursive "all" directory target.
@@ -437,6 +518,51 @@ src/Juego/Figuras/preinstall:
 # Recursive "clean" directory target.
 src/Juego/Figuras/clean:
 .PHONY : src/Juego/Figuras/clean
+
+#=============================================================================
+# Directory level rules for directory src/Juego/Habilidades
+
+# Recursive "all" directory target.
+src/Juego/Habilidades/all:
+.PHONY : src/Juego/Habilidades/all
+
+# Recursive "preinstall" directory target.
+src/Juego/Habilidades/preinstall:
+.PHONY : src/Juego/Habilidades/preinstall
+
+# Recursive "clean" directory target.
+src/Juego/Habilidades/clean:
+.PHONY : src/Juego/Habilidades/clean
+
+#=============================================================================
+# Directory level rules for directory src/Juego/Maquinas
+
+# Recursive "all" directory target.
+src/Juego/Maquinas/all:
+.PHONY : src/Juego/Maquinas/all
+
+# Recursive "preinstall" directory target.
+src/Juego/Maquinas/preinstall:
+.PHONY : src/Juego/Maquinas/preinstall
+
+# Recursive "clean" directory target.
+src/Juego/Maquinas/clean:
+.PHONY : src/Juego/Maquinas/clean
+
+#=============================================================================
+# Directory level rules for directory src/Juego/Objetos
+
+# Recursive "all" directory target.
+src/Juego/Objetos/all:
+.PHONY : src/Juego/Objetos/all
+
+# Recursive "preinstall" directory target.
+src/Juego/Objetos/preinstall:
+.PHONY : src/Juego/Objetos/preinstall
+
+# Recursive "clean" directory target.
+src/Juego/Objetos/clean:
+.PHONY : src/Juego/Objetos/clean
 
 #=============================================================================
 # Directory level rules for directory src/Juego/Sistemas
@@ -631,12 +757,12 @@ src/Motor/Utils/clean:
 _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps\sfml-build\src\SFML\System\CMakeFiles\sfml-system.dir\build.make _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps\sfml-build\src\SFML\System\CMakeFiles\sfml-system.dir\build.make _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=74,75,76,77,78 "Built target sfml-system"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=77,78,79,80 "Built target sfml-system"
 .PHONY : _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 5
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 0
 .PHONY : _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/rule
@@ -657,7 +783,7 @@ _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/clean:
 _deps/sfml-build/src/SFML/Main/CMakeFiles/sfml-main.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps\sfml-build\src\SFML\Main\CMakeFiles\sfml-main.dir\build.make _deps/sfml-build/src/SFML/Main/CMakeFiles/sfml-main.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps\sfml-build\src\SFML\Main\CMakeFiles\sfml-main.dir\build.make _deps/sfml-build/src/SFML/Main/CMakeFiles/sfml-main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=69 "Built target sfml-main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=72 "Built target sfml-main"
 .PHONY : _deps/sfml-build/src/SFML/Main/CMakeFiles/sfml-main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -683,12 +809,12 @@ _deps/sfml-build/src/SFML/Main/CMakeFiles/sfml-main.dir/clean:
 _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/all: _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps\sfml-build\src\SFML\Window\CMakeFiles\sfml-window.dir\build.make _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps\sfml-build\src\SFML\Window\CMakeFiles\sfml-window.dir\build.make _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=79,80,81,82,83,84,85,86,87,88,89 "Built target sfml-window"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=81,82,83,84,85,86,87,88,89,90 "Built target sfml-window"
 .PHONY : _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 16
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 0
 .PHONY : _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/rule
@@ -709,12 +835,12 @@ _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/clean:
 _deps/sfml-build/src/SFML/Network/CMakeFiles/sfml-network.dir/all: _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps\sfml-build\src\SFML\Network\CMakeFiles\sfml-network.dir\build.make _deps/sfml-build/src/SFML/Network/CMakeFiles/sfml-network.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps\sfml-build\src\SFML\Network\CMakeFiles\sfml-network.dir\build.make _deps/sfml-build/src/SFML/Network/CMakeFiles/sfml-network.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=70,71,72,73 "Built target sfml-network"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=73,74,75,76 "Built target sfml-network"
 .PHONY : _deps/sfml-build/src/SFML/Network/CMakeFiles/sfml-network.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/sfml-build/src/SFML/Network/CMakeFiles/sfml-network.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 9
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/sfml-build/src/SFML/Network/CMakeFiles/sfml-network.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 0
 .PHONY : _deps/sfml-build/src/SFML/Network/CMakeFiles/sfml-network.dir/rule
@@ -737,12 +863,12 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all: _deps/sfml-
 _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all: _deps/freetype-build/CMakeFiles/freetype.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps\sfml-build\src\SFML\Graphics\CMakeFiles\sfml-graphics.dir\build.make _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps\sfml-build\src\SFML\Graphics\CMakeFiles\sfml-graphics.dir\build.make _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=58,59,60,61,62,63,64,65,66,67,68 "Built target sfml-graphics"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=61,62,63,64,65,66,67,68,69,70,71 "Built target sfml-graphics"
 .PHONY : _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 45
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 41
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 0
 .PHONY : _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/rule
@@ -763,12 +889,12 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/clean:
 _deps/freetype-build/CMakeFiles/freetype.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps\freetype-build\CMakeFiles\freetype.dir\build.make _deps/freetype-build/CMakeFiles/freetype.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps\freetype-build\CMakeFiles\freetype.dir\build.make _deps/freetype-build/CMakeFiles/freetype.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46 "Built target freetype"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50 "Built target freetype"
 .PHONY : _deps/freetype-build/CMakeFiles/freetype.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/freetype-build/CMakeFiles/freetype.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 18
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/freetype-build/CMakeFiles/freetype.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 0
 .PHONY : _deps/freetype-build/CMakeFiles/freetype.dir/rule
@@ -794,12 +920,12 @@ _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/vorbis-buil
 _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps\sfml-build\src\SFML\Audio\CMakeFiles\sfml-audio.dir\build.make _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps\sfml-build\src\SFML\Audio\CMakeFiles\sfml-audio.dir\build.make _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=48,49,50,51,52,53,54,55,56,57 "Built target sfml-audio"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=53,54,55,56,57,58,59,60 "Built target sfml-audio"
 .PHONY : _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 42
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 37
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 0
 .PHONY : _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/rule
@@ -820,12 +946,12 @@ _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/clean:
 _deps/ogg-build/CMakeFiles/ogg.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps\ogg-build\CMakeFiles\ogg.dir\build.make _deps/ogg-build/CMakeFiles/ogg.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps\ogg-build\CMakeFiles\ogg.dir\build.make _deps/ogg-build/CMakeFiles/ogg.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=47 "Built target ogg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=51,52 "Built target ogg"
 .PHONY : _deps/ogg-build/CMakeFiles/ogg.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/ogg-build/CMakeFiles/ogg.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 1
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/ogg-build/CMakeFiles/ogg.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 0
 .PHONY : _deps/ogg-build/CMakeFiles/ogg.dir/rule
@@ -846,12 +972,12 @@ _deps/ogg-build/CMakeFiles/ogg.dir/clean:
 _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/all: _deps/ogg-build/CMakeFiles/ogg.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps\flac-build\src\libFLAC\CMakeFiles\FLAC.dir\build.make _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps\flac-build\src\libFLAC\CMakeFiles\FLAC.dir\build.make _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=9,10,11,12,13,14,15,16,17,18,19,20,21,22,23 "Built target FLAC"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=18,19,20,21,22,23,24,25,26,27,28,29,30 "Built target FLAC"
 .PHONY : _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 16
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 0
 .PHONY : _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/rule
@@ -873,12 +999,12 @@ _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/all: _deps/ogg-bui
 _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/all: _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps\flac-build\microbench\CMakeFiles\benchmark_residual.dir\build.make _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps\flac-build\microbench\CMakeFiles\benchmark_residual.dir\build.make _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=27,28 "Built target benchmark_residual"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=34 "Built target benchmark_residual"
 .PHONY : _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 18
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 0
 .PHONY : _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/rule
@@ -899,7 +1025,7 @@ _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/clean:
 _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/all: _deps/ogg-build/CMakeFiles/ogg.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps\vorbis-build\lib\CMakeFiles\vorbis.dir\build.make _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps\vorbis-build\lib\CMakeFiles\vorbis.dir\build.make _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=90,91,92,93,94,95,96,97,98 "Built target vorbis"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=91,92,93,94,95,96,97,98 "Built target vorbis"
 .PHONY : _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/all
 
 # Build rule for subdir invocation for target.
@@ -982,12 +1108,12 @@ _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/all: _deps/sfml-build/src/SFML/
 _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/all: _deps/freetype-build/CMakeFiles/freetype.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps\imgui-sfml-build\CMakeFiles\ImGui-SFML.dir\build.make _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps\imgui-sfml-build\CMakeFiles\ImGui-SFML.dir\build.make _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=24,25,26 "Built target ImGui-SFML"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=31,32,33 "Built target ImGui-SFML"
 .PHONY : _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 48
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 44
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 0
 .PHONY : _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/rule
@@ -1018,12 +1144,12 @@ src/Main/CMakeFiles/CimaEngine3v.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorb
 src/Main/CMakeFiles/CimaEngine3v.dir/all: _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/all
 	$(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/depend
 	$(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=1,2,3,4,5,6,7,8 "Built target CimaEngine3v"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17 "Built target CimaEngine3v"
 .PHONY : src/Main/CMakeFiles/CimaEngine3v.dir/all
 
 # Build rule for subdir invocation for target.
 src/Main/CMakeFiles/CimaEngine3v.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 93
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 94
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Main/CMakeFiles/CimaEngine3v.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\build\Debug\CMakeFiles" 0
 .PHONY : src/Main/CMakeFiles/CimaEngine3v.dir/rule

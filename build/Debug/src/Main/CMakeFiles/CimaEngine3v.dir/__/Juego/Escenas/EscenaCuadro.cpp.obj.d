@@ -295,7 +295,26 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCuadro.cpp.obj: \
  C:/mingw64/include/c++/14.2.0/bits/stl_tree.h \
  C:/mingw64/include/c++/14.2.0/bits/stl_map.h \
  C:/mingw64/include/c++/14.2.0/bits/stl_multimap.h \
- C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Figuras/Figuras.hpp \
+ C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Dinosaurios/Dinosaurio.hpp \
+ C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Objetos/Entidad.hpp \
+ C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Maquinas/FSM.hpp \
+ C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Componentes/IJComponentes.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/json.hpp \
+ C:/mingw64/include/c++/14.2.0/algorithm \
+ C:/mingw64/include/c++/14.2.0/bits/stl_algo.h \
+ C:/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
+ C:/mingw64/include/c++/14.2.0/bits/stl_heap.h \
+ C:/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
+ C:/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
+ C:/mingw64/include/c++/14.2.0/functional \
+ C:/mingw64/include/c++/14.2.0/bits/std_function.h \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/adl_serializer.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/abi_macros.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/conversions/from_json.hpp \
+ C:/mingw64/include/c++/14.2.0/forward_list \
+ C:/mingw64/include/c++/14.2.0/bits/forward_list.h \
+ C:/mingw64/include/c++/14.2.0/bits/forward_list.tcc \
+ C:/mingw64/include/c++/14.2.0/valarray \
  C:/mingw64/include/c++/14.2.0/cmath \
  C:/mingw64/x86_64-w64-mingw32/include/math.h \
  C:/mingw64/include/c++/14.2.0/bits/specfun.h \
@@ -311,9 +330,87 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCuadro.cpp.obj: \
  C:/mingw64/include/c++/14.2.0/tr1/poly_hermite.tcc \
  C:/mingw64/include/c++/14.2.0/tr1/poly_laguerre.tcc \
  C:/mingw64/include/c++/14.2.0/tr1/riemann_zeta.tcc \
+ C:/mingw64/include/c++/14.2.0/bits/valarray_array.h \
+ C:/mingw64/include/c++/14.2.0/bits/valarray_array.tcc \
+ C:/mingw64/include/c++/14.2.0/bits/valarray_before.h \
+ C:/mingw64/include/c++/14.2.0/bits/slice_array.h \
+ C:/mingw64/include/c++/14.2.0/bits/valarray_after.h \
+ C:/mingw64/include/c++/14.2.0/bits/gslice.h \
+ C:/mingw64/include/c++/14.2.0/bits/gslice_array.h \
+ C:/mingw64/include/c++/14.2.0/bits/mask_array.h \
+ C:/mingw64/include/c++/14.2.0/bits/indirect_array.h \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/exceptions.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/value_t.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/macro_scope.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/meta/detected.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/meta/void_t.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/thirdparty/hedley/hedley.hpp \
+ C:/mingw64/include/c++/14.2.0/version \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/string_escape.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/input/position_t.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/meta/cpp_future.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/meta/type_traits.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/iterators/iterator_traits.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/meta/call_std/begin.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/meta/call_std/end.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/json_fwd.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/string_concat.hpp \
+ C:/mingw64/include/c++/14.2.0/cstring \
+ C:/mingw64/x86_64-w64-mingw32/include/string.h \
+ C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/meta/identity_tag.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/meta/std_fs.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/conversions/to_json.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/iterators/iteration_proxy.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/string_utils.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/byte_container_with_subtype.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/hash.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/input/binary_reader.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/input/input_adapters.hpp \
+ C:/mingw64/include/c++/14.2.0/numeric \
+ C:/mingw64/include/c++/14.2.0/bits/stl_numeric.h \
+ C:/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/input/json_sax.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/input/lexer.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/meta/is_sax.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/input/parser.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/iterators/internal_iterator.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/iterators/primitive_iterator.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/iterators/iter_impl.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/iterators/json_reverse_iterator.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/json_custom_base_class.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/json_pointer.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/json_ref.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/output/binary_writer.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/output/output_adapters.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/output/serializer.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/conversions/to_chars.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/ordered_map.hpp \
+ C:/mingw64/include/c++/14.2.0/any \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/detail/macro_unscope.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/json-src/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
+ C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Habilidades/Habilidad.hpp \
+ C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Figuras/Figuras.hpp \
+ C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Primitivos/GestorAssets.hpp \
+ C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Maquinas/IdleFSM.hpp \
+ C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Objetos/TileMap.hpp \
  C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Camaras/CamarasGestor.hpp \
  C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Camaras/Camaras.hpp \
  C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Primitivos/GestorEscenas.hpp \
  C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Render/Render.hpp \
  C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Utils/Utils.hpp \
+ C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/GUI/GLogger.hpp \
+ C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/GUI/GLayer.hpp \
+ C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Utils/Lista.hpp \
+ C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Utils/CEInterfaces.hpp \
+ C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Utils/Nodo.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/IMGUI-~2/imgui.h \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/IM6998~1/imconfig-SFML.h \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/IM6998~1/imgui-SFML_export.h \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/IMGUI-~2/imconfig.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/float.h \
+ C:/mingw64/x86_64-w64-mingw32/include/float.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
+ C:/mingw64/x86_64-w64-mingw32/include/stdarg.h \
+ C:/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
  C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Sistemas/Sistemas.hpp

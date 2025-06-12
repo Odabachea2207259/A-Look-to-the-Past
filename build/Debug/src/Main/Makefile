@@ -194,77 +194,245 @@ CimaEngine3v/fast:
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/build
 .PHONY : CimaEngine3v/fast
 
-__/Juego/Escenas/EscenaCirculos.obj: __/Juego/Escenas/EscenaCirculos.cpp.obj
-.PHONY : __/Juego/Escenas/EscenaCirculos.obj
+__/Juego/Componentes/IJComponentes.obj: __/Juego/Componentes/IJComponentes.cpp.obj
+.PHONY : __/Juego/Componentes/IJComponentes.obj
 
 # target to build an object file
-__/Juego/Escenas/EscenaCirculos.cpp.obj:
-	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCirculos.cpp.obj
-.PHONY : __/Juego/Escenas/EscenaCirculos.cpp.obj
+__/Juego/Componentes/IJComponentes.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Componentes/IJComponentes.cpp.obj
+.PHONY : __/Juego/Componentes/IJComponentes.cpp.obj
 
-__/Juego/Escenas/EscenaCirculos.i: __/Juego/Escenas/EscenaCirculos.cpp.i
-.PHONY : __/Juego/Escenas/EscenaCirculos.i
+__/Juego/Componentes/IJComponentes.i: __/Juego/Componentes/IJComponentes.cpp.i
+.PHONY : __/Juego/Componentes/IJComponentes.i
 
 # target to preprocess a source file
-__/Juego/Escenas/EscenaCirculos.cpp.i:
-	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCirculos.cpp.i
-.PHONY : __/Juego/Escenas/EscenaCirculos.cpp.i
+__/Juego/Componentes/IJComponentes.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Componentes/IJComponentes.cpp.i
+.PHONY : __/Juego/Componentes/IJComponentes.cpp.i
 
-__/Juego/Escenas/EscenaCirculos.s: __/Juego/Escenas/EscenaCirculos.cpp.s
-.PHONY : __/Juego/Escenas/EscenaCirculos.s
+__/Juego/Componentes/IJComponentes.s: __/Juego/Componentes/IJComponentes.cpp.s
+.PHONY : __/Juego/Componentes/IJComponentes.s
 
 # target to generate assembly for a file
-__/Juego/Escenas/EscenaCirculos.cpp.s:
-	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCirculos.cpp.s
-.PHONY : __/Juego/Escenas/EscenaCirculos.cpp.s
+__/Juego/Componentes/IJComponentes.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Componentes/IJComponentes.cpp.s
+.PHONY : __/Juego/Componentes/IJComponentes.cpp.s
 
-__/Juego/Escenas/EscenaCuadro.obj: __/Juego/Escenas/EscenaCuadro.cpp.obj
-.PHONY : __/Juego/Escenas/EscenaCuadro.obj
+__/Juego/Dinosaurios/Dinosaurio.obj: __/Juego/Dinosaurios/Dinosaurio.cpp.obj
+.PHONY : __/Juego/Dinosaurios/Dinosaurio.obj
 
 # target to build an object file
-__/Juego/Escenas/EscenaCuadro.cpp.obj:
-	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCuadro.cpp.obj
-.PHONY : __/Juego/Escenas/EscenaCuadro.cpp.obj
+__/Juego/Dinosaurios/Dinosaurio.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Dinosaurios/Dinosaurio.cpp.obj
+.PHONY : __/Juego/Dinosaurios/Dinosaurio.cpp.obj
 
-__/Juego/Escenas/EscenaCuadro.i: __/Juego/Escenas/EscenaCuadro.cpp.i
-.PHONY : __/Juego/Escenas/EscenaCuadro.i
+__/Juego/Dinosaurios/Dinosaurio.i: __/Juego/Dinosaurios/Dinosaurio.cpp.i
+.PHONY : __/Juego/Dinosaurios/Dinosaurio.i
 
 # target to preprocess a source file
-__/Juego/Escenas/EscenaCuadro.cpp.i:
-	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCuadro.cpp.i
-.PHONY : __/Juego/Escenas/EscenaCuadro.cpp.i
+__/Juego/Dinosaurios/Dinosaurio.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Dinosaurios/Dinosaurio.cpp.i
+.PHONY : __/Juego/Dinosaurios/Dinosaurio.cpp.i
 
-__/Juego/Escenas/EscenaCuadro.s: __/Juego/Escenas/EscenaCuadro.cpp.s
-.PHONY : __/Juego/Escenas/EscenaCuadro.s
+__/Juego/Dinosaurios/Dinosaurio.s: __/Juego/Dinosaurios/Dinosaurio.cpp.s
+.PHONY : __/Juego/Dinosaurios/Dinosaurio.s
 
 # target to generate assembly for a file
-__/Juego/Escenas/EscenaCuadro.cpp.s:
-	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaCuadro.cpp.s
-.PHONY : __/Juego/Escenas/EscenaCuadro.cpp.s
+__/Juego/Dinosaurios/Dinosaurio.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Dinosaurios/Dinosaurio.cpp.s
+.PHONY : __/Juego/Dinosaurios/Dinosaurio.cpp.s
 
-__/Juego/Escenas/EscenaFiguras.obj: __/Juego/Escenas/EscenaFiguras.cpp.obj
-.PHONY : __/Juego/Escenas/EscenaFiguras.obj
+__/Juego/Escenas/EscenaDerrota.obj: __/Juego/Escenas/EscenaDerrota.cpp.obj
+.PHONY : __/Juego/Escenas/EscenaDerrota.obj
 
 # target to build an object file
-__/Juego/Escenas/EscenaFiguras.cpp.obj:
-	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFiguras.cpp.obj
-.PHONY : __/Juego/Escenas/EscenaFiguras.cpp.obj
+__/Juego/Escenas/EscenaDerrota.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaDerrota.cpp.obj
+.PHONY : __/Juego/Escenas/EscenaDerrota.cpp.obj
 
-__/Juego/Escenas/EscenaFiguras.i: __/Juego/Escenas/EscenaFiguras.cpp.i
-.PHONY : __/Juego/Escenas/EscenaFiguras.i
+__/Juego/Escenas/EscenaDerrota.i: __/Juego/Escenas/EscenaDerrota.cpp.i
+.PHONY : __/Juego/Escenas/EscenaDerrota.i
 
 # target to preprocess a source file
-__/Juego/Escenas/EscenaFiguras.cpp.i:
-	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFiguras.cpp.i
-.PHONY : __/Juego/Escenas/EscenaFiguras.cpp.i
+__/Juego/Escenas/EscenaDerrota.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaDerrota.cpp.i
+.PHONY : __/Juego/Escenas/EscenaDerrota.cpp.i
 
-__/Juego/Escenas/EscenaFiguras.s: __/Juego/Escenas/EscenaFiguras.cpp.s
-.PHONY : __/Juego/Escenas/EscenaFiguras.s
+__/Juego/Escenas/EscenaDerrota.s: __/Juego/Escenas/EscenaDerrota.cpp.s
+.PHONY : __/Juego/Escenas/EscenaDerrota.s
 
 # target to generate assembly for a file
-__/Juego/Escenas/EscenaFiguras.cpp.s:
-	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFiguras.cpp.s
-.PHONY : __/Juego/Escenas/EscenaFiguras.cpp.s
+__/Juego/Escenas/EscenaDerrota.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaDerrota.cpp.s
+.PHONY : __/Juego/Escenas/EscenaDerrota.cpp.s
+
+__/Juego/Escenas/EscenaFosiles.obj: __/Juego/Escenas/EscenaFosiles.cpp.obj
+.PHONY : __/Juego/Escenas/EscenaFosiles.obj
+
+# target to build an object file
+__/Juego/Escenas/EscenaFosiles.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFosiles.cpp.obj
+.PHONY : __/Juego/Escenas/EscenaFosiles.cpp.obj
+
+__/Juego/Escenas/EscenaFosiles.i: __/Juego/Escenas/EscenaFosiles.cpp.i
+.PHONY : __/Juego/Escenas/EscenaFosiles.i
+
+# target to preprocess a source file
+__/Juego/Escenas/EscenaFosiles.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFosiles.cpp.i
+.PHONY : __/Juego/Escenas/EscenaFosiles.cpp.i
+
+__/Juego/Escenas/EscenaFosiles.s: __/Juego/Escenas/EscenaFosiles.cpp.s
+.PHONY : __/Juego/Escenas/EscenaFosiles.s
+
+# target to generate assembly for a file
+__/Juego/Escenas/EscenaFosiles.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaFosiles.cpp.s
+.PHONY : __/Juego/Escenas/EscenaFosiles.cpp.s
+
+__/Juego/Escenas/EscenaMejora.obj: __/Juego/Escenas/EscenaMejora.cpp.obj
+.PHONY : __/Juego/Escenas/EscenaMejora.obj
+
+# target to build an object file
+__/Juego/Escenas/EscenaMejora.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaMejora.cpp.obj
+.PHONY : __/Juego/Escenas/EscenaMejora.cpp.obj
+
+__/Juego/Escenas/EscenaMejora.i: __/Juego/Escenas/EscenaMejora.cpp.i
+.PHONY : __/Juego/Escenas/EscenaMejora.i
+
+# target to preprocess a source file
+__/Juego/Escenas/EscenaMejora.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaMejora.cpp.i
+.PHONY : __/Juego/Escenas/EscenaMejora.cpp.i
+
+__/Juego/Escenas/EscenaMejora.s: __/Juego/Escenas/EscenaMejora.cpp.s
+.PHONY : __/Juego/Escenas/EscenaMejora.s
+
+# target to generate assembly for a file
+__/Juego/Escenas/EscenaMejora.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaMejora.cpp.s
+.PHONY : __/Juego/Escenas/EscenaMejora.cpp.s
+
+__/Juego/Escenas/EscenaSeleccion.obj: __/Juego/Escenas/EscenaSeleccion.cpp.obj
+.PHONY : __/Juego/Escenas/EscenaSeleccion.obj
+
+# target to build an object file
+__/Juego/Escenas/EscenaSeleccion.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaSeleccion.cpp.obj
+.PHONY : __/Juego/Escenas/EscenaSeleccion.cpp.obj
+
+__/Juego/Escenas/EscenaSeleccion.i: __/Juego/Escenas/EscenaSeleccion.cpp.i
+.PHONY : __/Juego/Escenas/EscenaSeleccion.i
+
+# target to preprocess a source file
+__/Juego/Escenas/EscenaSeleccion.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaSeleccion.cpp.i
+.PHONY : __/Juego/Escenas/EscenaSeleccion.cpp.i
+
+__/Juego/Escenas/EscenaSeleccion.s: __/Juego/Escenas/EscenaSeleccion.cpp.s
+.PHONY : __/Juego/Escenas/EscenaSeleccion.s
+
+# target to generate assembly for a file
+__/Juego/Escenas/EscenaSeleccion.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaSeleccion.cpp.s
+.PHONY : __/Juego/Escenas/EscenaSeleccion.cpp.s
+
+__/Juego/Escenas/EscenaShaders.obj: __/Juego/Escenas/EscenaShaders.cpp.obj
+.PHONY : __/Juego/Escenas/EscenaShaders.obj
+
+# target to build an object file
+__/Juego/Escenas/EscenaShaders.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaShaders.cpp.obj
+.PHONY : __/Juego/Escenas/EscenaShaders.cpp.obj
+
+__/Juego/Escenas/EscenaShaders.i: __/Juego/Escenas/EscenaShaders.cpp.i
+.PHONY : __/Juego/Escenas/EscenaShaders.i
+
+# target to preprocess a source file
+__/Juego/Escenas/EscenaShaders.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaShaders.cpp.i
+.PHONY : __/Juego/Escenas/EscenaShaders.cpp.i
+
+__/Juego/Escenas/EscenaShaders.s: __/Juego/Escenas/EscenaShaders.cpp.s
+.PHONY : __/Juego/Escenas/EscenaShaders.s
+
+# target to generate assembly for a file
+__/Juego/Escenas/EscenaShaders.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaShaders.cpp.s
+.PHONY : __/Juego/Escenas/EscenaShaders.cpp.s
+
+__/Juego/Escenas/EscenaVictoria.obj: __/Juego/Escenas/EscenaVictoria.cpp.obj
+.PHONY : __/Juego/Escenas/EscenaVictoria.obj
+
+# target to build an object file
+__/Juego/Escenas/EscenaVictoria.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaVictoria.cpp.obj
+.PHONY : __/Juego/Escenas/EscenaVictoria.cpp.obj
+
+__/Juego/Escenas/EscenaVictoria.i: __/Juego/Escenas/EscenaVictoria.cpp.i
+.PHONY : __/Juego/Escenas/EscenaVictoria.i
+
+# target to preprocess a source file
+__/Juego/Escenas/EscenaVictoria.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaVictoria.cpp.i
+.PHONY : __/Juego/Escenas/EscenaVictoria.cpp.i
+
+__/Juego/Escenas/EscenaVictoria.s: __/Juego/Escenas/EscenaVictoria.cpp.s
+.PHONY : __/Juego/Escenas/EscenaVictoria.s
+
+# target to generate assembly for a file
+__/Juego/Escenas/EscenaVictoria.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/EscenaVictoria.cpp.s
+.PHONY : __/Juego/Escenas/EscenaVictoria.cpp.s
+
+__/Juego/Escenas/Escena_Menu.obj: __/Juego/Escenas/Escena_Menu.cpp.obj
+.PHONY : __/Juego/Escenas/Escena_Menu.obj
+
+# target to build an object file
+__/Juego/Escenas/Escena_Menu.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/Escena_Menu.cpp.obj
+.PHONY : __/Juego/Escenas/Escena_Menu.cpp.obj
+
+__/Juego/Escenas/Escena_Menu.i: __/Juego/Escenas/Escena_Menu.cpp.i
+.PHONY : __/Juego/Escenas/Escena_Menu.i
+
+# target to preprocess a source file
+__/Juego/Escenas/Escena_Menu.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/Escena_Menu.cpp.i
+.PHONY : __/Juego/Escenas/Escena_Menu.cpp.i
+
+__/Juego/Escenas/Escena_Menu.s: __/Juego/Escenas/Escena_Menu.cpp.s
+.PHONY : __/Juego/Escenas/Escena_Menu.s
+
+# target to generate assembly for a file
+__/Juego/Escenas/Escena_Menu.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Escenas/Escena_Menu.cpp.s
+.PHONY : __/Juego/Escenas/Escena_Menu.cpp.s
+
+__/Juego/Estados/Estados.obj: __/Juego/Estados/Estados.cpp.obj
+.PHONY : __/Juego/Estados/Estados.obj
+
+# target to build an object file
+__/Juego/Estados/Estados.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Estados/Estados.cpp.obj
+.PHONY : __/Juego/Estados/Estados.cpp.obj
+
+__/Juego/Estados/Estados.i: __/Juego/Estados/Estados.cpp.i
+.PHONY : __/Juego/Estados/Estados.i
+
+# target to preprocess a source file
+__/Juego/Estados/Estados.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Estados/Estados.cpp.i
+.PHONY : __/Juego/Estados/Estados.cpp.i
+
+__/Juego/Estados/Estados.s: __/Juego/Estados/Estados.cpp.s
+.PHONY : __/Juego/Estados/Estados.s
+
+# target to generate assembly for a file
+__/Juego/Estados/Estados.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Estados/Estados.cpp.s
+.PHONY : __/Juego/Estados/Estados.cpp.s
 
 __/Juego/Figuras/Figuras.obj: __/Juego/Figuras/Figuras.cpp.obj
 .PHONY : __/Juego/Figuras/Figuras.obj
@@ -290,6 +458,30 @@ __/Juego/Figuras/Figuras.cpp.s:
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Figuras/Figuras.cpp.s
 .PHONY : __/Juego/Figuras/Figuras.cpp.s
 
+__/Juego/Habilidades/Habilidad.obj: __/Juego/Habilidades/Habilidad.cpp.obj
+.PHONY : __/Juego/Habilidades/Habilidad.obj
+
+# target to build an object file
+__/Juego/Habilidades/Habilidad.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Habilidades/Habilidad.cpp.obj
+.PHONY : __/Juego/Habilidades/Habilidad.cpp.obj
+
+__/Juego/Habilidades/Habilidad.i: __/Juego/Habilidades/Habilidad.cpp.i
+.PHONY : __/Juego/Habilidades/Habilidad.i
+
+# target to preprocess a source file
+__/Juego/Habilidades/Habilidad.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Habilidades/Habilidad.cpp.i
+.PHONY : __/Juego/Habilidades/Habilidad.cpp.i
+
+__/Juego/Habilidades/Habilidad.s: __/Juego/Habilidades/Habilidad.cpp.s
+.PHONY : __/Juego/Habilidades/Habilidad.s
+
+# target to generate assembly for a file
+__/Juego/Habilidades/Habilidad.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Habilidades/Habilidad.cpp.s
+.PHONY : __/Juego/Habilidades/Habilidad.cpp.s
+
 __/Juego/Juego.obj: __/Juego/Juego.cpp.obj
 .PHONY : __/Juego/Juego.obj
 
@@ -313,6 +505,318 @@ __/Juego/Juego.s: __/Juego/Juego.cpp.s
 __/Juego/Juego.cpp.s:
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Juego.cpp.s
 .PHONY : __/Juego/Juego.cpp.s
+
+__/Juego/Maquinas/AtaqueFSM.obj: __/Juego/Maquinas/AtaqueFSM.cpp.obj
+.PHONY : __/Juego/Maquinas/AtaqueFSM.obj
+
+# target to build an object file
+__/Juego/Maquinas/AtaqueFSM.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/AtaqueFSM.cpp.obj
+.PHONY : __/Juego/Maquinas/AtaqueFSM.cpp.obj
+
+__/Juego/Maquinas/AtaqueFSM.i: __/Juego/Maquinas/AtaqueFSM.cpp.i
+.PHONY : __/Juego/Maquinas/AtaqueFSM.i
+
+# target to preprocess a source file
+__/Juego/Maquinas/AtaqueFSM.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/AtaqueFSM.cpp.i
+.PHONY : __/Juego/Maquinas/AtaqueFSM.cpp.i
+
+__/Juego/Maquinas/AtaqueFSM.s: __/Juego/Maquinas/AtaqueFSM.cpp.s
+.PHONY : __/Juego/Maquinas/AtaqueFSM.s
+
+# target to generate assembly for a file
+__/Juego/Maquinas/AtaqueFSM.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/AtaqueFSM.cpp.s
+.PHONY : __/Juego/Maquinas/AtaqueFSM.cpp.s
+
+__/Juego/Maquinas/BuffFSM.obj: __/Juego/Maquinas/BuffFSM.cpp.obj
+.PHONY : __/Juego/Maquinas/BuffFSM.obj
+
+# target to build an object file
+__/Juego/Maquinas/BuffFSM.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/BuffFSM.cpp.obj
+.PHONY : __/Juego/Maquinas/BuffFSM.cpp.obj
+
+__/Juego/Maquinas/BuffFSM.i: __/Juego/Maquinas/BuffFSM.cpp.i
+.PHONY : __/Juego/Maquinas/BuffFSM.i
+
+# target to preprocess a source file
+__/Juego/Maquinas/BuffFSM.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/BuffFSM.cpp.i
+.PHONY : __/Juego/Maquinas/BuffFSM.cpp.i
+
+__/Juego/Maquinas/BuffFSM.s: __/Juego/Maquinas/BuffFSM.cpp.s
+.PHONY : __/Juego/Maquinas/BuffFSM.s
+
+# target to generate assembly for a file
+__/Juego/Maquinas/BuffFSM.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/BuffFSM.cpp.s
+.PHONY : __/Juego/Maquinas/BuffFSM.cpp.s
+
+__/Juego/Maquinas/DamageFSM.obj: __/Juego/Maquinas/DamageFSM.cpp.obj
+.PHONY : __/Juego/Maquinas/DamageFSM.obj
+
+# target to build an object file
+__/Juego/Maquinas/DamageFSM.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/DamageFSM.cpp.obj
+.PHONY : __/Juego/Maquinas/DamageFSM.cpp.obj
+
+__/Juego/Maquinas/DamageFSM.i: __/Juego/Maquinas/DamageFSM.cpp.i
+.PHONY : __/Juego/Maquinas/DamageFSM.i
+
+# target to preprocess a source file
+__/Juego/Maquinas/DamageFSM.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/DamageFSM.cpp.i
+.PHONY : __/Juego/Maquinas/DamageFSM.cpp.i
+
+__/Juego/Maquinas/DamageFSM.s: __/Juego/Maquinas/DamageFSM.cpp.s
+.PHONY : __/Juego/Maquinas/DamageFSM.s
+
+# target to generate assembly for a file
+__/Juego/Maquinas/DamageFSM.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/DamageFSM.cpp.s
+.PHONY : __/Juego/Maquinas/DamageFSM.cpp.s
+
+__/Juego/Maquinas/IdleFSM.obj: __/Juego/Maquinas/IdleFSM.cpp.obj
+.PHONY : __/Juego/Maquinas/IdleFSM.obj
+
+# target to build an object file
+__/Juego/Maquinas/IdleFSM.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/IdleFSM.cpp.obj
+.PHONY : __/Juego/Maquinas/IdleFSM.cpp.obj
+
+__/Juego/Maquinas/IdleFSM.i: __/Juego/Maquinas/IdleFSM.cpp.i
+.PHONY : __/Juego/Maquinas/IdleFSM.i
+
+# target to preprocess a source file
+__/Juego/Maquinas/IdleFSM.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/IdleFSM.cpp.i
+.PHONY : __/Juego/Maquinas/IdleFSM.cpp.i
+
+__/Juego/Maquinas/IdleFSM.s: __/Juego/Maquinas/IdleFSM.cpp.s
+.PHONY : __/Juego/Maquinas/IdleFSM.s
+
+# target to generate assembly for a file
+__/Juego/Maquinas/IdleFSM.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/IdleFSM.cpp.s
+.PHONY : __/Juego/Maquinas/IdleFSM.cpp.s
+
+__/Juego/Maquinas/MoverFSM.obj: __/Juego/Maquinas/MoverFSM.cpp.obj
+.PHONY : __/Juego/Maquinas/MoverFSM.obj
+
+# target to build an object file
+__/Juego/Maquinas/MoverFSM.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MoverFSM.cpp.obj
+.PHONY : __/Juego/Maquinas/MoverFSM.cpp.obj
+
+__/Juego/Maquinas/MoverFSM.i: __/Juego/Maquinas/MoverFSM.cpp.i
+.PHONY : __/Juego/Maquinas/MoverFSM.i
+
+# target to preprocess a source file
+__/Juego/Maquinas/MoverFSM.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MoverFSM.cpp.i
+.PHONY : __/Juego/Maquinas/MoverFSM.cpp.i
+
+__/Juego/Maquinas/MoverFSM.s: __/Juego/Maquinas/MoverFSM.cpp.s
+.PHONY : __/Juego/Maquinas/MoverFSM.s
+
+# target to generate assembly for a file
+__/Juego/Maquinas/MoverFSM.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MoverFSM.cpp.s
+.PHONY : __/Juego/Maquinas/MoverFSM.cpp.s
+
+__/Juego/Maquinas/MuerteFSM.obj: __/Juego/Maquinas/MuerteFSM.cpp.obj
+.PHONY : __/Juego/Maquinas/MuerteFSM.obj
+
+# target to build an object file
+__/Juego/Maquinas/MuerteFSM.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MuerteFSM.cpp.obj
+.PHONY : __/Juego/Maquinas/MuerteFSM.cpp.obj
+
+__/Juego/Maquinas/MuerteFSM.i: __/Juego/Maquinas/MuerteFSM.cpp.i
+.PHONY : __/Juego/Maquinas/MuerteFSM.i
+
+# target to preprocess a source file
+__/Juego/Maquinas/MuerteFSM.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MuerteFSM.cpp.i
+.PHONY : __/Juego/Maquinas/MuerteFSM.cpp.i
+
+__/Juego/Maquinas/MuerteFSM.s: __/Juego/Maquinas/MuerteFSM.cpp.s
+.PHONY : __/Juego/Maquinas/MuerteFSM.s
+
+# target to generate assembly for a file
+__/Juego/Maquinas/MuerteFSM.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Maquinas/MuerteFSM.cpp.s
+.PHONY : __/Juego/Maquinas/MuerteFSM.cpp.s
+
+__/Juego/Objetos/Entidad.obj: __/Juego/Objetos/Entidad.cpp.obj
+.PHONY : __/Juego/Objetos/Entidad.obj
+
+# target to build an object file
+__/Juego/Objetos/Entidad.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Entidad.cpp.obj
+.PHONY : __/Juego/Objetos/Entidad.cpp.obj
+
+__/Juego/Objetos/Entidad.i: __/Juego/Objetos/Entidad.cpp.i
+.PHONY : __/Juego/Objetos/Entidad.i
+
+# target to preprocess a source file
+__/Juego/Objetos/Entidad.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Entidad.cpp.i
+.PHONY : __/Juego/Objetos/Entidad.cpp.i
+
+__/Juego/Objetos/Entidad.s: __/Juego/Objetos/Entidad.cpp.s
+.PHONY : __/Juego/Objetos/Entidad.s
+
+# target to generate assembly for a file
+__/Juego/Objetos/Entidad.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Entidad.cpp.s
+.PHONY : __/Juego/Objetos/Entidad.cpp.s
+
+__/Juego/Objetos/Equipos.obj: __/Juego/Objetos/Equipos.cpp.obj
+.PHONY : __/Juego/Objetos/Equipos.obj
+
+# target to build an object file
+__/Juego/Objetos/Equipos.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Equipos.cpp.obj
+.PHONY : __/Juego/Objetos/Equipos.cpp.obj
+
+__/Juego/Objetos/Equipos.i: __/Juego/Objetos/Equipos.cpp.i
+.PHONY : __/Juego/Objetos/Equipos.i
+
+# target to preprocess a source file
+__/Juego/Objetos/Equipos.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Equipos.cpp.i
+.PHONY : __/Juego/Objetos/Equipos.cpp.i
+
+__/Juego/Objetos/Equipos.s: __/Juego/Objetos/Equipos.cpp.s
+.PHONY : __/Juego/Objetos/Equipos.s
+
+# target to generate assembly for a file
+__/Juego/Objetos/Equipos.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Equipos.cpp.s
+.PHONY : __/Juego/Objetos/Equipos.cpp.s
+
+__/Juego/Objetos/Jugador.obj: __/Juego/Objetos/Jugador.cpp.obj
+.PHONY : __/Juego/Objetos/Jugador.obj
+
+# target to build an object file
+__/Juego/Objetos/Jugador.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Jugador.cpp.obj
+.PHONY : __/Juego/Objetos/Jugador.cpp.obj
+
+__/Juego/Objetos/Jugador.i: __/Juego/Objetos/Jugador.cpp.i
+.PHONY : __/Juego/Objetos/Jugador.i
+
+# target to preprocess a source file
+__/Juego/Objetos/Jugador.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Jugador.cpp.i
+.PHONY : __/Juego/Objetos/Jugador.cpp.i
+
+__/Juego/Objetos/Jugador.s: __/Juego/Objetos/Jugador.cpp.s
+.PHONY : __/Juego/Objetos/Jugador.s
+
+# target to generate assembly for a file
+__/Juego/Objetos/Jugador.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Jugador.cpp.s
+.PHONY : __/Juego/Objetos/Jugador.cpp.s
+
+__/Juego/Objetos/Pais.obj: __/Juego/Objetos/Pais.cpp.obj
+.PHONY : __/Juego/Objetos/Pais.obj
+
+# target to build an object file
+__/Juego/Objetos/Pais.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Pais.cpp.obj
+.PHONY : __/Juego/Objetos/Pais.cpp.obj
+
+__/Juego/Objetos/Pais.i: __/Juego/Objetos/Pais.cpp.i
+.PHONY : __/Juego/Objetos/Pais.i
+
+# target to preprocess a source file
+__/Juego/Objetos/Pais.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Pais.cpp.i
+.PHONY : __/Juego/Objetos/Pais.cpp.i
+
+__/Juego/Objetos/Pais.s: __/Juego/Objetos/Pais.cpp.s
+.PHONY : __/Juego/Objetos/Pais.s
+
+# target to generate assembly for a file
+__/Juego/Objetos/Pais.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Pais.cpp.s
+.PHONY : __/Juego/Objetos/Pais.cpp.s
+
+__/Juego/Objetos/Recompensas.obj: __/Juego/Objetos/Recompensas.cpp.obj
+.PHONY : __/Juego/Objetos/Recompensas.obj
+
+# target to build an object file
+__/Juego/Objetos/Recompensas.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Recompensas.cpp.obj
+.PHONY : __/Juego/Objetos/Recompensas.cpp.obj
+
+__/Juego/Objetos/Recompensas.i: __/Juego/Objetos/Recompensas.cpp.i
+.PHONY : __/Juego/Objetos/Recompensas.i
+
+# target to preprocess a source file
+__/Juego/Objetos/Recompensas.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Recompensas.cpp.i
+.PHONY : __/Juego/Objetos/Recompensas.cpp.i
+
+__/Juego/Objetos/Recompensas.s: __/Juego/Objetos/Recompensas.cpp.s
+.PHONY : __/Juego/Objetos/Recompensas.s
+
+# target to generate assembly for a file
+__/Juego/Objetos/Recompensas.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Recompensas.cpp.s
+.PHONY : __/Juego/Objetos/Recompensas.cpp.s
+
+__/Juego/Objetos/Texto.obj: __/Juego/Objetos/Texto.cpp.obj
+.PHONY : __/Juego/Objetos/Texto.obj
+
+# target to build an object file
+__/Juego/Objetos/Texto.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Texto.cpp.obj
+.PHONY : __/Juego/Objetos/Texto.cpp.obj
+
+__/Juego/Objetos/Texto.i: __/Juego/Objetos/Texto.cpp.i
+.PHONY : __/Juego/Objetos/Texto.i
+
+# target to preprocess a source file
+__/Juego/Objetos/Texto.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Texto.cpp.i
+.PHONY : __/Juego/Objetos/Texto.cpp.i
+
+__/Juego/Objetos/Texto.s: __/Juego/Objetos/Texto.cpp.s
+.PHONY : __/Juego/Objetos/Texto.s
+
+# target to generate assembly for a file
+__/Juego/Objetos/Texto.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/Texto.cpp.s
+.PHONY : __/Juego/Objetos/Texto.cpp.s
+
+__/Juego/Objetos/TileMap.obj: __/Juego/Objetos/TileMap.cpp.obj
+.PHONY : __/Juego/Objetos/TileMap.obj
+
+# target to build an object file
+__/Juego/Objetos/TileMap.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/TileMap.cpp.obj
+.PHONY : __/Juego/Objetos/TileMap.cpp.obj
+
+__/Juego/Objetos/TileMap.i: __/Juego/Objetos/TileMap.cpp.i
+.PHONY : __/Juego/Objetos/TileMap.i
+
+# target to preprocess a source file
+__/Juego/Objetos/TileMap.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/TileMap.cpp.i
+.PHONY : __/Juego/Objetos/TileMap.cpp.i
+
+__/Juego/Objetos/TileMap.s: __/Juego/Objetos/TileMap.cpp.s
+.PHONY : __/Juego/Objetos/TileMap.s
+
+# target to generate assembly for a file
+__/Juego/Objetos/TileMap.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Juego/Objetos/TileMap.cpp.s
+.PHONY : __/Juego/Objetos/TileMap.cpp.s
 
 __/Juego/Sistemas/Sistemas.obj: __/Juego/Sistemas/Sistemas.cpp.obj
 .PHONY : __/Juego/Sistemas/Sistemas.obj
@@ -482,6 +986,30 @@ __/Motor/GUI/GLogger.cpp.s:
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GLogger.cpp.s
 .PHONY : __/Motor/GUI/GLogger.cpp.s
 
+__/Motor/GUI/GPropiedades.obj: __/Motor/GUI/GPropiedades.cpp.obj
+.PHONY : __/Motor/GUI/GPropiedades.obj
+
+# target to build an object file
+__/Motor/GUI/GPropiedades.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GPropiedades.cpp.obj
+.PHONY : __/Motor/GUI/GPropiedades.cpp.obj
+
+__/Motor/GUI/GPropiedades.i: __/Motor/GUI/GPropiedades.cpp.i
+.PHONY : __/Motor/GUI/GPropiedades.i
+
+# target to preprocess a source file
+__/Motor/GUI/GPropiedades.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GPropiedades.cpp.i
+.PHONY : __/Motor/GUI/GPropiedades.cpp.i
+
+__/Motor/GUI/GPropiedades.s: __/Motor/GUI/GPropiedades.cpp.s
+.PHONY : __/Motor/GUI/GPropiedades.s
+
+# target to generate assembly for a file
+__/Motor/GUI/GPropiedades.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/GUI/GPropiedades.cpp.s
+.PHONY : __/Motor/GUI/GPropiedades.cpp.s
+
 __/Motor/GUI/GViewport.obj: __/Motor/GUI/GViewport.cpp.obj
 .PHONY : __/Motor/GUI/GViewport.obj
 
@@ -578,6 +1106,30 @@ __/Motor/Primitivos/CEPool.cpp.s:
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/CEPool.cpp.s
 .PHONY : __/Motor/Primitivos/CEPool.cpp.s
 
+__/Motor/Primitivos/GestorAssets.obj: __/Motor/Primitivos/GestorAssets.cpp.obj
+.PHONY : __/Motor/Primitivos/GestorAssets.obj
+
+# target to build an object file
+__/Motor/Primitivos/GestorAssets.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorAssets.cpp.obj
+.PHONY : __/Motor/Primitivos/GestorAssets.cpp.obj
+
+__/Motor/Primitivos/GestorAssets.i: __/Motor/Primitivos/GestorAssets.cpp.i
+.PHONY : __/Motor/Primitivos/GestorAssets.i
+
+# target to preprocess a source file
+__/Motor/Primitivos/GestorAssets.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorAssets.cpp.i
+.PHONY : __/Motor/Primitivos/GestorAssets.cpp.i
+
+__/Motor/Primitivos/GestorAssets.s: __/Motor/Primitivos/GestorAssets.cpp.s
+.PHONY : __/Motor/Primitivos/GestorAssets.s
+
+# target to generate assembly for a file
+__/Motor/Primitivos/GestorAssets.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Primitivos/GestorAssets.cpp.s
+.PHONY : __/Motor/Primitivos/GestorAssets.cpp.s
+
 __/Motor/Primitivos/GestorEscenas.obj: __/Motor/Primitivos/GestorEscenas.cpp.obj
 .PHONY : __/Motor/Primitivos/GestorEscenas.obj
 
@@ -650,6 +1202,30 @@ __/Motor/Render/Render.cpp.s:
 	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Render/Render.cpp.s
 .PHONY : __/Motor/Render/Render.cpp.s
 
+__/Motor/Utils/Lerp.obj: __/Motor/Utils/Lerp.cpp.obj
+.PHONY : __/Motor/Utils/Lerp.obj
+
+# target to build an object file
+__/Motor/Utils/Lerp.cpp.obj:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Lerp.cpp.obj
+.PHONY : __/Motor/Utils/Lerp.cpp.obj
+
+__/Motor/Utils/Lerp.i: __/Motor/Utils/Lerp.cpp.i
+.PHONY : __/Motor/Utils/Lerp.i
+
+# target to preprocess a source file
+__/Motor/Utils/Lerp.cpp.i:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Lerp.cpp.i
+.PHONY : __/Motor/Utils/Lerp.cpp.i
+
+__/Motor/Utils/Lerp.s: __/Motor/Utils/Lerp.cpp.s
+.PHONY : __/Motor/Utils/Lerp.s
+
+# target to generate assembly for a file
+__/Motor/Utils/Lerp.cpp.s:
+	cd /d C:\Users\lalex\DOCUME~1\5TOSEM~1\INTROD~1\CIMAEN~2\CIMAEN~1\build\Debug && $(MAKE) $(MAKESILENT) -f src\Main\CMakeFiles\CimaEngine3v.dir\build.make src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Utils/Lerp.cpp.s
+.PHONY : __/Motor/Utils/Lerp.cpp.s
+
 __/Motor/Utils/Vector2D.obj: __/Motor/Utils/Vector2D.cpp.obj
 .PHONY : __/Motor/Utils/Vector2D.obj
 
@@ -713,21 +1289,84 @@ help:
 	@echo ... package_source
 	@echo ... rebuild_cache
 	@echo ... CimaEngine3v
-	@echo ... __/Juego/Escenas/EscenaCirculos.obj
-	@echo ... __/Juego/Escenas/EscenaCirculos.i
-	@echo ... __/Juego/Escenas/EscenaCirculos.s
-	@echo ... __/Juego/Escenas/EscenaCuadro.obj
-	@echo ... __/Juego/Escenas/EscenaCuadro.i
-	@echo ... __/Juego/Escenas/EscenaCuadro.s
-	@echo ... __/Juego/Escenas/EscenaFiguras.obj
-	@echo ... __/Juego/Escenas/EscenaFiguras.i
-	@echo ... __/Juego/Escenas/EscenaFiguras.s
+	@echo ... __/Juego/Componentes/IJComponentes.obj
+	@echo ... __/Juego/Componentes/IJComponentes.i
+	@echo ... __/Juego/Componentes/IJComponentes.s
+	@echo ... __/Juego/Dinosaurios/Dinosaurio.obj
+	@echo ... __/Juego/Dinosaurios/Dinosaurio.i
+	@echo ... __/Juego/Dinosaurios/Dinosaurio.s
+	@echo ... __/Juego/Escenas/EscenaDerrota.obj
+	@echo ... __/Juego/Escenas/EscenaDerrota.i
+	@echo ... __/Juego/Escenas/EscenaDerrota.s
+	@echo ... __/Juego/Escenas/EscenaFosiles.obj
+	@echo ... __/Juego/Escenas/EscenaFosiles.i
+	@echo ... __/Juego/Escenas/EscenaFosiles.s
+	@echo ... __/Juego/Escenas/EscenaMejora.obj
+	@echo ... __/Juego/Escenas/EscenaMejora.i
+	@echo ... __/Juego/Escenas/EscenaMejora.s
+	@echo ... __/Juego/Escenas/EscenaSeleccion.obj
+	@echo ... __/Juego/Escenas/EscenaSeleccion.i
+	@echo ... __/Juego/Escenas/EscenaSeleccion.s
+	@echo ... __/Juego/Escenas/EscenaShaders.obj
+	@echo ... __/Juego/Escenas/EscenaShaders.i
+	@echo ... __/Juego/Escenas/EscenaShaders.s
+	@echo ... __/Juego/Escenas/EscenaVictoria.obj
+	@echo ... __/Juego/Escenas/EscenaVictoria.i
+	@echo ... __/Juego/Escenas/EscenaVictoria.s
+	@echo ... __/Juego/Escenas/Escena_Menu.obj
+	@echo ... __/Juego/Escenas/Escena_Menu.i
+	@echo ... __/Juego/Escenas/Escena_Menu.s
+	@echo ... __/Juego/Estados/Estados.obj
+	@echo ... __/Juego/Estados/Estados.i
+	@echo ... __/Juego/Estados/Estados.s
 	@echo ... __/Juego/Figuras/Figuras.obj
 	@echo ... __/Juego/Figuras/Figuras.i
 	@echo ... __/Juego/Figuras/Figuras.s
+	@echo ... __/Juego/Habilidades/Habilidad.obj
+	@echo ... __/Juego/Habilidades/Habilidad.i
+	@echo ... __/Juego/Habilidades/Habilidad.s
 	@echo ... __/Juego/Juego.obj
 	@echo ... __/Juego/Juego.i
 	@echo ... __/Juego/Juego.s
+	@echo ... __/Juego/Maquinas/AtaqueFSM.obj
+	@echo ... __/Juego/Maquinas/AtaqueFSM.i
+	@echo ... __/Juego/Maquinas/AtaqueFSM.s
+	@echo ... __/Juego/Maquinas/BuffFSM.obj
+	@echo ... __/Juego/Maquinas/BuffFSM.i
+	@echo ... __/Juego/Maquinas/BuffFSM.s
+	@echo ... __/Juego/Maquinas/DamageFSM.obj
+	@echo ... __/Juego/Maquinas/DamageFSM.i
+	@echo ... __/Juego/Maquinas/DamageFSM.s
+	@echo ... __/Juego/Maquinas/IdleFSM.obj
+	@echo ... __/Juego/Maquinas/IdleFSM.i
+	@echo ... __/Juego/Maquinas/IdleFSM.s
+	@echo ... __/Juego/Maquinas/MoverFSM.obj
+	@echo ... __/Juego/Maquinas/MoverFSM.i
+	@echo ... __/Juego/Maquinas/MoverFSM.s
+	@echo ... __/Juego/Maquinas/MuerteFSM.obj
+	@echo ... __/Juego/Maquinas/MuerteFSM.i
+	@echo ... __/Juego/Maquinas/MuerteFSM.s
+	@echo ... __/Juego/Objetos/Entidad.obj
+	@echo ... __/Juego/Objetos/Entidad.i
+	@echo ... __/Juego/Objetos/Entidad.s
+	@echo ... __/Juego/Objetos/Equipos.obj
+	@echo ... __/Juego/Objetos/Equipos.i
+	@echo ... __/Juego/Objetos/Equipos.s
+	@echo ... __/Juego/Objetos/Jugador.obj
+	@echo ... __/Juego/Objetos/Jugador.i
+	@echo ... __/Juego/Objetos/Jugador.s
+	@echo ... __/Juego/Objetos/Pais.obj
+	@echo ... __/Juego/Objetos/Pais.i
+	@echo ... __/Juego/Objetos/Pais.s
+	@echo ... __/Juego/Objetos/Recompensas.obj
+	@echo ... __/Juego/Objetos/Recompensas.i
+	@echo ... __/Juego/Objetos/Recompensas.s
+	@echo ... __/Juego/Objetos/Texto.obj
+	@echo ... __/Juego/Objetos/Texto.i
+	@echo ... __/Juego/Objetos/Texto.s
+	@echo ... __/Juego/Objetos/TileMap.obj
+	@echo ... __/Juego/Objetos/TileMap.i
+	@echo ... __/Juego/Objetos/TileMap.s
 	@echo ... __/Juego/Sistemas/Sistemas.obj
 	@echo ... __/Juego/Sistemas/Sistemas.i
 	@echo ... __/Juego/Sistemas/Sistemas.s
@@ -749,6 +1388,9 @@ help:
 	@echo ... __/Motor/GUI/GLogger.obj
 	@echo ... __/Motor/GUI/GLogger.i
 	@echo ... __/Motor/GUI/GLogger.s
+	@echo ... __/Motor/GUI/GPropiedades.obj
+	@echo ... __/Motor/GUI/GPropiedades.i
+	@echo ... __/Motor/GUI/GPropiedades.s
 	@echo ... __/Motor/GUI/GViewport.obj
 	@echo ... __/Motor/GUI/GViewport.i
 	@echo ... __/Motor/GUI/GViewport.s
@@ -761,6 +1403,9 @@ help:
 	@echo ... __/Motor/Primitivos/CEPool.obj
 	@echo ... __/Motor/Primitivos/CEPool.i
 	@echo ... __/Motor/Primitivos/CEPool.s
+	@echo ... __/Motor/Primitivos/GestorAssets.obj
+	@echo ... __/Motor/Primitivos/GestorAssets.i
+	@echo ... __/Motor/Primitivos/GestorAssets.s
 	@echo ... __/Motor/Primitivos/GestorEscenas.obj
 	@echo ... __/Motor/Primitivos/GestorEscenas.i
 	@echo ... __/Motor/Primitivos/GestorEscenas.s
@@ -770,6 +1415,9 @@ help:
 	@echo ... __/Motor/Render/Render.obj
 	@echo ... __/Motor/Render/Render.i
 	@echo ... __/Motor/Render/Render.s
+	@echo ... __/Motor/Utils/Lerp.obj
+	@echo ... __/Motor/Utils/Lerp.i
+	@echo ... __/Motor/Utils/Lerp.s
 	@echo ... __/Motor/Utils/Vector2D.obj
 	@echo ... __/Motor/Utils/Vector2D.i
 	@echo ... __/Motor/Utils/Vector2D.s

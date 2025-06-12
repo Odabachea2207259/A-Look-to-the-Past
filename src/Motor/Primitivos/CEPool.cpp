@@ -1,4 +1,5 @@
 #include "CEPool.hpp"
+#include "../../Juego/Dinosaurios/Dinosaurio.hpp"
 #include <algorithm>
 
 namespace CE
@@ -13,27 +14,21 @@ namespace CE
 		if(objetos.size() == max_size)
 		{
 			max_size += max_size;
-			objetos.resize(max_size);
+			objetos.reserve(max_size);
 		}
 		objetos.emplace_back(obj);
 	}
 
 	void Pool::borrarPool()
 	{
-		//lambda para borrar todo objeto
-		//marcado como muerto
-
-		objetos.erase(
-			std::remove_if(
-				objetos.begin(),
-				objetos.end(),
-				//lambda
-				[](std::shared_ptr<Objeto> &o)
-				{
-					return !o->estaVivo();
-				}
-			), objetos.end()
-		);
+		for(auto & ente : objetos)
+		{
+			if(ente->esDino && !ente->estaVivo())
+			{
+				auto c = ente->getComponente<CE::IControl>();
+					c->muerte = true;
+			}
+		}
 	}
 
 	std::shared_ptr<Objeto>& Pool::operator[](std::size_t idx)

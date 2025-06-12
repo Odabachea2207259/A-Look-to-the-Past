@@ -1,5 +1,7 @@
 #pragma once
 #include "Objetos.hpp"
+#include "../../Juego/Dinosaurios/Dinosaurio.hpp"
+#include "../Componentes/IComponentes.hpp"
 
 namespace CE
 {

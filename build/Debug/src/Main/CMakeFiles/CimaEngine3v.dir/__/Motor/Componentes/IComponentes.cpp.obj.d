@@ -104,15 +104,51 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Componentes/IComponentes.cpp.obj: 
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
  C:/mingw64/x86_64-w64-mingw32/include/stdint.h \
  C:/mingw64/x86_64-w64-mingw32/include/inttypes.h \
- C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Utils/Vector2D.hpp \
- C:/mingw64/include/c++/14.2.0/iostream \
- C:/mingw64/include/c++/14.2.0/ostream C:/mingw64/include/c++/14.2.0/ios \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Export.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Config.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Rect.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/System/Vector2.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/System/Export.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/System/Angle.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/System/Angle.inl \
+ C:/mingw64/include/c++/14.2.0/cassert \
+ C:/mingw64/x86_64-w64-mingw32/include/assert.h \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/System/Vector2.inl \
+ C:/mingw64/include/c++/14.2.0/optional \
  C:/mingw64/include/c++/14.2.0/exception \
  C:/mingw64/include/c++/14.2.0/bits/exception_ptr.h \
  C:/mingw64/include/c++/14.2.0/bits/cxxabi_init_exception.h \
  C:/mingw64/include/c++/14.2.0/typeinfo \
  C:/mingw64/include/c++/14.2.0/bits/nested_exception.h \
- C:/mingw64/include/c++/14.2.0/bits/ios_base.h \
+ C:/mingw64/include/c++/14.2.0/bits/enable_special_members.h \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Rect.inl \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/CoordinateType.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/StencilMode.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Transform.hpp \
+ C:/mingw64/include/c++/14.2.0/array \
+ C:/mingw64/include/c++/14.2.0/compare \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Transform.inl \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Color.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Color.inl \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Texture.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Window/GlResource.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Window/Export.hpp \
+ C:/mingw64/include/c++/14.2.0/memory \
+ C:/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
+ C:/mingw64/include/c++/14.2.0/bits/stl_uninitialized.h \
+ C:/mingw64/include/c++/14.2.0/bits/stl_raw_storage_iter.h \
+ C:/mingw64/include/c++/14.2.0/bits/align.h \
+ C:/mingw64/include/c++/14.2.0/bits/unique_ptr.h \
+ C:/mingw64/include/c++/14.2.0/bits/shared_ptr.h \
+ C:/mingw64/include/c++/14.2.0/bits/shared_ptr_base.h \
+ C:/mingw64/include/c++/14.2.0/bits/allocated_ptr.h \
+ C:/mingw64/include/c++/14.2.0/ext/aligned_buffer.h \
  C:/mingw64/include/c++/14.2.0/ext/atomicity.h \
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr.h \
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr-default.h \
@@ -130,76 +166,6 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Componentes/IComponentes.cpp.obj: 
  C:/mingw64/x86_64-w64-mingw32/include/pthread_compat.h \
  C:/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h \
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/atomic_word.h \
- C:/mingw64/include/c++/14.2.0/bits/locale_classes.h \
- C:/mingw64/include/c++/14.2.0/bits/locale_classes.tcc \
- C:/mingw64/include/c++/14.2.0/system_error \
- C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/error_constants.h \
- C:/mingw64/include/c++/14.2.0/stdexcept \
- C:/mingw64/include/c++/14.2.0/streambuf \
- C:/mingw64/include/c++/14.2.0/bits/streambuf.tcc \
- C:/mingw64/include/c++/14.2.0/bits/basic_ios.h \
- C:/mingw64/include/c++/14.2.0/bits/locale_facets.h \
- C:/mingw64/include/c++/14.2.0/cwctype \
- C:/mingw64/x86_64-w64-mingw32/include/wctype.h \
- C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_base.h \
- C:/mingw64/include/c++/14.2.0/bits/streambuf_iterator.h \
- C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_inline.h \
- C:/mingw64/include/c++/14.2.0/bits/locale_facets.tcc \
- C:/mingw64/include/c++/14.2.0/bits/basic_ios.tcc \
- C:/mingw64/include/c++/14.2.0/bits/ostream.tcc \
- C:/mingw64/include/c++/14.2.0/istream \
- C:/mingw64/include/c++/14.2.0/bits/istream.tcc \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Export.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Config.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/CircleShape.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Shape.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Color.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Color.inl \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Rect.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/System/Vector2.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/System/Export.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/System/Angle.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/System/Angle.inl \
- C:/mingw64/include/c++/14.2.0/cassert \
- C:/mingw64/x86_64-w64-mingw32/include/assert.h \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/System/Vector2.inl \
- C:/mingw64/include/c++/14.2.0/optional \
- C:/mingw64/include/c++/14.2.0/bits/enable_special_members.h \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Rect.inl \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/CoordinateType.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/StencilMode.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Transform.hpp \
- C:/mingw64/include/c++/14.2.0/array \
- C:/mingw64/include/c++/14.2.0/compare \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Transform.inl \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/VertexArray.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
- C:/mingw64/include/c++/14.2.0/vector \
- C:/mingw64/include/c++/14.2.0/bits/stl_uninitialized.h \
- C:/mingw64/include/c++/14.2.0/bits/stl_vector.h \
- C:/mingw64/include/c++/14.2.0/bits/stl_bvector.h \
- C:/mingw64/include/c++/14.2.0/bits/vector.tcc \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/ConvexShape.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Font.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Glyph.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Texture.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Window/GlResource.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Window/Export.hpp \
- C:/mingw64/include/c++/14.2.0/memory \
- C:/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
- C:/mingw64/include/c++/14.2.0/bits/stl_raw_storage_iter.h \
- C:/mingw64/include/c++/14.2.0/bits/align.h \
- C:/mingw64/include/c++/14.2.0/bits/unique_ptr.h \
- C:/mingw64/include/c++/14.2.0/bits/shared_ptr.h \
- C:/mingw64/include/c++/14.2.0/bits/shared_ptr_base.h \
- C:/mingw64/include/c++/14.2.0/bits/allocated_ptr.h \
- C:/mingw64/include/c++/14.2.0/ext/aligned_buffer.h \
  C:/mingw64/include/c++/14.2.0/ext/concurrence.h \
  C:/mingw64/include/c++/14.2.0/bits/shared_ptr_atomic.h \
  C:/mingw64/include/c++/14.2.0/bits/atomic_base.h \
@@ -209,12 +175,27 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Componentes/IComponentes.cpp.obj: 
  C:/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
  C:/mingw64/include/c++/14.2.0/filesystem \
  C:/mingw64/include/c++/14.2.0/bits/fs_fwd.h \
+ C:/mingw64/include/c++/14.2.0/system_error \
+ C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/error_constants.h \
+ C:/mingw64/include/c++/14.2.0/stdexcept \
  C:/mingw64/include/c++/14.2.0/bits/chrono.h \
  C:/mingw64/include/c++/14.2.0/ratio C:/mingw64/include/c++/14.2.0/limits \
  C:/mingw64/include/c++/14.2.0/ctime \
  C:/mingw64/include/c++/14.2.0/bits/parse_numbers.h \
  C:/mingw64/include/c++/14.2.0/bits/fs_path.h \
  C:/mingw64/include/c++/14.2.0/locale \
+ C:/mingw64/include/c++/14.2.0/bits/locale_classes.h \
+ C:/mingw64/include/c++/14.2.0/bits/locale_classes.tcc \
+ C:/mingw64/include/c++/14.2.0/bits/locale_facets.h \
+ C:/mingw64/include/c++/14.2.0/cwctype \
+ C:/mingw64/x86_64-w64-mingw32/include/wctype.h \
+ C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_base.h \
+ C:/mingw64/include/c++/14.2.0/bits/ios_base.h \
+ C:/mingw64/include/c++/14.2.0/streambuf \
+ C:/mingw64/include/c++/14.2.0/bits/streambuf.tcc \
+ C:/mingw64/include/c++/14.2.0/bits/streambuf_iterator.h \
+ C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_inline.h \
+ C:/mingw64/include/c++/14.2.0/bits/locale_facets.tcc \
  C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h \
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h \
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h \
@@ -224,10 +205,30 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Componentes/IComponentes.cpp.obj: 
  C:/mingw64/include/c++/14.2.0/iomanip \
  C:/mingw64/include/c++/14.2.0/bits/quoted_string.h \
  C:/mingw64/include/c++/14.2.0/sstream \
+ C:/mingw64/include/c++/14.2.0/istream C:/mingw64/include/c++/14.2.0/ios \
+ C:/mingw64/include/c++/14.2.0/bits/basic_ios.h \
+ C:/mingw64/include/c++/14.2.0/bits/basic_ios.tcc \
+ C:/mingw64/include/c++/14.2.0/ostream \
+ C:/mingw64/include/c++/14.2.0/bits/ostream.tcc \
+ C:/mingw64/include/c++/14.2.0/bits/istream.tcc \
  C:/mingw64/include/c++/14.2.0/bits/sstream.tcc \
  C:/mingw64/include/c++/14.2.0/codecvt \
  C:/mingw64/include/c++/14.2.0/bits/fs_dir.h \
  C:/mingw64/include/c++/14.2.0/bits/fs_ops.h \
+ C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Utils/Vector2D.hpp \
+ C:/mingw64/include/c++/14.2.0/iostream \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/CircleShape.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Shape.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/VertexArray.hpp \
+ C:/mingw64/include/c++/14.2.0/vector \
+ C:/mingw64/include/c++/14.2.0/bits/stl_vector.h \
+ C:/mingw64/include/c++/14.2.0/bits/stl_bvector.h \
+ C:/mingw64/include/c++/14.2.0/bits/vector.tcc \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/ConvexShape.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Font.hpp \
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Glyph.hpp \
  C:/mingw64/include/c++/14.2.0/unordered_map \
  C:/mingw64/include/c++/14.2.0/bits/unordered_map.h \
  C:/mingw64/include/c++/14.2.0/bits/hashtable.h \
@@ -272,7 +273,6 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Componentes/IComponentes.cpp.obj: 
  C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Shader.hpp \
  C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Glsl.hpp \
  C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Glsl.inl \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
  C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/Text.hpp \
  C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp \
  C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/Window.hpp \
@@ -286,4 +286,8 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Componentes/IComponentes.cpp.obj: 
  C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/System/FileInputStream.hpp \
  C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/System/InputStream.hpp \
  C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
- C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/System/Sleep.hpp
+ C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/System/Sleep.hpp \
+ C:/mingw64/include/c++/14.2.0/map \
+ C:/mingw64/include/c++/14.2.0/bits/stl_tree.h \
+ C:/mingw64/include/c++/14.2.0/bits/stl_map.h \
+ C:/mingw64/include/c++/14.2.0/bits/stl_multimap.h

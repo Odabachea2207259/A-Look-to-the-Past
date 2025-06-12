@@ -284,4 +284,5 @@ src/Main/CMakeFiles/CimaEngine3v.dir/__/Motor/Render/Render.cpp.obj: \
  C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
  C:/Users/lalex/DOCUME~1/5TOSEM~1/INTROD~1/CIMAEN~2/CIMAEN~1/build/Debug/_deps/sfml-src/include/SFML/System/Sleep.hpp \
  C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Utils/Utils.hpp \
+ C:/Users/lalex/Documents/5to\ Semestre/Introduccion\ a\ los\ Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Motor/Utils/Vector2D.hpp \
  C:/mingw64/include/c++/14.2.0/iostream

@@ -47,6 +47,16 @@ namespace CE
 			float limitey;
 	};
 
+    class CamaraLERP: public Camara
+    {
+        public:
+            CamaraLERP(const Vector2D& pos, const Vector2D& dim);
+            ~CamaraLERP()override{};
+            void onUpdate(float dt)override;
+        private:
+            float vel;
+    };
+
 	class CamaraFigura : public Camara
 	{
 		public:

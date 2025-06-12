@@ -21,7 +21,7 @@ CMAKE_ADDR2LINE:FILEPATH=C:/mingw64/bin/addr2line.exe
 CMAKE_AR:FILEPATH=C:/mingw64/bin/ar.exe
 
 //Choose the type of build (Debug or Release)
-CMAKE_BUILD_TYPE:STRING=Debug
+CMAKE_BUILD_TYPE:STRING=DEBUG
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -333,13 +333,13 @@ CPACK_SOURCE_7Z:BOOL=ON
 CPACK_SOURCE_ZIP:BOOL=ON
 
 //Value Computed by CMake
-CimaEngine3v_BINARY_DIR:STATIC=C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/build/Debug/src/Juego/Escenas
+CimaEngine3v_BINARY_DIR:STATIC=C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/build/Debug/src/Juego/Estados
 
 //Value Computed by CMake
 CimaEngine3v_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-CimaEngine3v_SOURCE_DIR:STATIC=C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Escenas
+CimaEngine3v_SOURCE_DIR:STATIC=C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/src/Juego/Estados
 
 //Set FLAC__BYTES_PER_WORD to 8, for 64-bit machines. For 32-bit
 // machines, turning this off might give a tiny speed improvement
@@ -375,6 +375,10 @@ FETCHCONTENT_SOURCE_DIR_IMGUI:PATH=
 FETCHCONTENT_SOURCE_DIR_IMGUI-SFML:PATH=
 
 //When not empty, overrides where to find pre-populated content
+// for json
+FETCHCONTENT_SOURCE_DIR_JSON:PATH=
+
+//When not empty, overrides where to find pre-populated content
 // for ogg
 FETCHCONTENT_SOURCE_DIR_OGG:PATH=
 
@@ -400,6 +404,9 @@ FETCHCONTENT_UPDATES_DISCONNECTED_IMGUI:BOOL=OFF
 
 //Enables UPDATE_DISCONNECTED behavior just for population of imgui-sfml
 FETCHCONTENT_UPDATES_DISCONNECTED_IMGUI-SFML:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of json
+FETCHCONTENT_UPDATES_DISCONNECTED_JSON:BOOL=OFF
 
 //Enables UPDATE_DISCONNECTED behavior just for population of ogg
 FETCHCONTENT_UPDATES_DISCONNECTED_OGG:BOOL=OFF
@@ -454,6 +461,39 @@ INSTALL_CMAKE_CONFIG_MODULE:BOOL=ON
 
 //Install CMake package configiguration module
 INSTALL_CMAKE_PACKAGE_MODULE:BOOL=ON
+
+//Build the unit tests when BUILD_TESTING is enabled.
+JSON_BuildTests:BOOL=OFF
+
+//Enable CI build targets.
+JSON_CI:BOOL=OFF
+
+//Enable diagnostic positions.
+JSON_Diagnostic_Positions:BOOL=OFF
+
+//Use extended diagnostic messages.
+JSON_Diagnostics:BOOL=OFF
+
+//Disable default integer enum serialization.
+JSON_DisableEnumSerialization:BOOL=OFF
+
+//Place user-defined string literals in the global namespace.
+JSON_GlobalUDLs:BOOL=ON
+
+//Enable implicit conversions.
+JSON_ImplicitConversions:BOOL=ON
+
+//Install CMake targets during install step.
+JSON_Install:BOOL=OFF
+
+//Enable legacy discarded value comparison.
+JSON_LegacyDiscardedValueComparison:BOOL=OFF
+
+//Use non-amalgamated version of the library.
+JSON_MultipleHeaders:BOOL=ON
+
+//Include as system headers (skip for clang-tidy).
+JSON_SystemInclude:BOOL=OFF
 
 //OpenGL library for win32
 OPENGL_gl_LIBRARY:STRING=opengl32
@@ -556,6 +596,15 @@ libogg_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 libogg_SOURCE_DIR:STATIC=C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/build/Debug/_deps/ogg-src
+
+//Value Computed by CMake
+nlohmann_json_BINARY_DIR:STATIC=C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/build/Debug/_deps/json-build
+
+//Value Computed by CMake
+nlohmann_json_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+nlohmann_json_SOURCE_DIR:STATIC=C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/build/Debug/_deps/json-src
 
 //Value Computed by CMake
 vorbis_BINARY_DIR:STATIC=C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/build/Debug/_deps/vorbis-build
@@ -716,7 +765,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=33
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=40
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -890,6 +939,7 @@ INT_SIZE:INTERNAL=4
 LONG_LONG_SIZE:INTERNAL=8
 //CHECK_TYPE_SIZE: sizeof(long)
 LONG_SIZE:INTERNAL=4
+NLOHMANN_JSON_CONFIG_INSTALL_DIR:INTERNAL=share/cmake/nlohmann_json
 //ogg has already been built
 OGG_FOUND:INTERNAL=1
 //ADVANCED property for variable: OPENGL_gl_LIBRARY

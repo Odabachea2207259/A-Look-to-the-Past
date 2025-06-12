@@ -1,11 +1,11 @@
 #----------------------------------------------------------------
-# Generated CMake target import file for configuration "Debug".
+# Generated CMake target import file for configuration "DEBUG".
 #----------------------------------------------------------------
 
 # Commands may need to know the format version.
 set(CMAKE_IMPORT_FILE_VERSION 1)
 
-# Import target "ImGui-SFML::ImGui-SFML" for configuration "Debug"
+# Import target "ImGui-SFML::ImGui-SFML" for configuration "DEBUG"
 set_property(TARGET ImGui-SFML::ImGui-SFML APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(ImGui-SFML::ImGui-SFML PROPERTIES
   IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "CXX"
