@@ -1,3 +1,0 @@
-C:\mingw64\bin\cmake.exe -E rm -f CMakeFiles\CimaEngine3v.dir/objects.a
-C:\mingw64\bin\ar.exe qc CMakeFiles\CimaEngine3v.dir/objects.a @CMakeFiles\CimaEngine3v.dir\objects1.rsp
-C:\mingw64\bin\c++.exe -O3 -DNDEBUG -Wl,--whole-archive CMakeFiles\CimaEngine3v.dir/objects.a -Wl,--no-whole-archive -o "C:\Users\lalex\Documents\5to Semestre\Introduccion a los Videojuegos\CimaEngineV3_2\CimaEngineV3\bin\RELEASE\CimaEngine3v.exe" -Wl,--out-implib,libCimaEngine3v.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\CimaEngine3v.dir\linkLibs.rsp

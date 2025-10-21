@@ -26,6 +26,7 @@ namespace IVJ
 			std::shared_ptr<Rectangulo> progreso;
 			std::shared_ptr<Rectangulo> fosiles;
 			std::shared_ptr<Rectangulo> lab;
+			std::shared_ptr<Rectangulo> bestiario;
 
 			std::shared_ptr<CE::ISprite> fondo_1;
 			bool uno = true;

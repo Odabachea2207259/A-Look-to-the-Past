@@ -71,13 +71,6 @@ namespace IVJ
 			fondo.setOutlineColor(sf::Color::Black);
 			fondo.setOutlineThickness(2.f);
 
-			CE::GestorCamaras::Get().agregarCamara(std::make_shared<CE::CamaraCuadro>(
-			CE::Vector2D{540,360},CE::Vector2D{1080.f,720.f}));
-			CE::GestorCamaras::Get().agregarCamara(std::make_shared<CE::CamaraLERP>(
-			CE::Vector2D{540,360},CE::Vector2D{1080.f,720.f}));
-			CE::GestorCamaras::Get().setCamaraActiva(1);
-			CE::GestorCamaras::Get().getCamaraActiva().lockEnObjeto(actual);
-
 			if(!bg[0].loadTileMap(ASSETS "/mapas/mapaPelea1_layer1.txt")) exit(EXIT_FAILURE);
 			if(!bg[1].loadTileMap(ASSETS "/mapas/mapaPelea1_layer2.txt")) exit(EXIT_FAILURE);
 			if(!bg[2].loadTileMap(ASSETS "/mapas/mapaPelea1_layer3.txt")) exit(EXIT_FAILURE);
@@ -97,13 +90,35 @@ namespace IVJ
 
 		Equipos::Get().crearEnemigos();
 
-		posicionarPlayer();
-
 		posicionarEnemy();
+		posicionarPlayer();
 
 		ordenarTurnos();
 		actual = turnos.at(dinoTurno);
 		setBotonesFalso();
+
+		/*
+		argentino = std::make_shared<IVJ::Entidad>();
+
+		argentino->addComponente(std::make_shared<CE::ISprite>(
+			CE::GestorAssets::Get().getTextura("argentino"),
+			916,510,
+			2.f
+		));
+
+		argentino->addComponente(std::make_shared<CE::IControl>());
+		argentino->addComponente(std::make_shared<IVJ::IMaquinaEstado>());
+		auto &fsm_init = argentino->getComponente<IMaquinaEstado>()->fsm;
+		fsm_init = std::make_shared<IdleFSM>();
+		fsm_init->onEntrar(*argentino);
+
+		objetos.agregarPool(argentino);
+		*/
+
+		//CE::Vector2D{540,360},CE::Vector2D{1090.f,720.f}
+		CE::GestorCamaras::Get().agregarCamara(std::make_shared<CE::CamaraCuadro>(
+			CE::Vector2D{540,360},CE::Vector2D{100.f,50.f}
+		));
 
 		inicializar = false;
 	}
@@ -445,7 +460,14 @@ namespace IVJ
 	{
 		actual->habilidadSelecc = nullptr;
 		habilidadSelecc = nullptr;
-		revisarGanador();
+		switch(revisarGanador()){
+			case -1:
+				CE::GestorEscenas::Get().cambiarEscena("Derrota");
+				return;
+			case 1:
+				CE::GestorEscenas::Get().cambiarEscena("Victoria");
+				return;
+		}
 
 		auto c = actual->getComponente<CE::IControl>();
 		c->der = false;
@@ -488,21 +510,25 @@ namespace IVJ
 		});
 	}
 
-	void EscenaShaders::revisarGanador()
+	int EscenaShaders::revisarGanador()
 	{
 		int player = 0;
 		for(auto & dino : Equipos::Get().GetPlayer())
 			if(dino->estaVivo()) player++;
 
 		if(player <= 0)
-			CE::GestorEscenas::Get().cambiarEscena("Derrota");
+			return -1;
+			//CE::GestorEscenas::Get().cambiarEscena("Derrota");
 		
 		int enemy = 0;
 		for(auto & dino : Equipos::Get().GetEnemigos())
 			if(dino->estaVivo()) enemy++;
 
 		if(enemy <= 0)
-			CE::GestorEscenas::Get().cambiarEscena("Victoria");
+			return 1;
+			//CE::GestorEscenas::Get().cambiarEscena("Victoria");
+		
+			return 0;
 	}
 
 	bool EscenaShaders::aplicarEstados()

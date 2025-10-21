@@ -1,3 +1,0 @@
-C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/build/Release/_deps/imgui-subbuild/CMakeFiles/imgui-populate.dir
-C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/build/Release/_deps/imgui-subbuild/CMakeFiles/edit_cache.dir
-C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/build/Release/_deps/imgui-subbuild/CMakeFiles/rebuild_cache.dir

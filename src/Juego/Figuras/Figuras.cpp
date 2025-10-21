@@ -15,7 +15,7 @@ namespace IVJ
         rect_img.setFillColor(f_crelleno);
         rect_img.setOutlineColor(f_ccontorno);
         rect_img.setOutlineThickness(2);
-        //rect_img.setOrigin({ancho/2.f,largo/2.f});
+        //rect_img.setOrigin({ancho/2.f,largo/2.f}); //---------->>QUITAR PARA EL JUEGO
 	    //nombre->nombre = "Rectangulo "+std::to_string(CE::Objeto::getNumObjetos());
 	    nombre->nombre = "Rectangulo";
     }

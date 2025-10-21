@@ -19,13 +19,15 @@ namespace CE
     void Render::CrearVentana(const MotorConfig& motor_info)
     {
         sf::ContextSettings videosettings;
-        videosettings.antiAliasingLevel=3;
+        videosettings.antiAliasingLevel=10;
         //videosettings.majorVersion = 4;
         //videosettings.minorVersion = 1;
         //videosettings.attributeFlags = sf::ContextSettings::Core;
 
         r_ventana = std::make_unique<sf::RenderWindow>(
                 sf::VideoMode({motor_info.vW,motor_info.vH}, 32),
+                //sf::VideoMode({1920,1080}, 32),
+                //sf::VideoMode::getDesktopMode(),
                 sf::String(motor_info.titulo),
                 sf::Style::Default,
                 sf::State::Windowed,

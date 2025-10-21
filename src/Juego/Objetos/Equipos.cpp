@@ -59,24 +59,24 @@ namespace IVJ
 		{
 			case 0:
 				for(int i = 0; i < cant;i++)
-					enemigos->push_back(std::make_shared<Pachycephalosaurus>(nivelJugador));
+					enemigos->push_back(std::make_shared<Pachycephalosaurus>(0.5));
 				break;
 			case 1:
 				for(int i = 0; i < cant;i++)
-					enemigos->push_back(std::make_shared<Parasaurolophus>(nivelJugador));
+					enemigos->push_back(std::make_shared<Parasaurolophus>(0.5));
 				break;
 			case 2:
 				for(int i = 0; i < cant;i++)
-					enemigos->push_back(std::make_shared<Centrosaurus>(nivelJugador));
+					enemigos->push_back(std::make_shared<Centrosaurus>(0.5));
 				break;
 			case 3:
 				for(int i = 0; i < cant;i++)
-					enemigos->push_back(std::make_shared<Carnotauro>(nivelJugador));
+					enemigos->push_back(std::make_shared<Carnotauro>(0.5));
 				break;
 			case 4:
-                enemigos->push_back(std::make_shared<Carnotauro>(nivelJugador));
-                enemigos->push_back(std::make_shared<Pachycephalosaurus>(nivelJugador));
-				enemigos->push_back(std::make_shared<Carnotauro>(nivelJugador));
+                enemigos->push_back(std::make_shared<Carnotauro>(0.5));
+                enemigos->push_back(std::make_shared<Pachycephalosaurus>(0.5));
+				enemigos->push_back(std::make_shared<Carnotauro>(0.5));
 				break;
 			default:
 				break;

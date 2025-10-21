@@ -14,10 +14,11 @@ namespace IVJ
 			void onSalir(const Entidad& obj) override;
 			void onUpdate(const Entidad& obj,float dt) override;
 		private:
-			CE::Vector2D ani_frames[9]{};
+			CE::Vector2D ani_frames[20]{};
 			float tiempo{};
 			int id_actual{};
 			float max_tiempo{};
+			int max_frames{};
 			//sprite ref
 			sf::Sprite *sprite {nullptr};
 			int s_w{};

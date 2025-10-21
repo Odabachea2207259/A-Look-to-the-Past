@@ -13,7 +13,14 @@ namespace CE
 		void draw(sf::RenderTarget& target, sf::RenderStates state) const override;
 		bool esDino = false;
 
+		template <typename T> Objeto& copyComponente(const T *componente){
+			auto copia = std::make_shared<T>(*componente);
+			componentes.push_back(copia);
+			return *this;
+		}
+
 		Objeto& addComponente(const std::shared_ptr<IComponentes>& componente);
+		
 		template <typename T> T* getComponente() const
 		{
 			static_assert(std::is_base_of<IComponentes,T>::value,"Solo derivados de IComponentes");

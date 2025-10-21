@@ -17,16 +17,17 @@ namespace IVJ
     class Dinosaurio : public Entidad
     {
         public:
-            Dinosaurio(int nivel) : nivel{nivel}{
+            Dinosaurio(/*int*/float nivel) : nivel{nivel}{
                 esDino = true;
                 vida_max.setSize(sf::Vector2f(100.f, 10.f));  // Tamaño total de la barra
-                vida_max.setFillColor(sf::Color::Red);
-
+                //vida_max.setFillColor(sf::Color::Red);
+                vida_max.setFillColor(sf::Color(0,0,0,100));
+                
                 vida.setSize(sf::Vector2f(100.f, 10.f));      // Al inicio, vida completa
                 vida.setFillColor(sf::Color::Green);
             }
             float medidor = 0;
-            int nivel;
+            /*int*/float nivel;
             bool jugador = false;
             bool accion = false;
             bool turno = false;
@@ -163,7 +164,7 @@ namespace IVJ
     class Pachycephalosaurus : public Dinosaurio
     {
         public:
-            Pachycephalosaurus(int nivel):Dinosaurio(nivel)
+            Pachycephalosaurus(/*int*/float nivel):Dinosaurio(nivel)
             {
                 auto nombre = this->getNombre();
 		        nombre->nombre = "Pachycephalosaurus";
@@ -185,7 +186,7 @@ namespace IVJ
     class Parasaurolophus : public Dinosaurio
     {
         public:
-            Parasaurolophus(int nivel):Dinosaurio(nivel)
+            Parasaurolophus(/*int*/float nivel):Dinosaurio(nivel)
             {
                 configurarVida(100.f);
 		        auto nombre = this->getNombre();
@@ -206,7 +207,7 @@ namespace IVJ
     class Centrosaurus : public Dinosaurio
     {
         public:
-            Centrosaurus(int nivel):Dinosaurio(nivel)
+            Centrosaurus(/*int*/float nivel):Dinosaurio(nivel)
             {
                 configurarVida(100.f);
 		        auto nombre = this->getNombre();
@@ -227,7 +228,7 @@ namespace IVJ
     class Carnotauro : public Dinosaurio
     {
         public:
-            Carnotauro(int nivel):Dinosaurio(nivel)
+            Carnotauro(/*int*/float nivel):Dinosaurio(nivel)
             {
                 configurarVida(100.f);
 		        auto nombre = this->getNombre();

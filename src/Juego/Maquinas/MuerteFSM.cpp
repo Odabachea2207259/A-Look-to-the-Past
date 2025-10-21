@@ -33,15 +33,19 @@ namespace IVJ
 		s_h = c_sprite->height;
 
 		json j;
+		json ub;
 
 		auto nombre = obj.toString();
 
-		std::ifstream file(ASSETS "/sprites_dinos/"+nombre+"/"+nombre+"_tex.json");
+		std::ifstream ubicaciones(ASSETS "/Ubicaciones.json");
+		ubicaciones >> ub;
+
+		std::string ubicacion = (obj.esDino) ? "/sprites_dinos/"+nombre+"/"+nombre+"_tex.json" : getUbicacion(ub,nombre);
+
+		std::ifstream file(ASSETS + ubicacion);
 
 		if(!file)
-		{
-			std::cerr << "No se pudo abrir el JSON\n";
-		}
+			std::cout << "Error\nNo se pudo abrir el archivo\n";
 
 		file >> j;
 

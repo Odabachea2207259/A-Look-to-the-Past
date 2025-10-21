@@ -53,6 +53,8 @@ namespace IVJ
             int cantDinos = 0;
             int dinoTurno = 0;
 
+            std::shared_ptr<IVJ::Entidad> argentino;
+
             std::vector<std::shared_ptr<Dinosaurio>> turnos;
         private:
             void setBotonesFalso();
@@ -60,7 +62,7 @@ namespace IVJ
             void ordenarTurnos();
             void posicionarPlayer();
             void posicionarEnemy();
-            void revisarGanador();
+            int revisarGanador();
             bool aplicarEstados();
             void actualizarMedidor();
     };

@@ -14,6 +14,9 @@ namespace CE
     }
     void GPropiedades::OnUpdate(float dt)
     {
+        if(!guipath) guipath = new GPaths();
+        guipath->setObjetoSelect(objeto_select);
+        guipath->OnUpdate(dt);
     }
     void GPropiedades::OnRender(void)
     {
@@ -33,9 +36,13 @@ namespace CE
             ImGui::Separator();
         if(panelShaders(objeto_select->getComponente<IShader>()))
             ImGui::Separator();
+        if(panelStats(objeto_select->getStats()))
+            ImGui::Separator();
+        if(panelIPaths(objeto_select->getComponente<IPaths>()))
+            guipath->OnRender();
+        
 
         ImGui::End();
-
 
     }
     bool GPropiedades::panelTransformada()
@@ -168,28 +175,126 @@ namespace CE
             }
         }
 
-
         if(ImGui::Button("Reload"))
         {
-            if(!shader->m_vertshaderFile.empty() && shader->m_fragshaderFile.empty())
+            auto vars = shader->m_vars;
+            shader->m_vars.clear();
+            shader->cambiarShader(
+                    shader->m_vertshaderFile,
+                    shader->m_fragshaderFile);
+            shader->m_vars = vars;
+            for(auto& pair : shader->m_vars)
             {
-                if(!shader->m_shader.loadFromFile(shader->m_vertshaderFile,sf::Shader::Type::Vertex))
-                    GLogger::Get().agregarLog("No se pudo cargar Shader",GLogger::Niveles::LOG_ERROR);
+
+                auto key = pair.first;
+                auto var = shader->m_vars[key];
+                auto tipo = var.first;
+                auto valor = var.second;
+                switch(tipo)
+                {
+                    case CE::IShader::ShaderVars::FLOAT:
+                    {
+                        shader->setEscalar(key,(float*)valor);
+                        break;
+                    }
+                    case CE::IShader::ShaderVars::VEC2F:
+                    {
+                        shader->setVector2(key,(sf::Glsl::Vec2*)valor);
+                        break;
+                    }
+                    case CE::IShader::ShaderVars::VEC3F:
+                    {
+                        shader->setVector3(key,(sf::Glsl::Vec3*)valor);
+                        break;
+                    }
+                    case CE::IShader::ShaderVars::VEC4F:
+                    {
+                        shader->setVector4(key,(sf::Glsl::Vec4*)valor);
+                        break;
+                    }
+                    case CE::IShader::ShaderVars::MAT3:
+                    {
+                        break;
+                    }
+                    case CE::IShader::ShaderVars::MAT4:
+                    {
+                        break;
+                    }
+                    case CE::IShader::ShaderVars::TEX:
+                    {
+                        shader->setTextura(key,(sf::Texture*)valor);
+                        break;
+                    }
+                    default:
+                        break;
+                }
             }
-            else if(shader->m_vertshaderFile.empty() && !shader->m_fragshaderFile.empty())
-            {
-                if(!shader->m_shader.loadFromFile(shader->m_fragshaderFile,sf::Shader::Type::Fragment))
-                    GLogger::Get().agregarLog("No se pudo cargar Shader",GLogger::Niveles::LOG_ERROR);
-            }
-            else
-            {
-                if(!shader->m_shader.loadFromFile(shader->m_vertshaderFile,shader->m_fragshaderFile))
-                    GLogger::Get().agregarLog("No se pudo cargar Shader",GLogger::Niveles::LOG_ERROR);
-            }
+            
+            //if(!shader->m_vertshaderFile.empty() && shader->m_fragshaderFile.empty())
+            //{
+            //    if(!shader->m_shader.loadFromFile(shader->m_vertshaderFile,sf::Shader::Type::Vertex))
+            //        GLogger::Get().agregarLog("No se pudo cargar Shader",GLogger::Niveles::LOG_ERROR);
+            //}
+            //else if(shader->m_vertshaderFile.empty() && !shader->m_fragshaderFile.empty())
+            //{
+            //    if(!shader->m_shader.loadFromFile(shader->m_fragshaderFile,sf::Shader::Type::Fragment))
+            //        GLogger::Get().agregarLog("No se pudo cargar Shader",GLogger::Niveles::LOG_ERROR);
+            //}
+            //else
+            //{
+            //    if(!shader->m_shader.loadFromFile(shader->m_vertshaderFile,shader->m_fragshaderFile))
+            //        GLogger::Get().agregarLog("No se pudo cargar Shader",GLogger::Niveles::LOG_ERROR);
+            //}
         }
 
         return true;
     }
+    bool GPropiedades::panelStats(std::shared_ptr<IStats> stats)
+    {
+        if(!stats)
+            return false;
+        ImGui::TextColored(ImVec4{0,255,0,255},"%15sIStats%15s"," "," ");
+
+        float hp = stats->hp;
+		float hp_max = stats->hp_max;
+		
+		float str = stats->str;
+		float str_max = stats->str_max;
+
+		float def = stats->def;
+		float def_max = stats->def_max;
+
+		float agi = stats->agi;
+		float agi_max = stats->agi_max;
+
+        float hpStat[2] = {hp,hp_max};
+        float strStat[2] = {str,str_max};
+        float defStat[2] = {def,def_max};
+        float agiStat[2] = {agi,agi_max};
+
+        ImGui::DragFloat2("HP",hpStat);
+        ImGui::DragFloat2("STR",strStat);
+        ImGui::DragFloat2("DEF",defStat);
+        ImGui::DragFloat2("AGI",agiStat);
+
+        stats->hp = hpStat[0];
+        stats->hp_max = hpStat[1];
+        stats->str = strStat[0];
+        stats->str_max = strStat[1];
+        stats->def = defStat[0];
+        stats->def_max = defStat[1];
+        stats->agi = agiStat[0];
+        stats->agi_max = agiStat[1];
+        
+        return true;
+    }
+
+    bool GPropiedades::panelIPaths(IPaths *path)
+    {
+        if(!path) return false;
+        return true;
+    }
+
     void GPropiedades::seleccionarObjeto(Objeto* ref)
     {
         objeto_select = ref;

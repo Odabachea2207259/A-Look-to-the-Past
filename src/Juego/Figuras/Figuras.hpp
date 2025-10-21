@@ -35,7 +35,7 @@ namespace IVJ
             explicit Rectangulo(float ancho, float largo,const sf::Color& relleno,const  sf::Color& contorno);
             ~Rectangulo() override{};
             void draw(sf::RenderTarget& target, sf::RenderStates state) const override;
-            void setPosicion(float x, float y);
+            void setPosicion(float x, float y); //---> DESCOMENTAR PARA EL JUEGO
 			void setTam(float x, float y)
 			{
 				rect_img.setSize(sf::Vector2f{x,y});

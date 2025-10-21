@@ -1,0 +1,22 @@
+{
+  "SubTexture": [
+    { "width": 916, "y": 1537, "height": 510, "name": "Idle_0", "x": 919 },
+    { "width": 916, "y": 2561, "height": 510, "name": "Idle_1", "x": 1 },
+    { "width": 916, "y": 513, "height": 510, "name": "Idle_2", "x": 1 },
+    { "width": 916, "y": 2561, "height": 510, "name": "Idle_3", "x": 919 },
+    { "width": 916, "y": 1, "height": 510, "name": "Idle_4", "x": 919 },
+    { "width": 916, "y": 1, "height": 510, "name": "Idle_5", "x": 1 },
+    { "width": 916, "y": 1537, "height": 510, "name": "Idle_6", "x": 1 },
+    { "width": 916, "y": 513, "height": 510, "name": "Idle_7", "x": 919 },
+    { "width": 916, "y": 2049, "height": 510, "name": "Idle_8", "x": 919 },
+    { "width": 916, "y": 1025, "height": 510, "name": "Pisoton_0", "x": 919 },
+    { "width": 916, "y": 1025, "height": 510, "name": "Pisoton_1", "x": 1 },
+    { "width": 916, "y": 2049, "height": 510, "name": "Pisoton_2", "x": 1 }
+  ],
+  "name": "Argentinosaurus_mini_tex",
+  "imagePath": "Armature_tex.png",
+  "maxFrames": [
+    { "name": "Idle", "max": 9 },
+    { "name": "Pisoton", "max": 3 }
+  ]
+}

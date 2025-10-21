@@ -22,10 +22,15 @@ namespace IVJ
 		max_tiempo = 0.15f;
 		tiempo = max_tiempo;
 
+		CE::GestorAssets::Get().agregarTextura("hoja_yellow",ASSETS "/sprites_aliens/alienYellow.png",CE::Vector2D{0,0},CE::Vector2D{256,512});
+		CE::GestorAssets::Get().agregarTextura("hoja_pink",ASSETS "/sprites_aliens/alienPink.png",CE::Vector2D{0,0},CE::Vector2D{256,512});
+
 		CE::GestorAssets::Get().agregarTextura("parasaurolophus",ASSETS "/sprites_dinos/Parasaurolophus/Parasaurolophus_tex.png",CE::Vector2D{0,0},CE::Vector2D{1221,3976});
 		CE::GestorAssets::Get().agregarTextura("centrosaurus",ASSETS "/sprites_dinos/Centrosaurus/Centrosaurus_tex.png",CE::Vector2D{0,0},CE::Vector2D{1221,3877});
 		CE::GestorAssets::Get().agregarTextura("pachy",ASSETS "/sprites_dinos/Pachycephalosaurus/Pachycephalosaurus_tex.png",CE::Vector2D{0,0},CE::Vector2D{1586,3875});
 		CE::GestorAssets::Get().agregarTextura("carnotauro",ASSETS "/sprites_dinos/Carnotauro/Carnotauro_tex.png",CE::Vector2D{0,0},CE::Vector2D{1197,4049});
+		
+		CE::GestorAssets::Get().agregarTextura("argentino",ASSETS "/enemigos/jefes/Argentinosaurus/Armature_tex.png",CE::Vector2D{0,0},CE::Vector2D{1837,3073});
 
 		CE::GestorAssets::Get().agregarFont("Byte",ASSETS "/fonts/Bytesized-Regular.ttf");
 		CE::GestorAssets::Get().agregarFont("Caveman",ASSETS "/fonts/Prehistoric Caveman.ttf");
@@ -38,6 +43,8 @@ namespace IVJ
 		CE::GestorAssets::Get().agregarTextura("Mapa_1", ASSETS "/fondo/MenuPrincipal-Mapa1.jpg",CE::Vector2D{0,0},CE::Vector2D{1600,1200});
 		CE::GestorAssets::Get().agregarTextura("Mapa_2", ASSETS "/fondo/MenuPrincipal-Mapa2.jpg",CE::Vector2D{0,0},CE::Vector2D{1600,1200});
 		CE::GestorAssets::Get().agregarTextura("Mapa_3", ASSETS "/fondo/MenuPrincipal-Mapa3.jpg",CE::Vector2D{0,0},CE::Vector2D{1600,1200});
+
+		CE::GestorAssets::Get().agregarTextura("Bestiario",ASSETS "/bestiario/Bestiario.png",CE::Vector2D{0,0},CE::Vector2D{4320,4320});
 		
 		auto sizeVentana = CE::Render::Get().GetVentana().getSize();
 
@@ -67,6 +74,9 @@ namespace IVJ
 
 		auto spriteLab = lab->getComponente<CE::ISprite>();
 		spriteLab->m_sprite.setPosition({(sizeVentana.x - 515.f) + ((234.f * 1.f)/2.f),(sizeVentana.y - 104.f)+((104.f * 1.f)/2.f)});
+
+		bestiario = std::make_shared<Rectangulo>(200,100,sf::Color::White,sf::Color::White);
+		bestiario->setPosicion((sizeVentana.x - 900.f),(sizeVentana.y - 104.f));
 		
 		iconoDinero = std::make_shared<Rectangulo>(0,0,sf::Color::Transparent,sf::Color::Transparent);
 		iconoDinero->addComponente(std::make_shared<CE::ITexto>(
@@ -140,6 +150,11 @@ namespace IVJ
 		fondo_3 = std::make_shared<CE::ISprite>(CE::GestorAssets::Get().getTextura("Mapa_3"),1600,1200,0.7f);
 		fondo_3->m_sprite.setPosition(sf::Vector2f{(fondo_3->width*0.7f)/2,(fondo_3->height*0.7f)/2});
 
+		//CE::GestorCamaras::Get().agregarCamara(std::make_shared<CE::CamaraLERP>(
+		//	CE::Vector2D{540,360},CE::Vector2D{300.f,150.f}
+		//));
+		//CE::GestorCamaras::Get().setCamaraActiva(1);
+		
 		inicializar = false;
 	}
 	void Escena_Menu::onFinal(){}
@@ -183,6 +198,12 @@ namespace IVJ
 		{
 			if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
 				CE::GestorEscenas::Get().cambiarEscena("Mejora"); 
+		}
+
+		if(bestiario->rect_bounding.contains(sf::Vector2i{static_cast<int>(mousePos.x),static_cast<int>(mousePos.y)}))
+		{
+			if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
+				CE::GestorEscenas::Get().cambiarEscena("Bestiario"); 
 		}
 
 		for(auto &pais : paises)
@@ -312,6 +333,8 @@ namespace IVJ
 
 		CE::Render::Get().AddToDraw(fosiles->getComponente<CE::ISprite>()->m_sprite);
 		CE::Render::Get().AddToDraw(lab->getComponente<CE::ISprite>()->m_sprite);
+
+		CE::Render::Get().AddToDraw(bestiario->getRectangle());
 
 		CE::Render::Get().AddToDraw(iconoDinero->getComponente<CE::ISprite>()->m_sprite);
 		CE::Render::Get().AddToDraw(iconoDinero->getComponente<CE::ITexto>()->m_texto);

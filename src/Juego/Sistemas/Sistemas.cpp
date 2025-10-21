@@ -1,6 +1,9 @@
 #include "Sistemas.hpp"
-#include "../../Motor/Componentes/IComponentes.hpp"
 #include "../../Motor/Render/Render.hpp"
+#include "../../Motor/Utils/Vector2D.hpp"
+#include "../../Motor/Utils/Lerp.hpp"
+#include "../Objetos/Entidad.hpp"
+#include "../Figuras/Figuras.hpp"
 #include <cmath>
 
 namespace IVJ
@@ -17,6 +20,7 @@ namespace IVJ
 			}
 		}
 	}
+
 	void SistemaMovimientoRebote(std::vector<std::shared_ptr<CE::Objeto>> entes, float dt)
 	{
 		for(auto & e: entes)
@@ -190,5 +194,99 @@ namespace IVJ
 		if(hay_colision && resolucion)
 			*pa = prevA;
 		return hay_colision;
+	}
+
+	
+	void SistemaSpawn(std::vector<std::shared_ptr<CE::Objeto>>& spawns)
+	{
+		for(auto &s : spawns)
+		{
+			auto respawnData = s->getComponente<CE::IRespawn>();
+
+			if(!respawnData)
+				continue;
+
+			if(respawnData->num_objetos >= respawnData->max_objetos)
+				continue;
+
+			if(respawnData->timer_actual >= respawnData->timer_maximo)
+			{
+				//Crear objeto
+				auto malillo = std::make_shared<Entidad>();
+
+            	malillo->addComponente(std::make_shared<CE::ISprite>(
+            	    CE::GestorAssets::Get().getTextura("hoja_yellow"),
+            	    68,85,
+            	    1.0f
+            	));
+
+				auto comp = respawnData->prefab->getComponente<CE::ISprite>();
+
+				malillo->copyComponente<CE::ISprite>(comp);
+
+				//malillo->copyComponente<CE::IPaths>(respawnData->prefab->getComponente<CE::IPaths>());
+				
+				malillo->getStats()->hp = 100;
+				
+				int size_x = respawnData->width;
+				int size_y = respawnData->height;
+				float x0 = s->getTransformada()->posicion.x - size_x/2.f;
+				float y0 = s->getTransformada()->posicion.y - size_y/2.f;
+				float x = x0+rand()%size_x;
+				float y = y0+rand()%size_y;
+				
+				malillo->addComponente(std::make_shared<CE::IPaths>(200));
+        		auto path_enemies = malillo->getComponente<CE::IPaths>();
+        		path_enemies->addCurva(CE::Vector2D{x,y},CE::Vector2D{x-100.f,y-100.f},CE::Vector2D{x-300,y-300});
+				path_enemies->addCurva(CE::Vector2D{700.f,200.f},CE::Vector2D{600.f,500.f},CE::Vector2D{500.f,200.f});
+
+
+				malillo->setPosicion(x,y);
+				//spawns.push_back(malillo);
+				spawns.emplace_back(malillo);
+				
+				respawnData->timer_actual=0;
+				respawnData->num_objetos++;
+			}
+
+			respawnData->timer_actual++;
+		}
+	}
+	
+	void SistemaPaths(const std::vector<std::shared_ptr<CE::Objeto>>& obj)
+	{
+		for(auto & o : obj)
+		{
+			std::cout << o->tieneComponente<CE::IPaths>() << std::endl;
+			if(o->tieneComponente<CE::IPaths>())
+			{
+				auto *path = o->getComponente<CE::IPaths>();
+				int num_curvas = path->puntos.size()/3;
+				
+				std::cout << o << std::endl;
+				if(path->puntos.size() == 0) continue;
+				if(path->id_curva >= num_curvas) continue;
+				
+				//std::cout << path->puntos.size() <<"  " << path->id_curva << "   " << num_curvas << std::endl;
+					
+				float t = path->frame_actual_curva/(float)path->frame_total_curva;
+
+				CE::Vector2D P0 = path->puntos[0+path->id_curva*(path->offset)];
+				CE::Vector2D P1 = path->puntos[1+path->id_curva*(path->offset)];
+				CE::Vector2D P2 = path->puntos[2+path->id_curva*(path->offset)];
+
+				auto posiciones_actual = CE::lerp2(P0,P1,P2,t);
+				path->frame_actual_curva++;
+
+				o->setPosicion(posiciones_actual.x,posiciones_actual.y);
+				//std::cout << posiciones_actual.x << " " << posiciones_actual.y << std::endl;
+				
+				if(t==1)
+				{
+					path->id_curva++;
+					path->frame_actual_curva=0;
+				}
+			}
+		}
 	}
 }

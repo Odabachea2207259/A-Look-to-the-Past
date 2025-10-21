@@ -1,3 +1,0 @@
-C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/build/Debug/_deps/imgui-sfml-subbuild/CMakeFiles/imgui-sfml-populate.dir
-C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/build/Debug/_deps/imgui-sfml-subbuild/CMakeFiles/edit_cache.dir
-C:/Users/lalex/Documents/5to Semestre/Introduccion a los Videojuegos/CimaEngineV3_2/CimaEngineV3/build/Debug/_deps/imgui-sfml-subbuild/CMakeFiles/rebuild_cache.dir

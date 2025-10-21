@@ -6,6 +6,9 @@
 #include "BuffFSM.hpp"
 #include "DamageFSM.hpp"
 #include "MuerteFSM.hpp"
+#include "CambiarPaginaFSM.hpp"
+#include "CerrarFSM.hpp"
+#include "AbrirFSM.hpp"
 #include <nlohmann/json.hpp>
 #include <fstream>
 
@@ -37,6 +40,14 @@ namespace IVJ
 			return new DamageFSM();
 		else if(control.muerte)
 			return new MuerteFSM();
+		else if(control.nextPage)
+			return new CambiarPaginaFSM(true);
+		else if(control.prevPage)
+			return new CambiarPaginaFSM(false);
+		else if(control.cerrar)
+			return new CerrarFSM();
+		else if(control.abrir)
+			return new AbrirFSM();
 
 		return nullptr;
 	}
@@ -48,21 +59,26 @@ namespace IVJ
 		s_h = c_sprite->height;
 
 		json j;
+		json ub;
 
 		auto nombre = obj.toString();
 
-		std::ifstream file(ASSETS "/sprites_dinos/"+nombre+"/"+nombre+"_tex.json");
+		std::ifstream ubicaciones(ASSETS "/Ubicaciones.json");
+		ubicaciones >> ub;
+
+		std::string ubicacion = (obj.esDino) ? "/sprites_dinos/"+nombre+"/"+nombre+"_tex.json" : getUbicacion(ub,nombre);
+
+		std::ifstream file(ASSETS + ubicacion);
 
 		if(!file)
-		{
-			std::cerr << "No se pudo abrir el JSON\n";
-		}
+			std::cout << "Error\nNo se pudo abrir el archivo\n";
 
 		file >> j;
 
 		auto vectores = cargarSprites(j,"Idle");
+		max_frames = getMaxFrames(j,"Idle");
 
-		for(size_t i = 0; i < vectores.size() && i < 9; i++)
+		for(size_t i = 0; i < vectores.size() && i < max_frames; i++)
 			ani_frames[i] = vectores[i];
 
 		max_tiempo = 0.15f;
@@ -81,8 +97,8 @@ namespace IVJ
 			sprite->setTextureRect(
 			sf::IntRect{
 				{//posicion
-					(int)ani_frames[id_actual%9].x,
-					(int)ani_frames[id_actual%9].y
+					(int)ani_frames[id_actual%max_frames].x,
+					(int)ani_frames[id_actual%max_frames].y
 				},
 				{//tamaño
 					s_w,

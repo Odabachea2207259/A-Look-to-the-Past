@@ -45,12 +45,12 @@ namespace CE
 #if DEBUG
         ImGuiDockNodeFlags dockflags=  0;
 
-        if(ImGui::BeginMenuBar())
-        {
-            if(ImGui::Button("Archivos")){}
-            if(ImGui::Button("Edit")){}
-            ImGui::EndMenuBar();
-        }
+        //if(ImGui::BeginMenuBar())
+        //{
+        //    if(ImGui::Button("Archivos")){}
+        //    if(ImGui::Button("Edit")){}
+        //    ImGui::EndMenuBar();
+        //}
 #else
         ImGuiDockNodeFlags dockflags = ImGuiDockNodeFlags_PassthruCentralNode | ImGuiDockNodeFlags_AutoHideTabBar;
         

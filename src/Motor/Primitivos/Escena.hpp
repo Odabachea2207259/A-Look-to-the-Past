@@ -31,17 +31,18 @@ namespace CE
 		{
 			return objetos;
 		}
-            std::vector<sf::Keyboard::Scancode> 
-            getBotonesRegistrados()
+        
+		std::vector<sf::Keyboard::Scancode> 
+        getBotonesRegistrados()
+        {
+            std::vector<sf::Keyboard::Scancode> b;
+            b.reserve(botones.size());
+            for(auto k = botones.begin();k!=botones.end();k++)
             {
-                std::vector<sf::Keyboard::Scancode> b;
-                b.reserve(botones.size());
-                for(auto k = botones.begin();k!=botones.end();k++)
-                {
-                    b.emplace_back(k->first);
-                }
-                return b;
+                b.emplace_back(k->first);
             }
+            return b;
+        }
 	public:
 		HashBotones botones;
 		HashBotones gui;

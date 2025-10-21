@@ -6,6 +6,10 @@
 #include "../Utils/Vector2D.hpp"
 #include <map>
 
+namespace IVJ{
+	class Entidad;
+}
+
 namespace CE
 {
 	class IComponentes
@@ -113,6 +117,7 @@ namespace CE
             void setMat3(const std::string& key, sf::Glsl::Mat3* valor);
             void setMat4(const std::string& key, sf::Glsl::Mat4* valor);
             void setTextura(const std::string& key, sf::Texture* valor);
+            void cambiarShader(const std::string& vert, const std::string& frag);
         public:
             sf::Shader m_shader;
             std::string m_fragshaderFile;
@@ -138,6 +143,12 @@ namespace CE
 			bool damage; //Daño
 			bool muerte;
 			bool muerto;
+
+			bool nextPage;
+			bool prevPage;
+			bool abrir;
+			bool cerrar;
+			bool cambiar;
 	};
 	
 	class IBoundingBox : public IComponentes
@@ -146,5 +157,36 @@ namespace CE
 			explicit IBoundingBox(const Vector2D& dim);
 			Vector2D tam;
 			Vector2D mitad;
+	};
+
+	class IRespawn: public IComponentes
+	{
+		public:
+			IRespawn(int max, int w, int h, IVJ::Entidad *pre);
+			IRespawn(std::vector<std::shared_ptr<IComponentes>>& lista_comp,int max);
+
+			int timer_actual;
+			int timer_maximo;
+			int num_objetos;
+			int max_objetos;
+
+			IVJ::Entidad* prefab;
+			int width;
+			int height;
+			std::vector<std::shared_ptr<IComponentes>> componentes;
+	};
+
+	class IPaths : public IComponentes
+	{
+		public:
+			explicit IPaths(int total_frames);
+
+			void addCurva(Vector2D p1, Vector2D p2, Vector2D p3);
+		public:
+			std::vector<Vector2D> puntos;
+			int offset;
+			int frame_total_curva;
+			int frame_actual_curva; 
+			int id_curva;
 	};
 }

@@ -65,7 +65,8 @@ target_link_libraries(
 )
 
 if(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
-    add_compile_options((-ggdb -Wall -Wextra))
+    message("debug")
+    add_compile_options((-ggdb -Wall -g -Wextra))
 else()
     add_compile_options(-O2)
 endif()

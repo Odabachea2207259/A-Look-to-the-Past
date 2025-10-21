@@ -16,4 +16,6 @@ namespace IVJ
 	};
 
 	std::vector<CE::Vector2D> cargarSprites(const nlohmann::json& j, const std::string& prefijo);
+	int getMaxFrames(const nlohmann::json& j, const std::string& prefijo);
+	std::string getUbicacion(const nlohmann::json& j, const std::string& prefijo);
 }

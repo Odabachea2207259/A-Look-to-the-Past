@@ -14,6 +14,8 @@
 #include "Escenas/EscenaVictoria.hpp"
 #include "Escenas/EscenaDerrota.hpp"
 #include "Escenas/EscenaMejora.hpp"
+#include "Escenas/Escena_Zombie.hpp"
+#include "Escenas/EscenaBestiario.hpp"
 #include "Objetos/Jugador.hpp"
 #include "Objetos/Recompensas.hpp"
 #include "../Motor/Primitivos/GestorEscenas.hpp"
@@ -37,6 +39,9 @@ namespace IVJ
         Jugador::Get().GetNivel() = 1;
         Recompensas::Get().GetRecompensa() = Recompensas::Rewards::NADA;
 
+
+        //DESCOMENTAR
+        
 	    CE::GestorEscenas::Get().registrarEscena("Menu",std::make_shared<IVJ::Escena_Menu>());
 	    CE::GestorEscenas::Get().registrarEscena("Shaders",std::make_shared<EscenaShaders>());
         CE::GestorEscenas::Get().registrarEscena("Fosiles",std::make_shared<IVJ::EscenaFosiles>());
@@ -44,7 +49,14 @@ namespace IVJ
         CE::GestorEscenas::Get().registrarEscena("Victoria",std::make_shared<IVJ::EscenaVictoria>());
         CE::GestorEscenas::Get().registrarEscena("Derrota",std::make_shared<IVJ::EscenaDerrota>());
         CE::GestorEscenas::Get().registrarEscena("Mejora",std::make_shared<IVJ::EscenaMejora>());
+        CE::GestorEscenas::Get().registrarEscena("Bestiario",std::make_shared<IVJ::EscenaBestiario>());
+        
 	    CE::GestorEscenas::Get().cambiarEscena("Menu");
+        
+
+        //--------------------Escenas de clase-------------------------------------------->
+        //CE::GestorEscenas::Get().registrarEscena("Zombie",std::make_shared<IVJ::Escena_Zombie>());
+	    //CE::GestorEscenas::Get().cambiarEscena("Zombie");
 	    escena_actual = &CE::GestorEscenas::Get().getEscenaActual();
 
     }

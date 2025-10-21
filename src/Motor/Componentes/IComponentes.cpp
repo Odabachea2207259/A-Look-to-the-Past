@@ -38,13 +38,14 @@ namespace CE
 		//pivote
 		m_sprite.setOrigin({dim.x/2.f,dim.y/2.f});
 	}
+    
 	ISprite::ISprite(const sf::Texture& textura, int w, int h, float escala)
 	:IComponentes{},m_sprite{m_texture},m_texture{textura},width{w},height{h},escala{escala}
 	{
-		m_texture.setSmooth(true);
+		m_texture.setSmooth(false);
 		m_sprite.setTexture(m_texture);
 		m_sprite.setTextureRect(sf::IntRect{{0,0},{w,h}});
-		m_sprite.setScale({escala,escala});
+		m_sprite.setScale({escala,escala}); //-->checar
 		//pivote
 		m_sprite.setOrigin({w/2.f,h/2.f});
 	}
@@ -67,6 +68,27 @@ namespace CE
                 exit(EXIT_FAILURE);
         }
     }
+
+    void IShader::cambiarShader(const std::string& vert, const std::string& frag)
+    {
+        m_shader = sf::Shader(); //clear GPU
+        if(!vert.empty() && !frag.empty())
+        {
+            if(!m_shader.loadFromFile(vert,frag))
+                exit(EXIT_FAILURE);
+        }
+        else if(vert.empty())
+        {
+            if(!m_shader.loadFromFile(frag,sf::Shader::Type::Fragment))
+                exit(EXIT_FAILURE);
+        }else
+        {
+            if(!m_shader.loadFromFile(vert,sf::Shader::Type::Vertex))
+                exit(EXIT_FAILURE);
+        }
+
+    }
+
     void IShader::setEscalar(const std::string& key, float *valor)
     {
         m_vars[key]=std::pair<IShader::ShaderVars,void*>(IShader::ShaderVars::FLOAT,valor);
@@ -112,8 +134,36 @@ namespace CE
 		damage = false;
 		muerte = false;
 		muerto = false;
+
+        nextPage = false;
+        prevPage = false;
+        abrir = false;
+        cerrar = false;
+        cambiar = false;
 	}
     
     IBoundingBox::IBoundingBox(const Vector2D& dim)
     :tam{dim.x,dim.y},mitad{dim.x/2,dim.y/2}{}
+
+    IRespawn::IRespawn(std::vector<std::shared_ptr<IComponentes>>& lista_comp,int max)
+        :timer_actual{0},timer_maximo{max},componentes{lista_comp}{}
+
+    IRespawn::IRespawn(int max, int w, int h, IVJ::Entidad *pre)
+    :timer_actual{0},timer_maximo{max},width{w},height{h},max_objetos{1},num_objetos{0}
+    {
+        prefab = pre;
+    }
+
+    IPaths::IPaths(int total_frames)
+    :offset{3},frame_total_curva{total_frames},frame_actual_curva{0},id_curva{0}
+    {
+        
+    }
+
+    void IPaths::addCurva(Vector2D p1, Vector2D p2, Vector2D p3)
+    {
+        puntos.push_back(p1); //INICIO
+        puntos.push_back(p2); //PUNTO CONTROL
+        puntos.push_back(p3); //FINAL
+    }
 }
