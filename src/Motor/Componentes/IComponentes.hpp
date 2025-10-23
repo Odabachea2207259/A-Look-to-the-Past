@@ -4,10 +4,12 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include "../Utils/Vector2D.hpp"
+//#include "../../Juego/Estados/Estados.hpp"
 #include <map>
 
 namespace IVJ{
 	class Entidad;
+	class Estado;
 }
 
 namespace CE
@@ -37,6 +39,7 @@ namespace CE
 			Vector2D posicion;
 			Vector2D pos_prev;
 			Vector2D velocidad;
+			Vector2D pos_original;
 			float angulo;
 			int dirX = 1;
 			int dirY = 1;
@@ -143,12 +146,31 @@ namespace CE
 			bool damage; //Daño
 			bool muerte;
 			bool muerto;
+			bool accion;
 
 			bool nextPage;
 			bool prevPage;
 			bool abrir;
 			bool cerrar;
 			bool cambiar;
+	};
+
+	class IEstados : public IComponentes
+	{
+		public:
+			explicit IEstados(){}
+			std::vector<std::shared_ptr<IVJ::Estado>> estados;
+			bool dormido = false;
+            bool aturdido = false;
+
+			int cantidad = 0;
+	};
+
+	class IJugador : public IComponentes{
+		public:
+			explicit IJugador(){}
+			int dinoPuntos = 15;
+			float medidor = 0;
 	};
 	
 	class IBoundingBox : public IComponentes

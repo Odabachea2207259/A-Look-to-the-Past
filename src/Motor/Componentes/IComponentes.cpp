@@ -11,11 +11,12 @@ namespace CE
 	  :IComponentes{},
 	   posicion{Vector2D{0.f,0.f}},
 	   velocidad{Vector2D{0.f,0.f}},
+       pos_original{posicion},
 	   angulo{0}
 	{}
 
 	ITransform::ITransform(const Vector2D& pos, const Vector2D& vel, float ang)
-	  :IComponentes{}, posicion{pos},velocidad{vel},angulo{ang}
+	  :IComponentes{}, posicion{pos},velocidad{vel},angulo{ang},pos_original{pos}
 	{}
 
 	ITimer::ITimer()
@@ -134,6 +135,7 @@ namespace CE
 		damage = false;
 		muerte = false;
 		muerto = false;
+        accion = false;
 
         nextPage = false;
         prevPage = false;

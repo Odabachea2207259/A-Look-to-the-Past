@@ -4,6 +4,7 @@
 #include "../Estados/Estados.hpp"
 #include "../../Motor/Primitivos/Objetos.hpp"
 #include "../../Motor/Componentes/IComponentes.hpp"
+#include "../Sistemas/Sistemas.hpp"
 
 #include <ctime>
 
@@ -18,7 +19,7 @@ namespace IVJ
         EspecialBuff
     };
 
-    class Dinosaurio;
+    class Entidad;
     class Habilidad : public Rectangulo
     {
         public:
@@ -33,8 +34,8 @@ namespace IVJ
             bool seleccionado = false;
         
         public:
-            virtual bool accion(std::shared_ptr<IVJ::Dinosaurio> principal, std::shared_ptr<IVJ::Dinosaurio> target,float dt)=0;
-            virtual void realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target)=0;
+            virtual bool accion(std::shared_ptr<IVJ::Entidad> principal, std::shared_ptr<IVJ::Entidad> target,float dt)=0;
+            virtual void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target)=0;
     };
 
 /*---------------------------------------------------ATAQUES---------------------------------------------------*/
@@ -48,8 +49,8 @@ namespace IVJ
             }
         
         public:
-            void realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target)=0;
-            bool accion(std::shared_ptr<IVJ::Dinosaurio> principal, std::shared_ptr<IVJ::Dinosaurio> target,float dt);  
+            void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target)=0;
+            bool accion(std::shared_ptr<IVJ::Entidad> principal, std::shared_ptr<IVJ::Entidad> target,float dt);  
     };
 
     class Embestida : public Ataque
@@ -64,7 +65,7 @@ namespace IVJ
                 nombre->nombre = "Embestida";
             }
         public:
-            void realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target);
+            void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);
     };
 
     //Mordisco
@@ -80,7 +81,7 @@ namespace IVJ
                 nombre->nombre = "Mordisco";
             }
         public:
-            void realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target);
+            void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);
     };
 
     //SuperMordisco - Habilidad especial de Carnotauro
@@ -97,7 +98,7 @@ namespace IVJ
                 nombre->nombre = "SuperMordisco";
             }
         public:
-            void realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target);
+            void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);
     };
 
     //Cabezazo
@@ -113,7 +114,7 @@ namespace IVJ
                 nombre->nombre = "Cabezazo";
             }
         public:
-            void realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target);
+            void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);
     };
 
     //SuperCabezazo - HABILIDAD ESPECIAL DE PACHY
@@ -130,7 +131,7 @@ namespace IVJ
                 nombre->nombre = "SuperCabezazo";
             }
         public:
-            void realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target);   
+            void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);   
     };
 
     //Punzada
@@ -146,7 +147,7 @@ namespace IVJ
                 nombre->nombre = "Punzada";
             }
         public:
-            void realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target);
+            void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);
     };
 
     //SuperPunzada - Habilidad Especial de Centrosaurus
@@ -163,7 +164,7 @@ namespace IVJ
                 nombre->nombre = "SuperPunzada";
             }
         public:
-            void realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target);
+            void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);
     };
 
 /*------------------------------------------------------DEBUFFS-----------------------------------------------------------*/
@@ -177,8 +178,8 @@ namespace IVJ
             }
         
         public:
-            void realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target)=0;
-            bool accion(std::shared_ptr<IVJ::Dinosaurio> principal, std::shared_ptr<IVJ::Dinosaurio> target,float dt);   
+            void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target)=0;
+            bool accion(std::shared_ptr<IVJ::Entidad> principal, std::shared_ptr<IVJ::Entidad> target,float dt);   
     };
 
     //Rugido
@@ -193,7 +194,7 @@ namespace IVJ
                 nombre->nombre = "Rugido";
             }
         public:
-            void realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target);
+            void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);
     };
 
     //Canto
@@ -208,7 +209,7 @@ namespace IVJ
                 nombre->nombre = "Canto";
             }
         public:
-            void realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target);
+            void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);
     };
 
 /*---------------------------------------------------BUFFS---------------------------------------------------------------*/
@@ -222,8 +223,8 @@ namespace IVJ
             }
         
         public:
-            void realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target)=0;
-            bool accion(std::shared_ptr<IVJ::Dinosaurio> principal, std::shared_ptr<IVJ::Dinosaurio> target,float dt);   
+            void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target)=0;
+            bool accion(std::shared_ptr<IVJ::Entidad> principal, std::shared_ptr<IVJ::Entidad> target,float dt);   
     };
 
     class Valor : public Buff
@@ -237,7 +238,7 @@ namespace IVJ
                 nombre->nombre = "Valor";
             }
         public:
-            void realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target);
+            void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);
     };
 
     //Impulso
@@ -252,7 +253,7 @@ namespace IVJ
                 nombre->nombre = "Impulso";
             }
         public:
-            void realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target);
+            void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);
     };
 
     //Sanar
@@ -267,7 +268,7 @@ namespace IVJ
                 nombre->nombre = "Sanar";
             }
         public:
-            void realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target);
+            void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);
     };
 
     //Curar
@@ -282,7 +283,7 @@ namespace IVJ
                 nombre->nombre = "Curar";
             }
         public:
-            void realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target);
+            void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);
     };
 
     //Renacer - Habilidad especial de Parasaurolophus
@@ -298,7 +299,7 @@ namespace IVJ
                 nombre->nombre = "Renacer";
             }
         public:
-            void realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target);
+            void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);
     };
 
     //Adrenalina
@@ -313,7 +314,7 @@ namespace IVJ
                 nombre->nombre = "Adrenalina";
             }
         public:
-            void realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target);
+            void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);
     };
 
 }

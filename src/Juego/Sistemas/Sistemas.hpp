@@ -1,5 +1,6 @@
 #pragma once
 #include "../../Motor/Primitivos/Objetos.hpp"
+#include "../Objetos/Entidad.hpp"
 #include "../../Motor/Componentes/IComponentes.hpp"
 #include "../../Motor/Primitivos/GestorAssets.hpp"
 #include "../Figuras/Figuras.hpp"
@@ -18,4 +19,7 @@ namespace IVJ
 
 	[[maybe_unused]] void SistemaSpawn(std::vector<std::shared_ptr<CE::Objeto>>& spawns);
 	[[maybe_unused]] void SistemaPaths(const std::vector<std::shared_ptr<CE::Objeto>>& obj);
+
+	[[maybe_unused]] void SistemaQuitarVida(std::shared_ptr<IVJ::Entidad> target, float damage);
+	[[maybe_unused]] void SistemaAgregarVida(std::shared_ptr<IVJ::Entidad> target, float vida);
 }

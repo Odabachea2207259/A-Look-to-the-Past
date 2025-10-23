@@ -167,7 +167,7 @@ namespace IVJ
 	void EscenaShaders::actualizarMedidor()
 	{
 		auto dinoLider = Equipos::Get().GetDinoLider();
-		float porcentaje = dinoLider->medidor / dinoLider->habilidadEspecial->medidor;
+		float porcentaje = dinoLider->getComponente<CE::IJugador>()->medidor / dinoLider->habilidadEspecial->medidor;
 		porcentaje = std::min(porcentaje,1.f);
 		medidor->setTam(medidor->getWidth() * porcentaje,medidor->getHeight());
 	}
@@ -206,8 +206,10 @@ namespace IVJ
 
 		CE::Vector2D mousePos = CE::Render::Get().getMousePos();
 
-		if(actual->jugador && actual->estaVivo())
+		//if(actual->jugador && actual->estaVivo())
+		if(actual->tieneComponente<CE::IJugador>() && actual->estaVivo())
 		{
+			auto info = actual->getComponente<CE::IJugador>();
 			if(!habilidadActiva)
 			{
 				for(auto &boton:actual->movimientos)
@@ -215,12 +217,12 @@ namespace IVJ
 					if(boton->tipo == EspecialAtaque || boton->tipo == EspecialBuff)
 						if(actual != Equipos::Get().GetDinoLider())
 							continue;
-						else if(actual->medidor < boton->medidor)
+						else if(info->medidor < boton->medidor)
 						{
 							boton->setColor(sf::Color::Cyan);
 							continue;
 						}
-					if(boton->dinoPuntos <= actual->dinoPuntos && boton->rect_bounding.contains(sf::Vector2i(mousePos.x,mousePos.y)) || boton->seleccionado)
+					if(boton->dinoPuntos <= info->dinoPuntos && boton->rect_bounding.contains(sf::Vector2i(mousePos.x,mousePos.y)) || boton->seleccionado)
 					{
 						boton->setColor(sf::Color::Black);
 						auto texto = boton->getComponente<CE::ITexto>();
@@ -248,10 +250,10 @@ namespace IVJ
 					}
 					else
 					{
-						if((boton->tipo == EspecialAtaque || boton->tipo == EspecialBuff) && Equipos::Get().GetDinoLider()->medidor < boton->medidor) boton->setColor(sf::Color::White);
+						if((boton->tipo == EspecialAtaque || boton->tipo == EspecialBuff) && Equipos::Get().GetDinoLider()->getComponente<CE::IJugador>()->medidor < boton->medidor) boton->setColor(sf::Color::White);
 						else boton->setColor(sf::Color::Cyan);
 
-						if(boton->dinoPuntos > actual->dinoPuntos) boton->setColor(sf::Color::White);
+						if(boton->dinoPuntos > info->dinoPuntos) boton->setColor(sf::Color::White);
 						else{
 							switch(boton->tipo)
 							{
@@ -302,7 +304,7 @@ namespace IVJ
 								{
 									enemSelecc = enem;
 									habilidadActiva = true;
-									actual->accion = true;
+									c->accion = true;
 									break;
 								}
 								
@@ -343,7 +345,7 @@ namespace IVJ
 								{
 									playerSelecc = player;
 									habilidadActiva = true;
-									actual->accion = true;
+									c->accion = true;
 									break;
 								}
 								
@@ -365,7 +367,7 @@ namespace IVJ
 			if(!habilidadActiva)
 			{
 				habilidadActiva = true;
-				actual->accion = true;
+				c->accion = true;
 			}
 			
 			habilidadActiva = actual->turnoEnemigo(actual,Equipos::Get().GetPlayer(),Equipos::Get().GetEnemigos(),dt);
@@ -389,7 +391,8 @@ namespace IVJ
 			}
 		}
 
-		if(actual->jugador && actual->estaVivo() && enemSelecc)
+		//if(actual->jugador && actual->estaVivo() && enemSelecc)
+		if(actual->tieneComponente<CE::IJugador>() && actual->estaVivo() && enemSelecc)
 		{
 			habilidadActiva = habilidadSelecc->accion(actual,enemSelecc,dt);
 			
@@ -401,7 +404,8 @@ namespace IVJ
 				auto nombreEnem = enemSelecc->getNombre()->nombre;
 				sf::String n(nombreDino + "\na realizado\n" + nombreHabilidad + "\nen " + nombreEnem);
 				logText->m_texto.setString(n);
-				if(actual->jugador)
+				//if(actual->jugador)
+				if(actual->tieneComponente<CE::IJugador>())
 					logText->m_texto.setFillColor(sf::Color::Blue);
 
 				pSelecc = false;
@@ -413,7 +417,8 @@ namespace IVJ
 				cambiarTurno();
 			}
 		}
-		if(actual->jugador && actual->estaVivo() && playerSelecc)
+		//if(actual->jugador && actual->estaVivo() && playerSelecc)
+		if(actual->tieneComponente<CE::IJugador>() && actual->estaVivo() && playerSelecc)
 		{
 			habilidadActiva = habilidadSelecc->accion(actual,playerSelecc,dt);
 			
@@ -425,7 +430,8 @@ namespace IVJ
 				auto nombrePlayer = playerSelecc->getNombre()->nombre;
 				sf::String n(nombreDino + "\na realizado\n" + nombreHabilidad + "\nen " + nombrePlayer);
 				logText->m_texto.setString(n);
-				if(actual->jugador)
+				//if(actual->jugador)
+				if(actual->tieneComponente<CE::IJugador>())
 					logText->m_texto.setFillColor(sf::Color::Blue);
 				
 				pSelecc = false;
@@ -476,23 +482,34 @@ namespace IVJ
 		c->arr = false;
 
 		actual->turno = false;
-		actual->dormido = false;
-		actual->aturdido = false;
+		//actual->dormido = false;
+		//actual->aturdido = false;
+
+		auto estado_dino = actual->getComponente<CE::IEstados>();
+		estado_dino->dormido = false;
+		estado_dino->aturdido = false;
 		dinoTurno++;
 		if(dinoTurno >= cantDinos)
 			dinoTurno = 0;
 		
 		actual = turnos.at(dinoTurno);
 		if(actual->estaVivo()){
-			if(actual->jugador && actual == Equipos::Get().GetDinoLider()) Equipos::Get().GetDinoLider()->medidor += 10;
-			dinoPuntos->m_texto.setString(sf::String("DinoPuntos:\n"+std::to_string(actual->dinoPuntos)));
+			//if(actual->jugador && actual == Equipos::Get().GetDinoLider()) Equipos::Get().GetDinoLider()->medidor += 10;
+			//if(actual->tieneComponente<CE::IJugador>() && actual == Equipos::Get().GetDinoLider()) Equipos::Get().GetDinoLider()->getComponente<CE::IJugador>()->medidor += 10;
+			//dinoPuntos->m_texto.setString(sf::String("DinoPuntos:\n"+std::to_string(actual->getComponente<CE::IJugador>()->dinoPuntos)));
+
+			if(actual->tieneComponente<CE::IJugador>())
+			{
+				if(actual == Equipos::Get().GetDinoLider())Equipos::Get().GetDinoLider()->getComponente<CE::IJugador>()->medidor += 10;
+				dinoPuntos->m_texto.setString(sf::String("DinoPuntos:\n"+std::to_string(actual->getComponente<CE::IJugador>()->dinoPuntos)));
+			}
 			actual->habilidadSelecc = nullptr;
 			aplicarEstados();
 			c = actual->getComponente<CE::IControl>();
 			c->der = false;
 			c->izq = false;
-			if(actual->dormido || actual->aturdido || (actual->dinoPuntos <= 0 && !actual->tieneAtaquesGratis)) cambiarTurno();
-		}
+			if(actual->tieneComponente<CE::IJugador>() && actual->getComponente<CE::IJugador>()->dinoPuntos <= 0 && !actual->tieneAtaquesGratis) cambiarTurno();
+			if(actual->getComponente<CE::IEstados>()->dormido || actual->getComponente<CE::IEstados>()->aturdido) cambiarTurno();		}
 		else
 			cambiarTurno();
 	}
@@ -533,21 +550,21 @@ namespace IVJ
 
 	bool EscenaShaders::aplicarEstados()
 	{
-		if(actual->estados.empty()) return true;
+		auto estados = actual->getComponente<CE::IEstados>();
+		if(estados->estados.empty()) return true;
 
-		for(auto & estado : actual->estados)
+		for(auto & estado : estados->estados)
 		{
 			estado->aplicarEstado(actual);
-			if(!estado->permanente)
-				estado->turnos -= 1;
+			if(!estado->permanente) estado->turnos -= 1;
 		}
 
-		actual->estados.erase(
-		    std::remove_if(actual->estados.begin(), actual->estados.end(),
+		estados->estados.erase(
+		    std::remove_if(estados->estados.begin(), estados->estados.end(),
 		        [](const std::shared_ptr<Estado>& estado) {
 		            return estado->turnos <= 0;
 		        }),
-		    actual->estados.end());
+		    estados->estados.end());
 
 		return true;
 	}
@@ -574,7 +591,7 @@ namespace IVJ
 		{
 			if(npc->estaVivo())
 			{
-				for(auto & estado: npc->estados)
+				for(auto & estado: npc->getComponente<CE::IEstados>()->estados)
 					CE::Render::Get().AddToDraw(*estado);
 				CE::Render::Get().AddToDraw(npc->vida_max);
 				CE::Render::Get().AddToDraw(npc->vida);
@@ -585,7 +602,7 @@ namespace IVJ
 		{
 			if(player->estaVivo())
 			{
-				for(auto & estado: player->estados)
+				for(auto & estado: player->getComponente<CE::IEstados>()->estados)
 					CE::Render::Get().AddToDraw(*estado);
 				CE::Render::Get().AddToDraw(player->vida_max);
 				CE::Render::Get().AddToDraw(player->vida);
@@ -598,7 +615,8 @@ namespace IVJ
 			CE::Render::Get().AddToDraw(rectanguloDino);
 		}
 
-		if(actual->jugador)
+		//if(actual->jugador)
+		if(actual->tieneComponente<CE::IJugador>())
 		{
 			for(int i = 0; i < 4; i++)
 			{

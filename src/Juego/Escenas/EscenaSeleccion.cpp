@@ -22,7 +22,8 @@ namespace IVJ
             mostrarSelector = false;
             for(auto & dino : Jugador::Get().GetDinosaurios())
             {
-                dino->jugador = false;
+                //dino->jugador = false;
+				dino->eliminarComponente<CE::IJugador>();
                 dino->seleccion.setFillColor(sf::Color::Transparent);
                 dino->seleccion.setOutlineThickness(5.f);
                 dino->setPosicion(300.f*i,250.f*y);
@@ -73,7 +74,8 @@ namespace IVJ
 
         for(auto & dino : Jugador::Get().GetDinosaurios())
         {
-            dino->jugador = false;
+            //dino->jugador = false;
+			dino->eliminarComponente<CE::IJugador>();
             dino->seleccion.setFillColor(sf::Color::Transparent);
             dino->seleccion.setOutlineThickness(5.f);
             dino->setPosicion(300.f*i,250.f*y);
@@ -123,7 +125,8 @@ namespace IVJ
             
 			auto width = box->width*box->escala;
 			auto height = box->height*box->escala;
-            if(dino->jugador)
+            //if(dino->jugador)
+			if(dino->tieneComponente<CE::IJugador>())
             {
                 dino->seleccion.setOutlineColor(sf::Color::Red);
 				dino->seleccion.setSize(sf::Vector2f{width,height});
@@ -156,9 +159,11 @@ namespace IVJ
 			    }
 			    if(mousePrev)
 			    {
-                    if(dino->jugador)
+                    //if(dino->jugador)
+					if(dino->tieneComponente<CE::IJugador>())
                     {
-                        dino->jugador = false;
+                        //dino->jugador = false;
+						dino->eliminarComponente<CE::IJugador>();
                         dinosSeleccionados--;
                         dino->seleccion.setOutlineColor(sf::Color::Transparent);
                         int i = 0;
@@ -172,10 +177,11 @@ namespace IVJ
 							i++;
 						}
                     }
-                    else if(!dino->jugador && dinosSeleccionados < 3)
+                    else if(!dino->tieneComponente<CE::IJugador>() && dinosSeleccionados < 3)
                     {
                         c_dino->sacc = true;
-                        dino->jugador = true;
+                        //dino->jugador = true;
+						dino->addComponente(std::make_shared<CE::IJugador>());
                         dinosSeleccionados++;
                         Equipos::Get().GetPlayer().push_back(dino);
                     }
@@ -217,7 +223,8 @@ namespace IVJ
         for(auto & dino : Jugador::Get().GetDinosaurios())
         {
             CE::Render::Get().AddToDraw(dino->getComponente<CE::ISprite>()->m_sprite);
-            if(dino->jugador)
+            //if(dino->jugador)
+			if(dino->tieneComponente<CE::IJugador>())
             {
                 CE::Render::Get().AddToDraw(dino->seleccion);
             }

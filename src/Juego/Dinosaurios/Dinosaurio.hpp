@@ -1,9 +1,9 @@
 #pragma once
 #include "../Objetos/Entidad.hpp"
 #include "../Habilidades/Habilidad.hpp"
-#include "../Estados/Estados.hpp"
 #include "../../Motor/Primitivos/GestorAssets.hpp"
 #include "../../Motor/Componentes/IComponentes.hpp"
+//#include "../../Motor/Primitivos/Objetos.hpp"
 #include "../Componentes/IJComponentes.hpp"
 #include "../Maquinas/IdleFSM.hpp"
 
@@ -13,7 +13,7 @@
 namespace IVJ
 {
     class Habilidad;
-    class Estado;
+    //class Estado;
     class Dinosaurio : public Entidad
     {
         public:
@@ -26,23 +26,21 @@ namespace IVJ
                 vida.setSize(sf::Vector2f(100.f, 10.f));      // Al inicio, vida completa
                 vida.setFillColor(sf::Color::Green);
             }
-            float medidor = 0;
+            //float medidor = 0; // -> Componente
             /*int*/float nivel;
-            bool jugador = false;
+            //bool jugador = false; // -> Componente
             bool accion = false;
             bool turno = false;
-            bool dormido = false;
-            bool aturdido = false;
+            //bool dormido = false; // -> Componente
+            //bool aturdido = false; // -> Componente
             bool tieneAtaquesGratis = true;
             int numDino;
-            int dinoPuntos = 15;
+            //int dinoPuntos = 15; // -> Componente
             std::shared_ptr<Habilidad> habilidadSelecc;
             std::shared_ptr<Habilidad> habilidadEspecial;
-            
-            CE::Vector2D pos_original;
-            
+                        
             std::vector<std::shared_ptr<IVJ::Habilidad>> movimientos;
-            std::vector<std::shared_ptr<Estado>> estados;
+            //std::vector<std::shared_ptr<Estado>> estados;
             sf::RectangleShape vida;
             sf::RectangleShape vida_max;
 
@@ -71,15 +69,21 @@ namespace IVJ
             }
             void reiniciarDino()
             {
-                medidor = 0;
-                jugador = false;
-                accion = false;
+                //medidor = 0;
+                //jugador = false;
+                //accion = false;
+                this->eliminarComponente<CE::IJugador>();
                 turno = false;
-                dormido = false;
-                aturdido = false;
+                //dormido = false;
+                //aturdido = false;
 
                 reiniciarStats();
-                estados.clear();
+                //estados.clear();
+
+                auto estados = this->getComponente<CE::IEstados>();
+                estados->aturdido = false;
+                estados->dormido = false;
+                estados->estados.clear();
 
                 auto c = this->getComponente<CE::IControl>();
                 c->abj = false;
@@ -91,6 +95,7 @@ namespace IVJ
                 c->damage = false;
                 c->muerte = false;
                 c->muerto = false;
+                c->accion = false;
 
 		        auto &fsm_init = this->getComponente<IMaquinaEstado>()->fsm;
 		        fsm_init = std::make_shared<IdleFSM>();
@@ -103,12 +108,12 @@ namespace IVJ
                 porcentaje = std::max(0.f,porcentaje);
                 vida.setSize(sf::Vector2f(vida_max.getSize().x * porcentaje, 10.f));
             }
-            void quitarVida(float damage)
+            void quitarVida(float damage) //-> Sistema
             {
                 float realDamage = damage * std::pow(0.9,this->getStats()->def);
                 this->getStats()->hp -= realDamage;
             }
-            void agregarVida(float vida)
+            void agregarVida(float vida) // -> Sistema
             {
                 if(this->getStats()->hp + vida >= this->getStats()->hp_max)
                     this->getStats()->hp = this->getStats()->hp_max;
@@ -117,12 +122,12 @@ namespace IVJ
             }
             void setPosOriginal()
             {
-                pos_original = getTransformada()->posicion;
+                getTransformada()->pos_original = getTransformada()->posicion;
                 auto sprite = this->getComponente<CE::ISprite>();
                 auto width = sprite->width;
                 auto height = sprite->height;
-                vida.setPosition({pos_original.x - (width/8),pos_original.y-(height/4)});
-                vida_max.setPosition({pos_original.x - (width/8),pos_original.y-(height/4)});
+                vida.setPosition({getTransformada()->pos_original.x - (width/8),getTransformada()->pos_original.y-(height/4)});
+                vida_max.setPosition({getTransformada()->pos_original.x - (width/8),getTransformada()->pos_original.y-(height/4)});
             }
 
             void configurarVida(float vida)
@@ -151,6 +156,8 @@ namespace IVJ
 		        this->addComponente(std::make_shared<CE::ISprite>(CE::GestorAssets::Get().getTextura(nombre),w,h,escala));
                 this->addComponente(std::make_shared<CE::IControl>());
                 this->addComponente(std::make_shared<IVJ::IMaquinaEstado>());
+                this->addComponente(std::make_shared<CE::IEstados>());
+                //this->addComponente(std::make_shared<CE::IJugador>()); 
 		        auto &fsm_init = this->getComponente<IMaquinaEstado>()->fsm;
 		        fsm_init = std::make_shared<IdleFSM>();
 		        fsm_init->onEntrar(*this);

@@ -51,15 +51,18 @@ namespace CE
 		{
 			static_assert(std::is_base_of<IComponentes,T>::value,"Solo derivados de IComponentes");
 			int i = 0;
-			for(auto& c : componentes)
+			if(tieneComponente<T>())
 			{
-				T* comp = dynamic_cast<T*>(c.get());
-				if(comp!=nullptr)
-					break;
-				i++;
-			}
+				for(auto& c : componentes)
+				{
+					T* comp = dynamic_cast<T*>(c.get());
+					if(comp!=nullptr)
+						break;
+					i++;
+				}
 
-			componentes.erase(componentes.begin()+i);
+				componentes.erase(componentes.begin()+i);
+			}
 		};
 
 		static int getNumObjetos()

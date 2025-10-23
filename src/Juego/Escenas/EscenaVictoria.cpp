@@ -108,7 +108,7 @@ namespace IVJ
                     if(dino->estaVivo())
                     {
                         dino->getStats()->hp = dino->getStats()->hp_max;
-                        dino->dinoPuntos = 15;
+                        dino->getComponente<CE::IJugador>()->dinoPuntos = 15;
                     }
                 }
                 break;

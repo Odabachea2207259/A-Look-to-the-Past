@@ -15,11 +15,12 @@ namespace IVJ
 
     void Dinosaurio::mostrarEstados()
     {
-        if(!estados.empty())
+		auto estados = this->getComponente<CE::IEstados>();
+        if(getComponente<CE::IEstados>()->cantidad > 0)
         {
             int i = 0;
             
-            for(auto & estado : estados)
+            for(auto & estado : estados->estados)
             {
                 estado->setPosicion(vida_max.getPosition().x + (14*i),vida_max.getPosition().y + 15.f);
                 i++;

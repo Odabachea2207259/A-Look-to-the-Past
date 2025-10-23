@@ -289,4 +289,18 @@ namespace IVJ
 			}
 		}
 	}
+
+	void SistemaQuitarVida(std::shared_ptr<IVJ::Entidad> target, float damage)
+	{
+		float realDamage = damage * std::pow(0.9,target->getStats()->def);
+        target->getStats()->hp -= realDamage;
+	}
+
+	void SistemaAgregarVida(std::shared_ptr<IVJ::Entidad> target, float vida)
+	{
+        if(target->getStats()->hp + vida >= target->getStats()->hp_max)
+            target->getStats()->hp = target->getStats()->hp_max;
+        else   
+            target->getStats()->hp += vida;
+	}
 }

@@ -1,0 +1,78 @@
+{
+  "SubTexture": [
+    { "width": 416, "y": 0, "height": 207, "name": "Daño_0", "x": 832 },
+    { "width": 416, "y": 1449, "height": 207, "name": "Daño_1", "x": 1248 },
+    { "width": 416, "y": 207, "height": 207, "name": "Daño_2", "x": 1248 },
+    { "width": 416, "y": 414, "height": 207, "name": "Idle_0", "x": 416 },
+    { "width": 416, "y": 621, "height": 207, "name": "Idle_1", "x": 0 },
+    { "width": 416, "y": 621, "height": 207, "name": "Idle_2", "x": 1248 },
+    { "width": 416, "y": 828, "height": 207, "name": "Idle_3", "x": 832 },
+    { "width": 416, "y": 828, "height": 207, "name": "Idle_4", "x": 416 },
+    { "width": 416, "y": 0, "height": 207, "name": "Idle_5", "x": 416 },
+    { "width": 416, "y": 207, "height": 207, "name": "Idle_6", "x": 416 },
+    { "width": 416, "y": 828, "height": 207, "name": "Idle_7", "x": 1248 },
+    { "width": 416, "y": 1035, "height": 207, "name": "Idle_8", "x": 832 },
+    { "width": 416, "y": 1449, "height": 207, "name": "Mordisco_0", "x": 416 },
+    { "width": 416, "y": 621, "height": 207, "name": "Mordisco_1", "x": 832 },
+    { "width": 416, "y": 1035, "height": 207, "name": "Mordisco_2", "x": 1248 },
+    { "width": 416, "y": 207, "height": 207, "name": "SaltoRasguño_0", "x": 0 },
+    {
+      "width": 416,
+      "y": 1449,
+      "height": 207,
+      "name": "SaltoRasguño_1",
+      "x": 0
+    },
+    {
+      "width": 416,
+      "y": 1035,
+      "height": 207,
+      "name": "SaltoRasguño_2",
+      "x": 416
+    },
+    {
+      "width": 416,
+      "y": 1242,
+      "height": 207,
+      "name": "Movimiento_0",
+      "x": 416
+    },
+    {
+      "width": 416,
+      "y": 1449,
+      "height": 207,
+      "name": "Movimiento_1",
+      "x": 832
+    },
+    {
+      "width": 416,
+      "y": 1242,
+      "height": 207,
+      "name": "Movimiento_2",
+      "x": 832
+    },
+    { "width": 416, "y": 1242, "height": 207, "name": "Rasguño_0", "x": 1248 },
+    { "width": 416, "y": 0, "height": 207, "name": "Rasguño_1", "x": 0 },
+    { "width": 416, "y": 414, "height": 207, "name": "Rasguño_2", "x": 1248 },
+    { "width": 416, "y": 414, "height": 207, "name": "Rasguño_3", "x": 832 },
+    { "width": 416, "y": 207, "height": 207, "name": "Torpedo_0", "x": 832 },
+    { "width": 416, "y": 1035, "height": 207, "name": "Torpedo_1", "x": 0 },
+    { "width": 416, "y": 1242, "height": 207, "name": "Torpedo_2", "x": 0 },
+    { "width": 416, "y": 414, "height": 207, "name": "Torpedo_3", "x": 0 },
+    { "width": 416, "y": 0, "height": 207, "name": "Salto_0", "x": 1248 },
+    { "width": 416, "y": 828, "height": 207, "name": "Salto_1", "x": 0 },
+    { "width": 416, "y": 621, "height": 207, "name": "Salto_2", "x": 416 }
+  ],
+  "name": "Anteosaurus_tex",
+  "imagePath": "Anteosaurus_tex.png",
+  "maxFrames": [
+    { "name": "Daño", "max": 3 },
+    { "name": "Idle", "max": 9 },
+    { "name": "Mordisco", "max": 3 },
+    { "name": "SaltoRasguño", "max": 3 },
+    { "name": "Movimiento", "max": 3 },
+    { "name": "Rasguño", "max": 4 },
+    { "name": "Torpedo", "max": 4 },
+    { "name": "Salto", "max": 3 }
+  ]
+}

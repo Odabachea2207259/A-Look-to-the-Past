@@ -2,7 +2,7 @@
 namespace IVJ
 {
 /*----------------------------------------------------ACCION DE MOVIMIENTO DE CADA TIPO DE HABILIDAD------------------------------------------*/
-    bool Ataque::accion(std::shared_ptr<IVJ::Dinosaurio> principal, std::shared_ptr<IVJ::Dinosaurio> target, float dt)
+    bool Ataque::accion(std::shared_ptr<IVJ::Entidad> principal, std::shared_ptr<IVJ::Entidad> target, float dt)
     {
         auto c_principal = principal->getComponente<CE::IControl>();
         auto c_target = target->getComponente<CE::IControl>();
@@ -11,7 +11,7 @@ namespace IVJ
         auto trans_target = target->getTransformada();
 
         float velocidadDefault = 800.f;
-        if(principal->accion){        
+        if(c_principal->accion){        
 
             auto direccion = trans_target->posicion - trans_principal->posicion;
             if(trans_target->posicion.x > trans_principal->posicion.x)
@@ -41,13 +41,13 @@ namespace IVJ
             c_principal->acc = true;
             c_target->damage = true;
             realizarMov(principal,target);
-            principal->accion = false;
+            c_principal->accion = false;
         }
 
         if(c_principal->acc)
             return true;
 
-        auto pos_original = principal->pos_original;
+        auto pos_original = trans_principal->pos_original;
 
         auto direccion = pos_original - trans_principal->posicion;
 
@@ -79,14 +79,14 @@ namespace IVJ
         return false;
     }
 
-    bool Buff::accion(std::shared_ptr<IVJ::Dinosaurio> principal, std::shared_ptr<IVJ::Dinosaurio> target, float dt)
+    bool Buff::accion(std::shared_ptr<IVJ::Entidad> principal, std::shared_ptr<IVJ::Entidad> target, float dt)
     {
         auto c_principal = principal->getComponente<CE::IControl>();
 
-        if(principal->accion)
+        if(c_principal->accion)
         {
             c_principal->sacc = true;
-            principal->accion = false;
+            c_principal->accion = false;
         }
 
         if(c_principal->sacc)
@@ -96,15 +96,15 @@ namespace IVJ
         return false;
     }
 
-    bool Debuff::accion(std::shared_ptr<IVJ::Dinosaurio> principal, std::shared_ptr<IVJ::Dinosaurio> target, float dt)
+    bool Debuff::accion(std::shared_ptr<IVJ::Entidad> principal, std::shared_ptr<IVJ::Entidad> target, float dt)
     {
         auto c_principal = principal->getComponente<CE::IControl>();
         auto c_target = target->getComponente<CE::IControl>();
 
-        if(principal->accion) 
+        if(c_principal->accion) 
         {
             c_principal->sacc = true;
-            principal->accion = false;
+            c_principal->accion = false;
         }
 
         if(c_principal->sacc)
@@ -121,111 +121,167 @@ namespace IVJ
 
 /*-------------------------------------------------ATAQUES--------------------------------------------------------------------*/
 
-    void Embestida::realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target)
+    void Embestida::realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target)
     {
-        if(principal->jugador) principal->dinoPuntos -= this->dinoPuntos;
-        target->quitarVida(damage+principal->getStats()->str);
+        
+        //if(principal->jugador) principal->dinoPuntos -= this->dinoPuntos;
+        if(principal->tieneComponente<CE::IJugador>()) principal->getComponente<CE::IJugador>()->dinoPuntos -= this->dinoPuntos;
+        //target->quitarVida(damage+principal->getStats()->str);
+        SistemaQuitarVida(target,damage+principal->getStats()->str);
+        
     }
 
-    void Mordisco::realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target)
+    void Mordisco::realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target)
     {
-        if(principal->jugador) principal->dinoPuntos -= this->dinoPuntos;
-        target->quitarVida(damage+principal->getStats()->str);
+        
+        //if(principal->jugador) principal->dinoPuntos -= this->dinoPuntos;
+        if(principal->tieneComponente<CE::IJugador>()) principal->getComponente<CE::IJugador>()->dinoPuntos -= this->dinoPuntos;
+        //target->quitarVida(damage+principal->getStats()->str);
+        SistemaQuitarVida(target,damage+principal->getStats()->str);
+        
     }
 
-    void SuperMordisco::realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target)
+    void SuperMordisco::realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target)
     {
-        if(principal->jugador) principal->medidor = 0;
-        target->quitarVida(damage+principal->getStats()->str);
+        //if(principal->jugador) principal->medidor = 0;
+        if(principal->tieneComponente<CE::IJugador>()) principal->getComponente<CE::IJugador>()->dinoPuntos -= this->dinoPuntos;
+        //target->quitarVida(damage+principal->getStats()->str);
+        SistemaQuitarVida(target,damage+principal->getStats()->str);
     }
 
-    void Cabezazo::realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target)
+    void Cabezazo::realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target)
     {
-        if(principal->jugador) principal->dinoPuntos -= this->dinoPuntos;
-        target->quitarVida(damage+principal->getStats()->str);
+        //if(principal->jugador) principal->dinoPuntos -= this->dinoPuntos;
+        if(principal->tieneComponente<CE::IJugador>()) principal->getComponente<CE::IJugador>()->dinoPuntos -= this->dinoPuntos;
+        //target->quitarVida(damage+principal->getStats()->str);
+        SistemaQuitarVida(target,damage+principal->getStats()->str);
         //Aqui se haria algo como ponerle el estado de Aturdido
-        target->estados.push_back(std::make_shared<Aturdido>());
+        //target->estados.push_back(std::make_shared<Aturdido>());
+
+        auto estados = target->getComponente<CE::IEstados>();
+        estados->estados.push_back(std::make_shared<Aturdido>());
+        estados->cantidad++;
     }
 
-    void SuperCabezazo::realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target)
+    void SuperCabezazo::realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target)
     {
-        if(principal->jugador) principal->medidor = 0;
-        target->quitarVida(damage+principal->getStats()->str);
+        //if(principal->jugador) principal->medidor = 0;
+        if(principal->tieneComponente<CE::IJugador>()) principal->getComponente<CE::IJugador>()->dinoPuntos -= this->dinoPuntos;
+        //target->quitarVida(damage+principal->getStats()->str);
+        SistemaQuitarVida(target,damage+principal->getStats()->str);
         //Aqui se haria algo como ponerle el estado de Aturdido
         auto aturdido = std::make_shared<Aturdido>();
         aturdido->turnos = 5;
-        target->estados.push_back(aturdido);
+        //target->estados.push_back(aturdido);
+
+        auto estados = target->getComponente<CE::IEstados>();
+        estados->estados.push_back(aturdido);
+        estados->cantidad++;
     }
 
-    void Punzada::realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target)
+    void Punzada::realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target)
     {
-        if(principal->jugador) principal->dinoPuntos -= this->dinoPuntos;
-        target->quitarVida(damage+principal->getStats()->str);
+        //if(principal->jugador) principal->dinoPuntos -= this->dinoPuntos;
+        if(principal->tieneComponente<CE::IJugador>()) principal->getComponente<CE::IJugador>()->dinoPuntos -= this->dinoPuntos;
+        //target->quitarVida(damage+principal->getStats()->str);
+        SistemaQuitarVida(target,damage+principal->getStats()->str);
         //Aqui se haria algo como ponerle el estado de Sangrado
-        target->estados.push_back(std::make_shared<Sangrado>());
+        //target->estados.push_back(std::make_shared<Sangrado>());
+
+        auto estados = target->getComponente<CE::IEstados>();
+        estados->estados.push_back(std::make_shared<Sangrado>());
+        estados->cantidad++;
     }
 
-    void SuperPunzada::realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target)
+    void SuperPunzada::realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target)
     {
-        if(principal->jugador) principal->medidor = 0;
-        target->quitarVida(damage+principal->getStats()->str);
+        //if(principal->jugador) principal->medidor = 0;
+        if(principal->tieneComponente<CE::IJugador>()) principal->getComponente<CE::IJugador>()->medidor = 0;
+        //target->quitarVida(damage+principal->getStats()->str);
+        SistemaQuitarVida(target,damage+principal->getStats()->str);
         //Aqui se haria algo como ponerle el estado de Sangrado
-        target->estados.push_back(std::make_shared<Sangrado>());
+        //target->estados.push_back(std::make_shared<Sangrado>());
+
+        auto estados = target->getComponente<CE::IEstados>();
+        estados->estados.push_back(std::make_shared<Sangrado>());
+        estados->cantidad++;
     }
 
 /*-------------------------------------------------DEBUFFS--------------------------------------------------------------------*/
-    void Rugido::realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target)
+    void Rugido::realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target)
     {
-        if(principal->jugador) principal->dinoPuntos -= this->dinoPuntos;
+        //if(principal->jugador) principal->dinoPuntos -= this->dinoPuntos;
+        if(principal->tieneComponente<CE::IJugador>()) principal->getComponente<CE::IJugador>()->dinoPuntos -= this->dinoPuntos;
         target->getStats()->str -= 1.f;
         target->getStats()->def -= 1.f;
     }
 
-    void Canto::realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target)
+    void Canto::realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target)
     {
-        if(principal->jugador) principal->dinoPuntos -= this->dinoPuntos;
+        //if(principal->jugador) principal->dinoPuntos -= this->dinoPuntos;
+        if(principal->tieneComponente<CE::IJugador>()) principal->getComponente<CE::IJugador>()->dinoPuntos -= this->dinoPuntos;
         //Ponde Dormido
-        target->estados.push_back(std::make_shared<Dormido>());
+        //target->estados.push_back(std::make_shared<Dormido>());
+
+        auto estados = target->getComponente<CE::IEstados>();
+        estados->estados.push_back(std::make_shared<Dormido>());
+        estados->cantidad++;
     }
 /*-------------------------------------------------BUFFS--------------------------------------------------------------------*/
-    void Valor::realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target)
+    void Valor::realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target)
     {
-        if(principal->jugador) principal->dinoPuntos -= this->dinoPuntos;
+        //if(principal->jugador) principal->dinoPuntos -= this->dinoPuntos;
+        if(principal->tieneComponente<CE::IJugador>()) principal->getComponente<CE::IJugador>()->dinoPuntos -= this->dinoPuntos;
         target->getStats()->def += 1.f;
     }
 
-    void Impulso::realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target)
+    void Impulso::realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target)
     {
-        if(principal->jugador) principal->dinoPuntos -= this->dinoPuntos;
+        //if(principal->jugador) principal->dinoPuntos -= this->dinoPuntos;
+        if(principal->tieneComponente<CE::IJugador>()) principal->getComponente<CE::IJugador>()->dinoPuntos -= this->dinoPuntos;
         target->getStats()->agi += 1.f;
     }
 
-    void Sanar::realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target)
+    void Sanar::realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target)
     {
-        if(principal->jugador) principal->dinoPuntos -= this->dinoPuntos;
-        target->agregarVida(10.f);
+        //if(principal->jugador) principal->dinoPuntos -= this->dinoPuntos;
+        if(principal->tieneComponente<CE::IJugador>()) principal->getComponente<CE::IJugador>()->dinoPuntos -= this->dinoPuntos;
+        //target->agregarVida(10.f);
+        SistemaAgregarVida(target,10.f);
     }
 
-    void Curar::realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target)
+    void Curar::realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target)
     {
-        if(principal->jugador) principal->dinoPuntos -= this->dinoPuntos;
+        //if(principal->jugador) principal->dinoPuntos -= this->dinoPuntos;
+        if(principal->tieneComponente<CE::IJugador>()) principal->getComponente<CE::IJugador>()->dinoPuntos -= this->dinoPuntos;
         //Quita estados
-        target->estados.clear();
+        //target->estados.clear();
+
+        auto estados = target->getComponente<CE::IEstados>();
+        estados->estados.clear();
+        estados->cantidad = 0;
     }
 
-    void Renacer::realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target)
+    void Renacer::realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target)
     {
-        if(principal->jugador) principal->medidor = 0;
+        //if(principal->jugador) principal->medidor = 0;
+        if(principal->tieneComponente<CE::IJugador>()) principal->getComponente<CE::IJugador>()->medidor = 0;
         //Quita estados
-        target->estados.clear();
+        //target->estados.clear();
         target->getStats()->hp = target->getStats()->hp_max;
-        target->dinoPuntos = 15;
+        //target->dinoPuntos = 15;
+        target->getComponente<CE::IJugador>()->dinoPuntos = 15;
         //Poner estado de regenerar
+
+        auto estados = target->getComponente<CE::IEstados>();
+        estados->estados.clear();
+        estados->cantidad = 0;
     }
 
-    void Adrenalina::realizarMov(std::shared_ptr<IVJ::Dinosaurio> principal,std::shared_ptr<IVJ::Dinosaurio> target)
+    void Adrenalina::realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target)
     {
-        if(principal->jugador) principal->dinoPuntos -= this->dinoPuntos;
+        //if(principal->jugador) principal->dinoPuntos -= this->dinoPuntos;
+        if(principal->tieneComponente<CE::IJugador>()) principal->getComponente<CE::IJugador>()->dinoPuntos -= this->dinoPuntos;
         target->getStats()->str += 1.f;
         target->getStats()->def += 1.f;
         target->getStats()->agi += 1.f;

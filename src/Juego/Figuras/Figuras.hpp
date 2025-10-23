@@ -10,7 +10,7 @@ namespace IVJ
     public:
         explicit Figuras(int l, const sf::Color& relleno, const sf::Color& contorno);
         virtual ~Figuras() override{};
-	virtual float getArea()=0;
+		virtual float getArea()=0;
 	friend std::ostream& operator<<(std::ostream& os, const std::shared_ptr<Figuras>& fig)
 	{
 		os<<"Lados: "<< fig->lados<<

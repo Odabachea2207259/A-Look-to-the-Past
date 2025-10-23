@@ -12,12 +12,12 @@ namespace IVJ
     {
         int prob = rand() % 100 + 1;
         if(prob >= 50)
-            principal->dormido = true;
+            principal->getComponente<CE::IEstados>()->dormido = true;
         
     }
 
     void Aturdido::aplicarEstado(std::shared_ptr<Dinosaurio> principal)
     {
-        principal->aturdido = true;
+        principal->getComponente<CE::IEstados>()->aturdido = true;
     }
 }

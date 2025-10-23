@@ -30,7 +30,8 @@ namespace IVJ
 				nivelDino->m_texto.setPosition({360.f*i,150.f*y});
 				niveles.push_back(nivelDino);
 
-                dino->jugador = false;
+                //dino->jugador = false;
+				dino->eliminarComponente<CE::IJugador>();
                 dino->seleccion.setFillColor(sf::Color::Transparent);
                 dino->seleccion.setOutlineThickness(5.f);
                 dino->setPosicion(360.f*i,200.f*y);
@@ -93,7 +94,8 @@ namespace IVJ
 
 			niveles.push_back(nivelDino);
 
-            dino->jugador = false;
+            //dino->jugador = false;
+			dino->eliminarComponente<CE::IJugador>();
             dino->seleccion.setFillColor(sf::Color::Transparent);
             dino->seleccion.setOutlineThickness(5.f);
             dino->setPosicion(360.f*i,200.f*y);

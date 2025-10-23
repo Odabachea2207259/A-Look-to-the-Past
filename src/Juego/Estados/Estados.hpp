@@ -1,6 +1,7 @@
 #pragma once
 #include "../Figuras/Figuras.hpp"
 #include "../Dinosaurios/Dinosaurio.hpp"
+//#include "../../Motor/Componentes/IComponentes.hpp"
 
 namespace IVJ
 {
