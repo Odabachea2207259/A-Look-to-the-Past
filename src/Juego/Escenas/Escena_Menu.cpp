@@ -17,6 +17,23 @@ namespace IVJ
 	{
 		CE::GestorCamaras::Get().setCamaraActiva(0);
 
+		if((Jugador::Get().GetPeriodo() - periodo_prev) > 0){
+			for(int i = 0; i < (Jugador::Get().GetPeriodo() - periodo_prev); i++){
+				cuello.push_back(std::make_shared<CE::ISprite>(CE::GestorAssets::Get().getTextura("cuello"),91,90,0.5f));
+			}
+
+			periodo_prev = Jugador::Get().GetPeriodo();
+		}
+
+		switch(Jugador::Get().GetPeriodo()){
+			case 7:
+			case 10:
+				Jugador::Get().GetCheckpoint() = Jugador::Get().GetPeriodo();
+				break;
+		}
+
+		Jugador::Get().GetPeriodo() = Jugador::Get().GetCheckpoint(); 
+
 		if(!inicializar) return;
 
 		max_tiempo = 0.15f;
@@ -39,6 +56,8 @@ namespace IVJ
 		CE::GestorAssets::Get().agregarTextura("progreso", ASSETS "/iconos/progreso.png", CE::Vector2D{0,0},CE::Vector2D{1300,200});
 		CE::GestorAssets::Get().agregarTextura("fosiles",ASSETS "/iconos/Fosiles.png",CE::Vector2D{0,0},CE::Vector2D{273,112});
 		CE::GestorAssets::Get().agregarTextura("lab",ASSETS "/iconos/Lab.png",CE::Vector2D{0,0},CE::Vector2D{234,104});
+		CE::GestorAssets::Get().agregarTextura("craneo",ASSETS "/iconos/Craneo.png",CE::Vector2D{0,0},CE::Vector2D{167,109});
+		CE::GestorAssets::Get().agregarTextura("cuello",ASSETS "/iconos/Cuello.png",CE::Vector2D{0,0},CE::Vector2D{91,90});
 
 		CE::GestorAssets::Get().agregarTextura("Mapa_1", ASSETS "/fondo/MenuPrincipal-Mapa1.jpg",CE::Vector2D{0,0},CE::Vector2D{1600,1200});
 		CE::GestorAssets::Get().agregarTextura("Mapa_2", ASSETS "/fondo/MenuPrincipal-Mapa2.jpg",CE::Vector2D{0,0},CE::Vector2D{1600,1200});
@@ -96,6 +115,17 @@ namespace IVJ
 		textoDinero->m_texto.setCharacterSize(6);
 		textoDinero->m_texto.setFillColor(sf::Color::Black);
 
+		periodo = std::make_shared<Rectangulo>(0,0,sf::Color::Transparent,sf::Color::Transparent);
+		periodo->addComponente(std::make_shared<CE::ITexto>(
+			CE::GestorAssets::Get().getFont("Caveman"),
+			std::to_string(Jugador::Get().GetPeriodo())
+		));
+
+		auto textoPeriodo = periodo->getComponente<CE::ITexto>();
+		textoPeriodo->m_texto.setPosition(sf::Vector2f({73.f,100.f}));
+		textoPeriodo->m_texto.setCharacterSize(6);
+		textoPeriodo->m_texto.setFillColor(sf::Color::Black);
+
 		tooltip = std::make_shared<Rectangulo>(0,0,sf::Color(245,240,230),sf::Color(0,0,0,0));
 		tooltip->addComponente(std::make_shared<CE::ITexto>(
 			CE::GestorAssets::Get().getFont("Caveman"),
@@ -150,6 +180,10 @@ namespace IVJ
 		fondo_3 = std::make_shared<CE::ISprite>(CE::GestorAssets::Get().getTextura("Mapa_3"),1600,1200,0.7f);
 		fondo_3->m_sprite.setPosition(sf::Vector2f{(fondo_3->width*0.7f)/2,(fondo_3->height*0.7f)/2});
 
+		//cuello = std::make_shared<CE::ISprite>(CE::GestorAssets::Get().getTextura("cuello"),91,90,1.f);
+		craneo = std::make_shared<CE::ISprite>(CE::GestorAssets::Get().getTextura("craneo"),167,109,0.4f);
+		craneo->m_sprite.setPosition(sf::Vector2f{200.f,100.f});
+
 		//CE::GestorCamaras::Get().agregarCamara(std::make_shared<CE::CamaraLERP>(
 		//	CE::Vector2D{540,360},CE::Vector2D{300.f,150.f}
 		//));
@@ -162,6 +196,18 @@ namespace IVJ
 	{
 		auto textoDinero = iconoDinero->getComponente<CE::ITexto>();
 		textoDinero->m_texto.setString(std::to_string(Jugador::Get().GetDinero()));
+
+		auto textoPeriodo = periodo->getComponente<CE::ITexto>();
+		textoPeriodo->m_texto.setString(std::to_string(periodo_prev));
+
+		craneo->m_sprite.setPosition(sf::Vector2f{200.f + ((periodo_prev - 1) * 70.f),100.f});
+
+		int cant = 0;
+		for(auto &vertebra : cuello){
+			vertebra->m_sprite.setPosition(sf::Vector2f{200.f + (cant * 70.f),100.f});
+			cant++;
+		}
+
 		mouse = false;
 		auto mousePos = CE::Render::Get().getMousePos();
 		for(auto &f : objetos.getPool())
@@ -325,20 +371,28 @@ namespace IVJ
 			CE::Render::Get().AddToDraw(fondo_2->m_sprite);
 		else if(tres)
 			CE::Render::Get().AddToDraw(fondo_3->m_sprite);
-
-		//for(auto &f : objetos.getPool())
-		//	CE::Render::Get().AddToDraw(*f);
-
-		CE::Render::Get().AddToDraw(progreso->getComponente<CE::ISprite>()->m_sprite);
-
-		CE::Render::Get().AddToDraw(fosiles->getComponente<CE::ISprite>()->m_sprite);
-		CE::Render::Get().AddToDraw(lab->getComponente<CE::ISprite>()->m_sprite);
-
-		CE::Render::Get().AddToDraw(bestiario->getRectangle());
-
-		CE::Render::Get().AddToDraw(iconoDinero->getComponente<CE::ISprite>()->m_sprite);
-		CE::Render::Get().AddToDraw(iconoDinero->getComponente<CE::ITexto>()->m_texto);
 		
+			
+			//for(auto &f : objetos.getPool())
+			//	CE::Render::Get().AddToDraw(*f);
+			
+			CE::Render::Get().AddToDraw(progreso->getComponente<CE::ISprite>()->m_sprite);
+			
+			CE::Render::Get().AddToDraw(fosiles->getComponente<CE::ISprite>()->m_sprite);
+			CE::Render::Get().AddToDraw(lab->getComponente<CE::ISprite>()->m_sprite);
+			
+			CE::Render::Get().AddToDraw(bestiario->getRectangle());
+			
+			CE::Render::Get().AddToDraw(iconoDinero->getComponente<CE::ISprite>()->m_sprite);
+			CE::Render::Get().AddToDraw(iconoDinero->getComponente<CE::ITexto>()->m_texto);
+			
+			CE::Render::Get().AddToDraw(periodo->getComponente<CE::ITexto>()->m_texto);
+			
+			CE::Render::Get().AddToDraw(craneo->m_sprite);
+
+		for(auto &vertebra : cuello)
+			CE::Render::Get().AddToDraw(vertebra->m_sprite);
+
 		for(auto &pais : paises)
 			CE::Render::Get().AddToDraw(*pais);
 		

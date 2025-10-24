@@ -27,6 +27,10 @@ namespace IVJ
 			std::shared_ptr<Rectangulo> fosiles;
 			std::shared_ptr<Rectangulo> lab;
 			std::shared_ptr<Rectangulo> bestiario;
+			std::shared_ptr<Rectangulo> periodo;
+
+			std::vector<std::shared_ptr<CE::ISprite>> cuello;
+			std::shared_ptr<CE::ISprite> craneo;
 
 			std::shared_ptr<CE::ISprite> fondo_1;
 			bool uno = true;
@@ -34,6 +38,8 @@ namespace IVJ
 			bool dos = false;
 			std::shared_ptr<CE::ISprite> fondo_3;
 			bool tres = false;
+
+			int periodo_prev = 1;
 
 			float tiempo{};
 			float max_tiempo{};

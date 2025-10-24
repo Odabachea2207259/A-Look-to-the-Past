@@ -16,7 +16,8 @@ namespace IVJ
             bool permanente = false;
 
         public:
-            virtual void aplicarEstado(std::shared_ptr<IVJ::Dinosaurio> principal)=0;
+            //virtual void aplicarEstado(std::shared_ptr<IVJ::Dinosaurio> principal)=0;
+            virtual void aplicarEstado(std::shared_ptr<IVJ::Entidad> principal)=0;
     };
 
     class Sangrado : public Estado
@@ -29,7 +30,8 @@ namespace IVJ
                 permanente = true;
             }
 
-            void aplicarEstado(std::shared_ptr<IVJ::Dinosaurio> principal);
+            //void aplicarEstado(std::shared_ptr<IVJ::Dinosaurio> principal);
+            void aplicarEstado(std::shared_ptr<IVJ::Entidad> principal);
     };
 
     class Dormido : public Estado
@@ -42,7 +44,8 @@ namespace IVJ
                 permanente = true;
             }
 
-            void aplicarEstado(std::shared_ptr<IVJ::Dinosaurio> principal);
+            //void aplicarEstado(std::shared_ptr<IVJ::Dinosaurio> principal);
+            void aplicarEstado(std::shared_ptr<IVJ::Entidad> principal);
     };
 
     class Aturdido : public Estado
@@ -54,6 +57,7 @@ namespace IVJ
                 turnos = 2;
             }
 
-            void aplicarEstado(std::shared_ptr<IVJ::Dinosaurio> principal);
+            //void aplicarEstado(std::shared_ptr<IVJ::Dinosaurio> principal);
+            void aplicarEstado(std::shared_ptr<IVJ::Entidad> principal);
     };
 }

@@ -197,9 +197,7 @@ namespace IVJ
 					numDino = rand() % enemigos.size();
 					if(enemigos.at(numDino)->estaVivo()) break;
 				}
-			} while(true);
-			
-			std::cout << habilidadSelecc->getNombre()->nombre;
+			} while(true);			
 		}
 
 		if(habilidadSelecc->tipo == Attack || habilidadSelecc->tipo == Debuffeo)
@@ -266,9 +264,7 @@ namespace IVJ
 	
 					if(enemigos.at(numDino)->estaVivo()) break;
 				}
-			} while(true);
-			
-			std::cout << habilidadSelecc->getNombre()->nombre;
+			} while(true);			
 		}
 
 		if(habilidadSelecc->tipo == Attack || habilidadSelecc->tipo == Debuffeo)
@@ -312,9 +308,7 @@ namespace IVJ
 					numDino = rand() % enemigos.size();
 					if(enemigos.at(numDino)->estaVivo()) break;
 				}
-			} while(true);
-			
-			std::cout << habilidadSelecc->getNombre()->nombre;
+			} while(true);			
 		}
 
 		if(habilidadSelecc->tipo == Attack || habilidadSelecc->tipo == Debuffeo)
@@ -358,9 +352,7 @@ namespace IVJ
 					numDino = rand() % enemigos.size();
 					if(enemigos.at(numDino)->estaVivo()) break;
 				}
-			} while(true);
-			
-			std::cout << habilidadSelecc->getNombre()->nombre;
+			} while(true);			
 		}
 
 		if(habilidadSelecc->tipo == Attack || habilidadSelecc->tipo == Debuffeo)

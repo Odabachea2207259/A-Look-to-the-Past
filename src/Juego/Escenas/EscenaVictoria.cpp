@@ -77,6 +77,20 @@ namespace IVJ
         
         Jugador::Get().GetNivel() += 1;
 
+        if(Jugador::Get().GetPeriodo() < 7){
+            if(Jugador::Get().GetNivel() % 3 == 0)
+            {
+                Jugador::Get().GetPeriodo() += 1;
+                std::cout << "\nCambio de progreso\n";
+            }
+        } else if(Jugador::Get().GetPeriodo() < 10){
+            if(Jugador::Get().GetPeriodo() % 4 == 0)
+                Jugador::Get().GetNivel() += 1;
+        }else{
+            if(Jugador::Get().GetPeriodo() % 5 == 0)
+                Jugador::Get().GetNivel() += 1;
+        }
+
 		inicializar = false;
 	}
 

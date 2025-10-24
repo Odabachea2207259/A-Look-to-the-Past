@@ -2,13 +2,15 @@
 
 namespace IVJ
 {
-    void Sangrado::aplicarEstado(std::shared_ptr<Dinosaurio> principal)
+    //void Sangrado::aplicarEstado(std::shared_ptr<Dinosaurio> principal)
+    void Sangrado::aplicarEstado(std::shared_ptr<Entidad> principal)
     {
         //principal->quitarVida(principal->getStats()->hp * 0.2);
         principal->getStats()->hp -= principal->getStats()->hp * 0.2;
     }
 
-    void Dormido::aplicarEstado(std::shared_ptr<Dinosaurio> principal)
+    //void Dormido::aplicarEstado(std::shared_ptr<Dinosaurio> principal)
+    void Dormido::aplicarEstado(std::shared_ptr<Entidad> principal)
     {
         int prob = rand() % 100 + 1;
         if(prob >= 50)
@@ -16,7 +18,8 @@ namespace IVJ
         
     }
 
-    void Aturdido::aplicarEstado(std::shared_ptr<Dinosaurio> principal)
+    //void Aturdido::aplicarEstado(std::shared_ptr<Dinosaurio> principal)
+    void Aturdido::aplicarEstado(std::shared_ptr<Entidad> principal)
     {
         principal->getComponente<CE::IEstados>()->aturdido = true;
     }

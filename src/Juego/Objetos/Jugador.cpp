@@ -16,6 +16,8 @@ namespace IVJ
     {
         dinero = std::make_unique<int>(0);
         nivel = std::make_unique<int>(0);
+        periodo = std::make_unique<int>(1);
+        checkpoint = std::make_unique<int>(1);
         dinosaurios = std::make_unique<std::vector<std::shared_ptr<Dinosaurio>>>();
     }
 
@@ -33,6 +35,16 @@ namespace IVJ
     int& Jugador::GetNivel(void)
     {
         return *nivel;
+    }
+
+    int& Jugador::GetPeriodo(void)
+    {
+        return *periodo;
+    }
+
+    int& Jugador::GetCheckpoint(void)
+    {
+        return *checkpoint;
     }
 
     std::vector<std::shared_ptr<Dinosaurio>>& Jugador::GetDinosaurios() 

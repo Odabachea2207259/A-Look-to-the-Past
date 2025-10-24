@@ -14,12 +14,16 @@ namespace IVJ
             static void Terminar(void);
             int& GetDinero(void);
             int& GetNivel(void);
+            int& GetPeriodo(void);
+            int& GetCheckpoint(void);
             std::vector<std::shared_ptr<Dinosaurio>>& GetDinosaurios();
         private:
             Jugador();
             static inline Jugador* instancia =nullptr;
             std::unique_ptr<int> dinero;
             std::unique_ptr<int> nivel;
+            std::unique_ptr<int> periodo;
+            std::unique_ptr<int> checkpoint;
             std::unique_ptr<std::vector<std::shared_ptr<Dinosaurio>>> dinosaurios;
     };
 }
