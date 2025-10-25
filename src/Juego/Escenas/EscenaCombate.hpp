@@ -58,9 +58,8 @@ namespace IVJ
             void setBotonesFalso();
             void cambiarTurno();
             void ordenarTurnos();
-            void posicionarPlayer();
-            void posicionarEnemy();
             int revisarGanador();
             void actualizarMedidor();
+            void posicionarEntes();
     };
 }

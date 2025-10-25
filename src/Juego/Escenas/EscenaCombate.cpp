@@ -90,10 +90,9 @@ namespace IVJ
 
 		Equipos::Get().crearEnemigos();
 
-		posicionarEnemy();
-		posicionarPlayer();
-
 		ordenarTurnos();
+		posicionarEntes();
+
 
 		//turnos = IVJ::SistemaOrdenarTurnos(Equipos::Get().GetPlayer(),Equipos::Get().GetPlayer());
 		actual = turnos.at(dinoTurno);
@@ -106,44 +105,31 @@ namespace IVJ
 		inicializar = false;
 	}
 
-    void EscenaCombate::posicionarPlayer()
+	void EscenaCombate::posicionarEntes()
 	{
 		int dinoPlayer = 0;
-		for(auto & player : Equipos::Get().GetPlayer())
-		{
-			cantDinos++;
-			if(dinoPlayer == 0)
-				player->setPosicion(300.f,270.f);
-			else if(dinoPlayer == 1)
-				player->setPosicion(200.f,380.f);
-			else if(dinoPlayer == 2)
-				player->setPosicion(300.f,460.f);
-			player->setPosOriginal();
-
-			dinoPlayer++;
-			objetos.agregarPool(player);
-		}
-	}
-
-    void EscenaCombate::posicionarEnemy()
-	{
 		int dinoEnemy = 0;
-		for(auto & enemy : Equipos::Get().GetEnemigos())
+
+		float y[3] = {270.f, 380.f, 460.f};
+		float x[3] = {300.f,200.f,300.f};
+
+		for(auto & ente : turnos)
 		{
 			cantDinos++;
-			if(dinoEnemy == 0)
-				enemy->setPosicion(800.f,270.f);
-			else if(dinoEnemy == 1)
-				enemy->setPosicion(700.f,380.f);
-			else if(dinoEnemy == 2)
-				enemy->setPosicion(800.f,460.f);
-			enemy->setPosOriginal();
+			if(ente->tieneComponente<CE::IJugador>()){
+				ente->setPosicion(x[dinoPlayer],y[dinoPlayer]);
+				dinoPlayer++;
+			} else{
+				ente->setPosicion(x[dinoEnemy] + 500.f,y[dinoEnemy]);
+				dinoEnemy++;
+				
+				auto sprite = ente->getComponente<CE::ISprite>();
+				sprite->m_sprite.setScale({-sprite->escala,sprite->escala});
+			}
 
-			auto sprite = enemy->getComponente<CE::ISprite>();
-			sprite->m_sprite.setScale({-sprite->escala,sprite->escala});
-			objetos.agregarPool(enemy);
+			ente->setPosOriginal();
 
-			dinoEnemy++;
+			objetos.agregarPool(ente);
 		}
 	}
 
@@ -160,12 +146,6 @@ namespace IVJ
 		actualizarMedidor();
 		if(!actual->estaVivo())
 			cambiarTurno();
-
-		CE::GLogger::Get().agregarLog(actual->getNombre()->nombre + ":("+std::to_string(actual->getPosicion().x)+", "+std::to_string(actual->getPosicion().y) + ")",CE::GLogger::Niveles::LOG);
-		CE::GLogger::Get().agregarLog("HP->"+std::to_string(actual->getStats()->hp),CE::GLogger::Niveles::LOG);
-		CE::GLogger::Get().agregarLog("Str->"+std::to_string(actual->getStats()->str),CE::GLogger::Niveles::LOG);
-		CE::GLogger::Get().agregarLog("Agi->"+std::to_string(actual->getStats()->agi),CE::GLogger::Niveles::LOG);
-		CE::GLogger::Get().agregarLog("Def->"+std::to_string(actual->getStats()->def),CE::GLogger::Niveles::LOG);
 		
 		mouse = false;
 		auto c = actual->getComponente<CE::IControl>();
@@ -304,7 +284,6 @@ namespace IVJ
 		}
 		else
 		{
-			//if(!actual->estaVivo()) return;
 			if(!habilidadActiva)
 			{
 				habilidadActiva = true;
@@ -396,8 +375,6 @@ namespace IVJ
 		c->arr = false;
 
 		actual->turno = false;
-		//actual->dormido = false;
-		//actual->aturdido = false;
 
 		auto estado_dino = actual->getComponente<CE::IEstados>();
 		estado_dino->dormido = false;
@@ -408,21 +385,15 @@ namespace IVJ
 		
 		actual = turnos.at(dinoTurno);
 		if(actual->estaVivo()){
-			//if(actual->jugador && actual == Equipos::Get().GetDinoLider()) Equipos::Get().GetDinoLider()->medidor += 10;
-			//if(actual->tieneComponente<CE::IJugador>() && actual == Equipos::Get().GetDinoLider()) Equipos::Get().GetDinoLider()->getComponente<CE::IJugador>()->medidor += 10;
-			//dinoPuntos->m_texto.setString(sf::String("DinoPuntos:\n"+std::to_string(actual->getComponente<CE::IJugador>()->dinoPuntos)));
 
 			if(actual->tieneComponente<CE::IJugador>())
 			{
 				if(actual == Equipos::Get().GetDinoLider())Equipos::Get().GetDinoLider()->getComponente<CE::IJugador>()->medidor += 10;
 				dinoPuntos->m_texto.setString(sf::String("DinoPuntos:\n"+std::to_string(actual->getComponente<CE::IJugador>()->dinoPuntos)));
 			}
-			actual->habilidadSelecc = nullptr;
 
 			IVJ::SistemaAplicarEstados(actual);
-			c = actual->getComponente<CE::IControl>();
-			c->der = false;
-			c->izq = false;
+
 			if(actual->tieneComponente<CE::IJugador>() && actual->getComponente<CE::IJugador>()->dinoPuntos <= 0 && !actual->tieneAtaquesGratis) cambiarTurno();
 			if(actual->getComponente<CE::IEstados>()->dormido || actual->getComponente<CE::IEstados>()->aturdido) cambiarTurno();		}
 		else
@@ -440,30 +411,21 @@ namespace IVJ
 		std::sort(turnos.begin(),turnos.end(),[](const std::shared_ptr<Dinosaurio>& a, const std::shared_ptr<Dinosaurio>& b){
 			return a->getStats()->agi >= b->getStats()->agi;
 		});
-
-		for(auto& turno : turnos) std::cout << turno->getNombre()->nombre <<std::endl;
-		std::cout << std::endl;
 	}
 
 	int EscenaCombate::revisarGanador()
 	{
-		int player = 0;
-		for(auto & dino : Equipos::Get().GetPlayer())
-			if(dino->estaVivo()) player++;
+		int player = 0, enemy = 0;
 
-		if(player <= 0)
-			return -1;
-			//CE::GestorEscenas::Get().cambiarEscena("Derrota");
-		
-		int enemy = 0;
-		for(auto & dino : Equipos::Get().GetEnemigos())
-			if(dino->estaVivo()) enemy++;
+		for(auto & ente : turnos){
+			if(ente->tieneComponente<CE::IJugador>() && ente->estaVivo()) player++;
+			else if(ente->estaVivo()) enemy++;
+		}
 
-		if(enemy <= 0)
-			return 1;
-			//CE::GestorEscenas::Get().cambiarEscena("Victoria");
-		
-			return 0;
+		if(player <= 0) return -1;
+		if(enemy <= 0) return 1;
+
+		return 0;
 	}
 
 	void EscenaCombate::onInputs(const CE::Botones& accion){
@@ -484,25 +446,13 @@ namespace IVJ
 
 		CE::Render::Get().AddToDraw(fondo);
 
-		for(auto & npc:Equipos::Get().GetEnemigos())
+		for(auto & ente : turnos)
 		{
-			if(npc->estaVivo())
-			{
-				for(auto & estado: npc->getComponente<CE::IEstados>()->estados)
+			if(ente->estaVivo()){
+				for(auto & estado : ente->getComponente<CE::IEstados>()->estados)
 					CE::Render::Get().AddToDraw(*estado);
-				CE::Render::Get().AddToDraw(npc->vida_max);
-				CE::Render::Get().AddToDraw(npc->vida);
-			}
-		}
-
-		for(auto & player:Equipos::Get().GetPlayer())
-		{
-			if(player->estaVivo())
-			{
-				for(auto & estado: player->getComponente<CE::IEstados>()->estados)
-					CE::Render::Get().AddToDraw(*estado);
-				CE::Render::Get().AddToDraw(player->vida_max);
-				CE::Render::Get().AddToDraw(player->vida);
+				CE::Render::Get().AddToDraw(ente->vida_max);
+				CE::Render::Get().AddToDraw(ente->vida);
 			}
 		}
 
@@ -512,7 +462,6 @@ namespace IVJ
 			CE::Render::Get().AddToDraw(rectanguloDino);
 		}
 
-		//if(actual->jugador)
 		if(actual->tieneComponente<CE::IJugador>())
 		{
 			for(int i = 0; i < 4; i++)
