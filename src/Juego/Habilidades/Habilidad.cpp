@@ -166,7 +166,8 @@ namespace IVJ
     void SuperCabezazo::realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target)
     {
         //if(principal->jugador) principal->medidor = 0;
-        if(principal->tieneComponente<CE::IJugador>()) principal->getComponente<CE::IJugador>()->dinoPuntos -= this->dinoPuntos;
+        //if(principal->tieneComponente<CE::IJugador>()) principal->getComponente<CE::IJugador>()->dinoPuntos -= this->dinoPuntos;
+        if(principal->tieneComponente<CE::IJugador>()) principal->getComponente<CE::IJugador>()->medidor = 0;
         //target->quitarVida(damage+principal->getStats()->str);
         SistemaQuitarVida(target,damage+principal->getStats()->str);
         //Aqui se haria algo como ponerle el estado de Aturdido

@@ -4,6 +4,7 @@
 #include "../../Motor/Utils/Lerp.hpp"
 #include "../Objetos/Entidad.hpp"
 #include "../Figuras/Figuras.hpp"
+#include "../Estados/Estados.hpp"
 #include <cmath>
 
 namespace IVJ
@@ -302,5 +303,62 @@ namespace IVJ
             target->getStats()->hp = target->getStats()->hp_max;
         else   
             target->getStats()->hp += vida;
+	}
+
+	void SistemaAplicarEstados(std::shared_ptr<IVJ::Entidad> target)
+	{
+		auto estados = target->getComponente<CE::IEstados>();
+		if(estados->estados.empty()) return;
+
+		for(auto & estado : estados->estados)
+		{
+			estado->aplicarEstado(target);
+			if(!estado->permanente) estado->turnos -= 1;
+		}
+
+		estados->estados.erase(
+		    std::remove_if(estados->estados.begin(), estados->estados.end(),
+		        [](const std::shared_ptr<Estado>& estado) {
+		            return estado->turnos <= 0;
+		        }),
+		    estados->estados.end());
+
+		return;
+	}
+
+	std::vector<std::shared_ptr<IVJ::Entidad>> SistemaOrdenarTurnos(std::vector<std::shared_ptr<IVJ::Entidad>> jugador,std::vector<std::shared_ptr<IVJ::Entidad>> enemigos)
+	{	
+		std::vector<std::shared_ptr<IVJ::Entidad>> turnos;
+
+		for(auto & dino : jugador)
+			turnos.push_back(dino);
+		
+		for(auto & dino : enemigos)
+			turnos.push_back(dino);
+
+		std::sort(turnos.begin(),turnos.end(),[](const std::shared_ptr<Entidad>& a, const std::shared_ptr<Entidad>& b){
+			return a->getStats()->agi >= b->getStats()->agi;
+		});
+
+		for(auto& turno : turnos) std::cout << turno->getNombre()->nombre <<std::endl;
+		std::cout << std::endl;
+
+		return turnos;
+	}
+
+	void SistemaMostrarEstados(std::shared_ptr<IVJ::Entidad> target)
+	{
+		auto estados = target->getComponente<CE::IEstados>();
+        if(target->getComponente<CE::IEstados>()->cantidad > 0)
+        {
+            int i = 0;
+            
+            for(auto & estado : estados->estados)
+            {
+                //estado->setPosicion(vida_max.getPosition().x + (14*i),vida_max.getPosition().y + 15.f);
+                i++;
+                if(i >= 5) return;
+            }
+        }
 	}
 }

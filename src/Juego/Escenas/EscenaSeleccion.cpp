@@ -113,7 +113,7 @@ namespace IVJ
 		if(boton->rect_bounding.contains({static_cast<int>(mousePos.x),static_cast<int>(mousePos.y)}) && dinosSeleccionados > 0)
 		{
 			if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)){
-				CE::GestorEscenas::Get().cambiarEscena("Shaders");
+				CE::GestorEscenas::Get().cambiarEscena("Combate");
 			}
 		}
 

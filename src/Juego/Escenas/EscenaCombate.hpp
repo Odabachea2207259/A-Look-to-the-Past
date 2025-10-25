@@ -14,10 +14,10 @@
 #include <vector>
 namespace IVJ
 {
-    class EscenaShaders :public CE::Escena
+    class EscenaCombate :public CE::Escena
     {
         public:
-            EscenaShaders():CE::Escena{}{};
+            EscenaCombate():CE::Escena{}{};
             void onInit();
             void onFinal();
             void onUpdate(float dt);
@@ -53,8 +53,6 @@ namespace IVJ
             int cantDinos = 0;
             int dinoTurno = 0;
 
-            std::shared_ptr<IVJ::Entidad> argentino;
-
             std::vector<std::shared_ptr<Dinosaurio>> turnos;
         private:
             void setBotonesFalso();
@@ -63,7 +61,6 @@ namespace IVJ
             void posicionarPlayer();
             void posicionarEnemy();
             int revisarGanador();
-            bool aplicarEstados();
             void actualizarMedidor();
     };
 }

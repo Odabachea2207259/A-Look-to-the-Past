@@ -1,4 +1,4 @@
-#include "EscenaShaders.hpp"
+#include "EscenaCombate.hpp"
 #include "../Figuras/Figuras.hpp"
 #include "../../Motor/Camaras/CamarasGestor.hpp"
 #include "../../Motor/Render/Render.hpp"
@@ -16,7 +16,7 @@
 
 namespace IVJ
 {
-	void EscenaShaders::onInit()
+	void EscenaCombate::onInit()
 	{
 		objetos.getPool().clear();
 		cantDinos = 0;
@@ -94,28 +94,11 @@ namespace IVJ
 		posicionarPlayer();
 
 		ordenarTurnos();
+
+		//turnos = IVJ::SistemaOrdenarTurnos(Equipos::Get().GetPlayer(),Equipos::Get().GetPlayer());
 		actual = turnos.at(dinoTurno);
 		setBotonesFalso();
 
-		/*
-		argentino = std::make_shared<IVJ::Entidad>();
-
-		argentino->addComponente(std::make_shared<CE::ISprite>(
-			CE::GestorAssets::Get().getTextura("argentino"),
-			916,510,
-			2.f
-		));
-
-		argentino->addComponente(std::make_shared<CE::IControl>());
-		argentino->addComponente(std::make_shared<IVJ::IMaquinaEstado>());
-		auto &fsm_init = argentino->getComponente<IMaquinaEstado>()->fsm;
-		fsm_init = std::make_shared<IdleFSM>();
-		fsm_init->onEntrar(*argentino);
-
-		objetos.agregarPool(argentino);
-		*/
-
-		//CE::Vector2D{540,360},CE::Vector2D{1090.f,720.f}
 		CE::GestorCamaras::Get().agregarCamara(std::make_shared<CE::CamaraCuadro>(
 			CE::Vector2D{540,360},CE::Vector2D{100.f,50.f}
 		));
@@ -123,7 +106,7 @@ namespace IVJ
 		inicializar = false;
 	}
 
-    void EscenaShaders::posicionarPlayer()
+    void EscenaCombate::posicionarPlayer()
 	{
 		int dinoPlayer = 0;
 		for(auto & player : Equipos::Get().GetPlayer())
@@ -142,7 +125,7 @@ namespace IVJ
 		}
 	}
 
-    void EscenaShaders::posicionarEnemy()
+    void EscenaCombate::posicionarEnemy()
 	{
 		int dinoEnemy = 0;
 		for(auto & enemy : Equipos::Get().GetEnemigos())
@@ -164,15 +147,15 @@ namespace IVJ
 		}
 	}
 
-	void EscenaShaders::actualizarMedidor()
+	void EscenaCombate::actualizarMedidor()
 	{
 		auto dinoLider = Equipos::Get().GetDinoLider();
 		float porcentaje = dinoLider->getComponente<CE::IJugador>()->medidor / dinoLider->habilidadEspecial->medidor;
 		porcentaje = std::min(porcentaje,1.f);
 		medidor->setTam(medidor->getWidth() * porcentaje,medidor->getHeight());
 	}
-	void EscenaShaders::onFinal(){}
-	void EscenaShaders::onUpdate(float dt)
+	void EscenaCombate::onFinal(){}
+	void EscenaCombate::onUpdate(float dt)
 	{
 		actualizarMedidor();
 		if(!actual->estaVivo())
@@ -192,25 +175,19 @@ namespace IVJ
 			f->onUpdate(dt);
 		}
 
-		for(auto & enemy : Equipos::Get().GetEnemigos())
-		{
-			enemy->mostrarEstados();
-			enemy->actualizarVida();
-		}
-
-		for(auto & player : Equipos::Get().GetPlayer())
-		{
-			player->mostrarEstados();
-			player->actualizarVida();
+		for(auto & entidades : turnos){
+			entidades->mostrarEstados();
+			entidades->actualizarVida();
 		}
 
 		CE::Vector2D mousePos = CE::Render::Get().getMousePos();
 
-		//if(actual->jugador && actual->estaVivo())
-		if(actual->tieneComponente<CE::IJugador>() && actual->estaVivo())
+		//REVISAMOS SI EL ACTUAL ES UN DINO DEL JUGADOR
+		if(actual->tieneComponente<CE::IJugador>())
 		{
 			auto info = actual->getComponente<CE::IJugador>();
-			if(!habilidadActiva)
+
+			if(!habilidadActiva) //SI NO HAY HABILIDAD EN PROCESO
 			{
 				for(auto &boton:actual->movimientos)
 				{
@@ -222,16 +199,20 @@ namespace IVJ
 							boton->setColor(sf::Color::Cyan);
 							continue;
 						}
+					//SI LA HABILIDAD CUESTA MENOS QUE LA CANTIDAD DE PUNTOS DISPONIBLES Y ESTÁ DENTRO DE LOS LIMITES DEL MOUSE
+					//O SI YA FUE SELECCIONADA
 					if(boton->dinoPuntos <= info->dinoPuntos && boton->rect_bounding.contains(sf::Vector2i(mousePos.x,mousePos.y)) || boton->seleccionado)
 					{
-						boton->setColor(sf::Color::Black);
+						boton->setColor(sf::Color::Black); //CAMBIAMOS DE COLOR A NEGRO
 						auto texto = boton->getComponente<CE::ITexto>();
-						texto->m_texto.setFillColor(sf::Color::White);
+						texto->m_texto.setFillColor(sf::Color::White); //CAMBIAMOS DE TEXTO A BLANCO
+
+						//PREGUNTAMOS SI EL MOUSE FUE PRESIONADO
 						if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
 						{
-							habilidadSelecc = boton;
-							setBotonesFalso();
-							boton->seleccionado = true;
+							habilidadSelecc = boton; //SE SELECCIONA LA HABILIDAD
+							setBotonesFalso(); //SE PONEN TODOS LOS DEMÁS BOTONES DESELECCIONADOS
+							boton->seleccionado = true; //SE CAMBIA A QUE ESTE BOTÓN ESTÁ SELECCIONADO
 							
 							switch(boton->tipo){
 								case Attack:
@@ -248,12 +229,12 @@ namespace IVJ
 							}
 						}
 					}
-					else
+					else //SI EL BOTÓN NO ESTA SELECCIONADO O EL MOUSE NO ESTÁ ENCIMA
 					{
 						if((boton->tipo == EspecialAtaque || boton->tipo == EspecialBuff) && Equipos::Get().GetDinoLider()->getComponente<CE::IJugador>()->medidor < boton->medidor) boton->setColor(sf::Color::White);
 						else boton->setColor(sf::Color::Cyan);
 
-						if(boton->dinoPuntos > info->dinoPuntos) boton->setColor(sf::Color::White);
+						if(boton->dinoPuntos > info->dinoPuntos) boton->setColor(sf::Color::White); //SI AL JUGADOR YA NO LE ALCANZA, SE CAMBIA EL COLOR
 						else{
 							switch(boton->tipo)
 							{
@@ -275,21 +256,24 @@ namespace IVJ
 						auto texto = boton->getComponente<CE::ITexto>();
 						texto->m_texto.setFillColor(sf::Color::Black);		
 					}
-				
-					if(eSelecc && habilidadSelecc)
+					
+					if(habilidadSelecc)
 					{
-						for(auto& enem : Equipos::Get().GetEnemigos())
+						for(auto& entidad : turnos)
 						{
-							//auto box = enem->getComponente<CE::IBoundingBox>();
-							auto box = enem->getComponente<CE::ISprite>();
-							auto pos = enem->getPosicion();
-						
+							auto box = entidad->getComponente<CE::ISprite>();
+							auto pos = entidad->getPosicion();
+
 							auto width = box->width*box->escala;
 							auto height = box->height*box->escala;
+
 							sf::IntRect rect({static_cast<int>(pos.x-width/2),static_cast<int>(pos.y-height/2)},{static_cast<int>(width),static_cast<int>(height)});
-							
-							if(rect.contains(sf::Vector2i(mousePos.x,mousePos.y)) && enem->estaVivo())
+
+							if(rect.contains(sf::Vector2i(mousePos.x,mousePos.y)) && entidad->estaVivo())
 							{
+								if(pSelecc && !entidad->tieneComponente<CE::IJugador>()) continue;
+								if(eSelecc && entidad->tieneComponente<CE::IJugador>()) continue;
+
 								mouse = true;
 								mostrarSelector = true;
 								rectanguloDino.setSize(sf::Vector2f{width,height});
@@ -302,7 +286,8 @@ namespace IVJ
 								
 								if(botonMouseActual && !botonMouseAnterior)
 								{
-									enemSelecc = enem;
+									if(pSelecc) playerSelecc = entidad;
+									else if(eSelecc) enemSelecc = entidad;
 									habilidadActiva = true;
 									c->accion = true;
 									break;
@@ -311,51 +296,7 @@ namespace IVJ
 								botonMouseAnterior = botonMouseActual;
 							
 								break;
-							}
-							else{
-								mouse = false;
-							}
-						}
-					}
-					if(pSelecc && habilidadSelecc)
-					{
-						for(auto& player : Equipos::Get().GetPlayer())
-						{
-							//auto box = enem->getComponente<CE::IBoundingBox>();
-							auto box = player->getComponente<CE::ISprite>();
-							auto pos = player->getPosicion();
-						
-							auto width = box->width*box->escala;
-							auto height = box->height*box->escala;
-							sf::IntRect rect({static_cast<int>(pos.x-width/2),static_cast<int>(pos.y-height/2)},{static_cast<int>(width),static_cast<int>(height)});
-							
-							if(rect.contains(sf::Vector2i(mousePos.x,mousePos.y)) && player->estaVivo())
-							{
-								mouse = true;
-								mostrarSelector = true;
-								rectanguloDino.setSize(sf::Vector2f{width,height});
-								rectanguloDino.setPosition(sf::Vector2f{pos.x-width/2,pos.y-height/2});
-							
-								selector.setPosition({(pos.x-width/2) + (height - ancho) / 2.f,
-													(pos.y-width/2) - alto - 2});
-								
-								bool botonMouseActual = sf::Mouse::isButtonPressed(sf::Mouse::Button::Left);
-								
-								if(botonMouseActual && !botonMouseAnterior)
-								{
-									playerSelecc = player;
-									habilidadActiva = true;
-									c->accion = true;
-									break;
-								}
-								
-								botonMouseAnterior = botonMouseActual;
-							
-								break;
-							}
-							else{
-								mouse = false;
-							}
+							} else mouse = false;
 						}
 					}
 				}
@@ -363,7 +304,7 @@ namespace IVJ
 		}
 		else
 		{
-			if(!actual->estaVivo()) return;
+			//if(!actual->estaVivo()) return;
 			if(!habilidadActiva)
 			{
 				habilidadActiva = true;
@@ -391,22 +332,20 @@ namespace IVJ
 			}
 		}
 
-		//if(actual->jugador && actual->estaVivo() && enemSelecc)
-		if(actual->tieneComponente<CE::IJugador>() && actual->estaVivo() && enemSelecc)
+		if(actual->tieneComponente<CE::IJugador>() && actual->estaVivo() && (playerSelecc || enemSelecc))
 		{
-			habilidadActiva = habilidadSelecc->accion(actual,enemSelecc,dt);
-			
+			habilidadActiva = (playerSelecc) ? habilidadSelecc->accion(actual,playerSelecc,dt) : habilidadSelecc->accion(actual,enemSelecc,dt);
+
 			if(!habilidadActiva)
 			{
 				auto logText = log->getComponente<CE::ITexto>();
 				auto nombreDino = actual->getNombre()->nombre;
 				auto nombreHabilidad = habilidadSelecc->getNombre()->nombre;
-				auto nombreEnem = enemSelecc->getNombre()->nombre;
-				sf::String n(nombreDino + "\na realizado\n" + nombreHabilidad + "\nen " + nombreEnem);
+				auto nombreTarget = (playerSelecc) ? playerSelecc->getNombre()->nombre : enemSelecc->getNombre()->nombre;
+				sf::String n(nombreDino + "\na realizado\n" + nombreHabilidad + "\nen " + nombreTarget);
 				logText->m_texto.setString(n);
-				//if(actual->jugador)
-				if(actual->tieneComponente<CE::IJugador>())
-					logText->m_texto.setFillColor(sf::Color::Blue);
+
+				logText->m_texto.setFillColor(sf::Color::Blue);
 
 				pSelecc = false;
 				eSelecc = false;
@@ -417,32 +356,7 @@ namespace IVJ
 				cambiarTurno();
 			}
 		}
-		//if(actual->jugador && actual->estaVivo() && playerSelecc)
-		if(actual->tieneComponente<CE::IJugador>() && actual->estaVivo() && playerSelecc)
-		{
-			habilidadActiva = habilidadSelecc->accion(actual,playerSelecc,dt);
-			
-			if(!habilidadActiva)
-			{
-				auto logText = log->getComponente<CE::ITexto>();
-				auto nombreDino = actual->getNombre()->nombre;
-				auto nombreHabilidad = habilidadSelecc->getNombre()->nombre;
-				auto nombrePlayer = playerSelecc->getNombre()->nombre;
-				sf::String n(nombreDino + "\na realizado\n" + nombreHabilidad + "\nen " + nombrePlayer);
-				logText->m_texto.setString(n);
-				//if(actual->jugador)
-				if(actual->tieneComponente<CE::IJugador>())
-					logText->m_texto.setFillColor(sf::Color::Blue);
-				
-				pSelecc = false;
-				eSelecc = false;
-				enemSelecc = nullptr;
-				playerSelecc = nullptr;
-				habilidadSelecc = nullptr;
-				setBotonesFalso();
-				cambiarTurno();
-			}
-		}
+
 		if(!mouse)
 		{
 			mousePressed = false;
@@ -452,7 +366,7 @@ namespace IVJ
 		objetos.borrarPool();
 	}
 
-	void EscenaShaders::setBotonesFalso()
+	void EscenaCombate::setBotonesFalso()
 	{
 		for(auto& boton:actual->movimientos)
 			boton->seleccionado = false;
@@ -462,7 +376,7 @@ namespace IVJ
 		mostrarSelector = false;
 	}
 
-	void EscenaShaders::cambiarTurno()
+	void EscenaCombate::cambiarTurno()
 	{
 		actual->habilidadSelecc = nullptr;
 		habilidadSelecc = nullptr;
@@ -504,7 +418,8 @@ namespace IVJ
 				dinoPuntos->m_texto.setString(sf::String("DinoPuntos:\n"+std::to_string(actual->getComponente<CE::IJugador>()->dinoPuntos)));
 			}
 			actual->habilidadSelecc = nullptr;
-			aplicarEstados();
+
+			IVJ::SistemaAplicarEstados(actual);
 			c = actual->getComponente<CE::IControl>();
 			c->der = false;
 			c->izq = false;
@@ -514,7 +429,7 @@ namespace IVJ
 			cambiarTurno();
 	}
 
-	void EscenaShaders::ordenarTurnos()
+	void EscenaCombate::ordenarTurnos()
 	{
 		for(auto & dino : Equipos::Get().GetPlayer())
 			turnos.push_back(dino);
@@ -523,11 +438,14 @@ namespace IVJ
 			turnos.push_back(dino);
 
 		std::sort(turnos.begin(),turnos.end(),[](const std::shared_ptr<Dinosaurio>& a, const std::shared_ptr<Dinosaurio>& b){
-			return a->getStats()->agi > b->getStats()->agi;
+			return a->getStats()->agi >= b->getStats()->agi;
 		});
+
+		for(auto& turno : turnos) std::cout << turno->getNombre()->nombre <<std::endl;
+		std::cout << std::endl;
 	}
 
-	int EscenaShaders::revisarGanador()
+	int EscenaCombate::revisarGanador()
 	{
 		int player = 0;
 		for(auto & dino : Equipos::Get().GetPlayer())
@@ -548,28 +466,7 @@ namespace IVJ
 			return 0;
 	}
 
-	bool EscenaShaders::aplicarEstados()
-	{
-		auto estados = actual->getComponente<CE::IEstados>();
-		if(estados->estados.empty()) return true;
-
-		for(auto & estado : estados->estados)
-		{
-			estado->aplicarEstado(actual);
-			if(!estado->permanente) estado->turnos -= 1;
-		}
-
-		estados->estados.erase(
-		    std::remove_if(estados->estados.begin(), estados->estados.end(),
-		        [](const std::shared_ptr<Estado>& estado) {
-		            return estado->turnos <= 0;
-		        }),
-		    estados->estados.end());
-
-		return true;
-	}
-
-	void EscenaShaders::onInputs(const CE::Botones& accion){
+	void EscenaCombate::onInputs(const CE::Botones& accion){
 		if(accion.getTipo() == CE::Botones::TipoAccion::OnPress)
 		{
             if(accion.getNombre() == "menu")
@@ -577,7 +474,7 @@ namespace IVJ
 		}
 	}
 
-	void EscenaShaders::onRender()
+	void EscenaCombate::onRender()
 	{
 		for(auto &b :bg)
 			CE::Render::Get().AddToDraw(b);

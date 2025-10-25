@@ -20,27 +20,20 @@ namespace IVJ
             Dinosaurio(/*int*/float nivel) : nivel{nivel}{
                 esDino = true;
                 vida_max.setSize(sf::Vector2f(100.f, 10.f));  // Tamaño total de la barra
-                //vida_max.setFillColor(sf::Color::Red);
                 vida_max.setFillColor(sf::Color(0,0,0,100));
                 
                 vida.setSize(sf::Vector2f(100.f, 10.f));      // Al inicio, vida completa
                 vida.setFillColor(sf::Color::Green);
             }
-            //float medidor = 0; // -> Componente
             /*int*/float nivel;
-            //bool jugador = false; // -> Componente
-            bool accion = false;
             bool turno = false;
-            //bool dormido = false; // -> Componente
-            //bool aturdido = false; // -> Componente
+
             bool tieneAtaquesGratis = true;
             int numDino;
-            //int dinoPuntos = 15; // -> Componente
             std::shared_ptr<Habilidad> habilidadSelecc;
             std::shared_ptr<Habilidad> habilidadEspecial;
                         
             std::vector<std::shared_ptr<IVJ::Habilidad>> movimientos;
-            //std::vector<std::shared_ptr<Estado>> estados;
             sf::RectangleShape vida;
             sf::RectangleShape vida_max;
 
@@ -69,16 +62,10 @@ namespace IVJ
             }
             void reiniciarDino()
             {
-                //medidor = 0;
-                //jugador = false;
-                //accion = false;
                 this->eliminarComponente<CE::IJugador>();
                 turno = false;
-                //dormido = false;
-                //aturdido = false;
 
                 reiniciarStats();
-                //estados.clear();
 
                 auto estados = this->getComponente<CE::IEstados>();
                 estados->aturdido = false;
@@ -101,26 +88,14 @@ namespace IVJ
 		        fsm_init = std::make_shared<IdleFSM>();
 		        fsm_init->onEntrar(*this);
             }
-            void cambiarNivel(int nivel);
             void actualizarVida()
             {   
                 float porcentaje = this->getStats()->hp/this->getStats()->hp_max;
                 porcentaje = std::max(0.f,porcentaje);
                 vida.setSize(sf::Vector2f(vida_max.getSize().x * porcentaje, 10.f));
             }
-            void quitarVida(float damage) //-> Sistema
-            {
-                float realDamage = damage * std::pow(0.9,this->getStats()->def);
-                this->getStats()->hp -= realDamage;
-            }
-            void agregarVida(float vida) // -> Sistema
-            {
-                if(this->getStats()->hp + vida >= this->getStats()->hp_max)
-                    this->getStats()->hp = this->getStats()->hp_max;
-                else   
-                    this->getStats()->hp += vida;
-            }
-            void setPosOriginal()
+
+            void setPosOriginal() //--> se puede hacer sistema
             {
                 getTransformada()->pos_original = getTransformada()->posicion;
                 auto sprite = this->getComponente<CE::ISprite>();
@@ -163,7 +138,6 @@ namespace IVJ
 		        fsm_init->onEntrar(*this);
             }
 
-            bool aplicarEstados();
             virtual void agregarHabilidades(){};
             virtual bool turnoEnemigo(std::shared_ptr<Dinosaurio> actual,std::vector<std::shared_ptr<Dinosaurio>> player, std::vector<std::shared_ptr<Dinosaurio>> enemigos, float dt){return true;};
     };

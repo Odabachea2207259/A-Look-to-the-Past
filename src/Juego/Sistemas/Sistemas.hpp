@@ -20,6 +20,14 @@ namespace IVJ
 	[[maybe_unused]] void SistemaSpawn(std::vector<std::shared_ptr<CE::Objeto>>& spawns);
 	[[maybe_unused]] void SistemaPaths(const std::vector<std::shared_ptr<CE::Objeto>>& obj);
 
+
+	/*<----- SISTEMAS DE ENTIDADES (DINOS, ENEMIGOS, JEFES)*/
 	[[maybe_unused]] void SistemaQuitarVida(std::shared_ptr<IVJ::Entidad> target, float damage);
 	[[maybe_unused]] void SistemaAgregarVida(std::shared_ptr<IVJ::Entidad> target, float vida);
+	[[maybe_unused]] void SistemaAplicarEstados(std::shared_ptr<IVJ::Entidad> target);
+
+	[[maybe_unused]] void SistemaMostrarEstados(std::shared_ptr<IVJ::Entidad> target);
+
+	/*<----- SISTEMAS DE ESCENAS ------>*/
+	[[maybe_unused]] std::vector<std::shared_ptr<IVJ::Entidad>> SistemaOrdenarTurnos(std::vector<std::shared_ptr<IVJ::Entidad>> jugador,std::vector<std::shared_ptr<IVJ::Entidad>> enemigos);
 }

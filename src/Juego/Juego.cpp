@@ -8,7 +8,7 @@
 #include "../Motor/GUI/GLogger.hpp"
 #include "../Motor/Camaras/CamarasGestor.hpp"
 #include "Escenas/Escena_Menu.hpp"
-#include "Escenas/EscenaShaders.hpp"
+#include "Escenas/EscenaCombate.hpp"
 #include "Escenas/EscenaFosiles.hpp"
 #include "Escenas/EscenaSeleccion.hpp"
 #include "Escenas/EscenaVictoria.hpp"
@@ -43,7 +43,7 @@ namespace IVJ
         //DESCOMENTAR
         
 	    CE::GestorEscenas::Get().registrarEscena("Menu",std::make_shared<IVJ::Escena_Menu>());
-	    CE::GestorEscenas::Get().registrarEscena("Shaders",std::make_shared<EscenaShaders>());
+	    CE::GestorEscenas::Get().registrarEscena("Combate",std::make_shared<EscenaCombate>());
         CE::GestorEscenas::Get().registrarEscena("Fosiles",std::make_shared<IVJ::EscenaFosiles>());
         CE::GestorEscenas::Get().registrarEscena("Seleccion",std::make_shared<IVJ::EscenaSeleccion>());
         CE::GestorEscenas::Get().registrarEscena("Victoria",std::make_shared<IVJ::EscenaVictoria>());

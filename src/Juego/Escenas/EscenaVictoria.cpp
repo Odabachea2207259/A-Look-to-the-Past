@@ -67,7 +67,8 @@ namespace IVJ
 
         for(auto & dino : Equipos::Get().GetPlayer())
             if(dino->estaVivo())
-                dino->agregarVida(dino->getStats()->hp_max * 0.2);
+                //dino->agregarVida(dino->getStats()->hp_max * 0.2);
+                IVJ::SistemaAgregarVida(dino,dino->getStats()->hp_max * 0.2);
 
         
         ganancias += (Jugador::Get().GetNivel() * Equipos::Get().GetEnemigos().size()) * 5;
@@ -194,7 +195,7 @@ namespace IVJ
             boton->getComponente<CE::ITexto>()->m_texto.setFillColor(sf::Color(166, 134, 86));
             if (clicked)
             {
-                CE::GestorEscenas::Get().cambiarEscena("Shaders");
+                CE::GestorEscenas::Get().cambiarEscena("Combate");
             }
         }
         else

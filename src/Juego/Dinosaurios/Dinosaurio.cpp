@@ -3,16 +3,6 @@
 
 namespace IVJ
 {
-    void Dinosaurio::cambiarNivel(int nivel)
-    {
-        auto stats = this->getStats();
-        stats->hp *= nivel;
-        stats->hp_max *= nivel;
-        stats->str *= nivel;
-        stats->agi *= nivel;
-        stats->def *= nivel;
-    }
-
     void Dinosaurio::mostrarEstados()
     {
 		auto estados = this->getComponente<CE::IEstados>();
