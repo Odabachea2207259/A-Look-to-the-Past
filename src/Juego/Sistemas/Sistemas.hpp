@@ -8,6 +8,8 @@
 
 namespace IVJ
 {
+	class Dinosaurio;
+	
 	[[maybe_unused]] void SistemaMover(const std::vector<std::shared_ptr<CE::Objeto>>& entes, float dt);
 	[[maybe_unused]] void SistemaMovimientoEntes(std::vector<std::shared_ptr<CE::Objeto>> entes, float dt);
 	[[maybe_unused]] void SistemaMovimientoRebote(std::vector<std::shared_ptr<CE::Objeto>> entes, float dt);
@@ -27,6 +29,16 @@ namespace IVJ
 	[[maybe_unused]] void SistemaAplicarEstados(std::shared_ptr<IVJ::Entidad> target);
 
 	[[maybe_unused]] void SistemaMostrarEstados(std::shared_ptr<IVJ::Entidad> target);
+	[[maybe_unused]] void SistemaSetPosOriginal(std::shared_ptr<IVJ::Entidad> target);
+	[[maybe_unused]] void SistemaActualizarVida(std::shared_ptr<IVJ::Entidad> target);
+	[[maybe_unused]] void SistemaReiniciarStats(std::shared_ptr<IVJ::Entidad> target);
+	[[maybe_unused]] void SistemaReiniciarDino(std::shared_ptr<IVJ::Entidad> target);
+	[[maybe_unused]] void SistemaSubirNivel(std::shared_ptr<IVJ::Entidad> target);
+	[[maybe_unused]] void SistemaConfigurarStats(IVJ::Dinosaurio * const &target,float hp, float str, float agi, float def);
+
+	[[maybe_unused]] bool SistemaIA(std::shared_ptr<Entidad> actual,std::vector<std::shared_ptr<IVJ::Entidad>> player, std::vector<std::shared_ptr<IVJ::Entidad>> enemigos, float dt);
+	[[maybe_unused]] bool SistemaIA_Attack(std::shared_ptr<Entidad> actual,std::vector<std::shared_ptr<IVJ::Entidad>> player, std::vector<std::shared_ptr<IVJ::Entidad>> enemigos, float dt);
+	[[maybe_unused]] bool SistemaIA_Heal(std::shared_ptr<Entidad> actual,std::vector<std::shared_ptr<IVJ::Entidad>> player, std::vector<std::shared_ptr<IVJ::Entidad>> enemigos, float dt);
 
 	/*<----- SISTEMAS DE ESCENAS ------>*/
 	[[maybe_unused]] std::vector<std::shared_ptr<IVJ::Entidad>> SistemaOrdenarTurnos(std::vector<std::shared_ptr<IVJ::Entidad>> jugador,std::vector<std::shared_ptr<IVJ::Entidad>> enemigos);

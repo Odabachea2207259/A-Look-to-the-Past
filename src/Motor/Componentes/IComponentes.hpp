@@ -8,8 +8,13 @@
 #include <map>
 
 namespace IVJ{
+	enum TipoEnte{
+		Atacante,
+		Healer
+	};
 	class Entidad;
 	class Estado;
+	class Habilidad;
 }
 
 namespace CE
@@ -166,11 +171,47 @@ namespace CE
 			int cantidad = 0;
 	};
 
+	class IHabilidades : public IComponentes
+	{
+		public:
+			explicit IHabilidades(){}
+
+			std::vector<std::shared_ptr<IVJ::Habilidad>> movimientos;
+
+			std::shared_ptr<IVJ::Habilidad> habilidadSelecc;
+			std::shared_ptr<IVJ::Habilidad> habilidadEspecial;
+	};
+
 	class IJugador : public IComponentes{
 		public:
 			explicit IJugador(){}
 			int dinoPuntos = 15;
 			float medidor = 0;
+	};
+
+	class ISelectores : public IComponentes
+	{
+		public:
+			explicit ISelectores(){}
+
+			sf::RectangleShape vida;
+            sf::RectangleShape vida_max;
+
+            sf::RectangleShape seleccion;
+	};
+
+	class IPersonaje : public IComponentes
+	{
+		public:
+			explicit IPersonaje(){}
+
+		    /*int*/float nivel;
+            bool turno = false;
+
+            bool tieneAtaquesGratis = true;
+            int numDino;
+            
+            IVJ::TipoEnte tipo;
 	};
 	
 	class IBoundingBox : public IComponentes

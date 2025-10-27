@@ -24,10 +24,10 @@ namespace IVJ
             {
                 //dino->jugador = false;
 				dino->eliminarComponente<CE::IJugador>();
-                dino->seleccion.setFillColor(sf::Color::Transparent);
-                dino->seleccion.setOutlineThickness(5.f);
+                dino->getComponente<CE::ISelectores>()->seleccion.setFillColor(sf::Color::Transparent);
+                dino->getComponente<CE::ISelectores>()->seleccion.setOutlineThickness(5.f);
                 dino->setPosicion(300.f*i,250.f*y);
-                dino->setPosOriginal();
+				IVJ::SistemaSetPosOriginal(dino);
                 i++;
                 if(i%3==0)
                 {
@@ -76,10 +76,10 @@ namespace IVJ
         {
             //dino->jugador = false;
 			dino->eliminarComponente<CE::IJugador>();
-            dino->seleccion.setFillColor(sf::Color::Transparent);
-            dino->seleccion.setOutlineThickness(5.f);
+            dino->getComponente<CE::ISelectores>()->seleccion.setFillColor(sf::Color::Transparent);
+            dino->getComponente<CE::ISelectores>()->seleccion.setOutlineThickness(5.f);
             dino->setPosicion(300.f*i,250.f*y);
-            dino->setPosOriginal();
+			IVJ::SistemaSetPosOriginal(dino);
             i++;
             if(i%3==0)
             {
@@ -128,9 +128,9 @@ namespace IVJ
             //if(dino->jugador)
 			if(dino->tieneComponente<CE::IJugador>())
             {
-                dino->seleccion.setOutlineColor(sf::Color::Red);
-				dino->seleccion.setSize(sf::Vector2f{width,height});
-				dino->seleccion.setPosition(sf::Vector2f{pos.x-width/2,pos.y-height/2});
+                dino->getComponente<CE::ISelectores>()->seleccion.setOutlineColor(sf::Color::Red);
+				dino->getComponente<CE::ISelectores>()->seleccion.setSize(sf::Vector2f{width,height});
+				dino->getComponente<CE::ISelectores>()->seleccion.setPosition(sf::Vector2f{pos.x-width/2,pos.y-height/2});
             }
 			sf::IntRect rect({static_cast<int>(pos.x-width/2),static_cast<int>(pos.y-height/2)},{static_cast<int>(width),static_cast<int>(height)});
 			
@@ -165,7 +165,7 @@ namespace IVJ
                         //dino->jugador = false;
 						dino->eliminarComponente<CE::IJugador>();
                         dinosSeleccionados--;
-                        dino->seleccion.setOutlineColor(sf::Color::Transparent);
+                        dino->getComponente<CE::ISelectores>()->seleccion.setOutlineColor(sf::Color::Transparent);
                         int i = 0;
                         for(auto & equipo : Equipos::Get().GetPlayer())
 						{
@@ -226,7 +226,7 @@ namespace IVJ
             //if(dino->jugador)
 			if(dino->tieneComponente<CE::IJugador>())
             {
-                CE::Render::Get().AddToDraw(dino->seleccion);
+                CE::Render::Get().AddToDraw(dino->getComponente<CE::ISelectores>()->seleccion);
             }
         }
 

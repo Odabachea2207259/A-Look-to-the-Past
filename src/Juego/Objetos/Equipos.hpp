@@ -3,7 +3,8 @@
 #include "../../Motor/Utils/Utils.hpp"
 #include "../../Motor/Utils/Vector2D.hpp"
 #include "Jugador.hpp"
-#include "../Dinosaurios/Dinosaurio.hpp"
+//#include "../Dinosaurios/Dinosaurio.hpp"
+#include "../Objetos/Entidad.hpp"
 
 #include<memory>
 namespace IVJ
@@ -14,18 +15,18 @@ namespace IVJ
             static Equipos& Get(void);
             static void Terminar(void);
 
-            std::vector<std::shared_ptr<Dinosaurio>>& GetPlayer();
-            std::vector<std::shared_ptr<Dinosaurio>>& GetEnemigos();
+            std::vector<std::shared_ptr<IVJ::Entidad>>& GetPlayer();
+            std::vector<std::shared_ptr<IVJ::Entidad>>& GetEnemigos();
             std::shared_ptr<Habilidad> GetHabilidadEsp();
-            std::shared_ptr<Dinosaurio>& GetDinoLider();
+            std::shared_ptr<IVJ::Entidad>& GetDinoLider();
             
             void crearEnemigos();
         private:
             Equipos();
             static inline Equipos* instancia =nullptr;
-            std::unique_ptr<std::vector<std::shared_ptr<Dinosaurio>>> player;
-            std::unique_ptr<std::vector<std::shared_ptr<Dinosaurio>>> enemigos;
+            std::unique_ptr<std::vector<std::shared_ptr<IVJ::Entidad>>> player;
+            std::unique_ptr<std::vector<std::shared_ptr<IVJ::Entidad>>> enemigos;
             std::shared_ptr<Habilidad> habilidadEspecial;
-            std::shared_ptr<Dinosaurio> dinoLider;
+            std::shared_ptr<IVJ::Entidad> dinoLider;
     };
 }

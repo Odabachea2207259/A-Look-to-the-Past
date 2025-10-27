@@ -31,7 +31,7 @@ namespace IVJ
             bool mostrarSelector = false;
             sf::RectangleShape rectanguloDino;
             float ancho,alto;
-            std::shared_ptr<Dinosaurio> actual;
+            std::shared_ptr<IVJ::Entidad> actual;
             TileMap bg[4];
 	        sf::RectangleShape fondo;
             std::vector<std::shared_ptr<Rectangulo>> vector_botones;
@@ -42,8 +42,8 @@ namespace IVJ
             std::shared_ptr<IVJ::Rectangulo> nivelActual;
             std::shared_ptr<IVJ::Rectangulo> medidor;
 
-            std::shared_ptr<Dinosaurio> enemSelecc = nullptr;
-            std::shared_ptr<Dinosaurio> playerSelecc = nullptr;
+            std::shared_ptr<IVJ::Entidad> enemSelecc = nullptr;
+            std::shared_ptr<IVJ::Entidad> playerSelecc = nullptr;
             std::shared_ptr<Habilidad> habilidadSelecc = nullptr;
             bool habilidadActiva = false;
 
@@ -53,7 +53,7 @@ namespace IVJ
             int cantDinos = 0;
             int dinoTurno = 0;
 
-            std::vector<std::shared_ptr<Dinosaurio>> turnos;
+            std::vector<std::shared_ptr<Entidad>> turnos;
         private:
             void setBotonesFalso();
             void cambiarTurno();

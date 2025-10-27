@@ -95,7 +95,7 @@ namespace IVJ
 
 
 		//turnos = IVJ::SistemaOrdenarTurnos(Equipos::Get().GetPlayer(),Equipos::Get().GetPlayer());
-		actual = turnos.at(dinoTurno);
+		actual = turnos.at(dinoTurno); //---->revisar
 		setBotonesFalso();
 
 		CE::GestorCamaras::Get().agregarCamara(std::make_shared<CE::CamaraCuadro>(
@@ -127,7 +127,8 @@ namespace IVJ
 				sprite->m_sprite.setScale({-sprite->escala,sprite->escala});
 			}
 
-			ente->setPosOriginal();
+			//ente->setPosOriginal();
+			IVJ::SistemaSetPosOriginal(ente);
 
 			objetos.agregarPool(ente);
 		}
@@ -136,7 +137,7 @@ namespace IVJ
 	void EscenaCombate::actualizarMedidor()
 	{
 		auto dinoLider = Equipos::Get().GetDinoLider();
-		float porcentaje = dinoLider->getComponente<CE::IJugador>()->medidor / dinoLider->habilidadEspecial->medidor;
+		float porcentaje = dinoLider->getComponente<CE::IJugador>()->medidor / dinoLider->getComponente<CE::IHabilidades>()->habilidadEspecial->medidor;
 		porcentaje = std::min(porcentaje,1.f);
 		medidor->setTam(medidor->getWidth() * porcentaje,medidor->getHeight());
 	}
@@ -150,14 +151,22 @@ namespace IVJ
 		mouse = false;
 		auto c = actual->getComponente<CE::IControl>();
 
+		CE::GLogger::Get().agregarLog(std::to_string(actual->getComponente<CE::IPersonaje>()->nivel),CE::GLogger::Niveles::LOG_DEBUG);
+		CE::GLogger::Get().agregarLog(std::to_string(actual->getStats()->hp_max),CE::GLogger::Niveles::LOG_DEBUG);
+		CE::GLogger::Get().agregarLog(std::to_string(actual->getStats()->str_max),CE::GLogger::Niveles::LOG_DEBUG);
+		CE::GLogger::Get().agregarLog(std::to_string(actual->getStats()->def_max),CE::GLogger::Niveles::LOG_DEBUG);
+		CE::GLogger::Get().agregarLog(std::to_string(actual->getStats()->agi_max),CE::GLogger::Niveles::LOG_DEBUG);
+
 		for(auto &f: objetos.getPool())
 		{
 			f->onUpdate(dt);
 		}
 
 		for(auto & entidades : turnos){
-			entidades->mostrarEstados();
-			entidades->actualizarVida();
+			//entidades->mostrarEstados();
+			IVJ::SistemaMostrarEstados(entidades);
+			//entidades->actualizarVida();
+			IVJ::SistemaActualizarVida(entidades);
 		}
 
 		CE::Vector2D mousePos = CE::Render::Get().getMousePos();
@@ -169,7 +178,7 @@ namespace IVJ
 
 			if(!habilidadActiva) //SI NO HAY HABILIDAD EN PROCESO
 			{
-				for(auto &boton:actual->movimientos)
+				for(auto &boton:actual->getComponente<CE::IHabilidades>()->movimientos)
 				{
 					if(boton->tipo == EspecialAtaque || boton->tipo == EspecialBuff)
 						if(actual != Equipos::Get().GetDinoLider())
@@ -290,7 +299,8 @@ namespace IVJ
 				c->accion = true;
 			}
 			
-			habilidadActiva = actual->turnoEnemigo(actual,Equipos::Get().GetPlayer(),Equipos::Get().GetEnemigos(),dt);
+			//habilidadActiva = std::static_pointer_cast<IVJ::Dinosaurio>(actual)->turnoEnemigo(actual,Equipos::Get().GetPlayer(),Equipos::Get().GetEnemigos(),dt);
+			habilidadActiva = IVJ::SistemaIA(actual,Equipos::Get().GetPlayer(),Equipos::Get().GetEnemigos(),dt);
 
 			if(!habilidadActiva)
 			{
@@ -347,9 +357,9 @@ namespace IVJ
 
 	void EscenaCombate::setBotonesFalso()
 	{
-		for(auto& boton:actual->movimientos)
+		for(auto& boton:actual->getComponente<CE::IHabilidades>()->movimientos)
 			boton->seleccionado = false;
-		actual->habilidadEspecial->seleccionado = false;
+		actual->getComponente<CE::IHabilidades>()->habilidadEspecial->seleccionado = false;
 		eSelecc = false;
 		pSelecc = false;
 		mostrarSelector = false;
@@ -357,7 +367,7 @@ namespace IVJ
 
 	void EscenaCombate::cambiarTurno()
 	{
-		actual->habilidadSelecc = nullptr;
+		actual->getComponente<CE::IHabilidades>()->habilidadSelecc = nullptr;
 		habilidadSelecc = nullptr;
 		switch(revisarGanador()){
 			case -1:
@@ -374,7 +384,7 @@ namespace IVJ
 		c->abj = false;
 		c->arr = false;
 
-		actual->turno = false;
+		actual->getComponente<CE::IPersonaje>()->turno = false;
 
 		auto estado_dino = actual->getComponente<CE::IEstados>();
 		estado_dino->dormido = false;
@@ -394,7 +404,7 @@ namespace IVJ
 
 			IVJ::SistemaAplicarEstados(actual);
 
-			if(actual->tieneComponente<CE::IJugador>() && actual->getComponente<CE::IJugador>()->dinoPuntos <= 0 && !actual->tieneAtaquesGratis) cambiarTurno();
+			if(actual->tieneComponente<CE::IJugador>() && actual->getComponente<CE::IJugador>()->dinoPuntos <= 0 && !actual->getComponente<CE::IPersonaje>()->tieneAtaquesGratis) cambiarTurno();
 			if(actual->getComponente<CE::IEstados>()->dormido || actual->getComponente<CE::IEstados>()->aturdido) cambiarTurno();		}
 		else
 			cambiarTurno();
@@ -408,7 +418,7 @@ namespace IVJ
 		for(auto & dino : Equipos::Get().GetEnemigos())
 			turnos.push_back(dino);
 
-		std::sort(turnos.begin(),turnos.end(),[](const std::shared_ptr<Dinosaurio>& a, const std::shared_ptr<Dinosaurio>& b){
+		std::sort(turnos.begin(),turnos.end(),[](const std::shared_ptr<Entidad>& a, const std::shared_ptr<Entidad>& b){
 			return a->getStats()->agi >= b->getStats()->agi;
 		});
 	}
@@ -451,8 +461,8 @@ namespace IVJ
 			if(ente->estaVivo()){
 				for(auto & estado : ente->getComponente<CE::IEstados>()->estados)
 					CE::Render::Get().AddToDraw(*estado);
-				CE::Render::Get().AddToDraw(ente->vida_max);
-				CE::Render::Get().AddToDraw(ente->vida);
+				CE::Render::Get().AddToDraw(ente->getComponente<CE::ISelectores>()->vida_max);
+				CE::Render::Get().AddToDraw(ente->getComponente<CE::ISelectores>()->vida);
 			}
 		}
 
@@ -466,14 +476,14 @@ namespace IVJ
 		{
 			for(int i = 0; i < 4; i++)
 			{
-				CE::Render::Get().AddToDraw(*actual->movimientos.at(i));
-				CE::Render::Get().AddToDraw(actual->movimientos.at(i)->getComponente<CE::ITexto>()->m_texto);
+				CE::Render::Get().AddToDraw(*actual->getComponente<CE::IHabilidades>()->movimientos.at(i));
+				CE::Render::Get().AddToDraw(actual->getComponente<CE::IHabilidades>()->movimientos.at(i)->getComponente<CE::ITexto>()->m_texto);
 			}
 
 			if(actual == Equipos::Get().GetDinoLider())
 			{
-				CE::Render::Get().AddToDraw(*actual->habilidadEspecial);
-				CE::Render::Get().AddToDraw(actual->habilidadEspecial->getComponente<CE::ITexto>()->m_texto);
+				CE::Render::Get().AddToDraw(*actual->getComponente<CE::IHabilidades>()->habilidadEspecial);
+				CE::Render::Get().AddToDraw(actual->getComponente<CE::IHabilidades>()->habilidadEspecial->getComponente<CE::ITexto>()->m_texto);
 			}
 
 			CE::Render::Get().AddToDraw(dinoPuntos->m_texto);

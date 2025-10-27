@@ -39,7 +39,7 @@ namespace IVJ
         }
         
         for(auto & dino : Equipos::Get().GetPlayer())
-                dino->reiniciarDino();
+                IVJ::SistemaReiniciarDino(dino);
 
         int ganancias = Jugador::Get().GetNivel() * 5;
 

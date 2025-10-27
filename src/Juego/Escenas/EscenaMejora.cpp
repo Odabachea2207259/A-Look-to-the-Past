@@ -32,10 +32,10 @@ namespace IVJ
 
                 //dino->jugador = false;
 				dino->eliminarComponente<CE::IJugador>();
-                dino->seleccion.setFillColor(sf::Color::Transparent);
-                dino->seleccion.setOutlineThickness(5.f);
+                dino->getComponente<CE::ISelectores>()->seleccion.setFillColor(sf::Color::Transparent);
+                dino->getComponente<CE::ISelectores>()->seleccion.setOutlineThickness(5.f);
                 dino->setPosicion(360.f*i,200.f*y);
-                dino->setPosOriginal();
+				IVJ::SistemaSetPosOriginal(dino);
                 i++;
                 if(i%3==0)
                 {
@@ -96,10 +96,10 @@ namespace IVJ
 
             //dino->jugador = false;
 			dino->eliminarComponente<CE::IJugador>();
-            dino->seleccion.setFillColor(sf::Color::Transparent);
-            dino->seleccion.setOutlineThickness(5.f);
+            dino->getComponente<CE::ISelectores>()->seleccion.setFillColor(sf::Color::Transparent);
+            dino->getComponente<CE::ISelectores>()->seleccion.setOutlineThickness(5.f);
             dino->setPosicion(360.f*i,200.f*y);
-            dino->setPosOriginal();
+			IVJ::SistemaSetPosOriginal(dino);
             i++;
             if(i%3==0)
             {
@@ -118,7 +118,7 @@ namespace IVJ
 		int i = 0;
 		for(auto & dino : Jugador::Get().GetDinosaurios())
 		{
-			niveles.at(i)->m_texto.setString("Nivel " + std::to_string(dino->nivel));
+			niveles.at(i)->m_texto.setString("Nivel " + std::to_string(dino->getComponente<CE::IPersonaje>()->nivel));
 			i++;
 		}
 	}
@@ -136,19 +136,19 @@ namespace IVJ
 		CE::Vector2D mousePos = CE::Render::Get().getMousePos();
 
         auto texto = boton->getComponente<CE::ITexto>();
-		if(dinosSeleccionados <= 0 || Jugador::Get().GetDinero() < dinoSelecc->nivel*precioMejora)
+		if(dinosSeleccionados <= 0 || Jugador::Get().GetDinero() < dinoSelecc->getComponente<CE::IPersonaje>()->nivel*precioMejora)
         {
             texto->m_texto.setString("Mejora");
 			boton->setColor(sf::Color(255,0,0,100));
         }
 		else
         {
-            sf::String mensaje(std::to_string(dinoSelecc->nivel*precioMejora));
+            sf::String mensaje(std::to_string(dinoSelecc->getComponente<CE::IPersonaje>()->nivel*precioMejora));
             texto->m_texto.setString(mensaje);
 			boton->setColor(sf::Color(255,0,0,255));
         }
 
-		if(boton->rect_bounding.contains({static_cast<int>(mousePos.x),static_cast<int>(mousePos.y)}) && dinosSeleccionados > 0 && Jugador::Get().GetDinero() >= dinoSelecc->nivel*precioMejora)
+		if(boton->rect_bounding.contains({static_cast<int>(mousePos.x),static_cast<int>(mousePos.y)}) && dinosSeleccionados > 0 && Jugador::Get().GetDinero() >= dinoSelecc->getComponente<CE::IPersonaje>()->nivel*precioMejora)
 		{
             if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
 			{
@@ -166,8 +166,9 @@ namespace IVJ
 
             if(mousePrev)
             {
-                Jugador::Get().GetDinero() -= (dinoSelecc->nivel*precioMejora);
-                dinoSelecc->subirNivel();
+                Jugador::Get().GetDinero() -= (dinoSelecc->getComponente<CE::IPersonaje>()->nivel*precioMejora);
+                //dinoSelecc->subirNivel();
+				IVJ::SistemaSubirNivel(dinoSelecc);
 				mousePrev = false;
 				return;
             }
@@ -181,9 +182,9 @@ namespace IVJ
             
 			auto width = box->width*box->escala;
 			auto height = box->height*box->escala;
-            dinoSelecc->seleccion.setOutlineColor(sf::Color::Red);
-			dinoSelecc->seleccion.setSize(sf::Vector2f{width,height});
-			dinoSelecc->seleccion.setPosition(sf::Vector2f{pos.x-width/2,pos.y-height/2});
+            dinoSelecc->getComponente<CE::ISelectores>()->seleccion.setOutlineColor(sf::Color::Red);
+			dinoSelecc->getComponente<CE::ISelectores>()->seleccion.setSize(sf::Vector2f{width,height});
+			dinoSelecc->getComponente<CE::ISelectores>()->seleccion.setPosition(sf::Vector2f{pos.x-width/2,pos.y-height/2});
         }
 		for(auto & dino : Jugador::Get().GetDinosaurios())
 		{
@@ -277,7 +278,7 @@ namespace IVJ
         }
 
         if(dinoSelecc)
-            CE::Render::Get().AddToDraw(dinoSelecc->seleccion);
+            CE::Render::Get().AddToDraw(dinoSelecc->getComponente<CE::ISelectores>()->seleccion);
 
 		CE::Render::Get().AddToDraw(*boton);
 		CE::Render::Get().AddToDraw(boton->getComponente<CE::ITexto>()->m_texto);

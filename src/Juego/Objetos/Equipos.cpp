@@ -14,8 +14,8 @@ namespace IVJ
 
     Equipos::Equipos()
     {
-        player = std::make_unique<std::vector<std::shared_ptr<Dinosaurio>>>();
-        enemigos = std::make_unique<std::vector<std::shared_ptr<Dinosaurio>>>();
+        player = std::make_unique<std::vector<std::shared_ptr<IVJ::Entidad>>>();
+        enemigos = std::make_unique<std::vector<std::shared_ptr<IVJ::Entidad>>>();
         habilidadEspecial = nullptr;
         dinoLider = nullptr;
     }
@@ -26,12 +26,12 @@ namespace IVJ
         //instancia = nullptr;
     }
 
-    std::vector<std::shared_ptr<Dinosaurio>>& Equipos::GetPlayer() 
+    std::vector<std::shared_ptr<IVJ::Entidad>>& Equipos::GetPlayer() 
     {
         return *player;
     }
 
-    std::vector<std::shared_ptr<Dinosaurio>>& Equipos::GetEnemigos() 
+    std::vector<std::shared_ptr<IVJ::Entidad>>& Equipos::GetEnemigos() 
     {
         return *enemigos;
     }
@@ -41,7 +41,7 @@ namespace IVJ
         return habilidadEspecial;
     }
 
-    std::shared_ptr<Dinosaurio>& Equipos::GetDinoLider()
+    std::shared_ptr<IVJ::Entidad>& Equipos::GetDinoLider()
     {
         return dinoLider;
     }
@@ -52,7 +52,8 @@ namespace IVJ
 		float nivelJugador = static_cast<int>(Jugador::Get().GetNivel() / 2);
         if(nivelJugador < 1) nivelJugador = 1;
 
-		int prob = rand() % 4;
+		//int prob = rand() % 5;
+		int prob = 1;
 		int cant = rand() % player->size() + 1;
 
         nivelJugador = 0.5;
@@ -69,7 +70,7 @@ namespace IVJ
 				break;
 			case 2:
 				for(int i = 0; i < cant;i++)
-					enemigos->push_back(std::make_shared<Centrosaurus>( nivelJugador));
+					enemigos->push_back(std::make_shared<Centrosaurus>(nivelJugador));
 				break;
 			case 3:
 				for(int i = 0; i < cant;i++)

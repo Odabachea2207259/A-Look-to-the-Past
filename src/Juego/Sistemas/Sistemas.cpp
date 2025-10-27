@@ -355,10 +355,216 @@ namespace IVJ
             
             for(auto & estado : estados->estados)
             {
-                //estado->setPosicion(vida_max.getPosition().x + (14*i),vida_max.getPosition().y + 15.f);
+                estado->setPosicion(target->getComponente<CE::ISelectores>()->vida_max.getPosition().x + (14*i),target->getComponente<CE::ISelectores>()->vida_max.getPosition().y + 15.f);
                 i++;
                 if(i >= 5) return;
             }
         }
+	}
+
+	void SistemaSetPosOriginal(std::shared_ptr<IVJ::Entidad> target)
+	{
+	    target->getTransformada()->pos_original = target->getTransformada()->posicion;
+        auto sprite = target->getComponente<CE::ISprite>();
+        auto width = sprite->width;
+        auto height = sprite->height;
+        target->getComponente<CE::ISelectores>()->vida.setPosition({target->getTransformada()->pos_original.x - (width/8),target->getTransformada()->pos_original.y-(height/4)});
+        target->getComponente<CE::ISelectores>()->vida_max.setPosition({target->getTransformada()->pos_original.x - (width/8),target->getTransformada()->pos_original.y-(height/4)});
+	}
+
+	void SistemaActualizarVida(std::shared_ptr<IVJ::Entidad> target)
+	{
+        float porcentaje = target->getStats()->hp/target->getStats()->hp_max;
+        porcentaje = std::max(0.f,porcentaje);
+        target->getComponente<CE::ISelectores>()->vida.setSize(sf::Vector2f(target->getComponente<CE::ISelectores>()->vida_max.getSize().x * porcentaje, 10.f));
+	}
+
+	void SistemaReiniciarStats(std::shared_ptr<IVJ::Entidad> target)
+	{
+        target->getStats()->hp = target->getStats()->hp_max;
+        target->getStats()->agi =target->getStats()->agi_max;
+        target->getStats()->str =target->getStats()->str_max;
+        target->getStats()->def =target->getStats()->def_max;
+	}
+
+	void SistemaReiniciarDino(std::shared_ptr<IVJ::Entidad> target)
+	{
+		target->eliminarComponente<CE::IJugador>();
+        target->getComponente<CE::IPersonaje>()->turno = false;
+
+		SistemaReiniciarStats(target);
+
+        auto estados = target->getComponente<CE::IEstados>();
+        estados->aturdido = false;
+        estados->dormido = false;
+        estados->estados.clear();
+
+    	auto c = target->getComponente<CE::IControl>();
+    	c->abj = false;
+    	c->der = false;
+    	c->arr = false;
+    	c->izq = false;
+    	c->acc = false;
+    	c->sacc = false;
+    	c->damage = false;
+    	c->muerte = false;
+    	c->muerto = false;
+    	c->accion = false;
+
+		auto &fsm_init = target->getComponente<IMaquinaEstado>()->fsm;
+		fsm_init = std::make_shared<IdleFSM>();
+		fsm_init->onEntrar(*target);
+	}
+
+	void SistemaSubirNivel(std::shared_ptr<IVJ::Entidad> target)
+	{
+        target->getStats()->hp_max += target->getStats()->hp_max * 0.2;
+        target->getStats()->agi_max += 2.f;
+        target->getStats()->str_max += 2.f;
+        target->getStats()->def_max += 2.f;    
+        
+        target->getComponente<CE::IPersonaje>()->nivel++;
+		SistemaReiniciarStats(target);
+	}
+
+	void SistemaConfigurarStats(IVJ::Dinosaurio * const &target,float hp, float str, float agi, float def)
+	{
+		auto nivel = target->getComponente<CE::IPersonaje>()->nivel;
+		target->getStats()->hp = hp * nivel;
+		target->getStats()->hp_max = hp * nivel;
+
+		target->getStats()->str = str * nivel;
+		target->getStats()->str_max = str * nivel;
+
+		target->getStats()->agi = agi * nivel;
+		target->getStats()->agi_max = agi * nivel;
+
+		target->getStats()->def = def * nivel;
+		target->getStats()->def_max = def * nivel;
+	}
+
+	bool SistemaIA(std::shared_ptr<Entidad> actual,std::vector<std::shared_ptr<IVJ::Entidad>> player, std::vector<std::shared_ptr<IVJ::Entidad>> enemigos, float dt)
+	{
+		bool mov = false;
+		switch(actual->getComponente<CE::IPersonaje>()->tipo)
+		{
+			case IVJ::TipoEnte::Atacante:
+				mov = SistemaIA_Attack(actual,enemigos,player,dt);
+				break;
+			case IVJ::TipoEnte::Healer:
+				mov = SistemaIA_Heal(actual,enemigos,player,dt);
+				break;
+		}
+
+		return mov;
+	}
+	bool SistemaIA_Attack(std::shared_ptr<Entidad> actual,std::vector<std::shared_ptr<IVJ::Entidad>> player, std::vector<std::shared_ptr<IVJ::Entidad>> enemigos, float dt)
+	{
+		auto actualHabilidades = actual->getComponente<CE::IHabilidades>();
+
+		auto personaje = actual->getComponente<CE::IPersonaje>();
+
+		if(!personaje->turno)
+		{
+			personaje->turno = true;
+			int prob = (rand() % 100) + 1;
+			int habilidad = 0;
+
+			if(prob >= 76) habilidad = 3;
+			else if(prob >= 51) habilidad = 2;
+			else if(prob >= 26) habilidad = 1;
+			else habilidad = 0;
+
+			actualHabilidades->habilidadSelecc = actualHabilidades->movimientos.at(habilidad);
+
+			do{
+				if(actualHabilidades->habilidadSelecc->tipo == IVJ::TipoHabilidad::Buffeo)
+				{
+					personaje->numDino = rand() % player.size();
+					if(player.at(personaje->numDino)->estaVivo()) break;
+				}
+				else
+				{
+					personaje->numDino = rand() % enemigos.size();
+					if(enemigos.at(personaje->numDino)->estaVivo()) break;
+				}
+			} while(true);			
+		}
+
+		if(actualHabilidades->habilidadSelecc->tipo == IVJ::TipoHabilidad::Buffeo)
+			return actualHabilidades->habilidadSelecc->accion(actual,player.at(personaje->numDino),dt);
+		
+		return actualHabilidades->habilidadSelecc->accion(actual,enemigos.at(personaje->numDino),dt);
+	}
+
+	bool SistemaIA_Heal(std::shared_ptr<Entidad> actual,std::vector<std::shared_ptr<IVJ::Entidad>> player, std::vector<std::shared_ptr<IVJ::Entidad>> enemigos, float dt)
+	{
+		auto actualHabilidades = actual->getComponente<CE::IHabilidades>();
+
+		auto personaje = actual->getComponente<CE::IPersonaje>();
+
+		if(!personaje->turno)
+		{
+			int x = 50, y = 50, z = 50;
+			personaje->turno = true;
+
+			float menorVida = 1000.f;
+			personaje->numDino = -1;
+
+			for(auto & a: enemigos)
+			{
+				if(a->getStats()->hp < menorVida && a->estaVivo())
+				{
+					menorVida = a->getStats()->hp;
+				}
+				personaje->numDino++;
+			}
+
+			if(menorVida < enemigos.at(personaje->numDino)->getStats()->hp_max * 0.5f && menorVida > 0.f)
+			{
+				x = 50/3;
+				y = 50 + x;
+				z = y + 50/3;
+			}
+		
+			int prob = (rand() % 100) + 1;
+
+			if(prob >= 1 && prob <= x)
+			{
+				actualHabilidades->habilidadSelecc = actualHabilidades->movimientos.at(0);
+			}
+			else if(prob > x && prob <= y)
+			{
+				actualHabilidades->habilidadSelecc = actualHabilidades->movimientos.at(1);
+			}
+			else if(prob > y && prob <= z)
+			{
+				actualHabilidades->habilidadSelecc = actualHabilidades->movimientos.at(2);
+			}
+			else if(prob > z && prob <= 100)
+			{
+				actualHabilidades->habilidadSelecc = actualHabilidades->movimientos.at(3);
+			}
+
+			do{
+				if(actualHabilidades->habilidadSelecc->tipo == Buffeo)
+				{
+					personaje->numDino = rand() % player.size();
+					if(player.at(personaje->numDino)->estaVivo()) break;
+				}
+				else
+				{
+					if(menorVida < 40.f && menorVida > 0.f) break;
+					personaje->numDino = rand() % enemigos.size();
+	
+					if(enemigos.at(personaje->numDino)->estaVivo()) break;
+				}
+			} while(true);			
+		}
+
+		if(actualHabilidades->habilidadSelecc->tipo == Buffeo)
+			return actualHabilidades->habilidadSelecc->accion(actual,player.at(personaje->numDino),dt);
+		
+		return actualHabilidades->habilidadSelecc->accion(actual,enemigos.at(personaje->numDino),dt);
 	}
 }
