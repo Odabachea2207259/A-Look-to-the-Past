@@ -55,11 +55,7 @@ namespace IVJ
 
             std::vector<std::shared_ptr<Entidad>> turnos;
         private:
-            void setBotonesFalso();
             void cambiarTurno();
-            void ordenarTurnos();
-            int revisarGanador();
-            void actualizarMedidor();
             void posicionarEntes();
     };
 }

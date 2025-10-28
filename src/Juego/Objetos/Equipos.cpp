@@ -52,8 +52,8 @@ namespace IVJ
 		float nivelJugador = static_cast<int>(Jugador::Get().GetNivel() / 2);
         if(nivelJugador < 1) nivelJugador = 1;
 
-		//int prob = rand() % 5;
-		int prob = 1;
+		int prob = rand() % 5;
+		//int prob = 1;
 		int cant = rand() % player->size() + 1;
 
         nivelJugador = 0.5;
@@ -85,4 +85,15 @@ namespace IVJ
 				break;
 		}
     }
+
+
+    /*<-----------------------Crear una función intermedia para saber en que ronda nos encontramos----------------->*/
+    /*<-----------------------y mandar a la clase que creara los jefes necesarios.                ----------------->*/
+    /*<-----------------------Esta función intermedia se usará en todas las escenas y detectará si----------------->*/
+    /*<-----------------------mandar a la función de crear enemigos random o a los jefes.         ----------------->*/
+
+
+    //void Equipos::crearJefesP()
+    //void Equipos::crearJefesM()
+    //void Equipos::crearJefesC()
 }

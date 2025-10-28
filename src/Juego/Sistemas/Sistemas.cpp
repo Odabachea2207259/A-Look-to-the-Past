@@ -567,4 +567,36 @@ namespace IVJ
 		
 		return actualHabilidades->habilidadSelecc->accion(actual,enemigos.at(personaje->numDino),dt);
 	}
+
+	void SistemaActualizarMedidor(std::shared_ptr<IVJ::Entidad> dinoLider,std::shared_ptr<IVJ::Rectangulo> medidor)
+	{
+		float porcentaje = dinoLider->getComponente<CE::IJugador>()->medidor / dinoLider->getComponente<CE::IHabilidades>()->habilidadEspecial->medidor;
+		porcentaje = std::min(porcentaje,1.f);
+		medidor->setTam(medidor->getWidth() * porcentaje,medidor->getHeight());
+	}
+
+	void SistemaApagarBotones(std::shared_ptr<IVJ::Entidad> actual, bool* eSelecc, bool* pSelecc, bool* mostrarSelector)
+	{
+		for(auto& boton:actual->getComponente<CE::IHabilidades>()->movimientos)
+			boton->seleccionado = false;
+		actual->getComponente<CE::IHabilidades>()->habilidadEspecial->seleccionado = false;
+		*eSelecc = false;
+		*pSelecc = false;
+		*mostrarSelector = false;
+	}
+
+	int SistemaRevisarGanador(std::vector<std::shared_ptr<IVJ::Entidad>> turnos)
+	{
+		int player = 0, enemy = 0;
+
+		for(auto & ente : turnos){
+			if(ente->tieneComponente<CE::IJugador>() && ente->estaVivo()) player++;
+			else if(ente->estaVivo()) enemy++;
+		}
+
+		if(player <= 0) return -1;
+		if(enemy <= 0) return 1;
+
+		return 0;
+	}
 }

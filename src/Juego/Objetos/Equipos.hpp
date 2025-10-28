@@ -19,6 +19,10 @@ namespace IVJ
             std::vector<std::shared_ptr<IVJ::Entidad>>& GetEnemigos();
             std::shared_ptr<Habilidad> GetHabilidadEsp();
             std::shared_ptr<IVJ::Entidad>& GetDinoLider();
+
+            //void Equipos::crearJefesP()
+            //void Equipos::crearJefesM()
+            //void Equipos::crearJefesC()
             
             void crearEnemigos();
         private:

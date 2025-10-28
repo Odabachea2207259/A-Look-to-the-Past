@@ -1,4 +1,4 @@
-#include "EscenaCombate.hpp"
+#include "EscenaJefe.hpp"
 #include "../Figuras/Figuras.hpp"
 #include "../../Motor/Camaras/CamarasGestor.hpp"
 #include "../../Motor/Render/Render.hpp"
@@ -16,7 +16,7 @@
 
 namespace IVJ
 {
-	void EscenaCombate::onInit()
+	void EscenaJefe::onInit()
 	{
 		objetos.getPool().clear();
 		cantDinos = 0;
@@ -28,11 +28,9 @@ namespace IVJ
 
 			auto tam = CE::Render::Get().GetVentana().getSize();
 
-			//AGREGAMOS EL MEDIDOR DE LA SUPER HABILIDAD
 			medidor = std::make_shared<Rectangulo>(tam.x-6.f,10.f,sf::Color::Blue,sf::Color::Black);
 			medidor->setPosicion(3.f,3.f);
 
-			//AGREGAMOS EL LOG DE LOS MOVIMIENTOS REALIZADOS
 			log = std::make_shared<Rectangulo>(500.f,100.f,sf::Color::Green,sf::Color::Black);
 			log->addComponente(std::make_shared<CE::ITexto>(CE::GestorAssets::Get().getFont("Caveman")," "));
 			log->setPosicion((tam.x/2.f)-250.f,40.f);
@@ -40,7 +38,6 @@ namespace IVJ
 			textLog->m_texto.setPosition({(tam.x/2.f)-250.f,45.f});
 			textLog->m_texto.setCharacterSize(10);
 
-			//AGREGAMOS EL CONTADOR QUE DICE EN QUE RONDA ESTAMOS
 			nivelActual = std::make_shared<Rectangulo>(100.f,100.f,sf::Color::Transparent,sf::Color::Transparent);
 			nivelActual->addComponente(std::make_shared<CE::ITexto>(CE::GestorAssets::Get().getFont("Caveman"), " "));
 			auto textoNivel = nivelActual->getComponente<CE::ITexto>();
@@ -48,14 +45,11 @@ namespace IVJ
 			textoNivel->m_texto.setPosition({5.f,40.f});
 			textoNivel->m_texto.setFillColor(sf::Color::Black);
 
-			//AGREGAMOS EL TEXTO DE LOS PUNTOS DE CADA DINO
-			/*<------------------Puede que esto pueda tenerlo cada dino------------------------------>*/
 			dinoPuntos = std::make_shared<CE::ITexto>(CE::GestorAssets::Get().getFont("Caveman")," ");
 			dinoPuntos->m_texto.setCharacterSize(10);
 			dinoPuntos->m_texto.setFillColor(sf::Color::Black);
 			dinoPuntos->m_texto.setPosition({850.f,650.f});
 
-			//CREAMOS EL CUADRO PARA VER QUE DINO SELECCIONAMOS O A CUAL ESTAMOS APUNTANDO
 			rectanguloDino.setFillColor(sf::Color::Transparent);
 			rectanguloDino.setOutlineColor(sf::Color::White);
 			rectanguloDino.setOutlineThickness(5.f);
@@ -113,7 +107,7 @@ namespace IVJ
 		inicializar = false;
 	}
 
-	void EscenaCombate::posicionarEntes()
+	void EscenaJefe::posicionarEntes()
 	{
 		int dinoPlayer = 0;
 		int dinoEnemy = 0;
@@ -141,8 +135,8 @@ namespace IVJ
 		}
 	}
 
-	void EscenaCombate::onFinal(){}
-	void EscenaCombate::onUpdate(float dt)
+	void EscenaJefe::onFinal(){}
+	void EscenaJefe::onUpdate(float dt)
 	{
 		IVJ::SistemaActualizarMedidor(Equipos::Get().GetDinoLider(),medidor);
 		if(!actual->estaVivo())
@@ -358,7 +352,7 @@ namespace IVJ
 		objetos.borrarPool();
 	}
 
-	void EscenaCombate::cambiarTurno()
+	void EscenaJefe::cambiarTurno()
 	{
 		actual->getComponente<CE::IHabilidades>()->habilidadSelecc = nullptr;
 		habilidadSelecc = nullptr;
@@ -404,7 +398,7 @@ namespace IVJ
 			cambiarTurno();
 	}
 
-	void EscenaCombate::onInputs(const CE::Botones& accion){
+	void EscenaJefe::onInputs(const CE::Botones& accion){
 		if(accion.getTipo() == CE::Botones::TipoAccion::OnPress)
 		{
             if(accion.getNombre() == "menu")
@@ -412,7 +406,7 @@ namespace IVJ
 		}
 	}
 
-	void EscenaCombate::onRender()
+	void EscenaJefe::onRender()
 	{
 		for(auto &b :bg)
 			CE::Render::Get().AddToDraw(b);

@@ -42,4 +42,7 @@ namespace IVJ
 
 	/*<----- SISTEMAS DE ESCENAS ------>*/
 	[[maybe_unused]] std::vector<std::shared_ptr<IVJ::Entidad>> SistemaOrdenarTurnos(std::vector<std::shared_ptr<IVJ::Entidad>> jugador,std::vector<std::shared_ptr<IVJ::Entidad>> enemigos);
+	[[maybe_unused]] void SistemaActualizarMedidor(std::shared_ptr<IVJ::Entidad> dinoLider,std::shared_ptr<IVJ::Rectangulo> medidor);
+	[[maybe_unused]] void SistemaApagarBotones(std::shared_ptr<IVJ::Entidad> actual, bool* eSelecc, bool* pSelecc, bool* mostrarSelector);
+	[[maybe_unused]] int SistemaRevisarGanador(std::vector<std::shared_ptr<IVJ::Entidad>> turnos);
 }
