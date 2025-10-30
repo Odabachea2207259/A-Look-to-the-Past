@@ -7,6 +7,7 @@ namespace IVJ
 	{
 		public:
 			explicit AtaqueFSM();
+			explicit AtaqueFSM(std::string nombre);
 			~AtaqueFSM() override{};
 			FSM* onInputs(const CE::IControl& control) override;
 			void onEntrar(const Entidad& obj) override;
@@ -24,6 +25,8 @@ namespace IVJ
 			sf::Sprite *sprite{nullptr};
 			int s_w{};
 			int s_h{};
+
+			int max_frames{};
 
 			bool termino;
 			int frame;

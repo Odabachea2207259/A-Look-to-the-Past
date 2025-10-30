@@ -19,7 +19,6 @@ namespace IVJ
 	void EscenaJefe::onInit()
 	{
 		objetos.getPool().clear();
-		cantDinos = 0;
 		dinoTurno = 0;
 		if(inicializar) {
 			registrarBotones(sf::Keyboard::Scancode::Escape,"menu");
@@ -94,7 +93,6 @@ namespace IVJ
 		turnos = IVJ::SistemaOrdenarTurnos(Equipos::Get().GetPlayer(),Equipos::Get().GetEnemigos());
 		posicionarEntes();
 
-
 		//turnos = IVJ::SistemaOrdenarTurnos(Equipos::Get().GetPlayer(),Equipos::Get().GetPlayer());
 		actual = turnos.at(dinoTurno); //---->revisar
 		//setBotonesFalso();
@@ -124,9 +122,6 @@ namespace IVJ
 			} else{
 				ente->setPosicion(x[dinoEnemy] + 500.f,y[dinoEnemy]);
 				dinoEnemy++;
-				
-				auto sprite = ente->getComponente<CE::ISprite>();
-				sprite->m_sprite.setScale({-sprite->escala,sprite->escala});
 			}
 
 			IVJ::SistemaSetPosOriginal(ente);
@@ -295,7 +290,7 @@ namespace IVJ
 			}
 			
 			//habilidadActiva = std::static_pointer_cast<IVJ::Dinosaurio>(actual)->turnoEnemigo(actual,Equipos::Get().GetPlayer(),Equipos::Get().GetEnemigos(),dt);
-			habilidadActiva = IVJ::SistemaIA(actual,Equipos::Get().GetPlayer(),Equipos::Get().GetEnemigos(),dt);
+			habilidadActiva = IVJ::SistemaIAJefes(actual,Equipos::Get().GetPlayer(),Equipos::Get().GetEnemigos(),dt);
 
 			if(!habilidadActiva)
 			{
@@ -354,7 +349,7 @@ namespace IVJ
 
 	void EscenaJefe::cambiarTurno()
 	{
-		actual->getComponente<CE::IHabilidades>()->habilidadSelecc = nullptr;
+		if(actual->tieneComponente<CE::IHabilidades>())actual->getComponente<CE::IHabilidades>()->habilidadSelecc = nullptr;
 		habilidadSelecc = nullptr;
 		//switch(revisarGanador()){
 		switch(IVJ::SistemaRevisarGanador(turnos)){

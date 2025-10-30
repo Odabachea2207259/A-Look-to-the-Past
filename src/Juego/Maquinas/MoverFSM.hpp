@@ -20,6 +20,7 @@ namespace IVJ
 			float tiempo{};
 			int id_actual{};
 			float max_tiempo{};
+			int max_frames{};
 
 			sf::Vector2f escala_or;
 

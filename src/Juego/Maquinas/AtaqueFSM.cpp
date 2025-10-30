@@ -10,7 +10,15 @@ namespace IVJ
 	AtaqueFSM::AtaqueFSM()
 	:FSM()
 	{
-		nombre="AtaqueFSM";
+		nombre="Ataque";
+		termino = false;
+		frame = 0;
+	}
+
+	AtaqueFSM::AtaqueFSM(std::string nombre)
+	:FSM()
+	{
+		nombre=nombre;
 		termino = false;
 		frame = 0;
 	}
@@ -44,9 +52,11 @@ namespace IVJ
 
 		file >> j;
 
-		auto vectores = cargarSprites(j,"Ataque");
+		//auto vectores = cargarSprites(j,"Ataque");
+		auto vectores = cargarSprites(j,obj.getComponente<CE::IControl>()->ataque);
+		max_frames = getMaxFrames(j,obj.getComponente<CE::IControl>()->ataque);
 
-		for(size_t i = 0; i < vectores.size() && i < 9; i++)
+		for(size_t i = 0; i < vectores.size() && i < max_frames; i++)
 			ani_frames[i] = vectores[i];
 
 		if(nombre=="Pachycephalosaurus")
@@ -71,6 +81,7 @@ namespace IVJ
 		auto c = obj.getComponente<CE::IControl>();
 
 		c->acc = false;
+		c->ataque = "Ataque";
 	}
 
 	void AtaqueFSM::onUpdate(const Entidad& obj,float dt)
@@ -83,8 +94,8 @@ namespace IVJ
 			sprite->setTextureRect(
 			sf::IntRect{
 				{//posicion
-					(int)ani_frames[id_actual%9].x,
-					(int)ani_frames[id_actual%9].y
+					(int)ani_frames[id_actual%max_frames].x,
+					(int)ani_frames[id_actual%max_frames].y
 				},
 				{//tamaño
 					s_w,
@@ -94,7 +105,7 @@ namespace IVJ
 			id_actual++;
 			frame++;
 
-			if(id_actual%9 == 9 || frame == 9)
+			if(id_actual%max_frames == max_frames || frame == max_frames)
 			{
 				termino = true;
 			}

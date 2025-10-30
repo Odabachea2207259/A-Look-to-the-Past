@@ -113,7 +113,15 @@ namespace IVJ
 		if(boton->rect_bounding.contains({static_cast<int>(mousePos.x),static_cast<int>(mousePos.y)}) && dinosSeleccionados > 0)
 		{
 			if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)){
-				CE::GestorEscenas::Get().cambiarEscena("Combate");
+				switch(Jugador::Get().GetPeriodo())
+                {
+                    case 1:
+                        CE::GestorEscenas::Get().cambiarEscena("Jefe");
+                        break;
+                    default:
+                        CE::GestorEscenas::Get().cambiarEscena("Combate");
+                        break;
+                }
 			}
 		}
 

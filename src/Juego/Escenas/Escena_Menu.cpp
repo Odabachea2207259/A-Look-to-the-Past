@@ -48,6 +48,7 @@ namespace IVJ
 		CE::GestorAssets::Get().agregarTextura("carnotauro",ASSETS "/sprites_dinos/Carnotauro/Carnotauro_tex.png",CE::Vector2D{0,0},CE::Vector2D{1197,4049});
 		
 		CE::GestorAssets::Get().agregarTextura("argentino",ASSETS "/enemigos/jefes/Argentinosaurus/Armature_tex.png",CE::Vector2D{0,0},CE::Vector2D{1837,3073});
+		CE::GestorAssets::Get().agregarTextura("anteosaurus",ASSETS "/enemigos/jefes/Anteosaurus/Anteosaurus_tex.png",CE::Vector2D{0,0},CE::Vector2D{1664,1656});
 
 		CE::GestorAssets::Get().agregarFont("Byte",ASSETS "/fonts/Bytesized-Regular.ttf");
 		CE::GestorAssets::Get().agregarFont("Caveman",ASSETS "/fonts/Prehistoric Caveman.ttf");

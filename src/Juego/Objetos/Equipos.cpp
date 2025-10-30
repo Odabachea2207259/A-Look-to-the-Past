@@ -1,4 +1,6 @@
 #include "Equipos.hpp"
+#include "../../Motor/Primitivos/GestorAssets.hpp"
+
 #include <iostream>
 
 namespace IVJ
@@ -48,6 +50,19 @@ namespace IVJ
 
     void Equipos::crearEnemigos()
     {
+        switch(Jugador::Get().GetPeriodo()){
+            case 1:
+                crearJefesP();
+                break;
+            case 9:
+            default:
+                crearEnemigosDefault();
+                break;
+        }
+    }
+
+    void Equipos::crearEnemigosDefault()
+    {
         enemigos->clear();
 		float nivelJugador = static_cast<int>(Jugador::Get().GetNivel() / 2);
         if(nivelJugador < 1) nivelJugador = 1;
@@ -56,7 +71,7 @@ namespace IVJ
 		//int prob = 1;
 		int cant = rand() % player->size() + 1;
 
-        nivelJugador = 0.5;
+        nivelJugador = 0.2;
 
 		switch(prob)
 		{
@@ -86,14 +101,36 @@ namespace IVJ
 		}
     }
 
+    void Equipos::crearJefesP()
+    {
+        enemigos->clear();
 
-    /*<-----------------------Crear una función intermedia para saber en que ronda nos encontramos----------------->*/
-    /*<-----------------------y mandar a la clase que creara los jefes necesarios.                ----------------->*/
-    /*<-----------------------Esta función intermedia se usará en todas las escenas y detectará si----------------->*/
-    /*<-----------------------mandar a la función de crear enemigos random o a los jefes.         ----------------->*/
+        auto jefeA = std::make_shared<IVJ::Entidad>();
+        jefeA->addComponente(std::make_shared<CE::ISprite>(
+            CE::GestorAssets::Get().getTextura("anteosaurus"),
+            416,207,1.0f
+        ));
 
+        auto nombre = jefeA->getNombre();
+        nombre->nombre = "Anteosaurus";
 
-    //void Equipos::crearJefesP()
+        jefeA->addComponente(std::make_shared<CE::IControl>());
+        jefeA->addComponente(std::make_shared<IVJ::IMaquinaEstado>());
+        jefeA->addComponente(std::make_shared<CE::IEstados>());
+        jefeA->addComponente(std::make_shared<CE::ISelectores>());
+        jefeA->addComponente(std::make_shared<CE::IPersonaje>());
+
+        jefeA->getComponente<CE::IPersonaje>()->nivel = 10;
+
+        auto &fsm_init = jefeA->getComponente<IVJ::IMaquinaEstado>()->fsm;
+        fsm_init = std::make_shared<IVJ::IdleFSM>();
+        fsm_init->onEntrar(*jefeA);
+
+        IVJ::SistemaConfigurarStatsE(jefeA,1000,20,1,10);
+
+        enemigos->push_back(jefeA);
+        
+    }
     //void Equipos::crearJefesM()
     //void Equipos::crearJefesC()
 }

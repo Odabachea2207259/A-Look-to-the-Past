@@ -50,8 +50,9 @@ namespace IVJ
 		file >> j;
 
 		auto vectores = cargarSprites(j,"Muerte");
+		max_frames = getMaxFrames(j,"Muerte");
 
-		for(size_t i = 0; i < vectores.size() && i < 9; i++)
+		for(size_t i = 0; i < vectores.size() && i < max_frames; i++)
 			ani_frames[i] = vectores[i];
 
 		if(nombre=="Pachycephalosaurus")
@@ -106,8 +107,8 @@ namespace IVJ
 			c_sprite->m_sprite.setTextureRect(
 			sf::IntRect{
 				{//posicion
-					(int)ani_frames[id_actual%9].x,
-					(int)ani_frames[id_actual%9].y
+					(int)ani_frames[id_actual%max_frames].x,
+					(int)ani_frames[id_actual%max_frames].y
 				},
 				{//tamaño
 					s_w,
@@ -117,7 +118,7 @@ namespace IVJ
 			id_actual++;
 			frame++;
 
-			if(id_actual%9 == 9 || frame == 9)
+			if(id_actual%max_frames == max_frames || frame == max_frames)
 			{
 				auto c = obj.getComponente<CE::IControl>();
 				c->muerto = true;

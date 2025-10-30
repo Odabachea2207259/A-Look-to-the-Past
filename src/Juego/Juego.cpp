@@ -9,6 +9,7 @@
 #include "../Motor/Camaras/CamarasGestor.hpp"
 #include "Escenas/Escena_Menu.hpp"
 #include "Escenas/EscenaCombate.hpp"
+#include "Escenas/EscenaJefe.hpp"
 #include "Escenas/EscenaFosiles.hpp"
 #include "Escenas/EscenaSeleccion.hpp"
 #include "Escenas/EscenaVictoria.hpp"
@@ -44,6 +45,7 @@ namespace IVJ
         
 	    CE::GestorEscenas::Get().registrarEscena("Menu",std::make_shared<IVJ::Escena_Menu>());
 	    CE::GestorEscenas::Get().registrarEscena("Combate",std::make_shared<EscenaCombate>());
+        CE::GestorEscenas::Get().registrarEscena("Jefe",std::make_shared<IVJ::EscenaJefe>());
         CE::GestorEscenas::Get().registrarEscena("Fosiles",std::make_shared<IVJ::EscenaFosiles>());
         CE::GestorEscenas::Get().registrarEscena("Seleccion",std::make_shared<IVJ::EscenaSeleccion>());
         CE::GestorEscenas::Get().registrarEscena("Victoria",std::make_shared<IVJ::EscenaVictoria>());

@@ -20,11 +20,12 @@ namespace IVJ
             std::shared_ptr<Habilidad> GetHabilidadEsp();
             std::shared_ptr<IVJ::Entidad>& GetDinoLider();
 
-            //void Equipos::crearJefesP()
-            //void Equipos::crearJefesM()
-            //void Equipos::crearJefesC()
+            void crearJefesP();
+            //void Equipos::crearJefesM();
+            //void Equipos::crearJefesC();
             
             void crearEnemigos();
+            void crearEnemigosDefault();
         private:
             Equipos();
             static inline Equipos* instancia =nullptr;

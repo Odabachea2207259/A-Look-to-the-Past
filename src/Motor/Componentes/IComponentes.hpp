@@ -153,6 +153,8 @@ namespace CE
 			bool muerto;
 			bool accion;
 
+			std::string ataque = "Ataque";
+
 			bool nextPage;
 			bool prevPage;
 			bool abrir;

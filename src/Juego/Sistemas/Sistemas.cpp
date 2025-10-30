@@ -5,6 +5,7 @@
 #include "../Objetos/Entidad.hpp"
 #include "../Figuras/Figuras.hpp"
 #include "../Estados/Estados.hpp"
+#include "../Objetos/Jugador.hpp"
 #include <cmath>
 
 namespace IVJ
@@ -326,6 +327,93 @@ namespace IVJ
 		return;
 	}
 
+	bool SistemaAtaque(std::shared_ptr<IVJ::Entidad> principal, std::shared_ptr<IVJ::Entidad> target, float dt)
+	{
+        auto c_principal = principal->getComponente<CE::IControl>();
+		auto c_target = target->getComponente<CE::IControl>();
+		auto trans_principal = principal->getTransformada();
+		auto trans_target = target->getTransformada();
+		float velocidadDefault = 800.f;
+
+
+		if(c_principal->accion)
+			return SistemaMover_Target(principal,target,dt,c_principal,c_target,trans_principal,trans_target,velocidadDefault);
+
+        if(c_principal->acc)
+            return true;
+
+		return SistemaMover_Original(principal,target,dt,c_principal,c_target,trans_principal,trans_target,velocidadDefault);
+
+	}
+
+	bool SistemaMover_Target(std::shared_ptr<IVJ::Entidad> principal, std::shared_ptr<IVJ::Entidad> target, float dt, CE::IControl *c_principal,CE::IControl *c_target,std::shared_ptr<CE::ITransform> trans_principal,std::shared_ptr<CE::ITransform> trans_target, float velocidadDefault)
+	{
+        auto direccion = trans_target->posicion - trans_principal->posicion;
+        if(trans_target->posicion.x > trans_principal->posicion.x)
+            c_principal->izq = true;
+        else
+            c_principal->der = true;
+
+        float magnitud = std::sqrt(direccion.x * direccion.x + direccion.y * direccion.y);
+
+        if(magnitud != 0.f)
+        {
+            direccion.x /= magnitud;
+            direccion.y /= magnitud;
+        }
+
+        CE::Vector2D velocidad(direccion.x*velocidadDefault,direccion.y*velocidadDefault);
+
+        if(magnitud > 100.f)
+        {
+            auto cpy = velocidad;
+            trans_principal->posicion.suma(cpy.escala(dt));
+            return true;
+        }
+            
+        c_principal->der = false;
+        c_principal->izq = false;
+        c_target->damage = true;
+        c_principal->accion = false;
+		
+        c_principal->acc = true;
+		return true;
+	}
+
+	bool SistemaMover_Original(std::shared_ptr<IVJ::Entidad> principal, std::shared_ptr<IVJ::Entidad> target, float dt, CE::IControl *c_principal,CE::IControl *c_target,std::shared_ptr<CE::ITransform> trans_principal,std::shared_ptr<CE::ITransform> trans_target, float velocidadDefault)
+	{
+        auto pos_original = trans_principal->pos_original;
+
+        auto direccion = pos_original - trans_principal->posicion;
+
+        if(pos_original.x > trans_principal->posicion.x)
+            c_principal->izq = true;
+        else
+            c_principal->der = true;
+
+        float magnitud = std::sqrt(direccion.x * direccion.x + direccion.y * direccion.y);
+
+        if(magnitud != 0.f)
+        {
+            direccion.x /= magnitud;
+            direccion.y /= magnitud;
+        }
+        CE::Vector2D velocidad(direccion.x*velocidadDefault,direccion.y*velocidadDefault);
+        if(magnitud > 15.f)
+        {
+            auto cpy = velocidad;
+            trans_principal->posicion.suma(cpy.escala(dt));
+            return true;
+        }
+
+        auto c_sprite = principal->getComponente<CE::ISprite>();
+        
+        c_principal->der = false;
+        c_principal->izq = false;
+
+        return false;
+	}
+
 	std::vector<std::shared_ptr<IVJ::Entidad>> SistemaOrdenarTurnos(std::vector<std::shared_ptr<IVJ::Entidad>> jugador,std::vector<std::shared_ptr<IVJ::Entidad>> enemigos)
 	{	
 		std::vector<std::shared_ptr<IVJ::Entidad>> turnos;
@@ -428,6 +516,22 @@ namespace IVJ
 	}
 
 	void SistemaConfigurarStats(IVJ::Dinosaurio * const &target,float hp, float str, float agi, float def)
+	{
+		auto nivel = target->getComponente<CE::IPersonaje>()->nivel;
+		target->getStats()->hp = hp * nivel;
+		target->getStats()->hp_max = hp * nivel;
+
+		target->getStats()->str = str * nivel;
+		target->getStats()->str_max = str * nivel;
+
+		target->getStats()->agi = agi * nivel;
+		target->getStats()->agi_max = agi * nivel;
+
+		target->getStats()->def = def * nivel;
+		target->getStats()->def_max = def * nivel;
+	}
+
+	void SistemaConfigurarStatsE(std::shared_ptr<IVJ::Entidad> target,float hp, float str, float agi, float def)
 	{
 		auto nivel = target->getComponente<CE::IPersonaje>()->nivel;
 		target->getStats()->hp = hp * nivel;
@@ -577,9 +681,12 @@ namespace IVJ
 
 	void SistemaApagarBotones(std::shared_ptr<IVJ::Entidad> actual, bool* eSelecc, bool* pSelecc, bool* mostrarSelector)
 	{
-		for(auto& boton:actual->getComponente<CE::IHabilidades>()->movimientos)
-			boton->seleccionado = false;
-		actual->getComponente<CE::IHabilidades>()->habilidadEspecial->seleccionado = false;
+		if(actual->tieneComponente<CE::IHabilidades>())
+		{
+			for(auto& boton:actual->getComponente<CE::IHabilidades>()->movimientos)
+				boton->seleccionado = false;
+			actual->getComponente<CE::IHabilidades>()->habilidadEspecial->seleccionado = false;
+		}
 		*eSelecc = false;
 		*pSelecc = false;
 		*mostrarSelector = false;
@@ -598,5 +705,51 @@ namespace IVJ
 		if(enemy <= 0) return 1;
 
 		return 0;
+	}
+
+	bool SistemaIAJefes(std::shared_ptr<Entidad> actual, std::vector<std::shared_ptr<IVJ::Entidad>> player, std::vector<std::shared_ptr<IVJ::Entidad>> enemigos, float dt)
+	{
+		bool mov = false;
+		switch(Jugador::Get().GetPeriodo())
+		{
+			case 1:
+				mov = SistemaIAJefes_P(actual,enemigos,player,dt);
+				break;
+		}
+
+		return mov;
+	}
+
+	bool SistemaIAJefes_P(std::shared_ptr<Entidad> actual, std::vector<std::shared_ptr<IVJ::Entidad>> player, std::vector<std::shared_ptr<IVJ::Entidad>> enemigos, float dt)
+	{
+		int numDino;
+		auto personaje = actual->getComponente<CE::IPersonaje>();
+		if(!personaje->turno)
+		{
+			personaje->turno = true;
+			do
+			{
+				numDino = rand() % player.size();
+				if(player.at(numDino)->estaVivo()) break;
+			} while (true);
+
+			std::string ataque;
+			switch(rand() % 2){
+				case 0:
+					ataque = "Rasguño";
+					break;
+				case 1:
+					ataque = "Mordisco";
+					break;
+				default:
+					ataque = "Torpedo";
+					break;
+			}
+
+			//actual->getComponente<CE::IControl>()->ataque = ataque;
+			actual->getComponente<CE::IControl>()->ataque = "Mordisco";
+		}
+
+		return SistemaAtaque(actual,enemigos.at(numDino),dt);
 	}
 }

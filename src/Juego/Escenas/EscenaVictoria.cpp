@@ -195,7 +195,15 @@ namespace IVJ
             boton->getComponente<CE::ITexto>()->m_texto.setFillColor(sf::Color(166, 134, 86));
             if (clicked)
             {
-                CE::GestorEscenas::Get().cambiarEscena("Combate");
+                switch(Jugador::Get().GetPeriodo())
+                {
+                    case 1:
+                        CE::GestorEscenas::Get().cambiarEscena("Jefe");
+                        break;
+                    default:
+                        CE::GestorEscenas::Get().cambiarEscena("Combate");
+                        break;
+                }
             }
         }
         else

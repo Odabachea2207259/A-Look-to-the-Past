@@ -33,7 +33,7 @@ namespace IVJ
 		else if(control.izq)
 			return new MoverFSM(true);
 		else if(control.acc)
-			return new AtaqueFSM();
+			return new AtaqueFSM(control.ataque);
 		else if(control.sacc)
 			return new BuffFSM();
 		else if(control.damage)

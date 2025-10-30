@@ -50,8 +50,9 @@ namespace IVJ
 		file >> j;
 
 		auto vectores = cargarSprites(j,"Movimiento");
+		max_frames = getMaxFrames(j,"Movimiento");
 
-		for(size_t i = 0; i < vectores.size() && i < 9; i++)
+		for(size_t i = 0; i < vectores.size() && i < max_frames; i++)
 			ani_frames[i] = vectores[i];
 
 		max_tiempo = 0.05f;
@@ -84,8 +85,8 @@ namespace IVJ
 			sprite->setTextureRect(
 			sf::IntRect{
 				{//posicion
-					(int)ani_frames[id_actual%9].x,
-					(int)ani_frames[id_actual%9].y
+					(int)ani_frames[id_actual%max_frames].x,
+					(int)ani_frames[id_actual%max_frames].y
 				},
 				{//tamaño
 					s_w,
