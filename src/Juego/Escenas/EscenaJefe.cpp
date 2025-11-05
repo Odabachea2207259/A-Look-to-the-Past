@@ -301,9 +301,12 @@ namespace IVJ
 			if(!habilidadActiva)
 			{
 				std::cout <<"Fin"<<std::endl;
+
 				auto logText = log->getComponente<CE::ITexto>();
 				auto nombreDino = actual->getNombre()->nombre;
 				sf::String n(nombreDino + "\na realizado su\nmovimiento");
+				*Log::Get().texto = nombreDino + "\na realizado su\nmovimiento";
+				Log::Get().acomodarTextos();
 				logText->m_texto.setString(n);
 
 				logText->m_texto.setFillColor(sf::Color::Red);
@@ -456,8 +459,16 @@ namespace IVJ
 		}
 
 		CE::Render::Get().AddToDraw(*medidor);
-		CE::Render::Get().AddToDraw(*log);
-		CE::Render::Get().AddToDraw(log->getComponente<CE::ITexto>()->m_texto);
+		//CE::Render::Get().AddToDraw(*log);
+		//CE::Render::Get().AddToDraw(log->getComponente<CE::ITexto>()->m_texto);
+
+		CE::Render::Get().AddToDraw(*Log::Get().log);
+
+		if(!Log::Get().textos->empty()){
+			for(auto & texto : Log::Get().GetTextos()){
+				CE::Render::Get().AddToDraw(texto->m_texto);
+			}
+		}
 
 		CE::Render::Get().AddToDraw(nivelActual->getComponente<CE::ITexto>()->m_texto);
 	}

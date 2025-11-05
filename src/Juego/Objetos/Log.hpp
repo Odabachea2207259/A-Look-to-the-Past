@@ -12,11 +12,16 @@ namespace IVJ
         public:
             static Log& Get(void);
             static void Terminar(void);
-        private:
+            
             Log();
             static inline Log* instancia =nullptr;
+            
             std::unique_ptr<IVJ::Rectangulo> log;
-            std::unique_ptr<std::vector<CE::ITexto>> textos;
+            std::unique_ptr<std::vector<std::shared_ptr<CE::ITexto>>> textos;
             std::unique_ptr<std::string> texto;
+
+            std::vector<std::shared_ptr<CE::ITexto>>& GetTextos();
+
+            void acomodarTextos();
     };
 }

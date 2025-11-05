@@ -18,6 +18,7 @@
 #include "Escenas/Escena_Zombie.hpp"
 #include "Escenas/EscenaBestiario.hpp"
 #include "Objetos/Jugador.hpp"
+#include "Objetos/Log.hpp"
 #include "Objetos/Recompensas.hpp"
 #include "../Motor/Primitivos/GestorEscenas.hpp"
 

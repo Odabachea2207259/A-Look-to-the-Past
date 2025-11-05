@@ -455,8 +455,12 @@ namespace IVJ
 		}
 
 		CE::Render::Get().AddToDraw(*medidor);
-		CE::Render::Get().AddToDraw(*log);
-		CE::Render::Get().AddToDraw(log->getComponente<CE::ITexto>()->m_texto);
+
+		
+		//CE::Render::Get().AddToDraw(*log);
+		//CE::Render::Get().AddToDraw(log->getComponente<CE::ITexto>()->m_texto);
+
+		CE::Render::Get().AddToDraw(*Log::Get().log);
 
 		CE::Render::Get().AddToDraw(nivelActual->getComponente<CE::ITexto>()->m_texto);
 	}

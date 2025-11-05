@@ -11,6 +11,7 @@
 #include "Camaras/CamarasGestor.hpp"
 #include "GUI/GListaObjetos.hpp"
 #include "../Juego/Objetos/Jugador.hpp"
+#include "../Juego/Objetos/Log.hpp"
 #include "../Juego/Objetos/Equipos.hpp"
 #include "../Juego/Objetos/Recompensas.hpp"
 
@@ -45,6 +46,7 @@ namespace CE
         IVJ::Jugador::Terminar();
         IVJ::Equipos::Terminar();
         IVJ::Recompensas::Terminar();
+        IVJ::Log::Terminar();
         ImGui::SFML::Shutdown();
 
         return 0;
