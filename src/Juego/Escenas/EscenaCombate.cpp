@@ -145,9 +145,8 @@ namespace IVJ
 	void EscenaCombate::onUpdate(float dt)
 	{
 		IVJ::SistemaActualizarMedidor(Equipos::Get().GetDinoLider(),medidor);
-		if(!actual->estaVivo())
-			cambiarTurno();
-		
+		if(!actual->estaVivo()) cambiarTurno();
+
 		mouse = false;
 		auto c = actual->getComponente<CE::IControl>();
 

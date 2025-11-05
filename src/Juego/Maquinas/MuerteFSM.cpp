@@ -51,14 +51,11 @@ namespace IVJ
 
 		auto vectores = cargarSprites(j,"Muerte");
 		max_frames = getMaxFrames(j,"Muerte");
+		max_tiempo = getVel(j,"Muerte");
 
 		for(size_t i = 0; i < vectores.size() && i < max_frames; i++)
 			ani_frames[i] = vectores[i];
 
-		if(nombre=="Pachycephalosaurus")
-			max_tiempo = 0.15f;
-		else
-			max_tiempo = 0.1f;
 		tiempo = max_tiempo;
 		id_actual = 0;
 	}
@@ -90,8 +87,8 @@ namespace IVJ
 			c_sprite->m_sprite.setTextureRect(
 			sf::IntRect{
 				{//posicion
-					(int)ani_frames[8].x,
-					(int)ani_frames[8].y
+					(int)ani_frames[max_frames-1].x,
+					(int)ani_frames[max_frames-1].y
 				},
 				{//tamaño
 					s_w,

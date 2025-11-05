@@ -48,6 +48,8 @@ namespace IVJ
             std::shared_ptr<Habilidad> habilidadSelecc = nullptr;
             bool habilidadActiva = false;
 
+            bool cotyVivo = true;
+
             bool eSelecc;
             bool pSelecc;
 

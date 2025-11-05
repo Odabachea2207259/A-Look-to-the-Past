@@ -52,17 +52,13 @@ namespace IVJ
 
 		file >> j;
 
-		//auto vectores = cargarSprites(j,"Ataque");
 		auto vectores = cargarSprites(j,obj.getComponente<CE::IControl>()->ataque);
 		max_frames = getMaxFrames(j,obj.getComponente<CE::IControl>()->ataque);
+		max_tiempo = getVel(j,obj.getComponente<CE::IControl>()->ataque);
 
 		for(size_t i = 0; i < vectores.size() && i < max_frames; i++)
 			ani_frames[i] = vectores[i];
 
-		if(nombre=="Pachycephalosaurus")
-			max_tiempo = 0.15f;
-		else
-			max_tiempo = 0.1f;
 		tiempo = max_tiempo;
 		id_actual = 0;
 	}

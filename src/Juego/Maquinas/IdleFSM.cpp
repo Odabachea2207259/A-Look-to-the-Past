@@ -9,6 +9,7 @@
 #include "CambiarPaginaFSM.hpp"
 #include "CerrarFSM.hpp"
 #include "AbrirFSM.hpp"
+#include "SaltoFSM.hpp"
 #include <nlohmann/json.hpp>
 #include <fstream>
 
@@ -28,6 +29,8 @@ namespace IVJ
 			return new MoverFSM(false);
 		else if(control.abj)
 			return new MoverFSM(true);
+		else if(control.salto)
+			return new SaltoFSM(true);
 		else if(control.der)
 			return new MoverFSM(false);
 		else if(control.izq)
@@ -77,11 +80,12 @@ namespace IVJ
 
 		auto vectores = cargarSprites(j,"Idle");
 		max_frames = getMaxFrames(j,"Idle");
+		max_tiempo = getVel(j,"Idle");
 
 		for(size_t i = 0; i < vectores.size() && i < max_frames; i++)
 			ani_frames[i] = vectores[i];
 
-		max_tiempo = 0.15f;
+		//max_tiempo = 0.15f;
 		tiempo = max_tiempo;
 		id_actual = 0;
 	}

@@ -82,11 +82,11 @@
   "name": "Parasaurolophus_tex",
   "imagePath": "Parasaurolophus_tex.png",
   "maxFrames": [
-    { "name": "Idle", "max": 9 },
-    { "name": "Movimiento", "max": 9 },
-    { "name": "Ataque", "max": 9 },
-    { "name": "Daño", "max": 9 },
-    { "name": "Muerte", "max": 9 },
-    { "name": "Habilidad", "max": 9 }
+    { "name": "Idle", "max": 9, "vel": 0.15 },
+    { "name": "Movimiento", "max": 9, "vel": 0.05 },
+    { "name": "Ataque", "max": 9, "vel": 0.1 },
+    { "name": "Daño", "max": 9, "vel": 0.08 },
+    { "name": "Muerte", "max": 9, "vel": 0.15 },
+    { "name": "Habilidad", "max": 9, "vel": 0.1 }
   ]
 }

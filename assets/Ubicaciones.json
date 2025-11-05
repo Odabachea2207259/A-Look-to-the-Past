@@ -1,5 +1,6 @@
 {
   "Bestiario": "/bestiario/Bestiario.json",
   "Argentinosaurus": "/enemigos/jefes/Argentinosaurus/Armature_tex.json",
-  "Anteosaurus": "/enemigos/jefes/Anteosaurus/Anteosaurus_tex.json"
+  "Anteosaurus": "/enemigos/jefes/Anteosaurus/Anteosaurus_tex.json",
+  "Coty": "/enemigos/jefes/Coty/Coty_tex.json"
 }

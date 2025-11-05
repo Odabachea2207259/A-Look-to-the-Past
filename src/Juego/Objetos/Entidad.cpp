@@ -23,7 +23,9 @@ namespace IVJ
 		{
 			auto mq = getComponente<IVJ::IMaquinaEstado>();
 			if(mq->fsm)
+			{
 				mq->fsm->onUpdate(*this,dt);
+			}
 			inputFSM();
 		}
 

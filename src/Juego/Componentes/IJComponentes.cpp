@@ -41,6 +41,22 @@ namespace IVJ
 		return max;
 	}
 
+	float getVel(const nlohmann::json& j, const std::string& prefijo)
+	{
+		float vel = 0.0f;
+
+		for(const auto& item: j["maxFrames"])
+		{
+			std::string nombre = item["name"];
+			if(nombre.rfind(prefijo,0)==0){
+				vel = item["vel"];
+				break;
+			}
+		}
+
+		return vel;
+	}
+
 	std::string getUbicacion(const nlohmann::json& j, const std::string& prefijo)
 	{
 		return j[prefijo];

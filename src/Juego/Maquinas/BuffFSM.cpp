@@ -45,11 +45,13 @@ namespace IVJ
 		file >> j;
 
 		auto vectores = cargarSprites(j,"Habilidad");
+		max_frames = getMaxFrames(j,"Habilidad");
+		max_tiempo = getVel(j,"Habilidad");
 
-		for(size_t i = 0; i < vectores.size() && i < 9; i++)
+		for(size_t i = 0; i < vectores.size() && i < max_frames; i++)
 			ani_frames[i] = vectores[i];
 
-		max_tiempo = 0.1f;
+		//max_tiempo = 0.1f;
 		tiempo = max_tiempo;
 		id_actual = 0;
 	}
@@ -80,8 +82,8 @@ namespace IVJ
 			sprite->setTextureRect(
 			sf::IntRect{
 				{//posicion
-					(int)ani_frames[id_actual%9].x,
-					(int)ani_frames[id_actual%9].y
+					(int)ani_frames[id_actual%max_frames].x,
+					(int)ani_frames[id_actual%max_frames].y
 				},
 				{//tamaño
 					s_w,
@@ -91,7 +93,7 @@ namespace IVJ
 			id_actual++;
 			frame++;
 
-			if(id_actual%9 == 9 || frame == 9)
+			if(id_actual%max_frames == max_frames || frame == max_frames)
 			{
 				termino = true;
 			}

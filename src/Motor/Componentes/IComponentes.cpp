@@ -136,6 +136,8 @@ namespace CE
 		muerte = false;
 		muerto = false;
         accion = false;
+        salto = false;
+        saltando = false;
 
         nextPage = false;
         prevPage = false;

@@ -6,6 +6,8 @@
 #include "../Figuras/Figuras.hpp"
 #include "../Estados/Estados.hpp"
 #include "../Objetos/Jugador.hpp"
+
+
 #include <cmath>
 
 namespace IVJ
@@ -112,23 +114,11 @@ namespace IVJ
 			suma = 0;
 			auto& trans = *ente->getTransformada();
 
-			//RECTANGULOS SIN ANGULO
-			//if(mousePos.x >= trans.posicion.x
-			//&& mousePos.x <= trans.posicion.x + ente->getWidth()
-			//&& mousePos.y >= trans.posicion.y
-			//&& mousePos.y <= trans.posicion.y + ente->getHeight())
-			//	ente->mouse = 1;
-			//else
-			//	ente->mouse = 0;
-
-			//RECTANGULOS CON ANGULO Y SIN ANGULO
 			CE::Vector2D a(trans.posicion.x - ente->getWidth() / 2,trans.posicion.y - ente->getHeight()/2);
 			CE::Vector2D b(trans.posicion.x + ente->getWidth() - ente->getWidth()/2,trans.posicion.y-ente->getHeight()/2);
 			CE::Vector2D c(trans.posicion.x + ente->getWidth()-ente->getWidth()/2, trans.posicion.y + ente->getHeight()-ente->getHeight()/2);
 			CE::Vector2D d(trans.posicion.x-ente->getWidth()/2, trans.posicion.y + ente->getHeight()-ente->getHeight()/2);
 			
-			//ABC
-			//suma += abs((b.x * a.y - a.x * b.y) + (c.x * b.y - b.x * c.y) + (a.x * c.y - c.x * a.y))/2;
 
 			float mouseX = mousePos.x;// - (ente->getWidth() / 2);
 			float mouseY = mousePos.y;// - (ente->getHeight() / 2);
@@ -327,93 +317,6 @@ namespace IVJ
 		return;
 	}
 
-	bool SistemaAtaque(std::shared_ptr<IVJ::Entidad> principal, std::shared_ptr<IVJ::Entidad> target, float dt)
-	{
-        auto c_principal = principal->getComponente<CE::IControl>();
-		auto c_target = target->getComponente<CE::IControl>();
-		auto trans_principal = principal->getTransformada();
-		auto trans_target = target->getTransformada();
-		float velocidadDefault = 800.f;
-
-
-		if(c_principal->accion)
-			return SistemaMover_Target(principal,target,dt,c_principal,c_target,trans_principal,trans_target,velocidadDefault);
-
-        if(c_principal->acc)
-            return true;
-
-		return SistemaMover_Original(principal,target,dt,c_principal,c_target,trans_principal,trans_target,velocidadDefault);
-
-	}
-
-	bool SistemaMover_Target(std::shared_ptr<IVJ::Entidad> principal, std::shared_ptr<IVJ::Entidad> target, float dt, CE::IControl *c_principal,CE::IControl *c_target,std::shared_ptr<CE::ITransform> trans_principal,std::shared_ptr<CE::ITransform> trans_target, float velocidadDefault)
-	{
-        auto direccion = trans_target->posicion - trans_principal->posicion;
-        if(trans_target->posicion.x > trans_principal->posicion.x)
-            c_principal->izq = true;
-        else
-            c_principal->der = true;
-
-        float magnitud = std::sqrt(direccion.x * direccion.x + direccion.y * direccion.y);
-
-        if(magnitud != 0.f)
-        {
-            direccion.x /= magnitud;
-            direccion.y /= magnitud;
-        }
-
-        CE::Vector2D velocidad(direccion.x*velocidadDefault,direccion.y*velocidadDefault);
-
-        if(magnitud > 100.f)
-        {
-            auto cpy = velocidad;
-            trans_principal->posicion.suma(cpy.escala(dt));
-            return true;
-        }
-            
-        c_principal->der = false;
-        c_principal->izq = false;
-        c_target->damage = true;
-        c_principal->accion = false;
-		
-        c_principal->acc = true;
-		return true;
-	}
-
-	bool SistemaMover_Original(std::shared_ptr<IVJ::Entidad> principal, std::shared_ptr<IVJ::Entidad> target, float dt, CE::IControl *c_principal,CE::IControl *c_target,std::shared_ptr<CE::ITransform> trans_principal,std::shared_ptr<CE::ITransform> trans_target, float velocidadDefault)
-	{
-        auto pos_original = trans_principal->pos_original;
-
-        auto direccion = pos_original - trans_principal->posicion;
-
-        if(pos_original.x > trans_principal->posicion.x)
-            c_principal->izq = true;
-        else
-            c_principal->der = true;
-
-        float magnitud = std::sqrt(direccion.x * direccion.x + direccion.y * direccion.y);
-
-        if(magnitud != 0.f)
-        {
-            direccion.x /= magnitud;
-            direccion.y /= magnitud;
-        }
-        CE::Vector2D velocidad(direccion.x*velocidadDefault,direccion.y*velocidadDefault);
-        if(magnitud > 15.f)
-        {
-            auto cpy = velocidad;
-            trans_principal->posicion.suma(cpy.escala(dt));
-            return true;
-        }
-
-        auto c_sprite = principal->getComponente<CE::ISprite>();
-        
-        c_principal->der = false;
-        c_principal->izq = false;
-
-        return false;
-	}
-
 	std::vector<std::shared_ptr<IVJ::Entidad>> SistemaOrdenarTurnos(std::vector<std::shared_ptr<IVJ::Entidad>> jugador,std::vector<std::shared_ptr<IVJ::Entidad>> enemigos)
 	{	
 		std::vector<std::shared_ptr<IVJ::Entidad>> turnos;
@@ -498,6 +401,8 @@ namespace IVJ
     	c->muerte = false;
     	c->muerto = false;
     	c->accion = false;
+		c->saltando = false;
+		c->salto = false;
 
 		auto &fsm_init = target->getComponente<IMaquinaEstado>()->fsm;
 		fsm_init = std::make_shared<IdleFSM>();
@@ -547,21 +452,59 @@ namespace IVJ
 		target->getStats()->def_max = def * nivel;
 	}
 
+	void SistemaActualizarMedidor(std::shared_ptr<IVJ::Entidad> dinoLider,std::shared_ptr<IVJ::Rectangulo> medidor)
+	{
+		float porcentaje = dinoLider->getComponente<CE::IJugador>()->medidor / dinoLider->getComponente<CE::IHabilidades>()->habilidadEspecial->medidor;
+		porcentaje = std::min(porcentaje,1.f);
+		medidor->setTam(medidor->getWidth() * porcentaje,medidor->getHeight());
+	}
+
+	void SistemaApagarBotones(std::shared_ptr<IVJ::Entidad> actual, bool* eSelecc, bool* pSelecc, bool* mostrarSelector)
+	{
+		if(actual->tieneComponente<CE::IHabilidades>())
+		{
+			for(auto& boton:actual->getComponente<CE::IHabilidades>()->movimientos)
+				boton->seleccionado = false;
+			actual->getComponente<CE::IHabilidades>()->habilidadEspecial->seleccionado = false;
+		}
+		*eSelecc = false;
+		*pSelecc = false;
+		*mostrarSelector = false;
+	}
+
+	int SistemaRevisarGanador(std::vector<std::shared_ptr<IVJ::Entidad>> turnos)
+	{
+		int player = 0, enemy = 0;
+
+		for(auto & ente : turnos){
+			if(ente->tieneComponente<CE::IJugador>() && ente->estaVivo()) player++;
+			else if(ente->estaVivo()) enemy++;
+		}
+
+		if(player <= 0) return -1;
+		if(enemy <= 0) return 1;
+
+		return 0;
+	}
+
+	//<----->
+
 	bool SistemaIA(std::shared_ptr<Entidad> actual,std::vector<std::shared_ptr<IVJ::Entidad>> player, std::vector<std::shared_ptr<IVJ::Entidad>> enemigos, float dt)
 	{
 		bool mov = false;
 		switch(actual->getComponente<CE::IPersonaje>()->tipo)
 		{
 			case IVJ::TipoEnte::Atacante:
-				mov = SistemaIA_Attack(actual,enemigos,player,dt);
+				mov = SistemaIA_Attack(actual,player,enemigos,dt);
 				break;
 			case IVJ::TipoEnte::Healer:
-				mov = SistemaIA_Heal(actual,enemigos,player,dt);
+				mov = SistemaIA_Heal(actual,player,enemigos,dt);
 				break;
 		}
 
 		return mov;
 	}
+	
 	bool SistemaIA_Attack(std::shared_ptr<Entidad> actual,std::vector<std::shared_ptr<IVJ::Entidad>> player, std::vector<std::shared_ptr<IVJ::Entidad>> enemigos, float dt)
 	{
 		auto actualHabilidades = actual->getComponente<CE::IHabilidades>();
@@ -584,21 +527,21 @@ namespace IVJ
 			do{
 				if(actualHabilidades->habilidadSelecc->tipo == IVJ::TipoHabilidad::Buffeo)
 				{
-					personaje->numDino = rand() % player.size();
-					if(player.at(personaje->numDino)->estaVivo()) break;
+					personaje->numDino = rand() % enemigos.size();
+					if(enemigos.at(personaje->numDino)->estaVivo()) break;
 				}
 				else
 				{
-					personaje->numDino = rand() % enemigos.size();
-					if(enemigos.at(personaje->numDino)->estaVivo()) break;
+					personaje->numDino = rand() % player.size();
+					if(player.at(personaje->numDino)->estaVivo()) break;
 				}
 			} while(true);			
 		}
 
 		if(actualHabilidades->habilidadSelecc->tipo == IVJ::TipoHabilidad::Buffeo)
-			return actualHabilidades->habilidadSelecc->accion(actual,player.at(personaje->numDino),dt);
+			return actualHabilidades->habilidadSelecc->accion(actual,enemigos.at(personaje->numDino),dt);
 		
-		return actualHabilidades->habilidadSelecc->accion(actual,enemigos.at(personaje->numDino),dt);
+		return actualHabilidades->habilidadSelecc->accion(actual,player.at(personaje->numDino),dt);
 	}
 
 	bool SistemaIA_Heal(std::shared_ptr<Entidad> actual,std::vector<std::shared_ptr<IVJ::Entidad>> player, std::vector<std::shared_ptr<IVJ::Entidad>> enemigos, float dt)
@@ -653,103 +596,22 @@ namespace IVJ
 			do{
 				if(actualHabilidades->habilidadSelecc->tipo == Buffeo)
 				{
-					personaje->numDino = rand() % player.size();
-					if(player.at(personaje->numDino)->estaVivo()) break;
+					personaje->numDino = rand() % enemigos.size();
+					if(enemigos.at(personaje->numDino)->estaVivo()) break;
 				}
 				else
 				{
 					if(menorVida < 40.f && menorVida > 0.f) break;
-					personaje->numDino = rand() % enemigos.size();
+					personaje->numDino = rand() % player.size();
 	
-					if(enemigos.at(personaje->numDino)->estaVivo()) break;
+					if(player.at(personaje->numDino)->estaVivo()) break;
 				}
 			} while(true);			
 		}
 
 		if(actualHabilidades->habilidadSelecc->tipo == Buffeo)
-			return actualHabilidades->habilidadSelecc->accion(actual,player.at(personaje->numDino),dt);
+			return actualHabilidades->habilidadSelecc->accion(actual,enemigos.at(personaje->numDino),dt);
 		
-		return actualHabilidades->habilidadSelecc->accion(actual,enemigos.at(personaje->numDino),dt);
-	}
-
-	void SistemaActualizarMedidor(std::shared_ptr<IVJ::Entidad> dinoLider,std::shared_ptr<IVJ::Rectangulo> medidor)
-	{
-		float porcentaje = dinoLider->getComponente<CE::IJugador>()->medidor / dinoLider->getComponente<CE::IHabilidades>()->habilidadEspecial->medidor;
-		porcentaje = std::min(porcentaje,1.f);
-		medidor->setTam(medidor->getWidth() * porcentaje,medidor->getHeight());
-	}
-
-	void SistemaApagarBotones(std::shared_ptr<IVJ::Entidad> actual, bool* eSelecc, bool* pSelecc, bool* mostrarSelector)
-	{
-		if(actual->tieneComponente<CE::IHabilidades>())
-		{
-			for(auto& boton:actual->getComponente<CE::IHabilidades>()->movimientos)
-				boton->seleccionado = false;
-			actual->getComponente<CE::IHabilidades>()->habilidadEspecial->seleccionado = false;
-		}
-		*eSelecc = false;
-		*pSelecc = false;
-		*mostrarSelector = false;
-	}
-
-	int SistemaRevisarGanador(std::vector<std::shared_ptr<IVJ::Entidad>> turnos)
-	{
-		int player = 0, enemy = 0;
-
-		for(auto & ente : turnos){
-			if(ente->tieneComponente<CE::IJugador>() && ente->estaVivo()) player++;
-			else if(ente->estaVivo()) enemy++;
-		}
-
-		if(player <= 0) return -1;
-		if(enemy <= 0) return 1;
-
-		return 0;
-	}
-
-	bool SistemaIAJefes(std::shared_ptr<Entidad> actual, std::vector<std::shared_ptr<IVJ::Entidad>> player, std::vector<std::shared_ptr<IVJ::Entidad>> enemigos, float dt)
-	{
-		bool mov = false;
-		switch(Jugador::Get().GetPeriodo())
-		{
-			case 1:
-				mov = SistemaIAJefes_P(actual,enemigos,player,dt);
-				break;
-		}
-
-		return mov;
-	}
-
-	bool SistemaIAJefes_P(std::shared_ptr<Entidad> actual, std::vector<std::shared_ptr<IVJ::Entidad>> player, std::vector<std::shared_ptr<IVJ::Entidad>> enemigos, float dt)
-	{
-		int numDino;
-		auto personaje = actual->getComponente<CE::IPersonaje>();
-		if(!personaje->turno)
-		{
-			personaje->turno = true;
-			do
-			{
-				numDino = rand() % player.size();
-				if(player.at(numDino)->estaVivo()) break;
-			} while (true);
-
-			std::string ataque;
-			switch(rand() % 2){
-				case 0:
-					ataque = "Rasguño";
-					break;
-				case 1:
-					ataque = "Mordisco";
-					break;
-				default:
-					ataque = "Torpedo";
-					break;
-			}
-
-			//actual->getComponente<CE::IControl>()->ataque = ataque;
-			actual->getComponente<CE::IControl>()->ataque = "Mordisco";
-		}
-
-		return SistemaAtaque(actual,enemigos.at(numDino),dt);
+		return actualHabilidades->habilidadSelecc->accion(actual,player.at(personaje->numDino),dt);
 	}
 }

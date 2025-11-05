@@ -108,7 +108,7 @@ namespace IVJ
         auto jefeA = std::make_shared<IVJ::Entidad>();
         jefeA->addComponente(std::make_shared<CE::ISprite>(
             CE::GestorAssets::Get().getTextura("anteosaurus"),
-            416,207,1.0f
+            440,220,1.0f
         ));
 
         auto nombre = jefeA->getNombre();
@@ -129,6 +129,33 @@ namespace IVJ
         IVJ::SistemaConfigurarStatsE(jefeA,1000,20,1,10);
 
         enemigos->push_back(jefeA);
+
+        auto jefeC = std::make_shared<IVJ::Entidad>();
+        jefeC->addComponente(std::make_shared<CE::ISprite>(
+            CE::GestorAssets::Get().getTextura("coty"),
+            340,246,1.f
+        ));
+
+        nombre = jefeC->getNombre();
+        nombre->nombre = "Coty";
+
+        jefeC->addComponente(std::make_shared<CE::IControl>());
+        jefeC->addComponente(std::make_shared<IVJ::IMaquinaEstado>());
+        jefeC->addComponente(std::make_shared<CE::IEstados>());
+        jefeC->addComponente(std::make_shared<CE::ISelectores>());
+        jefeC->addComponente(std::make_shared<CE::IPersonaje>());
+
+        jefeC->getComponente<CE::IPersonaje>()->nivel = 10;
+
+        auto &fsm_init_2 = jefeC->getComponente<IVJ::IMaquinaEstado>()->fsm;
+        fsm_init_2 = std::make_shared<IVJ::IdleFSM>();
+        fsm_init_2->onEntrar(*jefeC);
+
+        IVJ::SistemaConfigurarStatsE(jefeC,10,1,1,1);
+
+        jefeC->getComponente<CE::IPersonaje>()->target = jefeA;
+
+        enemigos->push_back(jefeC);
         
     }
     //void Equipos::crearJefesM()

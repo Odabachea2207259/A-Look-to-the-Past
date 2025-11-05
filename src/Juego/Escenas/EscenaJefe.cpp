@@ -7,10 +7,12 @@
 #include "../../Motor/Utils/Lerp.hpp"
 #include "../../Motor/Primitivos/GestorAssets.hpp"
 #include "../Sistemas/Sistemas.hpp"
+#include "../Sistemas/SistemasJefes.hpp"
 #include "../Componentes/IJComponentes.hpp"
 #include "../Maquinas/IdleFSM.hpp"
 #include "../../Motor/GUI/GLogger.hpp"
 #include "../Objetos/Equipos.hpp"
+#include "../Objetos/Log.hpp"
 #include <memory>
 #include <SFML/Graphics.hpp>
 
@@ -20,6 +22,8 @@ namespace IVJ
 	{
 		objetos.getPool().clear();
 		dinoTurno = 0;
+		cantDinos = 0;
+		srand(static_cast<unsigned>(time(nullptr)));
 		if(inicializar) {
 			registrarBotones(sf::Keyboard::Scancode::Escape,"menu");
 			CE::GestorAssets::Get().agregarTextura("nubes",ASSETS "/textura/cloud.png",CE::Vector2D{0,0},CE::Vector2D{400,400});
@@ -120,7 +124,9 @@ namespace IVJ
 				ente->setPosicion(x[dinoPlayer],y[dinoPlayer]);
 				dinoPlayer++;
 			} else{
-				ente->setPosicion(x[dinoEnemy] + 500.f,y[dinoEnemy]);
+				if(dinoEnemy == 1) ente->setPosicion(900.f,350.f);
+				else ente->setPosicion(755.f,350.f);
+
 				dinoEnemy++;
 			}
 
@@ -134,17 +140,16 @@ namespace IVJ
 	void EscenaJefe::onUpdate(float dt)
 	{
 		IVJ::SistemaActualizarMedidor(Equipos::Get().GetDinoLider(),medidor);
-		if(!actual->estaVivo())
-			cambiarTurno();
+		if(!actual->estaVivo()) cambiarTurno();
 		
 		mouse = false;
 		auto c = actual->getComponente<CE::IControl>();
 
 		CE::GLogger::Get().agregarLog(std::to_string(actual->getComponente<CE::IPersonaje>()->nivel),CE::GLogger::Niveles::LOG_DEBUG);
-		CE::GLogger::Get().agregarLog(std::to_string(actual->getStats()->hp_max),CE::GLogger::Niveles::LOG_DEBUG);
-		CE::GLogger::Get().agregarLog(std::to_string(actual->getStats()->str_max),CE::GLogger::Niveles::LOG_DEBUG);
-		CE::GLogger::Get().agregarLog(std::to_string(actual->getStats()->def_max),CE::GLogger::Niveles::LOG_DEBUG);
-		CE::GLogger::Get().agregarLog(std::to_string(actual->getStats()->agi_max),CE::GLogger::Niveles::LOG_DEBUG);
+		CE::GLogger::Get().agregarLog(std::to_string(actual->getStats()->hp),CE::GLogger::Niveles::LOG_DEBUG);
+		CE::GLogger::Get().agregarLog(std::to_string(actual->getStats()->str),CE::GLogger::Niveles::LOG_DEBUG);
+		CE::GLogger::Get().agregarLog(std::to_string(actual->getStats()->def),CE::GLogger::Niveles::LOG_DEBUG);
+		CE::GLogger::Get().agregarLog(std::to_string(actual->getStats()->agi),CE::GLogger::Niveles::LOG_DEBUG);
 
 		for(auto &f: objetos.getPool())
 		{
@@ -152,9 +157,7 @@ namespace IVJ
 		}
 
 		for(auto & entidades : turnos){
-			//entidades->mostrarEstados();
 			IVJ::SistemaMostrarEstados(entidades);
-			//entidades->actualizarVida();
 			IVJ::SistemaActualizarVida(entidades);
 		}
 
@@ -240,6 +243,8 @@ namespace IVJ
 					{
 						for(auto& entidad : turnos)
 						{
+							if(cotyVivo)
+								if(entidad->getNombre()->nombre == "Anteosaurus") continue;
 							auto box = entidad->getComponente<CE::ISprite>();
 							auto pos = entidad->getPosicion();
 
@@ -285,6 +290,7 @@ namespace IVJ
 		{
 			if(!habilidadActiva)
 			{
+				std::cout << "Inicio\n";
 				habilidadActiva = true;
 				c->accion = true;
 			}
@@ -294,6 +300,7 @@ namespace IVJ
 
 			if(!habilidadActiva)
 			{
+				std::cout <<"Fin"<<std::endl;
 				auto logText = log->getComponente<CE::ITexto>();
 				auto nombreDino = actual->getNombre()->nombre;
 				sf::String n(nombreDino + "\na realizado su\nmovimiento");
@@ -388,9 +395,13 @@ namespace IVJ
 			IVJ::SistemaAplicarEstados(actual);
 
 			if(actual->tieneComponente<CE::IJugador>() && actual->getComponente<CE::IJugador>()->dinoPuntos <= 0 && !actual->getComponente<CE::IPersonaje>()->tieneAtaquesGratis) cambiarTurno();
-			if(actual->getComponente<CE::IEstados>()->dormido || actual->getComponente<CE::IEstados>()->aturdido) cambiarTurno();		}
+			if(actual->getComponente<CE::IEstados>()->dormido || actual->getComponente<CE::IEstados>()->aturdido) cambiarTurno();		
+		}
 		else
-			cambiarTurno();
+		{
+			if(actual->getNombre()->nombre == "Coty") cotyVivo = false;
+			cambiarTurno();		
+		}
 	}
 
 	void EscenaJefe::onInputs(const CE::Botones& accion){

@@ -14,6 +14,7 @@ namespace IVJ
 
             int turnos = 0;
             bool permanente = false;
+            bool curable = true;
 
         public:
             //virtual void aplicarEstado(std::shared_ptr<IVJ::Dinosaurio> principal)=0;

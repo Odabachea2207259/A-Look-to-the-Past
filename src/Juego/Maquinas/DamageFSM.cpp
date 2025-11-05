@@ -46,11 +46,12 @@ namespace IVJ
 
 		auto vectores = cargarSprites(j,"Daño");
 		max_frames = getMaxFrames(j,"Daño");
+		max_tiempo = getVel(j,"Daño");
 
 		for(size_t i = 0; i < vectores.size() && i < max_frames; i++)
 			ani_frames[i] = vectores[i];
 
-		max_tiempo = 0.08f;
+		//max_tiempo = 0.08f;
 		tiempo = max_tiempo;
 		id_actual = 0;
 	}

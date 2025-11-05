@@ -152,8 +152,11 @@ namespace CE
 			bool muerte;
 			bool muerto;
 			bool accion;
+			bool salto;
+			bool saltando;
 
 			std::string ataque = "Ataque";
+			std::string mov = "";
 
 			bool nextPage;
 			bool prevPage;
@@ -207,11 +210,13 @@ namespace CE
 		public:
 			explicit IPersonaje(){}
 
-		    /*int*/float nivel;
+		    float nivel;
             bool turno = false;
+			bool especial = false;
 
             bool tieneAtaquesGratis = true;
             int numDino;
+			std::shared_ptr<IVJ::Entidad> target;
             
             IVJ::TipoEnte tipo;
 	};

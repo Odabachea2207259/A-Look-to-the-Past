@@ -23,7 +23,12 @@ namespace CE
 	{
 		for(auto & ente : objetos)
 		{
-			if(ente->esDino && !ente->estaVivo())
+/* 			if(ente->esDino && !ente->estaVivo())
+			{
+				auto c = ente->getComponente<CE::IControl>();
+					c->muerte = true;
+			} */
+			if(!ente->estaVivo())
 			{
 				auto c = ente->getComponente<CE::IControl>();
 					c->muerte = true;
