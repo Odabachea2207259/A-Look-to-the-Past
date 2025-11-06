@@ -346,7 +346,12 @@ namespace IVJ
             
             for(auto & estado : estados->estados)
             {
-                estado->setPosicion(target->getComponente<CE::ISelectores>()->vida_max.getPosition().x + (14*i),target->getComponente<CE::ISelectores>()->vida_max.getPosition().y + 15.f);
+				if(estado->tieneComponente<CE::ISprite>())
+				{
+					auto sprite = estado->getComponente<CE::ISprite>();
+					sprite->m_sprite.setPosition(sf::Vector2f{target->getComponente<CE::ISelectores>()->vida_max.getPosition().x + (30*i),target->getComponente<CE::ISelectores>()->vida_max.getPosition().y + 30.f});
+				}
+                else estado->setPosicion(target->getComponente<CE::ISelectores>()->vida_max.getPosition().x + (14*i),target->getComponente<CE::ISelectores>()->vida_max.getPosition().y + 15.f);
                 i++;
                 if(i >= 5) return;
             }

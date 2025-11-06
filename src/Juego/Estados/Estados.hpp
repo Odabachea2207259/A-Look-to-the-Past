@@ -1,6 +1,7 @@
 #pragma once
 #include "../Figuras/Figuras.hpp"
 #include "../Dinosaurios/Dinosaurio.hpp"
+#include "../../Motor/Primitivos/GestorAssets.hpp"
 //#include "../../Motor/Componentes/IComponentes.hpp"
 
 namespace IVJ
@@ -10,7 +11,7 @@ namespace IVJ
     {
         public:
             explicit Estado(const sf::Color& relleno,const  sf::Color& contorno)
-            :Rectangulo{6.f,6.f,relleno,contorno}{}
+            :Rectangulo{15.f,15.f,relleno,contorno}{} //Revisar tamaño
 
             int turnos = 0;
             bool permanente = false;
@@ -29,6 +30,12 @@ namespace IVJ
             {
                 turnos = 1;
                 permanente = true;
+
+                this->addComponente(std::make_shared<CE::ISprite>(
+                    CE::GestorAssets::Get().getTextura("sangrado"),
+                    100.f,100.f,
+                    0.25f
+                ));
             }
 
             //void aplicarEstado(std::shared_ptr<IVJ::Dinosaurio> principal);
@@ -43,6 +50,12 @@ namespace IVJ
             {
                 turnos = 1;
                 permanente = true;
+
+                this->addComponente(std::make_shared<CE::ISprite>(
+                    CE::GestorAssets::Get().getTextura("dormido"),
+                    100.f,100.f,
+                    0.25f
+                ));
             }
 
             //void aplicarEstado(std::shared_ptr<IVJ::Dinosaurio> principal);
@@ -56,6 +69,12 @@ namespace IVJ
             :Estado{sf::Color::Yellow,sf::Color::Yellow}
             {
                 turnos = 2;
+
+                this->addComponente(std::make_shared<CE::ISprite>(
+                    CE::GestorAssets::Get().getTextura("aturdido"),
+                    100.f,100.f,
+                    0.25f
+                ));
             }
 
             //void aplicarEstado(std::shared_ptr<IVJ::Dinosaurio> principal);

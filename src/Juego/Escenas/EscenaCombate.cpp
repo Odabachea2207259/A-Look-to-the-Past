@@ -407,7 +407,10 @@ namespace IVJ
 		{
 			if(ente->estaVivo()){
 				for(auto & estado : ente->getComponente<CE::IEstados>()->estados)
+				{
+					if((estado->tieneComponente<CE::ISprite>())) CE::Render::Get().AddToDraw(estado->getComponente<CE::ISprite>()->m_sprite);
 					CE::Render::Get().AddToDraw(*estado);
+				}
 				CE::Render::Get().AddToDraw(ente->getComponente<CE::ISelectores>()->vida_max);
 				CE::Render::Get().AddToDraw(ente->getComponente<CE::ISelectores>()->vida);
 			}

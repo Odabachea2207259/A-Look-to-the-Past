@@ -61,6 +61,10 @@ namespace IVJ
 		CE::GestorAssets::Get().agregarTextura("craneo",ASSETS "/iconos/Craneo.png",CE::Vector2D{0,0},CE::Vector2D{167,109});
 		CE::GestorAssets::Get().agregarTextura("cuello",ASSETS "/iconos/Cuello.png",CE::Vector2D{0,0},CE::Vector2D{91,90});
 
+		CE::GestorAssets::Get().agregarTextura("sangrado",ASSETS "/estados/Sangrado.PNG",CE::Vector2D{0,0},CE::Vector2D{100,100});
+		CE::GestorAssets::Get().agregarTextura("dormido",ASSETS "/estados/Dormido.PNG",CE::Vector2D{0,0},CE::Vector2D{100,100});
+		CE::GestorAssets::Get().agregarTextura("aturdido",ASSETS "/estados/Aturdido.png",CE::Vector2D{0,0},CE::Vector2D{100,100});
+
 		CE::GestorAssets::Get().agregarTextura("Mapa_1", ASSETS "/fondo/MenuPrincipal-Mapa1.jpg",CE::Vector2D{0,0},CE::Vector2D{1600,1200});
 		CE::GestorAssets::Get().agregarTextura("Mapa_2", ASSETS "/fondo/MenuPrincipal-Mapa2.jpg",CE::Vector2D{0,0},CE::Vector2D{1600,1200});
 		CE::GestorAssets::Get().agregarTextura("Mapa_3", ASSETS "/fondo/MenuPrincipal-Mapa3.jpg",CE::Vector2D{0,0},CE::Vector2D{1600,1200});

@@ -73,7 +73,7 @@ namespace IVJ
         cant = 1;
 
         nivelJugador = 0.5;
-        prob = 1;
+        prob = 2;
 
 		switch(prob)
 		{
