@@ -184,7 +184,7 @@ namespace IVJ
 		bool mov = false;
 		switch(Jugador::Get().GetPeriodo())
 		{
-			case 1:
+			case 3:
 				mov = SistemaIAJefes_P(actual,player,enemigos,dt);
 				break;
 		}

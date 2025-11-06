@@ -51,7 +51,7 @@ namespace IVJ
     void Equipos::crearEnemigos()
     {
         switch(Jugador::Get().GetPeriodo()){
-            case 1:
+            case 3:
                 crearJefesP();
                 break;
             case 9:
@@ -71,7 +71,8 @@ namespace IVJ
 		//int prob = 1;
 		int cant = rand() % player->size() + 1;
 
-        nivelJugador = 0.2;
+        nivelJugador = 0.5;
+        prob = 2;
 
 		switch(prob)
 		{

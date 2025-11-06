@@ -67,7 +67,6 @@ namespace IVJ
 
         for(auto & dino : Equipos::Get().GetPlayer())
             if(dino->estaVivo())
-                //dino->agregarVida(dino->getStats()->hp_max * 0.2);
                 IVJ::SistemaAgregarVida(dino,dino->getStats()->hp_max * 0.2);
 
         
@@ -197,7 +196,7 @@ namespace IVJ
             {
                 switch(Jugador::Get().GetPeriodo())
                 {
-                    case 1:
+                    case 3:
                         CE::GestorEscenas::Get().cambiarEscena("Jefe");
                         break;
                     default:
@@ -220,65 +219,6 @@ namespace IVJ
                 areas.at(i)->setOutColor(sf::Color::Black);
         }
     }
-
-    /*
-	void EscenaVictoria::onUpdate(float dt)
-	{
-        auto mousePos = CE::Render::Get().getMousePos();
-
-        for(int i = 0; i < 3; i++)
-        {
-            if(areas.at(i)->rect_bounding.contains({static_cast<int>(mousePos.x),static_cast<int>(mousePos.y)}))
-            {
-                if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
-                {
-                    mousePressed = true;
-                }
-
-                if(mousePressed)
-                {
-                    if(!sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
-                        mousePrev = true;
-                }
-
-                if(mousePrev)
-                {
-                    mousePressed = false;
-                    mousePrev = false;
-
-                    if(!recompensaSelecc)
-                    {
-                        recompensaSelecc = true;
-                        recompensaPos = i;
-                    }
-                    else if(recompensaSelecc && i == recompensaPos){
-                        recompensaSelecc = false;
-                    }
-                }
-            }
-        }
-
-        if(boton->rect_bounding.contains({static_cast<int>(mousePos.x),static_cast<int>(mousePos.y)}))
-        {
-            boton->getComponente<CE::ITexto>()->m_texto.setFillColor(sf::Color(166,134,86));
-            if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
-                CE::GestorEscenas::Get().cambiarEscena("Shaders");
-        }
-        else
-            boton->getComponente<CE::ITexto>()->m_texto.setFillColor(sf::Color::Black);
-
-        if(recompensaSelecc)
-        {
-            for(int i = 0; i < 3; i++)
-            {
-                if(recompensaPos == i)
-                    areas.at(i)->getRectangle().setOutlineColor(sf::Color::Red);
-                else
-                    areas.at(i)->getRectangle().setOutlineColor(sf::Color::Black);
-            }
-        }
-	}
-    */
 
 	void EscenaVictoria::onInputs(const CE::Botones& accion)
 	{

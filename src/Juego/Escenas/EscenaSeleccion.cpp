@@ -115,7 +115,7 @@ namespace IVJ
 			if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)){
 				switch(Jugador::Get().GetPeriodo())
                 {
-                    case 1:
+                    case 3:
                         CE::GestorEscenas::Get().cambiarEscena("Jefe");
                         break;
                     default:

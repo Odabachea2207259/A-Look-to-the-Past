@@ -146,6 +146,7 @@ namespace IVJ
 	{
 		IVJ::SistemaActualizarMedidor(Equipos::Get().GetDinoLider(),medidor);
 		if(!actual->estaVivo()) cambiarTurno();
+		if(actual->tieneComponente<CE::IJugador>() && actual->getComponente<CE::IJugador>()->dinoPuntos <= 0 && !actual->getComponente<CE::IPersonaje>()->tieneAtaquesGratis && !habilidadActiva) cambiarTurno();
 
 		mouse = false;
 		auto c = actual->getComponente<CE::IControl>();
@@ -155,6 +156,8 @@ namespace IVJ
 		CE::GLogger::Get().agregarLog(std::to_string(actual->getStats()->str_max),CE::GLogger::Niveles::LOG_DEBUG);
 		CE::GLogger::Get().agregarLog(std::to_string(actual->getStats()->def_max),CE::GLogger::Niveles::LOG_DEBUG);
 		CE::GLogger::Get().agregarLog(std::to_string(actual->getStats()->agi_max),CE::GLogger::Niveles::LOG_DEBUG);
+		
+		if(actual->tieneComponente<CE::IJugador>()) CE::GLogger::Get().agregarLog(std::to_string(actual->getComponente<CE::IJugador>()->dinoPuntos),CE::GLogger::Niveles::LOG_DEBUG);
 
 		for(auto &f: objetos.getPool())
 		{
@@ -304,12 +307,10 @@ namespace IVJ
 
 			if(!habilidadActiva)
 			{
-				auto logText = log->getComponente<CE::ITexto>();
 				auto nombreDino = actual->getNombre()->nombre;
 				sf::String n(nombreDino + "\na realizado su\nmovimiento");
-				logText->m_texto.setString(n);
-
-				logText->m_texto.setFillColor(sf::Color::Red);
+				*Log::Get().texto = nombreDino + "\na realizado su\nmovimiento";
+				Log::Get().acomodarTextos();
 
 				pSelecc = false;
 				eSelecc = false;
@@ -328,14 +329,12 @@ namespace IVJ
 
 			if(!habilidadActiva)
 			{
-				auto logText = log->getComponente<CE::ITexto>();
 				auto nombreDino = actual->getNombre()->nombre;
 				auto nombreHabilidad = habilidadSelecc->getNombre()->nombre;
 				auto nombreTarget = (playerSelecc) ? playerSelecc->getNombre()->nombre : enemSelecc->getNombre()->nombre;
-				sf::String n(nombreDino + "\na realizado\n" + nombreHabilidad + "\nen " + nombreTarget);
-				logText->m_texto.setString(n);
 
-				logText->m_texto.setFillColor(sf::Color::Blue);
+				*Log::Get().texto = nombreDino + "\na realizado\n" + nombreHabilidad + "\nen " + nombreTarget;
+				Log::Get().acomodarTextos();
 
 				pSelecc = false;
 				eSelecc = false;
@@ -461,6 +460,12 @@ namespace IVJ
 		//CE::Render::Get().AddToDraw(log->getComponente<CE::ITexto>()->m_texto);
 
 		CE::Render::Get().AddToDraw(*Log::Get().log);
+
+		if(!Log::Get().textos->empty()){
+			for(auto & texto : Log::Get().GetTextos()){
+				CE::Render::Get().AddToDraw(texto->m_texto);
+			}
+		}
 
 		CE::Render::Get().AddToDraw(nivelActual->getComponente<CE::ITexto>()->m_texto);
 	}
