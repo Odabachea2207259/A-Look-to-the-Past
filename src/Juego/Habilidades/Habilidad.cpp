@@ -1,4 +1,6 @@
 #include "Habilidad.hpp"
+#include "../Objetos/Log.hpp"
+
 namespace IVJ
 {
 /*----------------------------------------------------ACCION DE MOVIMIENTO DE CADA TIPO DE HABILIDAD------------------------------------------*/
@@ -41,6 +43,12 @@ namespace IVJ
             c_principal->acc = true;
             c_target->damage = true;
             realizarMov(principal,target);
+
+            int damage = target->getStats()->hp_prev - target->getStats()->hp;
+            *IVJ::Log::Get().texto = principal->getNombre()->nombre + "\nredujo " + std::to_string(damage) + " puntos de HP a \n" + target->getNombre()->nombre;
+            IVJ::Log::Get().buff = false;
+
+            target->getStats()->hp_prev = target->getStats()->hp;
             if(target->getComponente<CE::IPersonaje>()->especial) 
             {
                 auto esp = target->getComponente<CE::IPersonaje>()->target;
@@ -100,7 +108,11 @@ namespace IVJ
 
         if(c_principal->sacc)
             return true;
+        
         realizarMov(principal,target);
+        *IVJ::Log::Get().texto = principal->getNombre()->nombre + "\nuso " + this->nombre->nombre + " en\n" + target->getNombre()->nombre;
+        IVJ::Log::Get().buff = true;
+        target->getStats()->hp_prev = target->getStats()->hp;
 
         return false;
     }
@@ -125,6 +137,8 @@ namespace IVJ
         return true;
         
         realizarMov(principal,target);
+        *IVJ::Log::Get().texto = principal->getNombre()->nombre + "\nuso " + this->nombre->nombre + " en\n" + target->getNombre()->nombre;
+        IVJ::Log::Get().buff = false;
         return false;
     }
 

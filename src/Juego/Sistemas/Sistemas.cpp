@@ -425,6 +425,7 @@ namespace IVJ
 		auto nivel = target->getComponente<CE::IPersonaje>()->nivel;
 		target->getStats()->hp = hp * nivel;
 		target->getStats()->hp_max = hp * nivel;
+		target->getStats()->hp_prev = target->getStats()->hp;
 
 		target->getStats()->str = str * nivel;
 		target->getStats()->str_max = str * nivel;
@@ -441,6 +442,7 @@ namespace IVJ
 		auto nivel = target->getComponente<CE::IPersonaje>()->nivel;
 		target->getStats()->hp = hp * nivel;
 		target->getStats()->hp_max = hp * nivel;
+		target->getStats()->hp_prev = target->getStats()->hp;
 
 		target->getStats()->str = str * nivel;
 		target->getStats()->str_max = str * nivel;
@@ -528,20 +530,27 @@ namespace IVJ
 				if(actualHabilidades->habilidadSelecc->tipo == IVJ::TipoHabilidad::Buffeo)
 				{
 					personaje->numDino = rand() % enemigos.size();
-					if(enemigos.at(personaje->numDino)->estaVivo()) break;
+					if(enemigos.at(personaje->numDino)->estaVivo()){
+						personaje->target = enemigos.at(personaje->numDino);
+						break;
+					} 
 				}
 				else
 				{
 					personaje->numDino = rand() % player.size();
-					if(player.at(personaje->numDino)->estaVivo()) break;
+					if(player.at(personaje->numDino)->estaVivo())
+					{
+						personaje->target = player.at(personaje->numDino);
+						break;
+					}
 				}
 			} while(true);			
 		}
 
 		if(actualHabilidades->habilidadSelecc->tipo == IVJ::TipoHabilidad::Buffeo)
-			return actualHabilidades->habilidadSelecc->accion(actual,enemigos.at(personaje->numDino),dt);
+			return actualHabilidades->habilidadSelecc->accion(actual,personaje->target,dt);
 		
-		return actualHabilidades->habilidadSelecc->accion(actual,player.at(personaje->numDino),dt);
+		return actualHabilidades->habilidadSelecc->accion(actual,personaje->target,dt);
 	}
 
 	bool SistemaIA_Heal(std::shared_ptr<Entidad> actual,std::vector<std::shared_ptr<IVJ::Entidad>> player, std::vector<std::shared_ptr<IVJ::Entidad>> enemigos, float dt)
@@ -555,17 +564,19 @@ namespace IVJ
 			int x = 50, y = 50, z = 50;
 			personaje->turno = true;
 
-			float menorVida = 1000.f;
-			personaje->numDino = -1;
+			//float menorVida = 1000.f;
+			float menorVida = INT_MAX;
 
-			for(auto & a: enemigos)
+			for(int i = 0; i < enemigos.size(); i++)
 			{
-				if(a->getStats()->hp < menorVida && a->estaVivo())
-				{
-					menorVida = a->getStats()->hp;
+				auto e = enemigos.at(i);
+				if(e->getStats()->hp < menorVida && e->estaVivo()){
+					menorVida = e->getStats()->hp;
+					personaje->numDino = i;
 				}
-				personaje->numDino++;
 			}
+
+			personaje->target = enemigos.at(personaje->numDino);
 
 			if(menorVida < enemigos.at(personaje->numDino)->getStats()->hp_max * 0.5f && menorVida > 0.f)
 			{
@@ -575,43 +586,42 @@ namespace IVJ
 			}
 		
 			int prob = (rand() % 100) + 1;
+			int habilidad = 0;
+			if(prob >= 1 && prob <= x) habilidad = 0;
+			else if(prob > x && prob <= y) habilidad = 1;
+			else if(prob > y && prob <= z) habilidad = 2;
+			else if(prob > z && prob <= 100) habilidad = 3;
 
-			if(prob >= 1 && prob <= x)
-			{
-				actualHabilidades->habilidadSelecc = actualHabilidades->movimientos.at(0);
-			}
-			else if(prob > x && prob <= y)
-			{
-				actualHabilidades->habilidadSelecc = actualHabilidades->movimientos.at(1);
-			}
-			else if(prob > y && prob <= z)
-			{
-				actualHabilidades->habilidadSelecc = actualHabilidades->movimientos.at(2);
-			}
-			else if(prob > z && prob <= 100)
-			{
-				actualHabilidades->habilidadSelecc = actualHabilidades->movimientos.at(3);
-			}
+			actualHabilidades->habilidadSelecc = actualHabilidades->movimientos.at(habilidad);
 
 			do{
 				if(actualHabilidades->habilidadSelecc->tipo == Buffeo)
 				{
+					if(menorVida < 40.f && menorVida > 0.f) break;
+					
 					personaje->numDino = rand() % enemigos.size();
-					if(enemigos.at(personaje->numDino)->estaVivo()) break;
+					if(enemigos.at(personaje->numDino)->estaVivo()) 
+					{
+						personaje->target = enemigos.at(personaje->numDino);
+						break;
+					}
 				}
 				else
 				{
-					if(menorVida < 40.f && menorVida > 0.f) break;
 					personaje->numDino = rand() % player.size();
 	
-					if(player.at(personaje->numDino)->estaVivo()) break;
+					if(player.at(personaje->numDino)->estaVivo()) 
+					{
+						personaje->target = player.at(personaje->numDino);
+						break;
+					}
 				}
 			} while(true);			
 		}
 
 		if(actualHabilidades->habilidadSelecc->tipo == Buffeo)
-			return actualHabilidades->habilidadSelecc->accion(actual,enemigos.at(personaje->numDino),dt);
+			return actualHabilidades->habilidadSelecc->accion(actual,personaje->target,dt);
 		
-		return actualHabilidades->habilidadSelecc->accion(actual,player.at(personaje->numDino),dt);
+		return actualHabilidades->habilidadSelecc->accion(actual,personaje->target,dt);
 	}
 }

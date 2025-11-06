@@ -32,14 +32,6 @@ namespace IVJ
 			medidor = std::make_shared<Rectangulo>(tam.x-6.f,10.f,sf::Color::Blue,sf::Color::Black);
 			medidor->setPosicion(3.f,3.f);
 
-			//AGREGAMOS EL LOG DE LOS MOVIMIENTOS REALIZADOS
-			log = std::make_shared<Rectangulo>(500.f,100.f,sf::Color::Green,sf::Color::Black);
-			log->addComponente(std::make_shared<CE::ITexto>(CE::GestorAssets::Get().getFont("Caveman")," "));
-			log->setPosicion((tam.x/2.f)-250.f,40.f);
-			auto textLog = log->getComponente<CE::ITexto>();
-			textLog->m_texto.setPosition({(tam.x/2.f)-250.f,45.f});
-			textLog->m_texto.setCharacterSize(10);
-
 			//AGREGAMOS EL CONTADOR QUE DICE EN QUE RONDA ESTAMOS
 			nivelActual = std::make_shared<Rectangulo>(100.f,100.f,sf::Color::Transparent,sf::Color::Transparent);
 			nivelActual->addComponente(std::make_shared<CE::ITexto>(CE::GestorAssets::Get().getFont("Caveman"), " "));
@@ -302,15 +294,11 @@ namespace IVJ
 				c->accion = true;
 			}
 			
-			//habilidadActiva = std::static_pointer_cast<IVJ::Dinosaurio>(actual)->turnoEnemigo(actual,Equipos::Get().GetPlayer(),Equipos::Get().GetEnemigos(),dt);
 			habilidadActiva = IVJ::SistemaIA(actual,Equipos::Get().GetPlayer(),Equipos::Get().GetEnemigos(),dt);
 
 			if(!habilidadActiva)
 			{
-				auto nombreDino = actual->getNombre()->nombre;
-				sf::String n(nombreDino + "\na realizado su\nmovimiento");
-				*Log::Get().texto = nombreDino + "\na realizado su\nmovimiento";
-				Log::Get().acomodarTextos();
+				Log::Get().acomodarTextos(false);
 
 				pSelecc = false;
 				eSelecc = false;
@@ -329,12 +317,7 @@ namespace IVJ
 
 			if(!habilidadActiva)
 			{
-				auto nombreDino = actual->getNombre()->nombre;
-				auto nombreHabilidad = habilidadSelecc->getNombre()->nombre;
-				auto nombreTarget = (playerSelecc) ? playerSelecc->getNombre()->nombre : enemSelecc->getNombre()->nombre;
-
-				*Log::Get().texto = nombreDino + "\na realizado\n" + nombreHabilidad + "\nen " + nombreTarget;
-				Log::Get().acomodarTextos();
+				Log::Get().acomodarTextos(true);
 
 				pSelecc = false;
 				eSelecc = false;

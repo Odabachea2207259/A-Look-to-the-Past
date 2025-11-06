@@ -22,6 +22,8 @@ namespace IVJ
 
             std::vector<std::shared_ptr<CE::ITexto>>& GetTextos();
 
-            void acomodarTextos();
+            bool buff;
+
+            void acomodarTextos(bool jugador);
     };
 }

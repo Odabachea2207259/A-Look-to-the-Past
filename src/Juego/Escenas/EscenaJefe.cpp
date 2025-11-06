@@ -296,9 +296,8 @@ namespace IVJ
 				std::cout <<"Fin"<<std::endl;
 
 				auto nombreDino = actual->getNombre()->nombre;
-				sf::String n(nombreDino + "\na realizado su\nmovimiento");
-				*Log::Get().texto = nombreDino + "\na realizado su\nmovimiento";
-				Log::Get().acomodarTextos();
+				//*Log::Get().texto = nombreDino + "\na realizado su\nmovimiento";
+				Log::Get().acomodarTextos(false);
 
 				pSelecc = false;
 				eSelecc = false;
@@ -321,8 +320,8 @@ namespace IVJ
 				auto nombreHabilidad = habilidadSelecc->getNombre()->nombre;
 				auto nombreTarget = (playerSelecc) ? playerSelecc->getNombre()->nombre : enemSelecc->getNombre()->nombre;
 
-				*Log::Get().texto = nombreDino + "\na realizado\n" + nombreHabilidad + "\nen " + nombreTarget;
-				Log::Get().acomodarTextos();
+				//*Log::Get().texto = nombreDino + "\na realizado\n" + nombreHabilidad + "\nen " + nombreTarget;
+				Log::Get().acomodarTextos(true);
 
 				pSelecc = false;
 				eSelecc = false;

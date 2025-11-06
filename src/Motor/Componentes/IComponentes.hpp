@@ -66,6 +66,7 @@ namespace CE
 
 			float hp;
 			float hp_max;
+			float hp_prev;
 			
 			float str;
 			float str_max;

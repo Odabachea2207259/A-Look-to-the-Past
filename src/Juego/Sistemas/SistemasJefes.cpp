@@ -1,4 +1,5 @@
 #include "SistemasJefes.hpp"
+#include "../Objetos/Log.hpp"
 
 namespace IVJ
 {
@@ -23,6 +24,10 @@ namespace IVJ
 		else if(target->getComponente<CE::IPersonaje>()->especial){
 			SistemaElegirAtaque(principal,target,c_principal->mov);
 			target->getComponente<CE::IPersonaje>()->especial = false;
+			int damage = target->getStats()->hp_prev - target->getStats()->hp;
+            *IVJ::Log::Get().texto = principal->getNombre()->nombre + "\nredujo " + std::to_string(damage) + " puntos de HP a \n" + target->getNombre()->nombre;
+			IVJ::Log::Get().buff = false;
+			target->getStats()->hp_prev = target->getStats()->hp;
 		}
 
 		return SistemaMover_Original(principal,target,dt,c_principal,c_target,trans_principal,trans_target,velocidadDefault);
@@ -93,6 +98,11 @@ namespace IVJ
         c_target->damage = true;
 
 		SistemaElegirAtaque(principal,target,c_principal->ataque);
+		int damage = target->getStats()->hp_prev - target->getStats()->hp;
+        *IVJ::Log::Get().texto = principal->getNombre()->nombre + "\nredujo " + std::to_string(damage) + " puntos de HP a \n" + target->getNombre()->nombre;
+		IVJ::Log::Get().buff = false;
+
+		target->getStats()->hp_prev = target->getStats()->hp;
 		
         c_principal->accion = false;
 		

@@ -35,11 +35,9 @@ namespace IVJ
             std::shared_ptr<IVJ::Entidad> actual;
             TileMap bg[4];
 	        sf::RectangleShape fondo;
-            std::vector<std::shared_ptr<Rectangulo>> vector_botones;
-            std::vector<std::shared_ptr<CE::ITexto>> textos;
+
             std::shared_ptr<CE::ITexto> dinoPuntos;
 
-            std::shared_ptr<IVJ::Rectangulo> log;
             std::shared_ptr<IVJ::Rectangulo> nivelActual;
             std::shared_ptr<IVJ::Rectangulo> medidor;
 
