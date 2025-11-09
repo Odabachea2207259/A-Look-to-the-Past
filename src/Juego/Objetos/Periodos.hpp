@@ -8,7 +8,8 @@ namespace IVJ
         Cenozoico = 10
     };
 
+    //CAMBIAR PARA REALIZAR EL EJEMPLO DE LA PELEA DE JEFES
     const int PALEOZOICO = 1;
-    const int MESOZOICO = 7;
+    const int MESOZOICO = 2; //7
     const int CENOZOICO = 10;
 }

@@ -76,8 +76,7 @@ namespace IVJ
                 
         Jugador::Get().GetDinero() += ganancias;
         
-        Jugador::Get().GetNivel() += 1;
-
+        
         if(Jugador::Get().GetPeriodo() < IVJ::MESOZOICO){
             if(Jugador::Get().GetNivel() % 3 == 0)
             {
@@ -86,12 +85,13 @@ namespace IVJ
             }
         } else if(Jugador::Get().GetPeriodo() < IVJ::CENOZOICO){
             if(Jugador::Get().GetPeriodo() % 4 == 0)
-                Jugador::Get().GetNivel() += 1;
+            Jugador::Get().GetNivel() += 1;
         }else{
             if(Jugador::Get().GetPeriodo() % 5 == 0)
-                Jugador::Get().GetNivel() += 1;
+            Jugador::Get().GetNivel() += 1;
         }
-
+        
+        Jugador::Get().GetNivel() += 1;
 		inicializar = false;
 	}
 

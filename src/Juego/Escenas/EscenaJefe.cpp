@@ -99,6 +99,7 @@ namespace IVJ
 			CE::Vector2D{540,360},CE::Vector2D{100.f,50.f}
 		));
 
+		cotyVivo = true;
 		inicializar = false;
 	}
 
@@ -415,7 +416,10 @@ namespace IVJ
 		{
 			if(ente->estaVivo()){
 				for(auto & estado : ente->getComponente<CE::IEstados>()->estados)
+				{
+					if((estado->tieneComponente<CE::ISprite>())) CE::Render::Get().AddToDraw(estado->getComponente<CE::ISprite>()->m_sprite);
 					CE::Render::Get().AddToDraw(*estado);
+				}
 				CE::Render::Get().AddToDraw(ente->getComponente<CE::ISelectores>()->vida_max);
 				CE::Render::Get().AddToDraw(ente->getComponente<CE::ISelectores>()->vida);
 			}
