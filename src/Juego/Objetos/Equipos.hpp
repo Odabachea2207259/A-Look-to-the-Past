@@ -3,6 +3,7 @@
 #include "../../Motor/Utils/Utils.hpp"
 #include "../../Motor/Utils/Vector2D.hpp"
 #include "Jugador.hpp"
+#include "Periodos.hpp"
 //#include "../Dinosaurios/Dinosaurio.hpp"
 #include "../Objetos/Entidad.hpp"
 

@@ -1,6 +1,7 @@
 #pragma once
 #include "../Figuras/Figuras.hpp"
 #include "../Objetos/Pais.hpp"
+#include "../Objetos/Periodos.hpp"
 #include "../../Motor/Primitivos/Escena.hpp"
 #include "../../Motor/Primitivos/GestorAssets.hpp"
 #include "../../Motor/Componentes/IComponentes.hpp"

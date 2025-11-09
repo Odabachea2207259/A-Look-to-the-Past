@@ -26,8 +26,7 @@ namespace IVJ
 		}
 
 		switch(Jugador::Get().GetPeriodo()){
-			case 7:
-			case 10:
+			case MESOZOICO:
 				Jugador::Get().GetCheckpoint() = Jugador::Get().GetPeriodo();
 				break;
 		}

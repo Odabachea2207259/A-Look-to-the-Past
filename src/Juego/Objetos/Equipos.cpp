@@ -51,10 +51,9 @@ namespace IVJ
     void Equipos::crearEnemigos()
     {
         switch(Jugador::Get().GetPeriodo()){
-            case 3:
+            case (IVJ::MESOZOICO - 1):
                 crearJefesP();
                 break;
-            case 9:
             default:
                 crearEnemigosDefault();
                 break;

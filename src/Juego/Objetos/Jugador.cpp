@@ -1,4 +1,5 @@
 #include "Jugador.hpp"
+#include "Periodos.hpp"
 #include <iostream>
 
 namespace IVJ
@@ -16,7 +17,7 @@ namespace IVJ
     {
         dinero = std::make_unique<int>(0);
         nivel = std::make_unique<int>(0);
-        periodo = std::make_unique<int>(1);
+        periodo = std::make_unique<int>(IVJ::PALEOZOICO);
         checkpoint = std::make_unique<int>(1);
         dinosaurios = std::make_unique<std::vector<std::shared_ptr<Dinosaurio>>>();
     }

@@ -5,6 +5,7 @@
 #include "../../Motor/Primitivos/GestorEscenas.hpp"
 #include "../Objetos/Jugador.hpp"
 #include "../Objetos/Equipos.hpp"
+#include "../Objetos/Periodos.hpp"
 #include "../../Motor/Render/Render.hpp"
 #include <fstream>
 
@@ -115,7 +116,7 @@ namespace IVJ
 			if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)){
 				switch(Jugador::Get().GetPeriodo())
                 {
-                    case 3:
+                    case (IVJ::MESOZOICO - 1):
                         CE::GestorEscenas::Get().cambiarEscena("Jefe");
                         break;
                     default:

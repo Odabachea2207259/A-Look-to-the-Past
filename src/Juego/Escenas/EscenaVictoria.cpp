@@ -2,6 +2,7 @@
 #include "../Objetos/Equipos.hpp"
 #include "../Figuras/Figuras.hpp"
 #include "../Objetos/Jugador.hpp"
+#include "../Objetos/Periodos.hpp"
 #include "../../Motor/Camaras/CamarasGestor.hpp"
 #include "../../Motor/Primitivos/GestorEscenas.hpp"
 #include "../../Motor/Primitivos/GestorAssets.hpp"
@@ -77,13 +78,13 @@ namespace IVJ
         
         Jugador::Get().GetNivel() += 1;
 
-        if(Jugador::Get().GetPeriodo() < 7){
+        if(Jugador::Get().GetPeriodo() < IVJ::MESOZOICO){
             if(Jugador::Get().GetNivel() % 3 == 0)
             {
                 Jugador::Get().GetPeriodo() += 1;
                 std::cout << "\nCambio de progreso\n";
             }
-        } else if(Jugador::Get().GetPeriodo() < 10){
+        } else if(Jugador::Get().GetPeriodo() < IVJ::CENOZOICO){
             if(Jugador::Get().GetPeriodo() % 4 == 0)
                 Jugador::Get().GetNivel() += 1;
         }else{
@@ -196,7 +197,7 @@ namespace IVJ
             {
                 switch(Jugador::Get().GetPeriodo())
                 {
-                    case 3:
+                    case (IVJ::MESOZOICO - 1):
                         CE::GestorEscenas::Get().cambiarEscena("Jefe");
                         break;
                     default:

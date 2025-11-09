@@ -1,6 +1,7 @@
 #pragma once
 #include "../Objetos/Entidad.hpp"
 #include "../Objetos/Jugador.hpp"
+#include "../Objetos/Periodos.hpp"
 
 namespace IVJ{
 	[[maybe_unused]] bool SistemaAtaque(std::shared_ptr<IVJ::Entidad> principal, std::shared_ptr<IVJ::Entidad> target, float dt,bool salto);
