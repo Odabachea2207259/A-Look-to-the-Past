@@ -157,7 +157,7 @@ namespace IVJ
     }
 	void EscenaVictoria::onFinal(){
         if(recompensaSelecc)
-            Recompensas::Get().GetRecompensa() = Recompensas::Rewards(recompensaPos);
+            Recompensas::Get().GetRecompensa() = Recompensas::Rewards(recompensas.at(recompensaPos));
     }
     void EscenaVictoria::onUpdate(float dt)
     {
