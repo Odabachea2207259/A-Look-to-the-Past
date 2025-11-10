@@ -459,8 +459,9 @@ namespace IVJ
 		{
 			for(int i = 0; i < 4; i++)
 			{
-				CE::Render::Get().AddToDraw(*actual->getComponente<CE::IHabilidades>()->movimientos.at(i));
-				CE::Render::Get().AddToDraw(actual->getComponente<CE::IHabilidades>()->movimientos.at(i)->getComponente<CE::ITexto>()->m_texto);
+				//CE::Render::Get().AddToDraw(*actual->getComponente<CE::IHabilidades>()->movimientos.at(i));
+				//CE::Render::Get().AddToDraw(actual->getComponente<CE::IHabilidades>()->movimientos.at(i)->getComponente<CE::ITexto>()->m_texto);
+				if(actual->getComponente<CE::IHabilidades>()->movimientos.at(i)->tieneComponente<CE::ISprite>()) CE::Render::Get().AddToDraw(actual->getComponente<CE::IHabilidades>()->movimientos.at(i)->getComponente<CE::ISprite>()->m_sprite);
 			}
 
 			if(actual == Equipos::Get().GetDinoLider())

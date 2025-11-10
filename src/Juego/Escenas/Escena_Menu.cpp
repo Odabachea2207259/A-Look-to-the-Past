@@ -64,6 +64,11 @@ namespace IVJ
 		CE::GestorAssets::Get().agregarTextura("dormido",ASSETS "/estados/Dormido.PNG",CE::Vector2D{0,0},CE::Vector2D{100,100});
 		CE::GestorAssets::Get().agregarTextura("aturdido",ASSETS "/estados/Aturdido.png",CE::Vector2D{0,0},CE::Vector2D{100,100});
 
+		CE::GestorAssets::Get().agregarTextura("Embestida",ASSETS "/habilidades/Embestida.png",CE::Vector2D{0,0},CE::Vector2D{600,200});
+		CE::GestorAssets::Get().agregarTextura("Mordisco",ASSETS "/habilidades/Mordisco.png",CE::Vector2D{0,0},CE::Vector2D{600,200});
+		CE::GestorAssets::Get().agregarTextura("Cabezazo",ASSETS "/habilidades/Cabezazo.png",CE::Vector2D{0,0},CE::Vector2D{600,200});
+		CE::GestorAssets::Get().agregarTextura("Punzada",ASSETS "/habilidades/Punzada.png",CE::Vector2D{0,0},CE::Vector2D{600,200});
+
 		CE::GestorAssets::Get().agregarTextura("Mapa_1", ASSETS "/fondo/MenuPrincipal-Mapa1.jpg",CE::Vector2D{0,0},CE::Vector2D{1600,1200});
 		CE::GestorAssets::Get().agregarTextura("Mapa_2", ASSETS "/fondo/MenuPrincipal-Mapa2.jpg",CE::Vector2D{0,0},CE::Vector2D{1600,1200});
 		CE::GestorAssets::Get().agregarTextura("Mapa_3", ASSETS "/fondo/MenuPrincipal-Mapa3.jpg",CE::Vector2D{0,0},CE::Vector2D{1600,1200});

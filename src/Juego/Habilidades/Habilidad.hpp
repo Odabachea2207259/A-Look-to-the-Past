@@ -4,6 +4,7 @@
 #include "../Estados/Estados.hpp"
 #include "../../Motor/Primitivos/Objetos.hpp"
 #include "../../Motor/Componentes/IComponentes.hpp"
+#include "../../Motor/Primitivos/GestorAssets.hpp"
 #include "../Sistemas/Sistemas.hpp"
 
 #include <ctime>
@@ -36,6 +37,14 @@ namespace IVJ
         public:
             virtual bool accion(std::shared_ptr<IVJ::Entidad> principal, std::shared_ptr<IVJ::Entidad> target,float dt)=0;
             virtual void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target)=0;
+
+            void agregarComponente(){
+                this->addComponente(std::make_shared<CE::ISprite>(
+                    CE::GestorAssets::Get().getTextura(this->getNombre()->nombre),
+                    600,200,
+                    0.35f
+                ));
+            }
     };
 
 /*---------------------------------------------------ATAQUES---------------------------------------------------*/
@@ -63,6 +72,7 @@ namespace IVJ
 
                 auto nombre = getNombre();
                 nombre->nombre = "Embestida";
+                agregarComponente();
             }
         public:
             void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);
@@ -79,6 +89,7 @@ namespace IVJ
 
                 auto nombre = getNombre();
                 nombre->nombre = "Mordisco";
+                agregarComponente();
             }
         public:
             void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);
@@ -112,6 +123,7 @@ namespace IVJ
 
                 auto nombre = getNombre();
                 nombre->nombre = "Cabezazo";
+                agregarComponente();
             }
         public:
             void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);
@@ -145,6 +157,7 @@ namespace IVJ
 
                 auto nombre = getNombre();
                 nombre->nombre = "Punzada";
+                agregarComponente();
             }
         public:
             void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);

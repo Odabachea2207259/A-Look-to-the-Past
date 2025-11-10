@@ -6,6 +6,16 @@ namespace IVJ
 	void Dinosaurio::acomodarBoton(std::shared_ptr<Habilidad> mov, int i)
 	{
 			mov->setPosicion(50.f + (200.f*i),650.f);
+			
+			if(mov->tieneComponente<CE::ISprite>())
+			{
+				auto sprite = mov->getComponente<CE::ISprite>();
+				auto escala = sprite->escala;
+				auto w = sprite->width;
+				auto h = sprite->height;
+				sprite->m_sprite.setPosition({50.f + (200.f*i) + (w*escala)/2,650.f+(h*escala)/2});
+			}
+
 			mov->addComponente(std::make_shared<CE::ITexto>(CE::GestorAssets::Get().getFont("Caveman"),mov->getNombre()->nombre + "\n" + std::to_string(mov->dinoPuntos)));
 			auto texto = mov->getComponente<CE::ITexto>();
 			texto->m_texto.setCharacterSize(10);
