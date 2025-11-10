@@ -23,6 +23,7 @@ namespace IVJ
 		objetos.getPool().clear();
 		dinoTurno = 0;
 		cantDinos = 0;
+		turnosTotales = 20;
 		srand(static_cast<unsigned>(time(nullptr)));
 		if(inicializar) {
 			registrarBotones(sf::Keyboard::Scancode::Escape,"menu");
@@ -40,6 +41,11 @@ namespace IVJ
 			textoNivel->m_texto.setCharacterSize(20);
 			textoNivel->m_texto.setPosition({5.f,40.f});
 			textoNivel->m_texto.setFillColor(sf::Color::Black);
+
+			turnosDisponibles = std::make_shared<CE::ITexto>(CE::GestorAssets::Get().getFont("Caveman"),std::to_string(turnosTotales));
+			turnosDisponibles->m_texto.setCharacterSize(15);
+			turnosDisponibles->m_texto.setFillColor(sf::Color::Red);
+			turnosDisponibles->m_texto.setPosition({tam.x - 60.f,40.f});
 
 			dinoPuntos = std::make_shared<CE::ITexto>(CE::GestorAssets::Get().getFont("Caveman")," ");
 			dinoPuntos->m_texto.setCharacterSize(10);
@@ -134,6 +140,7 @@ namespace IVJ
 	void EscenaJefe::onUpdate(float dt)
 	{
 		IVJ::SistemaActualizarMedidor(Equipos::Get().GetDinoLider(),medidor);
+		turnosDisponibles->m_texto.setString(std::to_string(turnosTotales));
 		if(!actual->estaVivo()) cambiarTurno();
 		
 		mouse = false;
@@ -385,12 +392,29 @@ namespace IVJ
 			IVJ::SistemaAplicarEstados(actual);
 
 			if(actual->tieneComponente<CE::IJugador>() && actual->getComponente<CE::IJugador>()->dinoPuntos <= 0 && !actual->getComponente<CE::IPersonaje>()->tieneAtaquesGratis) cambiarTurno();
-			if(actual->getComponente<CE::IEstados>()->dormido || actual->getComponente<CE::IEstados>()->aturdido) cambiarTurno();		
+			if(actual->getComponente<CE::IEstados>()->dormido || actual->getComponente<CE::IEstados>()->aturdido) cambiarTurno();
+			
+			turnosTotales -= 1;
 		}
 		else
 		{
 			if(actual->getNombre()->nombre == "Coty") cotyVivo = false;
 			cambiarTurno();		
+		}
+
+		if(turnosTotales <= 0){
+			for(auto & dino : Equipos::Get().GetPlayer())
+			{
+				dino->getStats()->hp = 0;
+				switch(IVJ::SistemaRevisarGanador(turnos)){
+				case -1:
+					CE::GestorEscenas::Get().cambiarEscena("Derrota");
+					return;
+				case 1:
+					CE::GestorEscenas::Get().cambiarEscena("Victoria");
+					return;
+				}
+			}
 		}
 	}
 
@@ -459,5 +483,6 @@ namespace IVJ
 		}
 
 		CE::Render::Get().AddToDraw(nivelActual->getComponente<CE::ITexto>()->m_texto);
+		CE::Render::Get().AddToDraw(turnosDisponibles->m_texto);
 	}
 }

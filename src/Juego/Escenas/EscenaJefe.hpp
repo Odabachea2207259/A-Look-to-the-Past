@@ -39,6 +39,7 @@ namespace IVJ
 	        sf::RectangleShape fondo;
 
             std::shared_ptr<CE::ITexto> dinoPuntos;
+            std::shared_ptr<CE::ITexto> turnosDisponibles;
 
             std::shared_ptr<IVJ::Rectangulo> nivelActual;
             std::shared_ptr<IVJ::Rectangulo> medidor;
@@ -55,6 +56,7 @@ namespace IVJ
 
             int cantDinos = 0;
             int dinoTurno = 0;
+            int turnosTotales;
             std::vector<std::shared_ptr<IVJ::Entidad>> turnos;
         private:
             void cambiarTurno();
