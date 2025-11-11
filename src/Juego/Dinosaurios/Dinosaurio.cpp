@@ -5,7 +5,8 @@ namespace IVJ
 {
 	void Dinosaurio::acomodarBoton(std::shared_ptr<Habilidad> mov, int i)
 	{
-			mov->setPosicion(50.f + (200.f*i),650.f);
+			//mov->setPosicion(50.f + (200.f*i),650.f);
+			mov->setPosicion(30.f + (250.f*i),630.f);
 			
 			if(mov->tieneComponente<CE::ISprite>())
 			{
@@ -13,7 +14,8 @@ namespace IVJ
 				auto escala = sprite->escala;
 				auto w = sprite->width;
 				auto h = sprite->height;
-				sprite->m_sprite.setPosition({50.f + (200.f*i) + (w*escala)/2,650.f+(h*escala)/2});
+				sprite->m_sprite.setPosition({(20.f + (250.f*i) + (w*escala)/2),(625.f+(h*escala)/2)});
+				//sprite->m_sprite.setPosition({((200.f*i) + (w*escala)/2),(650.f+(h*escala)/2)});
 			}
 
 			mov->addComponente(std::make_shared<CE::ITexto>(CE::GestorAssets::Get().getFont("Caveman"),mov->getNombre()->nombre + "\n" + std::to_string(mov->dinoPuntos)));
@@ -47,22 +49,28 @@ namespace IVJ
 	
     void Pachycephalosaurus::agregarHabilidades()
     {
+		//float w = 185.f;
+		float w = 600.f * .35f;
+
+		//float h = 50.f;
+		float h = 200.f * .35f;
+
 		for(int i = 0; i < 4; i++)
 		{
 			std::shared_ptr<Habilidad> mov;
 			switch(i)
 			{
 				case 0:
-					mov = std::make_shared<IVJ::Cabezazo>(185.f,50.f,sf::Color::Red,sf::Color::Black);
+					mov = std::make_shared<IVJ::Cabezazo>(w,h,sf::Color::Red,sf::Color::Black);
 					break;
 				case 1:
-					mov = std::make_shared<IVJ::Embestida>(185.f,50.f,sf::Color::Red,sf::Color::Black);
+					mov = std::make_shared<IVJ::Embestida>(w,h,sf::Color::Red,sf::Color::Black);
 					break;
 				case 2:
-					mov = std::make_shared<IVJ::Valor>(185.f,50.f,sf::Color::Blue,sf::Color::Black);
+					mov = std::make_shared<IVJ::Valor>(w,h,sf::Color::Blue,sf::Color::Black);
 					break;
 				case 3:
-					mov = std::make_shared<IVJ::Impulso>(185.f,50.f,sf::Color::Blue,sf::Color::Black);
+					mov = std::make_shared<IVJ::Impulso>(w,h,sf::Color::Blue,sf::Color::Black);
 					break;				
 			}
 			acomodarBoton(mov,i);
@@ -74,22 +82,28 @@ namespace IVJ
 
     void Parasaurolophus::agregarHabilidades()
     {
+		//float w = 185.f;
+		float w = 600.f * .35f;
+
+		//float h = 50.f;
+		float h = 200.f * .35f;
+
 		for(int i = 0; i < 4; i++)
 		{
 			std::shared_ptr<Habilidad> mov;
 			switch(i)
 			{
 				case 0:
-					mov = std::make_shared<IVJ::Mordisco>(185.f,50.f,sf::Color::Red,sf::Color::Black);
+					mov = std::make_shared<IVJ::Mordisco>(w,h,sf::Color::Red,sf::Color::Black);
 					break;
 				case 1:
-					mov = std::make_shared<IVJ::Sanar>(185.f,50.f,sf::Color::Blue,sf::Color::Black);
+					mov = std::make_shared<IVJ::Sanar>(w,h,sf::Color::Blue,sf::Color::Black);
 					break;
 				case 2:
-					mov = std::make_shared<IVJ::Curar>(185.f,50.f,sf::Color::Blue,sf::Color::Black);
+					mov = std::make_shared<IVJ::Curar>(w,h,sf::Color::Blue,sf::Color::Black);
 					break;
 				case 3:
-					mov = std::make_shared<IVJ::Canto>(185.f,50.f,sf::Color::Magenta,sf::Color::Black);
+					mov = std::make_shared<IVJ::Canto>(w,h,sf::Color::Magenta,sf::Color::Black);
 					break;				
 			}
 			acomodarBoton(mov,i);
@@ -100,22 +114,28 @@ namespace IVJ
 
     void Centrosaurus::agregarHabilidades()
     {
+		//float w = 185.f;
+		float w = 600.f * .35f;
+
+		//float h = 50.f;
+		float h = 200.f * .35f;
+
 		for(int i = 0; i < 4; i++)
 		{
 			std::shared_ptr<Habilidad> mov;
 			switch(i)
 			{
 				case 0:
-					mov = std::make_shared<IVJ::Embestida>(185.f,50.f,sf::Color::Red,sf::Color::Black);
+					mov = std::make_shared<IVJ::Embestida>(w,h,sf::Color::Red,sf::Color::Black);
 					break;
 				case 1:
-					mov = std::make_shared<IVJ::Punzada>(185.f,50.f,sf::Color::Red,sf::Color::Black);
+					mov = std::make_shared<IVJ::Punzada>(w,h,sf::Color::Red,sf::Color::Black);
 					break;
 				case 2:
-					mov = std::make_shared<IVJ::Mordisco>(185.f,50.f,sf::Color::Red,sf::Color::Black);
+					mov = std::make_shared<IVJ::Mordisco>(w,h,sf::Color::Red,sf::Color::Black);
 					break;
 				case 3:
-					mov = std::make_shared<IVJ::Adrenalina>(185.f,50.f,sf::Color::Blue,sf::Color::Black);
+					mov = std::make_shared<IVJ::Adrenalina>(w,h,sf::Color::Blue,sf::Color::Black);
 					break;				
 			}
 			acomodarBoton(mov,i);
@@ -126,22 +146,28 @@ namespace IVJ
 
     void Carnotauro::agregarHabilidades()
     {
+		//float w = 185.f;
+		float w = 600.f * .35f;
+
+		//float h = 50.f;
+		float h = 200.f * .35f;
+
 		for(int i = 0; i < 4; i++)
 		{
 			std::shared_ptr<Habilidad> mov;
 			switch(i)
 			{
 				case 0:
-					mov = std::make_shared<IVJ::Embestida>(185.f,50.f,sf::Color::Red,sf::Color::Black);
+					mov = std::make_shared<IVJ::Embestida>(w,h,sf::Color::Red,sf::Color::Black);
 					break;
 				case 1:
-					mov = std::make_shared<IVJ::Mordisco>(185.f,50.f,sf::Color::Red,sf::Color::Black);
+					mov = std::make_shared<IVJ::Mordisco>(w,h,sf::Color::Red,sf::Color::Black);
 					break;
 				case 2:
-					mov = std::make_shared<IVJ::Rugido>(185.f,50.f,sf::Color::Magenta,sf::Color::Black);
+					mov = std::make_shared<IVJ::Rugido>(w,h,sf::Color::Magenta,sf::Color::Black);
 					break;
 				case 3:
-					mov = std::make_shared<IVJ::Impulso>(185.f,50.f,sf::Color::Blue,sf::Color::Black);
+					mov = std::make_shared<IVJ::Impulso>(w,h,sf::Color::Blue,sf::Color::Black);
 					break;				
 			}
 			acomodarBoton(mov,i);

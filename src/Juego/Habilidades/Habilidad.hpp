@@ -42,7 +42,7 @@ namespace IVJ
                 this->addComponente(std::make_shared<CE::ISprite>(
                     CE::GestorAssets::Get().getTextura(this->getNombre()->nombre),
                     600,200,
-                    0.35f
+                    0.4f
                 ));
             }
     };
@@ -205,6 +205,7 @@ namespace IVJ
 
                 auto nombre = getNombre();
                 nombre->nombre = "Rugido";
+                agregarComponente();
             }
         public:
             void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);
@@ -220,6 +221,7 @@ namespace IVJ
 
                 auto nombre = getNombre();
                 nombre->nombre = "Canto";
+                agregarComponente();
             }
         public:
             void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);
@@ -249,6 +251,7 @@ namespace IVJ
 
                 auto nombre = getNombre();
                 nombre->nombre = "Valor";
+                agregarComponente();
             }
         public:
             void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);
@@ -264,6 +267,7 @@ namespace IVJ
 
                 auto nombre = getNombre();
                 nombre->nombre = "Impulso";
+                agregarComponente();
             }
         public:
             void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);
@@ -279,6 +283,7 @@ namespace IVJ
 
                 auto nombre = getNombre();
                 nombre->nombre = "Sanar";
+                agregarComponente();
             }
         public:
             void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);
@@ -294,6 +299,7 @@ namespace IVJ
 
                 auto nombre = getNombre();
                 nombre->nombre = "Curar";
+                agregarComponente();
             }
         public:
             void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);
@@ -325,6 +331,7 @@ namespace IVJ
 
                 auto nombre = getNombre();
                 nombre->nombre = "Adrenalina";
+                agregarComponente();
             }
         public:
             void realizarMov(std::shared_ptr<IVJ::Entidad> principal,std::shared_ptr<IVJ::Entidad> target);

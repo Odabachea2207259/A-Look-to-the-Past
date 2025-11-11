@@ -59,6 +59,7 @@ namespace IVJ
 		CE::GestorAssets::Get().agregarTextura("lab",ASSETS "/iconos/Lab.png",CE::Vector2D{0,0},CE::Vector2D{234,104});
 		CE::GestorAssets::Get().agregarTextura("craneo",ASSETS "/iconos/Craneo.png",CE::Vector2D{0,0},CE::Vector2D{167,109});
 		CE::GestorAssets::Get().agregarTextura("cuello",ASSETS "/iconos/Cuello.png",CE::Vector2D{0,0},CE::Vector2D{91,90});
+		CE::GestorAssets::Get().agregarTextura("selector",ASSETS "/iconos/selector.png",CE::Vector2D{0,0},CE::Vector2D{594,420});
 
 		CE::GestorAssets::Get().agregarTextura("sangrado",ASSETS "/estados/Sangrado.PNG",CE::Vector2D{0,0},CE::Vector2D{100,100});
 		CE::GestorAssets::Get().agregarTextura("dormido",ASSETS "/estados/Dormido.PNG",CE::Vector2D{0,0},CE::Vector2D{100,100});
@@ -68,6 +69,15 @@ namespace IVJ
 		CE::GestorAssets::Get().agregarTextura("Mordisco",ASSETS "/habilidades/Mordisco.png",CE::Vector2D{0,0},CE::Vector2D{600,200});
 		CE::GestorAssets::Get().agregarTextura("Cabezazo",ASSETS "/habilidades/Cabezazo.png",CE::Vector2D{0,0},CE::Vector2D{600,200});
 		CE::GestorAssets::Get().agregarTextura("Punzada",ASSETS "/habilidades/Punzada.png",CE::Vector2D{0,0},CE::Vector2D{600,200});
+		
+		CE::GestorAssets::Get().agregarTextura("Rugido",ASSETS "/habilidades/Rugido.png",CE::Vector2D{0,0},CE::Vector2D{600,200});
+		CE::GestorAssets::Get().agregarTextura("Canto",ASSETS "/habilidades/Canto.png",CE::Vector2D{0,0},CE::Vector2D{600,200});
+		
+		CE::GestorAssets::Get().agregarTextura("Sanar",ASSETS "/habilidades/Sanar.png",CE::Vector2D{0,0},CE::Vector2D{600,200});
+		CE::GestorAssets::Get().agregarTextura("Curar",ASSETS "/habilidades/Curar.png",CE::Vector2D{0,0},CE::Vector2D{600,200});
+		CE::GestorAssets::Get().agregarTextura("Valor",ASSETS "/habilidades/Valor.png",CE::Vector2D{0,0},CE::Vector2D{600,200});
+		CE::GestorAssets::Get().agregarTextura("Impulso",ASSETS "/habilidades/Impulso.png",CE::Vector2D{0,0},CE::Vector2D{600,200});
+		CE::GestorAssets::Get().agregarTextura("Adrenalina",ASSETS "/habilidades/Adrenalina.png",CE::Vector2D{0,0},CE::Vector2D{600,200});
 
 		CE::GestorAssets::Get().agregarTextura("Mapa_1", ASSETS "/fondo/MenuPrincipal-Mapa1.jpg",CE::Vector2D{0,0},CE::Vector2D{1600,1200});
 		CE::GestorAssets::Get().agregarTextura("Mapa_2", ASSETS "/fondo/MenuPrincipal-Mapa2.jpg",CE::Vector2D{0,0},CE::Vector2D{1600,1200});

@@ -251,8 +251,8 @@ namespace IVJ
 			int prob = 1;
 			personaje->turno = true;
 
-			//if(vida <= vida_max/2 && enemigos.at(1)->estaVivo()) prob = 4;
-			if(vida <= vida_max && enemigos.at(1)->estaVivo()) prob = 4;
+			if(vida <= vida_max/2 && enemigos.at(1)->estaVivo()) prob = 4;
+			//if(vida <= vida_max && enemigos.at(1)->estaVivo()) prob = 4;
 
 			switch(rand() % prob)
 			{
@@ -287,9 +287,7 @@ namespace IVJ
 					personaje->target = player.at(personaje->numDino);
 					break;
 				}
-				case 1:
-				case 2:
-				case 3:
+				default:
 				{
 					enemigos.at(0)->getComponente<CE::IPersonaje>()->especial = true;
 					actual->getComponente<CE::IPersonaje>()->especial = true;
