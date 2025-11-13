@@ -7,6 +7,7 @@
 #include "../../Motor/Utils/Lerp.hpp"
 #include "../../Motor/Primitivos/GestorAssets.hpp"
 #include "../Sistemas/Sistemas.hpp"
+#include "../Sistemas/SistemasIA.hpp"
 #include "../Componentes/IJComponentes.hpp"
 #include "../Maquinas/IdleFSM.hpp"
 #include "../../Motor/GUI/GLogger.hpp"

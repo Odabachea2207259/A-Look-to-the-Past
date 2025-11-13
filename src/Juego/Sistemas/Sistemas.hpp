@@ -42,8 +42,5 @@ namespace IVJ
 	[[maybe_unused]] void SistemaActualizarMedidor(std::shared_ptr<IVJ::Entidad> dinoLider,std::shared_ptr<IVJ::Rectangulo> medidor);
 	[[maybe_unused]] void SistemaApagarBotones(std::shared_ptr<IVJ::Entidad> actual, bool* eSelecc, bool* pSelecc, bool* mostrarSelector);
 	[[maybe_unused]] int SistemaRevisarGanador(std::vector<std::shared_ptr<IVJ::Entidad>> turnos);
-
-	[[maybe_unused]] bool SistemaIA(std::shared_ptr<Entidad> actual,std::vector<std::shared_ptr<IVJ::Entidad>> player, std::vector<std::shared_ptr<IVJ::Entidad>> enemigos, float dt);
-	[[maybe_unused]] bool SistemaIA_Attack(std::shared_ptr<Entidad> actual,std::vector<std::shared_ptr<IVJ::Entidad>> player, std::vector<std::shared_ptr<IVJ::Entidad>> enemigos, float dt);
-	[[maybe_unused]] bool SistemaIA_Heal(std::shared_ptr<Entidad> actual,std::vector<std::shared_ptr<IVJ::Entidad>> player, std::vector<std::shared_ptr<IVJ::Entidad>> enemigos, float dt);
+	[[maybe_unused]] std::vector<std::shared_ptr<CE::ISprite>> SistemaGetQueue(std::vector<std::shared_ptr<IVJ::Entidad>> turnos);
 }

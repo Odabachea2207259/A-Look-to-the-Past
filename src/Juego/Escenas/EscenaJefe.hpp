@@ -29,6 +29,7 @@ namespace IVJ
             bool inicializar{true};
             
             bool mostrarSelector = false;
+            std::shared_ptr<CE::ISprite> dinoSelector;
             sf::ConvexShape selector;
             sf::RectangleShape rectanguloDino;
             float ancho,alto;
@@ -58,8 +59,10 @@ namespace IVJ
             int dinoTurno = 0;
             int turnosTotales;
             std::vector<std::shared_ptr<IVJ::Entidad>> turnos;
+            std::vector<std::shared_ptr<CE::ISprite>> queue;
         private:
             void cambiarTurno();
             void posicionarEntes();
+            void posicionarQueue();
     };
 }

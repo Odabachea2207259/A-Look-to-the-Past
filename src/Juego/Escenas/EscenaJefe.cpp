@@ -56,6 +56,14 @@ namespace IVJ
 			rectanguloDino.setOutlineColor(sf::Color::White);
 			rectanguloDino.setOutlineThickness(5.f);
 
+			dinoSelector = std::make_shared<CE::ISprite>(
+				CE::GestorAssets::Get().getTextura("selector"),
+				594,420,
+				0.1f
+			);
+
+			dinoSelector->m_sprite.setPosition({-100,-100});
+
 			selector.setPointCount(3);
 
 			ancho = 30.f;
@@ -94,7 +102,9 @@ namespace IVJ
 
 		//ordenarTurnos();
 		turnos = IVJ::SistemaOrdenarTurnos(Equipos::Get().GetPlayer(),Equipos::Get().GetEnemigos());
+		queue = IVJ::SistemaGetQueue(turnos);
 		posicionarEntes();
+		posicionarQueue();
 
 		//turnos = IVJ::SistemaOrdenarTurnos(Equipos::Get().GetPlayer(),Equipos::Get().GetPlayer());
 		actual = turnos.at(dinoTurno); //---->revisar
@@ -133,6 +143,14 @@ namespace IVJ
 			IVJ::SistemaSetPosOriginal(ente);
 
 			objetos.agregarPool(ente);
+		}
+	}
+
+	void EscenaJefe::posicionarQueue()
+	{
+		for(int i = 0; i < queue.size(); i++)
+		{
+			queue.at(i)->m_sprite.setPosition({50.f,100.f + (70.f * (i + 1))});
 		}
 	}
 
@@ -214,6 +232,7 @@ namespace IVJ
 					}
 					else //SI EL BOTÓN NO ESTA SELECCIONADO O EL MOUSE NO ESTÁ ENCIMA
 					{
+						//dinoSelector->m_sprite.setPosition({-100,-100});
 						if((boton->tipo == EspecialAtaque || boton->tipo == EspecialBuff) && Equipos::Get().GetDinoLider()->getComponente<CE::IJugador>()->medidor < boton->medidor) boton->setColor(sf::Color::White);
 						else boton->setColor(sf::Color::Cyan);
 
@@ -242,6 +261,11 @@ namespace IVJ
 					
 					if(habilidadSelecc)
 					{
+						if(habilidadSelecc->tieneComponente<CE::ISprite>()){
+							auto b_sprite = habilidadSelecc->getComponente<CE::ISprite>()->m_sprite;
+							dinoSelector->m_sprite.setPosition(b_sprite.getPosition());
+						}
+
 						for(auto& entidad : turnos)
 						{
 							if(cotyVivo)
@@ -353,6 +377,7 @@ namespace IVJ
 
 	void EscenaJefe::cambiarTurno()
 	{
+		dinoSelector->m_sprite.setPosition({-100,-100});
 		if(actual->tieneComponente<CE::IHabilidades>())actual->getComponente<CE::IHabilidades>()->habilidadSelecc = nullptr;
 		habilidadSelecc = nullptr;
 		//switch(revisarGanador()){
@@ -482,6 +507,11 @@ namespace IVJ
 				CE::Render::Get().AddToDraw(texto->m_texto);
 			}
 		}
+
+		for(auto & cabeza : queue)
+			CE::Render::Get().AddToDraw(cabeza->m_sprite);
+
+		CE::Render::Get().AddToDraw(dinoSelector->m_sprite);
 
 		CE::Render::Get().AddToDraw(nivelActual->getComponente<CE::ITexto>()->m_texto);
 		CE::Render::Get().AddToDraw(turnosDisponibles->m_texto);

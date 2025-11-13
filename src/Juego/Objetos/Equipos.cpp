@@ -127,7 +127,7 @@ namespace IVJ
         fsm_init = std::make_shared<IVJ::IdleFSM>();
         fsm_init->onEntrar(*jefeA);
 
-        IVJ::SistemaConfigurarStatsE(jefeA,1000,20,1,10);
+        IVJ::SistemaConfigurarStatsE(jefeA,10,20,1,10);
 
         enemigos->push_back(jefeA);
 
@@ -152,7 +152,7 @@ namespace IVJ
         fsm_init_2 = std::make_shared<IVJ::IdleFSM>();
         fsm_init_2->onEntrar(*jefeC);
 
-        IVJ::SistemaConfigurarStatsE(jefeC,10,1,1,1);
+        IVJ::SistemaConfigurarStatsE(jefeC,20,1,1,1);
 
         jefeC->getComponente<CE::IPersonaje>()->target = jefeA;
 

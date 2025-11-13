@@ -42,13 +42,23 @@ namespace IVJ
 		CE::GestorAssets::Get().agregarTextura("hoja_pink",ASSETS "/sprites_aliens/alienPink.png",CE::Vector2D{0,0},CE::Vector2D{256,512});
 
 		CE::GestorAssets::Get().agregarTextura("parasaurolophus",ASSETS "/sprites_dinos/Parasaurolophus/Parasaurolophus_tex.png",CE::Vector2D{0,0},CE::Vector2D{1221,3976});
+		CE::GestorAssets::Get().agregarTextura("cabezaParasaurolophus",ASSETS "/sprites_dinos/Parasaurolophus/Cabeza.png",CE::Vector2D{0,0},CE::Vector2D{59,79});
+
 		CE::GestorAssets::Get().agregarTextura("centrosaurus",ASSETS "/sprites_dinos/Centrosaurus/Centrosaurus_tex.png",CE::Vector2D{0,0},CE::Vector2D{1221,3877});
+		CE::GestorAssets::Get().agregarTextura("cabezaCentrosaurus",ASSETS "/sprites_dinos/Centrosaurus/Cabeza.png",CE::Vector2D{0,0},CE::Vector2D{53,100});
+		
 		CE::GestorAssets::Get().agregarTextura("pachy",ASSETS "/sprites_dinos/Pachycephalosaurus/Pachycephalosaurus_tex.png",CE::Vector2D{0,0},CE::Vector2D{1586,3875});
+		CE::GestorAssets::Get().agregarTextura("cabezaPachycephalosaurus",ASSETS "/sprites_dinos/Pachycephalosaurus/Cabeza.png",CE::Vector2D{0,0},CE::Vector2D{54,56});
+		
 		CE::GestorAssets::Get().agregarTextura("carnotauro",ASSETS "/sprites_dinos/Carnotauro/Carnotauro_tex.png",CE::Vector2D{0,0},CE::Vector2D{1197,4049});
+		CE::GestorAssets::Get().agregarTextura("cabezaCarnotauro",ASSETS "/sprites_dinos/Carnotauro/Cabeza.png",CE::Vector2D{0,0},CE::Vector2D{62,45});
 		
 		CE::GestorAssets::Get().agregarTextura("argentino",ASSETS "/enemigos/jefes/Argentinosaurus/Armature_tex.png",CE::Vector2D{0,0},CE::Vector2D{1837,3073});
 		CE::GestorAssets::Get().agregarTextura("anteosaurus",ASSETS "/enemigos/jefes/Anteosaurus/Anteosaurus_tex.png",CE::Vector2D{0,0},CE::Vector2D{1760,3960});
+		CE::GestorAssets::Get().agregarTextura("cabezaAnteosaurus",ASSETS "/enemigos/jefes/Anteosaurus/Cabeza.png",CE::Vector2D{0,0},CE::Vector2D{82,71});
+		
 		CE::GestorAssets::Get().agregarTextura("coty",ASSETS "/enemigos/jefes/Coty/Coty_tex.png",CE::Vector2D{0,0},CE::Vector2D{1020,1722});
+		CE::GestorAssets::Get().agregarTextura("cabezaCoty",ASSETS "/enemigos/jefes/Coty/Cabeza.png",CE::Vector2D{0,0},CE::Vector2D{50,43});
 
 		CE::GestorAssets::Get().agregarFont("Byte",ASSETS "/fonts/Bytesized-Regular.ttf");
 		CE::GestorAssets::Get().agregarFont("Caveman",ASSETS "/fonts/Prehistoric Caveman.ttf");

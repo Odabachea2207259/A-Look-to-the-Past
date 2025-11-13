@@ -49,10 +49,10 @@
   "name": "Bestiario",
   "imagePath": "Bestiario.png",
   "maxFrames": [
-    { "name": "Idle", "max": 1 },
-    { "name": "Izq", "max": 11 },
-    { "name": "Der", "max": 11 },
-    { "name": "Cerr", "max": 11 },
-    { "name": "Abrir", "max": 11 }
+    { "name": "Idle", "max": 1, "vel": 0.1 },
+    { "name": "Izq", "max": 11, "vel": 0.1 },
+    { "name": "Der", "max": 11, "vel": 0.1 },
+    { "name": "Cerr", "max": 11, "vel": 0.1 },
+    { "name": "Abrir", "max": 11, "vel": 0.1 }
   ]
 }
