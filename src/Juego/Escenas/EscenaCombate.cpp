@@ -88,6 +88,7 @@ namespace IVJ
 			if(!bg[1].loadTileMap(ASSETS "/mapas/mapaPelea1_layer2.txt")) exit(EXIT_FAILURE);
 			if(!bg[2].loadTileMap(ASSETS "/mapas/mapaPelea1_layer3.txt")) exit(EXIT_FAILURE);
 			if(!bg[3].loadTileMap(ASSETS "/mapas/mapaPelea1_layer4.txt")) exit(EXIT_FAILURE);
+
 			inicializar = false;
 		}
 
@@ -111,6 +112,12 @@ namespace IVJ
 
 		//turnos = IVJ::SistemaOrdenarTurnos(Equipos::Get().GetPlayer(),Equipos::Get().GetPlayer());
 		actual = turnos.at(dinoTurno); //---->revisar
+		if(actual->tieneComponente<CE::IJugador>()) 
+		{
+			enteActual = std::make_shared<CE::ISprite>(*queue.at(dinoTurno));
+			enteActual->m_sprite.setPosition({fondo.getPosition().x + 100.f,fondo.getPosition().y + 140.f});
+			enteActual->m_sprite.setScale({1.5f,1.5f});
+		}
 
 		for(auto & habilidad : actual->getComponente<CE::IHabilidades>()->movimientos)
 		{
@@ -408,7 +415,13 @@ namespace IVJ
 			{
 				if(actual == Equipos::Get().GetDinoLider())Equipos::Get().GetDinoLider()->getComponente<CE::IJugador>()->medidor += 10;
 				dinoPuntos->m_texto.setString(sf::String("DinoPuntos:\n"+std::to_string(actual->getComponente<CE::IJugador>()->dinoPuntos)));
+
+				enteActual = std::make_shared<CE::ISprite>(*queue.at(dinoTurno));
+				enteActual->m_sprite.setPosition({fondo.getPosition().x + 100.f,fondo.getPosition().y + 140.f});
+				enteActual->m_sprite.setScale({1.5f,1.5f});
 			}
+			else
+				enteActual = nullptr;
 
 			IVJ::SistemaAplicarEstados(actual);
 
@@ -485,6 +498,8 @@ namespace IVJ
 			CE::Render::Get().AddToDraw(cabeza->m_sprite);
 
 		CE::Render::Get().AddToDraw(dinoSelector->m_sprite);
+		
+		if(enteActual) CE::Render::Get().AddToDraw(enteActual->m_sprite);
 
 		CE::Render::Get().AddToDraw(nivelActual->getComponente<CE::ITexto>()->m_texto);
 	}

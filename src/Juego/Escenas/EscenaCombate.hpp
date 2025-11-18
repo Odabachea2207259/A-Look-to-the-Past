@@ -58,6 +58,7 @@ namespace IVJ
 
             std::vector<std::shared_ptr<Entidad>> turnos;
             std::vector<std::shared_ptr<CE::ISprite>> queue;
+            std::shared_ptr<CE::ISprite> enteActual;
         private:
             void cambiarTurno();
             void posicionarEntes();
