@@ -44,13 +44,6 @@ namespace IVJ
 			textoNivel->m_texto.setPosition({5.f,40.f});
 			textoNivel->m_texto.setFillColor(sf::Color::Black);
 
-			//AGREGAMOS EL TEXTO DE LOS PUNTOS DE CADA DINO
-			/*<------------------Puede que esto pueda tenerlo cada dino------------------------------>*/
-			dinoPuntos = std::make_shared<CE::ITexto>(CE::GestorAssets::Get().getFont("Caveman")," ");
-			dinoPuntos->m_texto.setCharacterSize(10);
-			dinoPuntos->m_texto.setFillColor(sf::Color::Black);
-			dinoPuntos->m_texto.setPosition({850.f,650.f});
-
 			//CREAMOS EL CUADRO PARA VER QUE DINO SELECCIONAMOS O A CUAL ESTAMOS APUNTANDO
 			rectanguloDino.setFillColor(sf::Color::Transparent);
 			rectanguloDino.setOutlineColor(sf::Color::White);
@@ -110,6 +103,24 @@ namespace IVJ
 		posicionarEntes();
 		posicionarQueue();
 
+		fondoQueue.setSize({100.f,80.f  * queue.size()});
+		auto queuePos = queue.at(0)->m_sprite.getPosition();
+		fondoQueue.setPosition({0.f,queuePos.y - 50.f});
+		fondoQueue.setFillColor(sf::Color(100,100,100,220));
+		fondoQueue.setOutlineColor(sf::Color::Black);
+		fondoQueue.setOutlineThickness(2.f);
+
+		fondoDP = std::make_shared<IVJ::Rectangulo>(80.f,30.f,sf::Color(100,100,100,230),sf::Color::Black);
+		fondoDP->setPosicion(190.f,690.f);
+
+		fondoDP->addComponente(std::make_shared<CE::ITexto>(
+			CE::GestorAssets::Get().getFont("Caveman"),
+			""
+		));
+
+		auto textoDP = fondoDP->getComponente<CE::ITexto>();			
+
+		//objetos.agregarPool(fondoDP);
 		//turnos = IVJ::SistemaOrdenarTurnos(Equipos::Get().GetPlayer(),Equipos::Get().GetPlayer());
 		actual = turnos.at(dinoTurno); //---->revisar
 		if(actual->tieneComponente<CE::IJugador>()) 
@@ -117,12 +128,18 @@ namespace IVJ
 			enteActual = std::make_shared<CE::ISprite>(*queue.at(dinoTurno));
 			enteActual->m_sprite.setPosition({fondo.getPosition().x + 100.f,fondo.getPosition().y + 140.f});
 			enteActual->m_sprite.setScale({1.5f,1.5f});
+
+			textoDP->m_texto.setString(std::to_string(actual->getComponente<CE::IJugador>()->dinoPuntos) + " dP");
 		}
 
-		for(auto & habilidad : actual->getComponente<CE::IHabilidades>()->movimientos)
-		{
-			//objetos.agregarPool(habilidad);
-		}
+		textoDP->m_texto.setCharacterSize(10);
+		textoDP->m_texto.setFillColor(sf::Color::Black);
+
+        sf::FloatRect bounds = textoDP->m_texto.getLocalBounds();
+        textoDP->m_texto.setOrigin({bounds.position.x + bounds.size.x/2, 0.f});
+
+        textoDP->m_texto.setPosition({ fondoDP->getRectangle().getPosition().x + fondoDP->getWidth()/2, fondoDP->getRectangle().getPosition().y + textoDP->m_texto.getCharacterSize()});
+
 		//setBotonesFalso();
 		IVJ::SistemaApagarBotones(actual,&eSelecc,&pSelecc,&mostrarSelector);
 
@@ -414,11 +431,18 @@ namespace IVJ
 			if(actual->tieneComponente<CE::IJugador>())
 			{
 				if(actual == Equipos::Get().GetDinoLider())Equipos::Get().GetDinoLider()->getComponente<CE::IJugador>()->medidor += 10;
-				dinoPuntos->m_texto.setString(sf::String("DinoPuntos:\n"+std::to_string(actual->getComponente<CE::IJugador>()->dinoPuntos)));
 
 				enteActual = std::make_shared<CE::ISprite>(*queue.at(dinoTurno));
 				enteActual->m_sprite.setPosition({fondo.getPosition().x + 100.f,fondo.getPosition().y + 140.f});
 				enteActual->m_sprite.setScale({1.5f,1.5f});
+				
+				auto textoDP = fondoDP->getComponente<CE::ITexto>();
+				textoDP->m_texto.setString(std::to_string(actual->getComponente<CE::IJugador>()->dinoPuntos) + " dP");
+
+        		sf::FloatRect bounds = textoDP->m_texto.getLocalBounds();
+        		textoDP->m_texto.setOrigin({bounds.position.x + bounds.size.x/2, 0.f});
+
+        		textoDP->m_texto.setPosition({ fondoDP->getRectangle().getPosition().x + fondoDP->getWidth()/2, fondoDP->getRectangle().getPosition().y + textoDP->m_texto.getCharacterSize()});
 			}
 			else
 				enteActual = nullptr;
@@ -447,8 +471,6 @@ namespace IVJ
 		for(auto &f:objetos.getPool())
 			CE::Render::Get().AddToDraw(*f);
 
-		CE::Render::Get().AddToDraw(fondo);
-
 		for(auto & ente : turnos)
 		{
 			if(ente->estaVivo()){
@@ -470,6 +492,7 @@ namespace IVJ
 
 		if(actual->tieneComponente<CE::IJugador>())
 		{
+			CE::Render::Get().AddToDraw(fondo);
 			for(int i = 0; i < 4; i++)
 			{
 				if(actual->getComponente<CE::IHabilidades>()->movimientos.at(i)->tieneComponente<CE::ISprite>()) CE::Render::Get().AddToDraw(actual->getComponente<CE::IHabilidades>()->movimientos.at(i)->getComponente<CE::ISprite>()->m_sprite);
@@ -481,7 +504,9 @@ namespace IVJ
 				CE::Render::Get().AddToDraw(actual->getComponente<CE::IHabilidades>()->habilidadEspecial->getComponente<CE::ITexto>()->m_texto);
 			}
 
-			CE::Render::Get().AddToDraw(dinoPuntos->m_texto);
+			if(enteActual) CE::Render::Get().AddToDraw(enteActual->m_sprite);
+			CE::Render::Get().AddToDraw(*fondoDP);
+			CE::Render::Get().AddToDraw(fondoDP->getComponente<CE::ITexto>()->m_texto);
 		}
 
 		CE::Render::Get().AddToDraw(*medidor);
@@ -494,12 +519,12 @@ namespace IVJ
 			}
 		}
 
+		CE::Render::Get().AddToDraw(fondoQueue);
+
 		for(auto & cabeza : queue)
 			CE::Render::Get().AddToDraw(cabeza->m_sprite);
 
 		CE::Render::Get().AddToDraw(dinoSelector->m_sprite);
-		
-		if(enteActual) CE::Render::Get().AddToDraw(enteActual->m_sprite);
 
 		CE::Render::Get().AddToDraw(nivelActual->getComponente<CE::ITexto>()->m_texto);
 	}

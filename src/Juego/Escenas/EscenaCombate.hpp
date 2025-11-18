@@ -39,8 +39,8 @@ namespace IVJ
 
             TileMap bg[4];
 	        sf::RectangleShape fondo;
-
-            std::shared_ptr<CE::ITexto> dinoPuntos;
+            sf::RectangleShape fondoQueue;
+            std::shared_ptr<IVJ::Rectangulo> fondoDP;
 
             std::shared_ptr<IVJ::Rectangulo> nivelActual;
             std::shared_ptr<IVJ::Rectangulo> medidor;

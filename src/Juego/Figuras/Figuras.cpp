@@ -18,6 +18,7 @@ namespace IVJ
         //rect_img.setOrigin({ancho/2.f,largo/2.f}); //---------->>QUITAR PARA EL JUEGO
 	    //nombre->nombre = "Rectangulo "+std::to_string(CE::Objeto::getNumObjetos());
 	    nombre->nombre = "Rectangulo";
+        this->getStats()->hp = 1.f;
     }
 
     void Rectangulo::setPosicion(float x, float y)
