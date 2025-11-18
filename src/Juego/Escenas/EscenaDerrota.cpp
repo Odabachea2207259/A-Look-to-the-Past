@@ -8,6 +8,7 @@
 #include "../../Motor/Render/Render.hpp"
 #include "../Sistemas/Sistemas.hpp"
 #include "../../Motor/Utils/Lerp.hpp"
+#include "../../Motor/Utils/Ventana.hpp"
 #include <fstream>
 
 namespace IVJ
@@ -27,7 +28,8 @@ namespace IVJ
             dinero = std::make_shared<CE::ITexto>(CE::GestorAssets::Get().getFont("Caveman"),"Dino$");
             dinero->m_texto.setCharacterSize(10);
             dinero->m_texto.setFillColor(sf::Color(164,134,86));
-            auto tam = CE::Render::Get().GetVentana().getSize();
+            //auto tam = CE::Render::Get().GetVentana().getSize();
+            CE::Vector2D tam = {CE::WIDTH,CE::HEIGHT};
 
             dinero->m_texto.setPosition({(tam.x/2)-100.f,tam.y-400.f});
             boton->setPosicion((tam.x/2)-100.f,tam.y-165.f);

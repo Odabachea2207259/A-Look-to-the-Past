@@ -13,6 +13,7 @@
 #include "../../Motor/GUI/GLogger.hpp"
 #include "../Objetos/Equipos.hpp"
 #include "../Objetos/Log.hpp"
+#include "../../Motor/Utils/Ventana.hpp"
 #include <memory>
 #include <SFML/Graphics.hpp>
 
@@ -24,13 +25,15 @@ namespace IVJ
 		dinoTurno = 0;
 		cantDinos = 0;
 		turnosTotales = 20;
+
 		srand(static_cast<unsigned>(time(nullptr)));
 		if(inicializar) {
 			registrarBotones(sf::Keyboard::Scancode::Escape,"menu");
 			CE::GestorAssets::Get().agregarTextura("nubes",ASSETS "/textura/cloud.png",CE::Vector2D{0,0},CE::Vector2D{400,400});
 			CE::GestorAssets::Get().agregarTextura("noise",ASSETS "/textura/noise_texture.png",CE::Vector2D{0,0},CE::Vector2D{256,256});
 
-			auto tam = CE::Render::Get().GetVentana().getSize();
+			//auto tam = CE::Render::Get().GetVentana().getSize();
+			CE::Vector2D tam = {CE::WIDTH,CE::HEIGHT};
 
 			medidor = std::make_shared<Rectangulo>(tam.x-6.f,10.f,sf::Color::Blue,sf::Color::Black);
 			medidor->setPosicion(3.f,3.f);
@@ -315,7 +318,6 @@ namespace IVJ
 		{
 			if(!habilidadActiva)
 			{
-				std::cout << "Inicio\n";
 				habilidadActiva = true;
 				c->accion = true;
 			}
@@ -325,10 +327,6 @@ namespace IVJ
 
 			if(!habilidadActiva)
 			{
-				std::cout <<"Fin"<<std::endl;
-
-				auto nombreDino = actual->getNombre()->nombre;
-				//*Log::Get().texto = nombreDino + "\na realizado su\nmovimiento";
 				Log::Get().acomodarTextos(false);
 
 				pSelecc = false;
@@ -348,11 +346,6 @@ namespace IVJ
 
 			if(!habilidadActiva)
 			{
-				auto nombreDino = actual->getNombre()->nombre;
-				auto nombreHabilidad = habilidadSelecc->getNombre()->nombre;
-				auto nombreTarget = (playerSelecc) ? playerSelecc->getNombre()->nombre : enemSelecc->getNombre()->nombre;
-
-				//*Log::Get().texto = nombreDino + "\na realizado\n" + nombreHabilidad + "\nen " + nombreTarget;
 				Log::Get().acomodarTextos(true);
 
 				pSelecc = false;
@@ -484,8 +477,6 @@ namespace IVJ
 		{
 			for(int i = 0; i < 4; i++)
 			{
-				//CE::Render::Get().AddToDraw(*actual->getComponente<CE::IHabilidades>()->movimientos.at(i));
-				//CE::Render::Get().AddToDraw(actual->getComponente<CE::IHabilidades>()->movimientos.at(i)->getComponente<CE::ITexto>()->m_texto);
 				if(actual->getComponente<CE::IHabilidades>()->movimientos.at(i)->tieneComponente<CE::ISprite>()) CE::Render::Get().AddToDraw(actual->getComponente<CE::IHabilidades>()->movimientos.at(i)->getComponente<CE::ISprite>()->m_sprite);
 			}
 

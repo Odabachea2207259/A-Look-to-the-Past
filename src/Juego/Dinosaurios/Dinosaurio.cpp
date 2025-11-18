@@ -1,20 +1,28 @@
 #include "Dinosaurio.hpp"
 #include "../../Motor/Render/Render.hpp"
+#include "../../Motor/Utils/Ventana.hpp"
 
 namespace IVJ
 {
 	void Dinosaurio::acomodarBoton(std::shared_ptr<Habilidad> mov, int i)
 	{
 			//mov->setPosicion(50.f + (200.f*i),650.f);
-			mov->setPosicion(30.f + (250.f*i),630.f);
+			float x[2] = {370.f,630.f};
+			float y[2] = {580.f,650.f};
 			
+			//mov->setPosicion(30.f + (250.f*i),630.f);
+			int posY = y[(i >= 2) ? 0 : 1];
+			int posX = x[(i+2)%2];
+			mov->setPosicion(30.f + posX,posY);
+
 			if(mov->tieneComponente<CE::ISprite>())
 			{
 				auto sprite = mov->getComponente<CE::ISprite>();
 				auto escala = sprite->escala;
 				auto w = sprite->width;
 				auto h = sprite->height;
-				sprite->m_sprite.setPosition({(20.f + (250.f*i) + (w*escala)/2),(625.f+(h*escala)/2)});
+				//sprite->m_sprite.setPosition({(20.f + (250.f*i) + (w*escala)/2),(625.f+(h*escala)/2)});
+				sprite->m_sprite.setPosition({(20.f + posX + (w*escala)/2),(posY+(h*escala)/2)});
 				//sprite->m_sprite.setPosition({((200.f*i) + (w*escala)/2),(650.f+(h*escala)/2)});
 			}
 
@@ -31,7 +39,11 @@ namespace IVJ
 
 	void Dinosaurio::acomodarHabilidadEspecial(std::shared_ptr<Habilidad> mov)
 	{
-		mov->setPosicion(50.f,580.f);
+		CE::Vector2D fondoPos = {800.f,200.f};
+		CE::Vector2D pos = {(CE::WIDTH - fondoPos.x) / 2,CE::HEIGHT - fondoPos.y};
+		
+		//mov->setPosicion(50.f,580.f);
+		mov->setPosicion(pos.x + (fondoPos.x - mov->getWidth())/2,10.f + pos.y);
 		mov->addComponente(std::make_shared<CE::ITexto>(CE::GestorAssets::Get().getFont("Caveman"),mov->getNombre()->nombre));
 		auto texto = mov->getComponente<CE::ITexto>();
 		texto->m_texto.setCharacterSize(10);
@@ -76,7 +88,7 @@ namespace IVJ
 			acomodarBoton(mov,i);
 		}
 
-		auto habEspecial = std::make_shared<SuperCabezazo>(835.f,50.f,sf::Color::Cyan,sf::Color::Black);
+		auto habEspecial = std::make_shared<SuperCabezazo>(700.f,50.f,sf::Color::Cyan,sf::Color::Black);
 		acomodarHabilidadEspecial(habEspecial);
     }
 
@@ -108,7 +120,7 @@ namespace IVJ
 			}
 			acomodarBoton(mov,i);
 		}
-		auto habEspecial = std::make_shared<Renacer>(835.f,50.f,sf::Color::Cyan,sf::Color::Black);
+		auto habEspecial = std::make_shared<Renacer>(700.f,50.f,sf::Color::Cyan,sf::Color::Black);
 		acomodarHabilidadEspecial(habEspecial);
     }
 
@@ -140,7 +152,7 @@ namespace IVJ
 			}
 			acomodarBoton(mov,i);
 		}
-		auto habEspecial = std::make_shared<SuperPunzada>(835.f,50.f,sf::Color::Cyan,sf::Color::Black);
+		auto habEspecial = std::make_shared<SuperPunzada>(700.f,50.f,sf::Color::Cyan,sf::Color::Black);
 		acomodarHabilidadEspecial(habEspecial);
     }
 
@@ -172,7 +184,7 @@ namespace IVJ
 			}
 			acomodarBoton(mov,i);
 		}
-		auto habEspecial = std::make_shared<SuperMordisco>(835.f,50.f,sf::Color::Cyan,sf::Color::Black);
+		auto habEspecial = std::make_shared<SuperMordisco>(700.f,50.f,sf::Color::Cyan,sf::Color::Black);
 		acomodarHabilidadEspecial(habEspecial);
     }
 }

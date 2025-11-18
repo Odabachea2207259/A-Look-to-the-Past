@@ -7,6 +7,7 @@
 #include "../../Motor/Primitivos/GestorEscenas.hpp"
 #include "../../Motor/Primitivos/GestorAssets.hpp"
 #include "../../Motor/Render/Render.hpp"
+#include "../../Motor/Utils/Ventana.hpp"
 #include "../Sistemas/Sistemas.hpp"
 #include <fstream>
 
@@ -28,7 +29,8 @@ namespace IVJ
                 CE::GestorAssets::Get().getFont("Caveman"),"Continuar"
             ));
 
-            auto tam = CE::Render::Get().GetVentana().getSize();
+            //auto tam = CE::Render::Get().GetVentana().getSize();
+           CE::Vector2D tam = {CE::WIDTH,CE::HEIGHT};
 
             dinero = std::make_shared<CE::ITexto>(CE::GestorAssets::Get().getFont("Caveman"),"Dino$");
             dinero->m_texto.setCharacterSize(10);

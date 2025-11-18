@@ -69,7 +69,7 @@ namespace IVJ
 		int prob = rand() % 5;
 		//int prob = 1;
 		int cant = rand() % player->size() + 1;
-        cant = 1;
+        cant = 3;
 
         nivelJugador = 0.5;
         prob = 2;

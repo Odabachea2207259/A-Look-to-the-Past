@@ -25,7 +25,9 @@ namespace IVJ
     {
         public:
             explicit Habilidad(float ancho, float largo,const sf::Color& relleno,const  sf::Color& contorno)
-            :Rectangulo{ancho, largo,relleno,contorno}{}
+            :Rectangulo{ancho, largo,relleno,contorno}{
+                this->getStats()->hp = 1.f;
+            }
             float curacion = 0;
             float damage = 0;
             int dinoPuntos = 0;

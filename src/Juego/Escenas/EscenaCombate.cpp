@@ -5,6 +5,7 @@
 #include "../../Motor/Primitivos/GestorEscenas.hpp"
 #include "../../Motor/Utils/Vector2D.hpp"
 #include "../../Motor/Utils/Lerp.hpp"
+#include "../../Motor/Utils/Ventana.hpp"
 #include "../../Motor/Primitivos/GestorAssets.hpp"
 #include "../Sistemas/Sistemas.hpp"
 #include "../Sistemas/SistemasIA.hpp"
@@ -22,12 +23,14 @@ namespace IVJ
 		objetos.getPool().clear();
 		cantDinos = 0;
 		dinoTurno = 0;
+
 		if(inicializar) {
 			registrarBotones(sf::Keyboard::Scancode::Escape,"menu");
 			CE::GestorAssets::Get().agregarTextura("nubes",ASSETS "/textura/cloud.png",CE::Vector2D{0,0},CE::Vector2D{400,400});
 			CE::GestorAssets::Get().agregarTextura("noise",ASSETS "/textura/noise_texture.png",CE::Vector2D{0,0},CE::Vector2D{256,256});
 
-			auto tam = CE::Render::Get().GetVentana().getSize();
+			//auto tam = CE::Render::Get().GetVentana().getSize();
+			CE::Vector2D tam = {CE::WIDTH,CE::HEIGHT};
 
 			//AGREGAMOS EL MEDIDOR DE LA SUPER HABILIDAD
 			medidor = std::make_shared<Rectangulo>(tam.x-6.f,10.f,sf::Color::Blue,sf::Color::Black);
@@ -53,6 +56,14 @@ namespace IVJ
 			rectanguloDino.setOutlineColor(sf::Color::White);
 			rectanguloDino.setOutlineThickness(5.f);
 
+			dinoSelector = std::make_shared<CE::ISprite>(
+				CE::GestorAssets::Get().getTextura("selector"),
+				594,420,
+				0.1f
+			);
+
+			dinoSelector->m_sprite.setPosition({-100,-100});
+
 			selector.setPointCount(3);
 
 			ancho = 30.f;
@@ -64,8 +75,11 @@ namespace IVJ
 			selector.setFillColor(sf::Color::White);
 			selector.setRotation(sf::degrees(180));
 
-			fondo.setSize(sf::Vector2f(static_cast<float>(tam.x),150.f));
-			fondo.setPosition({2,tam.y-150.f});
+			//fondo.setSize(sf::Vector2f(static_cast<float>(tam.x),150.f));
+			float w = 800.f;
+			float h = 200.f;
+			fondo.setSize(sf::Vector2f(w,h));
+			fondo.setPosition({(tam.x - w) / 2,tam.y-h});
 			fondo.setFillColor(sf::Color(100,100,100,100));
 			fondo.setOutlineColor(sf::Color::Black);
 			fondo.setOutlineThickness(2.f);
@@ -91,11 +105,17 @@ namespace IVJ
 
 		//ordenarTurnos();
 		turnos = IVJ::SistemaOrdenarTurnos(Equipos::Get().GetPlayer(),Equipos::Get().GetEnemigos());
+		queue = IVJ::SistemaGetQueue(turnos);
 		posicionarEntes();
-
+		posicionarQueue();
 
 		//turnos = IVJ::SistemaOrdenarTurnos(Equipos::Get().GetPlayer(),Equipos::Get().GetPlayer());
 		actual = turnos.at(dinoTurno); //---->revisar
+
+		for(auto & habilidad : actual->getComponente<CE::IHabilidades>()->movimientos)
+		{
+			//objetos.agregarPool(habilidad);
+		}
 		//setBotonesFalso();
 		IVJ::SistemaApagarBotones(actual,&eSelecc,&pSelecc,&mostrarSelector);
 
@@ -134,6 +154,14 @@ namespace IVJ
 		}
 	}
 
+	void EscenaCombate::posicionarQueue()
+	{
+		for(int i = 0; i < queue.size(); i++)
+		{
+			queue.at(i)->m_sprite.setPosition({50.f,100.f + (70.f * (i + 1))});
+		}
+	}
+
 	void EscenaCombate::onFinal(){}
 	void EscenaCombate::onUpdate(float dt)
 	{
@@ -158,9 +186,7 @@ namespace IVJ
 		}
 
 		for(auto & entidades : turnos){
-			//entidades->mostrarEstados();
 			IVJ::SistemaMostrarEstados(entidades);
-			//entidades->actualizarVida();
 			IVJ::SistemaActualizarVida(entidades);
 		}
 
@@ -244,6 +270,11 @@ namespace IVJ
 					
 					if(habilidadSelecc)
 					{
+						if(habilidadSelecc->tieneComponente<CE::ISprite>()){
+							auto b_sprite = habilidadSelecc->getComponente<CE::ISprite>()->m_sprite;
+							dinoSelector->m_sprite.setPosition(b_sprite.getPosition());
+						}
+
 						for(auto& entidad : turnos)
 						{
 							auto box = entidad->getComponente<CE::ISprite>();
@@ -342,7 +373,8 @@ namespace IVJ
 
 	void EscenaCombate::cambiarTurno()
 	{
-		actual->getComponente<CE::IHabilidades>()->habilidadSelecc = nullptr;
+		dinoSelector->m_sprite.setPosition({-100,-100});
+		if(actual->tieneComponente<CE::IHabilidades>())actual->getComponente<CE::IHabilidades>()->habilidadSelecc = nullptr;
 		habilidadSelecc = nullptr;
 		//switch(revisarGanador()){
 		switch(IVJ::SistemaRevisarGanador(turnos)){
@@ -427,8 +459,7 @@ namespace IVJ
 		{
 			for(int i = 0; i < 4; i++)
 			{
-				CE::Render::Get().AddToDraw(*actual->getComponente<CE::IHabilidades>()->movimientos.at(i));
-				CE::Render::Get().AddToDraw(actual->getComponente<CE::IHabilidades>()->movimientos.at(i)->getComponente<CE::ITexto>()->m_texto);
+				if(actual->getComponente<CE::IHabilidades>()->movimientos.at(i)->tieneComponente<CE::ISprite>()) CE::Render::Get().AddToDraw(actual->getComponente<CE::IHabilidades>()->movimientos.at(i)->getComponente<CE::ISprite>()->m_sprite);
 			}
 
 			if(actual == Equipos::Get().GetDinoLider())
@@ -442,10 +473,6 @@ namespace IVJ
 
 		CE::Render::Get().AddToDraw(*medidor);
 
-		
-		//CE::Render::Get().AddToDraw(*log);
-		//CE::Render::Get().AddToDraw(log->getComponente<CE::ITexto>()->m_texto);
-
 		CE::Render::Get().AddToDraw(*Log::Get().log);
 
 		if(!Log::Get().textos->empty()){
@@ -453,6 +480,11 @@ namespace IVJ
 				CE::Render::Get().AddToDraw(texto->m_texto);
 			}
 		}
+
+		for(auto & cabeza : queue)
+			CE::Render::Get().AddToDraw(cabeza->m_sprite);
+
+		CE::Render::Get().AddToDraw(dinoSelector->m_sprite);
 
 		CE::Render::Get().AddToDraw(nivelActual->getComponente<CE::ITexto>()->m_texto);
 	}

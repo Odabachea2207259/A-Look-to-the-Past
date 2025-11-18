@@ -1,6 +1,7 @@
 #include "Log.hpp"
 #include "../../Motor/Primitivos/GestorAssets.hpp"
 #include "../../Motor/Render/Render.hpp"
+#include "../../Motor/Utils/Ventana.hpp"
 #include <iostream>
 
 namespace IVJ
@@ -22,7 +23,8 @@ namespace IVJ
         textos = std::make_unique<std::vector<std::shared_ptr<CE::ITexto>>>();
 
         log = std::make_unique<Rectangulo>(500.f,100.f,sf::Color(0,0,0,150),sf::Color::Black);
-        auto tam = CE::Render::Get().GetVentana().getSize();
+        //auto tam = CE::Render::Get().GetVentana().getSize();
+        CE::Vector2D tam = {CE::WIDTH,CE::HEIGHT};
         log->setPosicion((tam.x/2.f)-250.f,40.f);
     }
 

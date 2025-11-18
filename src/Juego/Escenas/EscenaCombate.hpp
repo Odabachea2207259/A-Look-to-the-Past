@@ -28,11 +28,15 @@ namespace IVJ
             bool mouse = false,mousePressed = false,mousePrev = false, botonMouseAnterior = false;
 
             bool inicializar{true};
-            sf::ConvexShape selector;
+            
             bool mostrarSelector = false;
+            std::shared_ptr<CE::ISprite> dinoSelector;
+            sf::ConvexShape selector;
             sf::RectangleShape rectanguloDino;
             float ancho,alto;
+
             std::shared_ptr<IVJ::Entidad> actual;
+
             TileMap bg[4];
 	        sf::RectangleShape fondo;
 
@@ -53,8 +57,10 @@ namespace IVJ
             int dinoTurno = 0;
 
             std::vector<std::shared_ptr<Entidad>> turnos;
+            std::vector<std::shared_ptr<CE::ISprite>> queue;
         private:
             void cambiarTurno();
             void posicionarEntes();
+            void posicionarQueue();
     };
 }
