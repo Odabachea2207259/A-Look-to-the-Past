@@ -74,7 +74,7 @@ namespace IVJ
 			selector.setRotation(sf::degrees(180));
 
 			float w = 800.f;
-			float h = 200.f;
+			float h = 150.f;
 			fondo.setSize(sf::Vector2f(w,h));
 			fondo.setPosition({(tam.x - w) / 2,tam.y-h});
 			fondo.setFillColor(sf::Color(100,100,100,100));
@@ -137,12 +137,19 @@ namespace IVJ
 		if(actual->tieneComponente<CE::IJugador>()) 
 		{
 			enteActual = std::make_shared<CE::ISprite>(*queue.at(dinoTurno));
-			enteActual->m_sprite.setPosition({fondo.getPosition().x + 70.f,fondo.getPosition().y + 140.f});
+			enteActual->m_sprite.setPosition({fondo.getPosition().x + 70.f,fondo.getPosition().y + 70.f});
 			enteActual->m_sprite.setScale({1.5f,1.5f});
 
 			textoDP->m_texto.setString(std::to_string(actual->getComponente<CE::IJugador>()->dinoPuntos) + " dP");
 			auto statsActual = actual->getStats();
 			stats->m_texto.setString("HP: " + std::to_string((int)statsActual->hp) + "\nSTR: " + std::to_string((int)statsActual->str) + "\nDEF: " + std::to_string((int)statsActual->def) + "\nAGI: " + std::to_string((int)statsActual->agi));
+
+			if(actual == Equipos::Get().GetDinoLider())
+			{
+				fondo.setSize({800.f,200.f});
+				fondo.setPosition({(CE::WIDTH - 800.f) / 2,CE::HEIGHT-200.f});
+				enteActual->m_sprite.setPosition({fondo.getPosition().x + 70.f,fondo.getPosition().y + 140.f});
+			}
 		}
 
 		textoDP->m_texto.setCharacterSize(10);
@@ -446,10 +453,20 @@ namespace IVJ
 
 			if(actual->tieneComponente<CE::IJugador>())
 			{
-				if(actual == Equipos::Get().GetDinoLider())Equipos::Get().GetDinoLider()->getComponente<CE::IJugador>()->medidor += 10;
+				float w = 800.f, h = 150.f, y = 70.f;
+				CE::Vector2D tam = {CE::WIDTH,CE::HEIGHT};
+				if(actual == Equipos::Get().GetDinoLider())
+				{
+					Equipos::Get().GetDinoLider()->getComponente<CE::IJugador>()->medidor += 10;
+					h = 200.f;
+					y = 140.f;
+				}
+
+				fondo.setSize({w,h});
+				fondo.setPosition({(tam.x - w) / 2,tam.y-h});
 
 				enteActual = std::make_shared<CE::ISprite>(*queue.at(dinoTurno));
-				enteActual->m_sprite.setPosition({fondo.getPosition().x + 70.f,fondo.getPosition().y + 140.f});
+				enteActual->m_sprite.setPosition({fondo.getPosition().x + 70.f,fondo.getPosition().y + y});
 				enteActual->m_sprite.setScale({1.5f,1.5f});
 				
 				auto textoDP = fondoDP->getComponente<CE::ITexto>();
