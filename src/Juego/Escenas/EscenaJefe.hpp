@@ -38,8 +38,10 @@ namespace IVJ
             
             TileMap bg[4];
 	        sf::RectangleShape fondo;
+            sf::RectangleShape fondoQueue;
+            std::shared_ptr<IVJ::Rectangulo> fondoDP;
+            std::shared_ptr<CE::ITexto> stats;
 
-            std::shared_ptr<CE::ITexto> dinoPuntos;
             std::shared_ptr<CE::ITexto> turnosDisponibles;
 
             std::shared_ptr<IVJ::Rectangulo> nivelActual;
@@ -60,6 +62,7 @@ namespace IVJ
             int turnosTotales;
             std::vector<std::shared_ptr<IVJ::Entidad>> turnos;
             std::vector<std::shared_ptr<CE::ISprite>> queue;
+            std::shared_ptr<CE::ISprite> enteActual;
         private:
             void cambiarTurno();
             void posicionarEntes();

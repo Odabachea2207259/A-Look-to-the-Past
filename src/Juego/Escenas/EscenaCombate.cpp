@@ -111,7 +111,7 @@ namespace IVJ
 		fondoQueue.setOutlineThickness(2.f);
 
 		fondoDP = std::make_shared<IVJ::Rectangulo>(80.f,30.f,sf::Color(100,100,100,230),sf::Color::Black);
-		fondoDP->setPosicion(190.f,690.f);
+		fondoDP->setPosicion(180.f,690.f);
 
 		fondoDP->addComponente(std::make_shared<CE::ITexto>(
 			CE::GestorAssets::Get().getFont("Caveman"),
@@ -123,13 +123,24 @@ namespace IVJ
 		//objetos.agregarPool(fondoDP);
 		//turnos = IVJ::SistemaOrdenarTurnos(Equipos::Get().GetPlayer(),Equipos::Get().GetPlayer());
 		actual = turnos.at(dinoTurno); //---->revisar
+		stats = std::make_shared<CE::ITexto>(
+			CE::GestorAssets::Get().getFont("Caveman"),
+			""
+		);
+
+		stats->m_texto.setCharacterSize(10);
+		stats->m_texto.setFillColor(sf::Color::Black);
+		stats->m_texto.setPosition({280.f,620.f});
+
 		if(actual->tieneComponente<CE::IJugador>()) 
 		{
 			enteActual = std::make_shared<CE::ISprite>(*queue.at(dinoTurno));
-			enteActual->m_sprite.setPosition({fondo.getPosition().x + 100.f,fondo.getPosition().y + 140.f});
+			enteActual->m_sprite.setPosition({fondo.getPosition().x + 70.f,fondo.getPosition().y + 140.f});
 			enteActual->m_sprite.setScale({1.5f,1.5f});
 
 			textoDP->m_texto.setString(std::to_string(actual->getComponente<CE::IJugador>()->dinoPuntos) + " dP");
+			auto statsActual = actual->getStats();
+			stats->m_texto.setString("HP: " + std::to_string((int)statsActual->hp) + "\nSTR: " + std::to_string((int)statsActual->str) + "\nDEF: " + std::to_string((int)statsActual->def) + "\nAGI: " + std::to_string((int)statsActual->agi));
 		}
 
 		textoDP->m_texto.setCharacterSize(10);
@@ -433,7 +444,7 @@ namespace IVJ
 				if(actual == Equipos::Get().GetDinoLider())Equipos::Get().GetDinoLider()->getComponente<CE::IJugador>()->medidor += 10;
 
 				enteActual = std::make_shared<CE::ISprite>(*queue.at(dinoTurno));
-				enteActual->m_sprite.setPosition({fondo.getPosition().x + 100.f,fondo.getPosition().y + 140.f});
+				enteActual->m_sprite.setPosition({fondo.getPosition().x + 70.f,fondo.getPosition().y + 140.f});
 				enteActual->m_sprite.setScale({1.5f,1.5f});
 				
 				auto textoDP = fondoDP->getComponente<CE::ITexto>();
@@ -443,6 +454,8 @@ namespace IVJ
         		textoDP->m_texto.setOrigin({bounds.position.x + bounds.size.x/2, 0.f});
 
         		textoDP->m_texto.setPosition({ fondoDP->getRectangle().getPosition().x + fondoDP->getWidth()/2, fondoDP->getRectangle().getPosition().y + textoDP->m_texto.getCharacterSize()});
+				auto statsActual = actual->getStats();
+				stats->m_texto.setString("HP: " + std::to_string((int)statsActual->hp) + "\nSTR: " + std::to_string((int)statsActual->str) + "\nDEF: " + std::to_string((int)statsActual->def) + "\nAGI: " + std::to_string((int)statsActual->agi));
 			}
 			else
 				enteActual = nullptr;
@@ -507,6 +520,7 @@ namespace IVJ
 			if(enteActual) CE::Render::Get().AddToDraw(enteActual->m_sprite);
 			CE::Render::Get().AddToDraw(*fondoDP);
 			CE::Render::Get().AddToDraw(fondoDP->getComponente<CE::ITexto>()->m_texto);
+			CE::Render::Get().AddToDraw(stats->m_texto);
 		}
 
 		CE::Render::Get().AddToDraw(*medidor);
