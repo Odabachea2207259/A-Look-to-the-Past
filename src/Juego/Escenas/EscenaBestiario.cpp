@@ -13,14 +13,17 @@ namespace IVJ
 	{
 		std::ifstream des(ASSETS"/Descubiertos.json");
 		des >> descubiertos;
+		mov = true;
 		
 		if(!inicializar)
         {
             fondo->getComponente<CE::IControl>()->abrir = true;
             return;
         }
+
+		std::ifstream in(ASSETS "/Info.json");
+		in >> info;
 		
-		mov = true;
         CE::GestorCamaras::Get().setCamaraActiva(0);
 
  		registrarBotones(sf::Keyboard::Scancode::Escape,"menu");
@@ -67,6 +70,24 @@ namespace IVJ
 		noDescubierto->m_texto.setFillColor(sf::Color::Black);
 		noDescubierto->m_texto.setPosition({300.f,300.f});
 
+		periodo = std::make_shared<CE::ITexto>(
+			CE::GestorAssets::Get().getFont("Shadows"),
+			"Periodo: "
+		);
+
+		periodo->m_texto.setCharacterSize(40.f);
+		periodo->m_texto.setFillColor(sf::Color::Black);
+		periodo->m_texto.setPosition({140.f,600.f});
+
+		nombreEnte = std::make_shared<CE::ITexto>(
+			CE::GestorAssets::Get().getFont("Shadows"),
+			"Nombre: "
+		);
+
+		nombreEnte->m_texto.setCharacterSize(40.f);
+		nombreEnte->m_texto.setFillColor(sf::Color::Black);
+		nombreEnte->m_texto.setPosition({130.f,500.f});
+
         objetos.agregarPool(fondo);
         //fondo->getComponente<CE::IControl>()->abrir = true;
 
@@ -85,6 +106,9 @@ namespace IVJ
 			if(enteDescubierto(descubiertos,entes[numPagina]))
 			{
 				textoPrueba->m_texto.setString(entes[numPagina] + "DESCUBIERTOOO");
+				nombreEnte->m_texto.setString("Nombre: " + entes[numPagina]);
+				std::string p = info[entes[numPagina]]["periodo"];
+				periodo->m_texto.setString("Periodo: " + p);
 				descubierto = true;
 			}
 			else
@@ -193,7 +217,11 @@ namespace IVJ
 		
 		if(!mov) 
 		{
-			if(descubierto)	CE::Render::Get().AddToDraw(textoPrueba->m_texto);
+			if(descubierto){
+				CE::Render::Get().AddToDraw(textoPrueba->m_texto);
+				CE::Render::Get().AddToDraw(periodo->m_texto);
+				CE::Render::Get().AddToDraw(nombreEnte->m_texto);
+			}	
 			else CE::Render::Get().AddToDraw(noDescubierto->m_texto);
 		}
 	}

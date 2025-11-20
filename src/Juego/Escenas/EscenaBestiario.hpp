@@ -38,11 +38,16 @@ namespace IVJ
             std::shared_ptr<Rectangulo> der;
 
 			std::shared_ptr<CE::ITexto> textoPrueba;
+			std::shared_ptr<CE::ITexto> periodo;
+			std::shared_ptr<CE::ITexto> nombreEnte;
+			std::shared_ptr<IVJ::Rectangulo> infoEnte;
+
 			std::shared_ptr<CE::ITexto> noDescubierto;
 
 			json descubiertos;
+			json info;
 
 			int numPagina = 0;
-            bool salir = false,salida = false,mov = false, descubierto;;
+            bool salir = false,salida = false,mov = false, descubierto;
 	};
 }
