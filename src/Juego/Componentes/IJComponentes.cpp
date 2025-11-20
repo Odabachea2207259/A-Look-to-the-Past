@@ -61,4 +61,26 @@ namespace IVJ
 	{
 		return j[prefijo];
 	}
+
+	bool enteDescubierto(const nlohmann::json& j, const std::string& prefijo)
+	{
+		return j[prefijo];
+	}
+
+	void enteVisto(const std::string& prefijo)
+	{
+		std::cout << prefijo << std::endl;
+		json descubiertos;
+
+		std::ifstream in(ASSETS "/Descubiertos.json");
+		in >> descubiertos;
+
+		if(!descubiertos[prefijo])
+		{
+			descubiertos[prefijo] = true;
+			
+			std::ofstream out(ASSETS "/Descubiertos.json");
+			out << descubiertos;
+		}
+	}
 }

@@ -42,6 +42,7 @@ namespace IVJ
             sf::RectangleShape fondoQueue;
             std::shared_ptr<IVJ::Rectangulo> fondoDP;
             std::shared_ptr<CE::ITexto> stats;
+            std::shared_ptr<IVJ::Rectangulo> tooltip;
 
             std::shared_ptr<IVJ::Rectangulo> nivelActual;
             std::shared_ptr<IVJ::Rectangulo> medidor;

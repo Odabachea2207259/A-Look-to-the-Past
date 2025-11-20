@@ -62,11 +62,14 @@ namespace IVJ
 
 		CE::GestorAssets::Get().agregarFont("Byte",ASSETS "/fonts/Bytesized-Regular.ttf");
 		CE::GestorAssets::Get().agregarFont("Caveman",ASSETS "/fonts/Prehistoric Caveman.ttf");
+		CE::GestorAssets::Get().agregarFont("Shadows", ASSETS "/fonts/ShadowsIntoLight-Regular.ttf");
 
 		CE::GestorAssets::Get().agregarTextura("dinero", ASSETS "/iconos/dinero.PNG",CE::Vector2D{0,0},CE::Vector2D{132,74});
 		CE::GestorAssets::Get().agregarTextura("progreso", ASSETS "/iconos/progreso.png", CE::Vector2D{0,0},CE::Vector2D{1300,200});
 		CE::GestorAssets::Get().agregarTextura("fosiles",ASSETS "/iconos/Fosiles.png",CE::Vector2D{0,0},CE::Vector2D{273,112});
 		CE::GestorAssets::Get().agregarTextura("lab",ASSETS "/iconos/Lab.png",CE::Vector2D{0,0},CE::Vector2D{234,104});
+		CE::GestorAssets::Get().agregarTextura("bestiarioBoton",ASSETS "/iconos/BestiarioCerr.png",CE::Vector2D{0,0},CE::Vector2D{113,136});
+		
 		CE::GestorAssets::Get().agregarTextura("craneo",ASSETS "/iconos/Craneo.png",CE::Vector2D{0,0},CE::Vector2D{167,109});
 		CE::GestorAssets::Get().agregarTextura("cuello",ASSETS "/iconos/Cuello.png",CE::Vector2D{0,0},CE::Vector2D{91,90});
 		CE::GestorAssets::Get().agregarTextura("selector",ASSETS "/iconos/selector.png",CE::Vector2D{0,0},CE::Vector2D{594,420});
@@ -124,8 +127,17 @@ namespace IVJ
 		auto spriteLab = lab->getComponente<CE::ISprite>();
 		spriteLab->m_sprite.setPosition({(sizeVentana.x - 515.f) + ((234.f * 1.f)/2.f),(sizeVentana.y - 104.f)+((104.f * 1.f)/2.f)});
 
-		bestiario = std::make_shared<Rectangulo>(200,100,sf::Color::White,sf::Color::White);
-		bestiario->setPosicion((sizeVentana.x - 900.f),(sizeVentana.y - 104.f));
+		bestiario = std::make_shared<Rectangulo>(113,136,sf::Color::Transparent,sf::Color::Transparent);
+		bestiario->setPosicion(50.f,(sizeVentana.y - 150.f));
+
+		bestiario->addComponente(std::make_shared<CE::ISprite>(
+			CE::GestorAssets::Get().getTextura("bestiarioBoton"),
+			113,136,
+			1.0f
+		));
+
+		auto spriteBestiario = bestiario->getComponente<CE::ISprite>();
+		spriteBestiario->m_sprite.setPosition({50.f + (113/2),(sizeVentana.y - 150.f) + (136/2)});
 		
 		iconoDinero = std::make_shared<Rectangulo>(0,0,sf::Color::Transparent,sf::Color::Transparent);
 		iconoDinero->addComponente(std::make_shared<CE::ITexto>(
@@ -411,7 +423,7 @@ namespace IVJ
 			CE::Render::Get().AddToDraw(fosiles->getComponente<CE::ISprite>()->m_sprite);
 			CE::Render::Get().AddToDraw(lab->getComponente<CE::ISprite>()->m_sprite);
 			
-			CE::Render::Get().AddToDraw(bestiario->getRectangle());
+			CE::Render::Get().AddToDraw(bestiario->getComponente<CE::ISprite>()->m_sprite);
 			
 			CE::Render::Get().AddToDraw(iconoDinero->getComponente<CE::ISprite>()->m_sprite);
 			CE::Render::Get().AddToDraw(iconoDinero->getComponente<CE::ITexto>()->m_texto);

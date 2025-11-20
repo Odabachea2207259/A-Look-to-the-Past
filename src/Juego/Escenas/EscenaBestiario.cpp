@@ -11,12 +11,16 @@ namespace IVJ
 {
 	void EscenaBestiario::onInit()
 	{
+		std::ifstream des(ASSETS"/Descubiertos.json");
+		des >> descubiertos;
+		
 		if(!inicializar)
         {
             fondo->getComponente<CE::IControl>()->abrir = true;
             return;
         }
-
+		
+		mov = true;
         CE::GestorCamaras::Get().setCamaraActiva(0);
 
  		registrarBotones(sf::Keyboard::Scancode::Escape,"menu");
@@ -45,6 +49,24 @@ namespace IVJ
         der = std::make_shared<Rectangulo>(470,520,sf::Color::Transparent,sf::Color::White);
         der->setPosicion(577.f,137.f);
 
+		textoPrueba = std::make_shared<CE::ITexto>(
+			CE::GestorAssets::Get().getFont("Shadows"),
+			""
+		);
+
+		textoPrueba->m_texto.setCharacterSize(30.f);
+		textoPrueba->m_texto.setFillColor(sf::Color::Black);
+		textoPrueba->m_texto.setPosition({300.f,300.f});
+
+		noDescubierto = std::make_shared<CE::ITexto>(
+			CE::GestorAssets::Get().getFont("Shadows"),
+			"?\t\t?"
+		);
+
+		noDescubierto->m_texto.setCharacterSize(100.f);
+		noDescubierto->m_texto.setFillColor(sf::Color::Black);
+		noDescubierto->m_texto.setPosition({300.f,300.f});
+
         objetos.agregarPool(fondo);
         //fondo->getComponente<CE::IControl>()->abrir = true;
 
@@ -57,10 +79,21 @@ namespace IVJ
     }
 	void EscenaBestiario::onUpdate(float dt)
 	{
+		auto control = fondo->getComponente<CE::IControl>();
+
+		if(numPagina >= 0 && numPagina < MAX_ENTES){
+			if(enteDescubierto(descubiertos,entes[numPagina]))
+			{
+				textoPrueba->m_texto.setString(entes[numPagina] + "DESCUBIERTOOO");
+				descubierto = true;
+			}
+			else
+				descubierto = false;
+		}
         if(salir)
         {
-            auto cerrar = fondo->getComponente<CE::IControl>()->cerrar;
-            auto cambiar = fondo->getComponente<CE::IControl>()->cambiar;
+            auto cerrar = control->cerrar;
+            auto cambiar = control->cambiar;
 
             if(cambiar)
             {
@@ -98,6 +131,7 @@ namespace IVJ
 
 			if(mousePrev)
 			{
+				numPagina--;
                 fondo->getComponente<CE::IControl>()->prevPage = true;
 				mousePrev = false;
 			}
@@ -123,6 +157,7 @@ namespace IVJ
 
 			if(mousePrev)
 			{
+				numPagina++;
                 fondo->getComponente<CE::IControl>()->nextPage = true;
 				mousePrev = false;
 			}
@@ -133,6 +168,12 @@ namespace IVJ
 			mousePrev = false;
 			mousePressed = false;
 		}
+
+		if(numPagina < 0) numPagina = MAX_ENTES-1;
+		else if(numPagina >= MAX_ENTES) numPagina = 0;
+
+		if(control->nextPage || control->prevPage || control->abrir || control->cerrar || control->cambiar) mov = true;
+		else mov = false;
 	}
 
 	void EscenaBestiario::onInputs(const CE::Botones& accion)
@@ -149,5 +190,11 @@ namespace IVJ
 	void EscenaBestiario::onRender()
 	{
         CE::Render::Get().AddToDraw(fondo->getComponente<CE::ISprite>()->m_sprite);
+		
+		if(!mov) 
+		{
+			if(descubierto)	CE::Render::Get().AddToDraw(textoPrueba->m_texto);
+			else CE::Render::Get().AddToDraw(noDescubierto->m_texto);
+		}
 	}
 }

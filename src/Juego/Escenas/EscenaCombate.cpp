@@ -15,6 +15,7 @@
 #include "../Objetos/Equipos.hpp"
 #include <memory>
 #include <SFML/Graphics.hpp>
+#include "../Componentes/IJComponentes.hpp"
 
 namespace IVJ
 {
@@ -76,6 +77,16 @@ namespace IVJ
 			fondo.setFillColor(sf::Color(100,100,100,100));
 			fondo.setOutlineColor(sf::Color::Black);
 			fondo.setOutlineThickness(2.f);
+
+			tooltip = std::make_shared<Rectangulo>(0,0,sf::Color(245,240,230),sf::Color(0,0,0,0));
+			tooltip->addComponente(std::make_shared<CE::ITexto>(
+				CE::GestorAssets::Get().getFont("Caveman"),
+				""
+			));
+
+			auto textoTooltip = tooltip->getComponente<CE::ITexto>();
+			textoTooltip->m_texto.setCharacterSize(5);
+			textoTooltip->m_texto.setFillColor(sf::Color::Black);
 
 			if(!bg[0].loadTileMap(ASSETS "/mapas/mapaPelea1_layer1.txt")) exit(EXIT_FAILURE);
 			if(!bg[1].loadTileMap(ASSETS "/mapas/mapaPelea1_layer2.txt")) exit(EXIT_FAILURE);
@@ -188,6 +199,7 @@ namespace IVJ
 				
 				auto sprite = ente->getComponente<CE::ISprite>();
 				sprite->m_sprite.setScale({-sprite->escala,sprite->escala});
+				IVJ::enteVisto(ente->getNombre()->nombre);
 			}
 
 			IVJ::SistemaSetPosOriginal(ente);
@@ -255,6 +267,21 @@ namespace IVJ
 					//O SI YA FUE SELECCIONADA
 					if(boton->dinoPuntos <= info->dinoPuntos && boton->rect_bounding.contains(sf::Vector2i(mousePos.x,mousePos.y)) || boton->seleccionado)
 					{
+						tooltip->setColor(sf::Color(245,240,230));
+						auto tooltipText = tooltip->getComponente<CE::ITexto>();
+						auto dinoPuntosH = boton->dinoPuntos;
+						tooltipText->m_texto.setString(std::to_string(dinoPuntosH));
+            			sf::FloatRect textBounds = tooltipText->m_texto.getLocalBounds();
+
+						float padding = 6.0f;
+						float tooltipW = textBounds.size.x + padding * 2;
+						float tooltipH = textBounds.size.y + padding * 2;
+
+						tooltipText->m_texto.setPosition(sf::Vector2f{mousePos.x - textBounds.size.x / 2, mousePos.y - tooltipH - 5 + padding});
+
+            			tooltip->setTam(tooltipW,tooltipH);
+            			tooltip->setPosicion(mousePos.x - tooltipW / 2, mousePos.y - tooltipH - 5);
+
 						boton->setColor(sf::Color::Black); //CAMBIAMOS DE COLOR A NEGRO
 						auto texto = boton->getComponente<CE::ITexto>();
 						texto->m_texto.setFillColor(sf::Color::White); //CAMBIAMOS DE TEXTO A BLANCO
@@ -558,5 +585,11 @@ namespace IVJ
 		CE::Render::Get().AddToDraw(dinoSelector->m_sprite);
 
 		CE::Render::Get().AddToDraw(nivelActual->getComponente<CE::ITexto>()->m_texto);
+
+		if(mouse)
+		{
+			CE::Render::Get().AddToDraw(*tooltip);
+			CE::Render::Get().AddToDraw(tooltip->getComponente<CE::ITexto>()->m_texto);
+		}
 	}
 }

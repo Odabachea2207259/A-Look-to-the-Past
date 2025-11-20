@@ -2,6 +2,9 @@
 #include "../Maquinas/FSM.hpp"
 #include "../../Motor/Componentes/IComponentes.hpp"
 #include <nlohmann/json.hpp>
+#include <fstream>
+
+using json = nlohmann::json;
 
 namespace IVJ
 {
@@ -19,4 +22,7 @@ namespace IVJ
 	int getMaxFrames(const nlohmann::json& j, const std::string& prefijo);
 	std::string getUbicacion(const nlohmann::json& j, const std::string& prefijo);
 	float getVel(const nlohmann::json& j, const std::string& prefijo);
+
+	bool enteDescubierto(const nlohmann::json& j, const std::string& prefijo);
+	void enteVisto(const std::string& prefijo);
 }
