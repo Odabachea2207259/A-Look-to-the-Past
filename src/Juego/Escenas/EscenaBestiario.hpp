@@ -41,6 +41,7 @@ namespace IVJ
 			std::shared_ptr<CE::ITexto> periodo;
 			std::shared_ptr<CE::ITexto> nombreEnte;
 			std::shared_ptr<IVJ::Rectangulo> infoEnte;
+			std::shared_ptr<IVJ::Rectangulo> dibujoEnte;
 
 			std::shared_ptr<CE::ITexto> noDescubierto;
 
@@ -48,6 +49,9 @@ namespace IVJ
 			json info;
 
 			int numPagina = 0;
-            bool salir = false,salida = false,mov = false, descubierto;
+			
+            bool salir = false,salida = false,mov = false, descubierto, vista;
+
+			void cargarInfo();
 	};
 }

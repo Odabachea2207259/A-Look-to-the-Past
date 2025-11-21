@@ -1,26 +1,26 @@
 {
   "Anteosaurus": {
     "periodo": "Permico",
-    "info": "isjsaofjiwefoiejwfowe"
+    "info": "/enemigos/jefes/Anteosaurus/info.txt"
   },
   "Carnotauro": {
     "periodo": "Cretacico",
-    "info": "sdfhwioefwefwef"
+    "info": "/sprites_dinos/Carnotauro/info.txt"
   },
   "Centrosaurus": {
     "periodo": "Cretacico",
-    "info": "wefwefaSDDVR"
+    "info": "/sprites_dinos/Centrosaurus/info.txt"
   },
   "Coty": {
     "periodo": "Permico",
-    "info": "QWRTYGFDVBH"
+    "info": "/enemigos/jefes/Coty/info.txt"
   },
   "Pachycephalosaurus": {
     "periodo": "Cretacico",
-    "info": "weqfwefewfew"
+    "info": "/sprites_dinos/Pachycephalosaurus/info.txt"
   },
   "Parasaurolophus": {
     "periodo": "Cretacico",
-    "info": "xeehfbwuu"
+    "info": "/sprites_dinos/Parasaurolophus/info.txt"
   }
 }

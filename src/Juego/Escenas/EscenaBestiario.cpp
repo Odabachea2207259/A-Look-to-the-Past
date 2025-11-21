@@ -52,6 +52,32 @@ namespace IVJ
         der = std::make_shared<Rectangulo>(470,520,sf::Color::Transparent,sf::Color::White);
         der->setPosicion(577.f,137.f);
 
+		infoEnte = std::make_shared<IVJ::Rectangulo>(
+			380.f,450.f,
+			sf::Color::Transparent,
+			sf::Color::White
+		);
+
+		infoEnte->setPosicion(600.f,200.f);
+
+		infoEnte->addComponente(std::make_shared<CE::ITexto>(
+			CE::GestorAssets::Get().getFont("Shadows"),
+			""
+		));
+
+		auto textoInfo = infoEnte->getComponente<CE::ITexto>();
+		textoInfo->m_texto.setCharacterSize(30);
+		textoInfo->m_texto.setFillColor(sf::Color::Black);
+		textoInfo->m_texto.setPosition({600.f,200.f});
+
+		dibujoEnte = std::make_shared<IVJ::Rectangulo>(
+			400.f,300.f,
+			sf::Color::Transparent,
+			sf::Color::White
+		);
+
+		dibujoEnte->setPosicion(150.f,200.f); // -->NO MOVER
+
 		textoPrueba = std::make_shared<CE::ITexto>(
 			CE::GestorAssets::Get().getFont("Shadows"),
 			""
@@ -77,7 +103,7 @@ namespace IVJ
 
 		periodo->m_texto.setCharacterSize(40.f);
 		periodo->m_texto.setFillColor(sf::Color::Black);
-		periodo->m_texto.setPosition({140.f,600.f});
+		periodo->m_texto.setPosition({150.f,600.f});
 
 		nombreEnte = std::make_shared<CE::ITexto>(
 			CE::GestorAssets::Get().getFont("Shadows"),
@@ -86,7 +112,7 @@ namespace IVJ
 
 		nombreEnte->m_texto.setCharacterSize(40.f);
 		nombreEnte->m_texto.setFillColor(sf::Color::Black);
-		nombreEnte->m_texto.setPosition({130.f,500.f});
+		nombreEnte->m_texto.setPosition({140.f,500.f});
 
         objetos.agregarPool(fondo);
         //fondo->getComponente<CE::IControl>()->abrir = true;
@@ -103,17 +129,9 @@ namespace IVJ
 		auto control = fondo->getComponente<CE::IControl>();
 
 		if(numPagina >= 0 && numPagina < MAX_ENTES){
-			if(enteDescubierto(descubiertos,entes[numPagina]))
-			{
-				textoPrueba->m_texto.setString(entes[numPagina] + "DESCUBIERTOOO");
-				nombreEnte->m_texto.setString("Nombre: " + entes[numPagina]);
-				std::string p = info[entes[numPagina]]["periodo"];
-				periodo->m_texto.setString("Periodo: " + p);
-				descubierto = true;
-			}
-			else
-				descubierto = false;
+			cargarInfo();
 		}
+
         if(salir)
         {
             auto cerrar = control->cerrar;
@@ -158,6 +176,7 @@ namespace IVJ
 				numPagina--;
                 fondo->getComponente<CE::IControl>()->prevPage = true;
 				mousePrev = false;
+				descubierto = false;
 			}
 		}
 
@@ -184,6 +203,7 @@ namespace IVJ
 				numPagina++;
                 fondo->getComponente<CE::IControl>()->nextPage = true;
 				mousePrev = false;
+				descubierto = false;
 			}
 		}
 
@@ -218,11 +238,33 @@ namespace IVJ
 		if(!mov) 
 		{
 			if(descubierto){
-				CE::Render::Get().AddToDraw(textoPrueba->m_texto);
+				//CE::Render::Get().AddToDraw(textoPrueba->m_texto);
 				CE::Render::Get().AddToDraw(periodo->m_texto);
 				CE::Render::Get().AddToDraw(nombreEnte->m_texto);
+				//CE::Render::Get().AddToDraw(*dibujoEnte);
+				CE::Render::Get().AddToDraw(infoEnte->getComponente<CE::ITexto>()->m_texto);
 			}	
 			else CE::Render::Get().AddToDraw(noDescubierto->m_texto);
 		}
+	}
+
+	void EscenaBestiario::cargarInfo()
+	{
+		if(enteDescubierto(descubiertos,entes[numPagina]))
+		{
+			//textoPrueba->m_texto.setString(entes[numPagina] + "DESCUBIERTOOO");
+			if(descubierto) return;
+			nombreEnte->m_texto.setString("Nombre: " + entes[numPagina]);
+			std::string p = info[entes[numPagina]]["periodo"];
+			periodo->m_texto.setString("Periodo: " + p);
+			
+			std::string ubi = info[entes[numPagina]]["info"];
+
+			//infoEnte->getComponente<CE::ITexto>()->m_texto.setString(std::wstring(texto.begin(),texto.end()));
+			infoEnte->getComponente<CE::ITexto>()->m_texto.setString(IVJ::getInfo(ubi));
+			descubierto = true;
+		}
+		else
+			descubierto = false;
 	}
 }

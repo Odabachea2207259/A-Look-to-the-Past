@@ -3,6 +3,7 @@
 #include "../../Motor/Componentes/IComponentes.hpp"
 #include <nlohmann/json.hpp>
 #include <fstream>
+#include <locale.h>
 
 using json = nlohmann::json;
 
@@ -25,4 +26,6 @@ namespace IVJ
 
 	bool enteDescubierto(const nlohmann::json& j, const std::string& prefijo);
 	void enteVisto(const std::string& prefijo);
+
+	std::wstring getInfo(const std::string& ubicacion);
 }

@@ -83,4 +83,15 @@ namespace IVJ
 			out << descubiertos;
 		}
 	}
+
+	std::wstring getInfo(const std::string& ubicacion)
+	{
+		setlocale(LC_ALL, "");
+
+		std::wifstream input1(ASSETS + ubicacion, std::ios::binary);
+		std::wstring content((std::istreambuf_iterator<wchar_t>(input1)),
+		    {});
+
+		return content;
+	}
 }
