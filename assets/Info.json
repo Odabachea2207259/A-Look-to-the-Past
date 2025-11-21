@@ -1,26 +1,32 @@
 {
   "Anteosaurus": {
     "periodo": "Permico",
-    "info": "/enemigos/jefes/Anteosaurus/info.txt"
+    "info": "/enemigos/jefes/Anteosaurus/info.txt",
+    "dibujo": "dibujoAnte"
   },
   "Carnotauro": {
     "periodo": "Cretacico",
-    "info": "/sprites_dinos/Carnotauro/info.txt"
+    "info": "/sprites_dinos/Carnotauro/info.txt",
+    "dibujo": "dibujoCarno"
   },
   "Centrosaurus": {
     "periodo": "Cretacico",
-    "info": "/sprites_dinos/Centrosaurus/info.txt"
+    "info": "/sprites_dinos/Centrosaurus/info.txt",
+    "dibujo": "dibujoCentro"
   },
   "Coty": {
     "periodo": "Permico",
-    "info": "/enemigos/jefes/Coty/info.txt"
+    "info": "/enemigos/jefes/Coty/info.txt",
+    "dibujo": "dibujoCoty"
   },
   "Pachycephalosaurus": {
     "periodo": "Cretacico",
-    "info": "/sprites_dinos/Pachycephalosaurus/info.txt"
+    "info": "/sprites_dinos/Pachycephalosaurus/info.txt",
+    "dibujo": "dibujoPachy"
   },
   "Parasaurolophus": {
     "periodo": "Cretacico",
-    "info": "/sprites_dinos/Parasaurolophus/info.txt"
+    "info": "/sprites_dinos/Parasaurolophus/info.txt",
+    "dibujo": "dibujoPara"
   }
 }

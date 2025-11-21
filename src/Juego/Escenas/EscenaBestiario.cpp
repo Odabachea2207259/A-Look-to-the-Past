@@ -21,6 +21,14 @@ namespace IVJ
             return;
         }
 
+		CE::GestorAssets::Get().agregarTextura("dibujoPara",ASSETS "/sprites_dinos/Parasaurolophus/Parasaurolophus.PNG",CE::Vector2D{0,0},CE::Vector2D{400,300});
+		CE::GestorAssets::Get().agregarTextura("dibujoPachy",ASSETS "/sprites_dinos/Pachycephalosaurus/Pachycephalosaurus.PNG",CE::Vector2D{0,0},CE::Vector2D{400,300});
+		CE::GestorAssets::Get().agregarTextura("dibujoCentro",ASSETS "/sprites_dinos/Centrosaurus/Centrosaurus.PNG",CE::Vector2D{0,0},CE::Vector2D{400,300});
+		CE::GestorAssets::Get().agregarTextura("dibujoCarno",ASSETS "/sprites_dinos/Carnotauro/Carnotauro.PNG",CE::Vector2D{0,0},CE::Vector2D{400,300});
+		
+		CE::GestorAssets::Get().agregarTextura("dibujoAnte",ASSETS "/enemigos/jefes/Anteosaurus/Anteosaurus.PNG",CE::Vector2D{0,0},CE::Vector2D{400,300});
+		CE::GestorAssets::Get().agregarTextura("dibujoCoty",ASSETS "/enemigos/jefes/Coty/Coty.PNG",CE::Vector2D{0,0},CE::Vector2D{400,300});
+
 		std::ifstream in(ASSETS "/Info.json");
 		in >> info;
 		
@@ -77,6 +85,14 @@ namespace IVJ
 		);
 
 		dibujoEnte->setPosicion(150.f,200.f); // -->NO MOVER
+
+		dibujoEnte->addComponente(std::make_shared<CE::ISprite>(
+			CE::GestorAssets::Get().getTextura("dibujoAnte"),
+			400,300,
+			1.f
+		));
+
+		dibujoEnte->getComponente<CE::ISprite>()->m_sprite.setPosition({350.f,350.f});
 
 		textoPrueba = std::make_shared<CE::ITexto>(
 			CE::GestorAssets::Get().getFont("Shadows"),
@@ -238,11 +254,10 @@ namespace IVJ
 		if(!mov) 
 		{
 			if(descubierto){
-				//CE::Render::Get().AddToDraw(textoPrueba->m_texto);
 				CE::Render::Get().AddToDraw(periodo->m_texto);
 				CE::Render::Get().AddToDraw(nombreEnte->m_texto);
-				//CE::Render::Get().AddToDraw(*dibujoEnte);
 				CE::Render::Get().AddToDraw(infoEnte->getComponente<CE::ITexto>()->m_texto);
+				CE::Render::Get().AddToDraw(dibujoEnte->getComponente<CE::ISprite>()->m_sprite);
 			}	
 			else CE::Render::Get().AddToDraw(noDescubierto->m_texto);
 		}
@@ -262,6 +277,13 @@ namespace IVJ
 
 			//infoEnte->getComponente<CE::ITexto>()->m_texto.setString(std::wstring(texto.begin(),texto.end()));
 			infoEnte->getComponente<CE::ITexto>()->m_texto.setString(IVJ::getInfo(ubi));
+
+			std::string ubiDibujo = info[entes[numPagina]]["dibujo"];
+
+			dibujoEnte->getComponente<CE::ISprite>()->m_sprite.setTexture(
+				CE::GestorAssets::Get().getTextura(ubiDibujo)
+			);
+
 			descubierto = true;
 		}
 		else
