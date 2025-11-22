@@ -29,5 +29,7 @@ namespace IVJ
             sf::RectangleShape fondo;
 
             std::shared_ptr<IVJ::Rectangulo> boton;
+
+			bool menu = false;
 	};
 }

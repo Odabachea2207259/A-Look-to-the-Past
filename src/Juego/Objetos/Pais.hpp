@@ -16,6 +16,7 @@ namespace IVJ
             Dinosaurio getDinosaurio();
             bool mostrarPrecio = false;
             int cantClics = 0;
+            bool mouseHover = false;
 
         public:
             void dinosCan();

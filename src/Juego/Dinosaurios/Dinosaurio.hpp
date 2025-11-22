@@ -41,6 +41,11 @@ namespace IVJ
                 this->addComponente(std::make_shared<IVJ::IMaquinaEstado>());
                 this->addComponente(std::make_shared<CE::IEstados>());
                 this->addComponente(std::make_shared<CE::IHabilidades>());
+                this->addComponente(std::make_shared<CE::ISonido>());
+
+                auto sonidos = this->getComponente<CE::ISonido>();
+                sonidos->muerte = "sonido_muerte";
+                sonidos->ataque = nombre + "_ataque";
 
 		        auto &fsm_init = this->getComponente<IMaquinaEstado>()->fsm;
 		        fsm_init = std::make_shared<IdleFSM>();

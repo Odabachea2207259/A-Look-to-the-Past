@@ -55,7 +55,12 @@ namespace IVJ
 
 		inicializar = false;
 	}
-	void EscenaDerrota::onFinal(){}
+	void EscenaDerrota::onFinal(){
+        CE::GestorAssets::Get().getMusica("combate").stop();
+
+        CE::GestorAssets::Get().getMusica("menu").play();
+        CE::GestorAssets::Get().getMusica("oceano").play();
+    }
 	void EscenaDerrota::onUpdate(float dt)
 	{
         auto mousePos = CE::Render::Get().getMousePos();

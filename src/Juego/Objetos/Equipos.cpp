@@ -71,8 +71,8 @@ namespace IVJ
 		int cant = rand() % player->size() + 1;
         cant = 3;
 
-        nivelJugador = 100;
-        prob = 2;
+        nivelJugador = 0.2;
+        prob = 3;
 
 		switch(prob)
 		{

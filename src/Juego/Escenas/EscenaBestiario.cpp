@@ -14,6 +14,8 @@ namespace IVJ
 		std::ifstream des(ASSETS"/Descubiertos.json");
 		des >> descubiertos;
 		mov = true;
+
+		CE::GestorAssets::Get().getSonido("AbrirLibro").play();
 		
 		if(!inicializar)
         {
@@ -141,6 +143,7 @@ namespace IVJ
         inicializar = false;
 	}
 	void EscenaBestiario::onFinal(){
+		
         salir = false;
         fondo->getComponente<CE::IControl>()->cambiar = false;
         fondo->getComponente<CE::IControl>()->cerrar = false;
@@ -155,6 +158,7 @@ namespace IVJ
 
         if(salir)
         {
+			CE::GestorAssets::Get().getSonido("CerrarLibro").play();
             auto cerrar = control->cerrar;
             auto cambiar = control->cambiar;
 

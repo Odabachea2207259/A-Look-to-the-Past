@@ -37,6 +37,9 @@ namespace IVJ
 
 		auto nombre = obj.toString();
 
+		CE::GestorAssets::Get().getSonido("sonido_muerte").setPitch(3.f);
+		CE::GestorAssets::Get().getSonido("sonido_muerte").play();
+
 		std::ifstream ubicaciones(ASSETS "/Ubicaciones.json");
 		ubicaciones >> ub;
 

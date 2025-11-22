@@ -3,6 +3,7 @@
 #include <cinttypes>
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Texture.hpp>
+#include <SFML/Audio.hpp>
 #include "../Utils/Vector2D.hpp"
 //#include "../../Juego/Estados/Estados.hpp"
 #include <map>
@@ -101,6 +102,16 @@ namespace CE
 			float escala;
 		private:
 			sf::Texture m_texture;
+	};
+
+	class ISonido : public IComponentes
+	{
+		public:
+		explicit ISonido(){}
+
+		std::string ataque;
+		std::string damage;
+		std::string muerte;
 	};
 
     class IShader : public IComponentes

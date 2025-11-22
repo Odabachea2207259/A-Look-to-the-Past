@@ -55,6 +55,10 @@ namespace IVJ
         CE::GestorEscenas::Get().registrarEscena("Bestiario",std::make_shared<IVJ::EscenaBestiario>());
         
         CE::GestorAssets::Get().agregarMusica("menu", ASSETS "/musica/menu.mp3");
+        CE::GestorAssets::Get().agregarMusica("oceano", ASSETS "/fondo/ocean.wav");
+        CE::GestorAssets::Get().getMusica("oceano").setLooping(true);
+        CE::GestorAssets::Get().getMusica("oceano").setVolume(70.f);
+        CE::GestorAssets::Get().getMusica("oceano").play();
         CE::GestorAssets::Get().getMusica("menu").play();
         CE::GestorAssets::Get().getMusica("menu").setLooping(true);
 	    CE::GestorEscenas::Get().cambiarEscena("Menu");

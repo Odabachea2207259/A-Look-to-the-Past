@@ -13,6 +13,10 @@ namespace IVJ
 {
 	void EscenaFosiles::onInit()
 	{
+
+        CE::GestorAssets::Get().getMusica("menu").pause();
+		CE::GestorAssets::Get().getMusica("oceano").pause();
+        
 		if(!inicializar)
         {
             mostrarDinos();
@@ -63,7 +67,8 @@ namespace IVJ
 	void EscenaFosiles::onFinal(){}
 	void EscenaFosiles::onUpdate(float dt)
 	{
-
+		CE::GestorAssets::Get().getMusica("menu").play();
+		CE::GestorAssets::Get().getMusica("oceano").play();
 	}
 
 	void EscenaFosiles::onInputs(const CE::Botones& accion)

@@ -97,6 +97,11 @@ namespace IVJ
 		CE::GestorAssets::Get().agregarTextura("Mapa_3", ASSETS "/fondo/MenuPrincipal-Mapa3.jpg",CE::Vector2D{0,0},CE::Vector2D{1600,1200});
 
 		CE::GestorAssets::Get().agregarTextura("Bestiario",ASSETS "/bestiario/Bestiario.png",CE::Vector2D{0,0},CE::Vector2D{4320,4320});
+
+		CE::GestorAssets::Get().agregarSonido("CerrarLibro", ASSETS "/bestiario/close_book.wav");
+		CE::GestorAssets::Get().agregarSonido("AbrirLibro", ASSETS "/bestiario/open_book.mp3");
+
+		CE::GestorAssets::Get().agregarSonido("mouse_hover", ASSETS "/mouse_hover.wav");
 		
 		auto sizeVentana = CE::Render::Get().GetVentana().getSize();
 
@@ -211,6 +216,8 @@ namespace IVJ
 
 		paises.push_back(argentina);
 
+		cant_paises = 4;
+
 		auto tam = CE::Render::Get().GetVentana().getSize();
 
 		fondo_1 = std::make_shared<CE::ISprite>(CE::GestorAssets::Get().getTextura("Mapa_1"),1600,1200,0.7f);
@@ -300,6 +307,9 @@ namespace IVJ
 		{
 			if(pais->rect_bounding.contains(sf::Vector2i{static_cast<int>(mousePos.x),static_cast<int>(mousePos.y)}))
 			{
+				if(!pais->mouseHover) CE::GestorAssets::Get().getSonido("mouse_hover").play();
+				pais->mouseHover = true;
+
 				if(!pais->desbloqueado)
 					tooltip->setColor(sf::Color(255,255,255,100));
 				else
@@ -366,6 +376,7 @@ namespace IVJ
 				}
 			}
 			else{
+				pais->mouseHover = false;
 				pais->cantClics = 0;
 				pais->mostrarPrecio = false;
 			}

@@ -20,7 +20,7 @@ namespace IVJ
 		private:
 			bool inicializar{true};
 			std::vector<std::shared_ptr<Pais>> paises;
-			bool mouse,mousePressed,mousePrev = false;
+			bool mouse,mousePressed,mousePrev = false,mouseHover = false;
 
 			std::shared_ptr<Rectangulo> tooltip;
 			std::shared_ptr<Rectangulo> iconoDinero;
@@ -41,6 +41,7 @@ namespace IVJ
 			bool tres = false;
 
 			int periodo_prev = 1;
+			int cant_paises = 0, pais_hover = 0;
 
 			float tiempo{};
 			float max_tiempo{};

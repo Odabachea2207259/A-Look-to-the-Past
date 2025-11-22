@@ -14,6 +14,7 @@ namespace IVJ
 	void EscenaMejora::onInit()
 	{
 		CE::GestorAssets::Get().getMusica("menu").pause();
+		CE::GestorAssets::Get().getMusica("oceano").pause();
 
 		objetos.getPool().clear();
 		niveles.clear();
@@ -120,13 +121,14 @@ namespace IVJ
 		int i = 0;
 		for(auto & dino : Jugador::Get().GetDinosaurios())
 		{
-			niveles.at(i)->m_texto.setString("Nivel " + std::to_string(dino->getComponente<CE::IPersonaje>()->nivel));
+			niveles.at(i)->m_texto.setString("Nivel " + std::to_string((int)dino->getComponente<CE::IPersonaje>()->nivel));
 			i++;
 		}
 	}
 
 	void EscenaMejora::onFinal(){
 		CE::GestorAssets::Get().getMusica("menu").play();
+		CE::GestorAssets::Get().getMusica("oceano").play();
 	}
 	void EscenaMejora::onUpdate(float dt)
 	{
@@ -146,7 +148,7 @@ namespace IVJ
         }
 		else
         {
-            sf::String mensaje(std::to_string(dinoSelecc->getComponente<CE::IPersonaje>()->nivel*precioMejora));
+            sf::String mensaje(std::to_string((int)dinoSelecc->getComponente<CE::IPersonaje>()->nivel*precioMejora));
             texto->m_texto.setString(mensaje);
 			boton->setColor(sf::Color(255,0,0,255));
         }

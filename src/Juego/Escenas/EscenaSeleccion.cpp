@@ -13,6 +13,8 @@ namespace IVJ
 {
 	void EscenaSeleccion::onInit()
 	{
+		CE::GestorAssets::Get().getMusica("menu").pause();
+		CE::GestorAssets::Get().getMusica("oceano").pause();
 		objetos.getPool().clear();
 		Equipos::Get().GetPlayer().clear();
 		if(!inicializar)
@@ -45,6 +47,18 @@ namespace IVJ
         CE::GestorCamaras::Get().setCamaraActiva(0);
 
  		registrarBotones(sf::Keyboard::Scancode::Escape,"menu");
+
+		CE::GestorAssets::Get().agregarMusica("combate", ASSETS "/musica/combate.mp3");
+
+		CE::GestorAssets::Get().agregarSonido("sonido_muerte",ASSETS "/sonidos/alligator_death.mp3");
+
+		CE::GestorAssets::Get().agregarSonido("Carnotauro_ataque",ASSETS "/sonidos/alligator_1.mp3");
+		
+		CE::GestorAssets::Get().agregarSonido("Parasaurolophus_ataque",ASSETS "/sonidos/parasaurolophusBuff.mp3");
+		
+		CE::GestorAssets::Get().agregarSonido("Centrosaurus_ataque",ASSETS "/sonidos/alligator_3.mp3");
+		
+		CE::GestorAssets::Get().agregarSonido("Pachycephalosaurus_ataque",ASSETS "/sonidos/alligator_4.mp3");
 
 		boton = std::make_shared<IVJ::Rectangulo>(185.f,50.f,sf::Color::Red,sf::Color::Black);
 		boton->setPosicion(50.f,650.f);
@@ -94,8 +108,18 @@ namespace IVJ
 		inicializar = false;
 	}
 	void EscenaSeleccion::onFinal(){
-		Equipos::Get().GetDinoLider() = Equipos::Get().GetPlayer().at(dinosSeleccionados-1);
-		std::cout<<Equipos::Get().GetDinoLider()->getNombre()->nombre<<std::endl;
+		if(dinosSeleccionados >= 1) Equipos::Get().GetDinoLider() = Equipos::Get().GetPlayer().at(dinosSeleccionados-1);
+		
+		if(menu)
+		{
+			CE::GestorAssets::Get().getMusica("menu").play();
+			CE::GestorAssets::Get().getMusica("oceano").play();
+		}
+		else
+		{
+			CE::GestorAssets::Get().getMusica("combate").setLooping(true);
+			CE::GestorAssets::Get().getMusica("combate").play();
+		}
 	}
 	void EscenaSeleccion::onUpdate(float dt)
 	{
@@ -114,6 +138,7 @@ namespace IVJ
 		if(boton->rect_bounding.contains({static_cast<int>(mousePos.x),static_cast<int>(mousePos.y)}) && dinosSeleccionados > 0)
 		{
 			if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)){
+				menu = false;
 				switch(Jugador::Get().GetPeriodo())
                 {
                     case (IVJ::MESOZOICO - 1):
@@ -218,7 +243,10 @@ namespace IVJ
 		if(accion.getTipo() == CE::Botones::TipoAccion::OnPress)
 		{
             if(accion.getNombre() == "menu")
+			{
+				menu = true;
 				CE::GestorEscenas::Get().cambiarEscena("Menu");
+			}
 		}
 	}
 
