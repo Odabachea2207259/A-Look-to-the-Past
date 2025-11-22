@@ -233,7 +233,9 @@ namespace IVJ
 		
 		inicializar = false;
 	}
-	void Escena_Menu::onFinal(){}
+	void Escena_Menu::onFinal(){
+		//CE::GestorAssets::Get().getMusica("menu").pause();
+	}
 	void Escena_Menu::onUpdate(float dt)
 	{
 		auto textoDinero = iconoDinero->getComponente<CE::ITexto>();

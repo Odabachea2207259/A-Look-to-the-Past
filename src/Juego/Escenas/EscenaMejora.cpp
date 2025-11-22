@@ -13,6 +13,8 @@ namespace IVJ
 {
 	void EscenaMejora::onInit()
 	{
+		CE::GestorAssets::Get().getMusica("menu").pause();
+
 		objetos.getPool().clear();
 		niveles.clear();
 		dinoSelecc = nullptr;
@@ -124,6 +126,7 @@ namespace IVJ
 	}
 
 	void EscenaMejora::onFinal(){
+		CE::GestorAssets::Get().getMusica("menu").play();
 	}
 	void EscenaMejora::onUpdate(float dt)
 	{

@@ -29,6 +29,11 @@ namespace IVJ
 		CE::GestorAssets::Get().agregarTextura("dibujoAnte",ASSETS "/enemigos/jefes/Anteosaurus/Anteosaurus.PNG",CE::Vector2D{0,0},CE::Vector2D{400,300});
 		CE::GestorAssets::Get().agregarTextura("dibujoCoty",ASSETS "/enemigos/jefes/Coty/Coty.PNG",CE::Vector2D{0,0},CE::Vector2D{400,300});
 
+		CE::GestorAssets::Get().agregarSonido("derecha", ASSETS "/bestiario/page-right.mp3");
+		CE::GestorAssets::Get().agregarSonido("izquierda", ASSETS "/bestiario/page-left.mp3");
+
+		CE::GestorAssets::Get().getSonido("derecha").setPitch(2.f);
+
 		std::ifstream in(ASSETS "/Info.json");
 		in >> info;
 		
@@ -193,6 +198,7 @@ namespace IVJ
                 fondo->getComponente<CE::IControl>()->prevPage = true;
 				mousePrev = false;
 				descubierto = false;
+				CE::GestorAssets::Get().getSonido("izquierda").play();
 			}
 		}
 
@@ -220,6 +226,7 @@ namespace IVJ
                 fondo->getComponente<CE::IControl>()->nextPage = true;
 				mousePrev = false;
 				descubierto = false;
+				CE::GestorAssets::Get().getSonido("derecha").play();
 			}
 		}
 

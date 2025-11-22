@@ -36,4 +36,25 @@ namespace CE
 		textura->setSmooth(true);
 		hashTexturas[key] = textura;
 	}
+
+    void GestorAssets::agregarSonido(const std::string& key, const std::string& filepath)
+    {   
+		auto buffer = std::make_shared<sf::SoundBuffer>();
+        if(!buffer->loadFromFile(filepath))
+            std::cerr<<"No se pudo cargar la Sonido "<<filepath<<"\n";
+
+		hashSoundBuffers[key] = buffer;
+
+		auto sound = std::make_shared<sf::Sound>(*buffer);
+		
+        hashSonidos[key] = sound;
+    }
+
+    void GestorAssets::agregarMusica(const std::string& key, const std::string& filepath)
+    {   
+        auto musica = std::make_shared<sf::Music>();
+        if(!musica->openFromFile(filepath))
+            std::cerr<<"No se pudo cargar la Música "<<filepath<<"\n";
+        hashMusica[key] = musica;
+    }
 }
