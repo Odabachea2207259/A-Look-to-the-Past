@@ -71,8 +71,8 @@ namespace IVJ
 		int cant = rand() % player->size() + 1;
         cant = 3;
 
-        nivelJugador = 0.2;
-        prob = 3;
+        nivelJugador = 0.1;
+        prob = 4;
 
 		switch(prob)
 		{
@@ -95,7 +95,7 @@ namespace IVJ
 			case 4:
                 enemigos->push_back(std::make_shared<Carnotauro>(nivelJugador));
                 enemigos->push_back(std::make_shared<Pachycephalosaurus>(nivelJugador));
-				enemigos->push_back(std::make_shared<Carnotauro>(nivelJugador));
+				enemigos->push_back(std::make_shared<Centrosaurus>(nivelJugador));
 				break;
 			default:
 				break;

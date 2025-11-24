@@ -26,6 +26,8 @@ namespace IVJ
 			int s_w{};
 			int s_h{};
 
+			std::string sonido;
+
 			int max_frames{};
 
 			bool termino;

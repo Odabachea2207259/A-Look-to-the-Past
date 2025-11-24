@@ -1,7 +1,6 @@
 #include "IdleFSM.hpp"
 #include "MuerteFSM.hpp"
 #include "../../Motor/Componentes/IComponentes.hpp"
-#include "../../Motor/Primitivos/GestorAssets.hpp"
 #include <nlohmann/json.hpp>
 #include <fstream>
 

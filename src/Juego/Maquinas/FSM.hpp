@@ -2,6 +2,7 @@
 #include "../../Motor/Componentes/IComponentes.hpp"
 #include "../Objetos/Entidad.hpp"
 #include <SFML/Graphics.hpp>
+#include "../../Motor/Primitivos/GestorAssets.hpp"
 
 namespace IVJ
 {

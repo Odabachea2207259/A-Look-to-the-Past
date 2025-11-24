@@ -52,13 +52,15 @@ namespace IVJ
 
 		CE::GestorAssets::Get().agregarSonido("sonido_muerte",ASSETS "/sonidos/alligator_death.mp3");
 
-		CE::GestorAssets::Get().agregarSonido("Carnotauro_ataque",ASSETS "/sonidos/alligator_1.mp3");
+		CE::GestorAssets::Get().agregarSonido("carnotauro_ataque",ASSETS "/sonidos/alligator_1.mp3");
 		
-		CE::GestorAssets::Get().agregarSonido("Parasaurolophus_ataque",ASSETS "/sonidos/parasaurolophusBuff.mp3");
+		CE::GestorAssets::Get().agregarSonido("parasaurolophus_ataque",ASSETS "/sonidos/parasaurolophusBuff.mp3");
 		
-		CE::GestorAssets::Get().agregarSonido("Centrosaurus_ataque",ASSETS "/sonidos/alligator_3.mp3");
+		CE::GestorAssets::Get().agregarSonido("centrosaurus_ataque",ASSETS "/sonidos/alligator_3.mp3");
 		
-		CE::GestorAssets::Get().agregarSonido("Pachycephalosaurus_ataque",ASSETS "/sonidos/alligator_4.mp3");
+		CE::GestorAssets::Get().agregarSonido("pachy_ataque",ASSETS "/sonidos/alligator_6.mp3");
+		
+		CE::GestorAssets::Get().agregarSonido("Anteosaurus_ataque",ASSETS "/sonidos/alligator_5.mp3");
 
 		boton = std::make_shared<IVJ::Rectangulo>(185.f,50.f,sf::Color::Red,sf::Color::Black);
 		boton->setPosicion(50.f,650.f);

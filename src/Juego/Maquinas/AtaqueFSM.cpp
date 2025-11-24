@@ -40,6 +40,10 @@ namespace IVJ
 
 		auto nombre = obj.toString();
 
+		sonido = obj.getComponente<CE::ISonido>()->ataque;
+
+		CE::GestorAssets::Get().getSonido(sonido).setPitch(2.f);
+
 		std::ifstream ubicaciones(ASSETS "/Ubicaciones.json");
 		ubicaciones >> ub;
 
@@ -102,9 +106,9 @@ namespace IVJ
 			frame++;
 
 			if(id_actual%max_frames == max_frames || frame == max_frames)
-			{
 				termino = true;
-			}
+			else if(frame == max_frames/2)
+				CE::GestorAssets::Get().getSonido(sonido).play();
 		}
 	}
 }
