@@ -61,6 +61,7 @@ namespace IVJ
 		CE::GestorAssets::Get().agregarSonido("pachy_ataque",ASSETS "/sonidos/alligator_6.mp3");
 		
 		CE::GestorAssets::Get().agregarSonido("Anteosaurus_ataque",ASSETS "/sonidos/alligator_5.mp3");
+		CE::GestorAssets::Get().agregarSonido("Coty_ataque",ASSETS "/sonidos/alligator_5.mp3");
 
 		boton = std::make_shared<IVJ::Rectangulo>(185.f,50.f,sf::Color::Red,sf::Color::Black);
 		boton->setPosicion(50.f,650.f);

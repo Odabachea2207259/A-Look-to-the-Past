@@ -36,6 +36,7 @@ namespace IVJ
             ~Rectangulo() override{};
             void draw(sf::RenderTarget& target, sf::RenderStates state) const override;
             void setPosicion(float x, float y); //---> DESCOMENTAR PARA EL JUEGO
+			void setPosicion(CE::Vector2D pos);
 			void setTam(float x, float y)
 			{
 				rect_img.setSize(sf::Vector2f{x,y});

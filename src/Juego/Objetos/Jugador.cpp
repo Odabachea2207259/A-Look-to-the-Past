@@ -20,6 +20,7 @@ namespace IVJ
         periodo = std::make_unique<int>(IVJ::PALEOZOICO);
         checkpoint = std::make_unique<int>(1);
         dinosaurios = std::make_unique<std::vector<std::shared_ptr<Dinosaurio>>>();
+        tutorial = std::make_unique<bool>(false);
     }
 
     void Jugador::Terminar()
@@ -51,5 +52,10 @@ namespace IVJ
     std::vector<std::shared_ptr<Dinosaurio>>& Jugador::GetDinosaurios() 
     {
         return *dinosaurios;
+    }
+
+    bool& Jugador::GetTutorial(void)
+    {
+        return *tutorial;
     }
 }

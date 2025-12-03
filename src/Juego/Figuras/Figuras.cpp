@@ -27,6 +27,11 @@ namespace IVJ
         rect_bounding = sf::IntRect({static_cast<int>(x),static_cast<int>(y)},{static_cast<int>(getWidth()),static_cast<int>(getHeight())});
     }
 
+    void Rectangulo::setPosicion(CE::Vector2D pos)
+    {
+        rect_img.setPosition(sf::Vector2f{pos.x,pos.y});
+    }
+
     void Rectangulo::draw(sf::RenderTarget& target, sf::RenderStates state) const 
     {
         state.transform *= getTransform();

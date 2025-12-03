@@ -20,6 +20,42 @@ namespace IVJ
         if(inicializar) {
             //std::srand(static_cast<unsigned>(std::time(nullptr)));
             CE::GestorAssets::Get().agregarTextura("Victoria",ASSETS "/pantallas/Victoria.png",CE::Vector2D{0,0},CE::Vector2D{1080,720});
+    
+			tuto_1 = std::make_shared<Rectangulo>(CE::WIDTH,CE::HEIGHT,sf::Color(0,0,0,200),sf::Color::Transparent);
+			tuto_2 = std::make_shared<Rectangulo>(CE::WIDTH,CE::HEIGHT,sf::Color(0,0,0,200),sf::Color::Transparent);
+
+			pos_tutorial_1 = {
+				{0.f,0.f},
+				{-650.f,0.f},
+				{-845.f,0.f}
+			};
+
+            pos_tutorial_2 = {
+                {0.f,0.f},
+                {610.f,0.f},
+                {540.f,0.f}
+            };
+
+			hattie = std::make_shared<Rectangulo>(300.f,300.f,sf::Color::Transparent,sf::Color::Transparent);
+
+			hattie->addComponente(std::make_shared<CE::ISprite>(
+				CE::GestorAssets::Get().getTextura("hattie"),
+				300,300,
+				1.f
+			)
+			);
+
+			hattie->setPosicion(300.f,300.f);
+			hattie->getComponente<CE::ISprite>()->m_sprite.setPosition({CE::WIDTH/2 - 150.f,CE::HEIGHT/2 - 150.f});
+
+			texto_tutorial = std::make_shared<CE::ITexto>(
+				CE::GestorAssets::Get().getFont("Science"),
+				"Prueba"
+			);
+
+			texto_tutorial->m_texto.setCharacterSize(30.f);
+			texto_tutorial->m_texto.setFillColor(sf::Color::White);
+			texto_tutorial->m_texto.setPosition({CE::WIDTH/2 - 300.f,CE::HEIGHT/2});
 
             fondo = std::make_shared<CE::ISprite>(CE::GestorAssets::Get().getTextura("Victoria"),1080,720,1.f);
             fondo->m_sprite.setPosition({1080.f/2.f,720.f/2.f});
@@ -161,20 +197,97 @@ namespace IVJ
         if(recompensaSelecc)
             Recompensas::Get().GetRecompensa() = Recompensas::Rewards(recompensas.at(recompensaPos));
     }
+
     void EscenaVictoria::onUpdate(float dt)
     {
-        auto mousePos = CE::Render::Get().getMousePos();
+        mousePos = CE::Render::Get().getMousePos();
 
         static bool wasPressedLastFrame = false;
         bool isPressedNow = sf::Mouse::isButtonPressed(sf::Mouse::Button::Left);
-        bool clicked = !isPressedNow && wasPressedLastFrame;
+        mousePrev = !isPressedNow && wasPressedLastFrame;
         wasPressedLastFrame = isPressedNow;
 
+		if(Jugador::Get().GetTutorial() && parrafo < cant_parrafos)
+		{
+			tutorial(dt);
+			return;
+		}
+
+        game(dt);
+    }
+
+	void EscenaVictoria::tutorial(float dt)
+	{
+		ec += dt*2;
+		SistemaFlotar(hattie,ec);
+
+		if(!algo)
+		{
+			texto_tutorial->m_texto.setString(IVJ::getTutorial("/TutorialVictoria.txt",parrafo));
+			algo = true;
+		}
+
+		if(mousePrev)
+		{
+			parrafo++;
+			algo = false;
+			mousePrev = false;
+
+			switch(parrafo)
+			{
+				case 3:
+					texto_tutorial->m_texto.setCharacterSize(10);
+					break;
+				case 4:
+					texto_tutorial->m_texto.setCharacterSize(40);
+					break;
+                case 5:
+                    texto_tutorial->m_texto.setCharacterSize(30);
+					tuto_1->setPosicion(pos_tutorial_1[1]);
+					tuto_2->setPosicion(pos_tutorial_2[1]);
+
+					hattie->getComponente<CE::ISprite>()->m_sprite.setPosition({CE::WIDTH/2 + 250.f,CE::HEIGHT/2 - 100.f});
+					texto_tutorial->m_texto.setPosition({CE::WIDTH/2 + 90.f,CE::HEIGHT/2 + 50.f});
+
+                    break;
+                case 8:
+                    texto_tutorial->m_texto.setFillColor(sf::Color::Green);
+                    break;
+                case 9:
+                    texto_tutorial->m_texto.setFillColor(sf::Color::Blue);
+                    break;
+                case 10:
+                    texto_tutorial->m_texto.setFillColor(sf::Color::Magenta);
+                    break;
+                case 11:
+                    texto_tutorial->m_texto.setFillColor(sf::Color::White);
+                    break;
+                case 16:
+					tuto_1->setPosicion(pos_tutorial_1[2]);
+					tuto_2->setPosicion(pos_tutorial_2[2]);
+
+					hattie->getComponente<CE::ISprite>()->m_sprite.setPosition({CE::WIDTH/2 + 150.f,CE::HEIGHT/2 - 100.f});
+					texto_tutorial->m_texto.setPosition({CE::WIDTH/2 + 30.f,CE::HEIGHT/2 + 50.f});
+
+                    break;
+                case 17:
+					tuto_1->setPosicion(pos_tutorial_1[0]);
+					tuto_2->setPosicion(pos_tutorial_2[0]);
+
+					hattie->getComponente<CE::ISprite>()->m_sprite.setPosition({CE::WIDTH/2 - 150.f,CE::HEIGHT/2 - 100.f});
+					texto_tutorial->m_texto.setPosition({CE::WIDTH/2 - 300.f,CE::HEIGHT/2});
+                    break;
+			}
+		}
+	}
+
+    void EscenaVictoria::game(float dt)
+    {
         for (int i = 0; i < 3; i++)
         {
             if (areas.at(i)->rect_bounding.contains({static_cast<int>(mousePos.x), static_cast<int>(mousePos.y)}))
             {
-                if (clicked)
+                if (mousePrev)
                 {
                     if (!recompensaSelecc)
                     {
@@ -195,7 +308,7 @@ namespace IVJ
         if (boton->rect_bounding.contains({static_cast<int>(mousePos.x), static_cast<int>(mousePos.y)}))
         {
             boton->getComponente<CE::ITexto>()->m_texto.setFillColor(sf::Color(166, 134, 86));
-            if (clicked)
+            if (mousePrev)
             {
                 switch(Jugador::Get().GetPeriodo())
                 {
@@ -240,5 +353,12 @@ namespace IVJ
 
         for(auto & area : areas)
             CE::Render::Get().AddToDraw(*area);
+        
+        if(Jugador::Get().GetTutorial() && parrafo < cant_parrafos){
+			CE::Render::Get().AddToDraw(*tuto_1);
+			CE::Render::Get().AddToDraw(*tuto_2);
+			CE::Render::Get().AddToDraw(hattie->getComponente<CE::ISprite>()->m_sprite);
+			CE::Render::Get().AddToDraw(texto_tutorial->m_texto);
+		}
 	}
 }

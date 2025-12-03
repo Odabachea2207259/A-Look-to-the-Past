@@ -17,6 +17,9 @@ namespace IVJ
 			void onUpdate(float dt);
 			void onInputs(const CE::Botones& accion);
 			void onRender();
+
+			void tutorial(float dt);
+			void game(float dt);
 		private:
 			bool inicializar{true};
 			std::vector<std::shared_ptr<Pais>> paises;
@@ -45,5 +48,18 @@ namespace IVJ
 
 			float tiempo{};
 			float max_tiempo{};
+			float ec{};
+
+			std::shared_ptr<IVJ::Rectangulo> tuto_1;
+			std::shared_ptr<IVJ::Rectangulo> tuto_2;
+			std::shared_ptr<IVJ::Rectangulo> hattie;
+			std::shared_ptr<CE::ITexto> texto_tutorial;
+			std::vector<CE::Vector2D> pos_tutorial_1;
+			std::vector<CE::Vector2D> pos_tutorial_2;
+			bool algo = false;
+			int parrafo = 1;
+			int cant_parrafos{23};
+
+			CE::Vector2D mousePos;
 	};
 }

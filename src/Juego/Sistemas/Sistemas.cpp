@@ -26,6 +26,12 @@ namespace IVJ
 		}
 	}
 
+	void SistemaFlotar(std::shared_ptr<CE::Objeto> obj,float dt)
+	{
+		auto pos = obj->getComponente<CE::ISprite>()->m_sprite.getPosition();
+		obj->getComponente<CE::ISprite>()->m_sprite.setPosition({pos.x,pos.y + sin(dt/2)*0.5});
+	}
+
 	void SistemaMovimientoRebote(std::vector<std::shared_ptr<CE::Objeto>> entes, float dt)
 	{
 		for(auto & e: entes)

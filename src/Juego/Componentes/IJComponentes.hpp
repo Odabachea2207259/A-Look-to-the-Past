@@ -4,6 +4,7 @@
 #include <nlohmann/json.hpp>
 #include <fstream>
 #include <locale.h>
+#include <string>
 
 using json = nlohmann::json;
 
@@ -28,4 +29,5 @@ namespace IVJ
 	void enteVisto(const std::string& prefijo);
 
 	std::wstring getInfo(const std::string& ubicacion);
+	std::string getTutorial(const std::string& ubicacion, int parrafo);
 }

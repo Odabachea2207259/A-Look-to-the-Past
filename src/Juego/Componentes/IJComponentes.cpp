@@ -94,4 +94,40 @@ namespace IVJ
 
 		return content;
 	}
+
+	std::string getTutorial(const std::string& ubicacion, int parrafo)
+	{
+		setlocale(LC_ALL, "");
+
+		std::ifstream input1(ASSETS + ubicacion, std::ios::binary);
+
+    	std::string line;
+    	std::string currentParagraph;
+    	int currentParagraphCount = 0;
+    	bool inParagraph = false;
+
+    	while (std::getline(input1, line)) {
+    	    if (line.find('-') != std::string::npos) {
+    	        if (inParagraph) {
+    	            currentParagraphCount++;
+    	            if (currentParagraphCount == parrafo) {
+    	                return currentParagraph;
+    	            }
+    	            currentParagraph.clear();
+    	            inParagraph = false;
+    	        }
+    	    } else {
+    	        if (!inParagraph) {
+    	            inParagraph = true;
+    	        }
+    	        currentParagraph += line + "\n";
+    	    }
+    	}
+
+    	if (inParagraph && currentParagraphCount + 1 == parrafo) {
+    	    return currentParagraph;
+    	}
+
+    	return "";
+	}
 }

@@ -5,6 +5,7 @@
 #include "../../Motor/Camaras/CamarasGestor.hpp"
 #include "../../Motor/Primitivos/GestorEscenas.hpp"
 #include "../../Motor/Render/Render.hpp"
+#include "../../Motor/Utils/Ventana.hpp"
 #include "../../Motor/GUI/GLogger.hpp"
 #include "../Objetos/Texto.hpp"
 
@@ -37,6 +38,9 @@ namespace IVJ
 
 		max_tiempo = 0.15f;
 		tiempo = max_tiempo;
+		ec = 0.f;
+
+		CE::GestorAssets::Get().agregarTextura("hattie", ASSETS "/Hatter.png", CE::Vector2D{0,0},CE::Vector2D{300,300});
 
 		CE::GestorAssets::Get().agregarTextura("hoja_yellow",ASSETS "/sprites_aliens/alienYellow.png",CE::Vector2D{0,0},CE::Vector2D{256,512});
 		CE::GestorAssets::Get().agregarTextura("hoja_pink",ASSETS "/sprites_aliens/alienPink.png",CE::Vector2D{0,0},CE::Vector2D{256,512});
@@ -63,6 +67,7 @@ namespace IVJ
 		CE::GestorAssets::Get().agregarFont("Byte",ASSETS "/fonts/Bytesized-Regular.ttf");
 		CE::GestorAssets::Get().agregarFont("Caveman",ASSETS "/fonts/Prehistoric Caveman.ttf");
 		CE::GestorAssets::Get().agregarFont("Shadows", ASSETS "/fonts/ShadowsIntoLight-Regular.ttf");
+		CE::GestorAssets::Get().agregarFont("Science", ASSETS "/fonts/Science.ttf");
 
 		CE::GestorAssets::Get().agregarTextura("dinero", ASSETS "/iconos/dinero.PNG",CE::Vector2D{0,0},CE::Vector2D{132,74});
 		CE::GestorAssets::Get().agregarTextura("progreso", ASSETS "/iconos/progreso.png", CE::Vector2D{0,0},CE::Vector2D{1300,200});
@@ -104,6 +109,43 @@ namespace IVJ
 		CE::GestorAssets::Get().agregarSonido("mouse_hover", ASSETS "/mouse_hover.wav");
 		
 		auto sizeVentana = CE::Render::Get().GetVentana().getSize();
+
+		pos_tutorial_1 = {
+			{0.f,0.f},
+			{450.f,0.f},
+			{110.f,0.f},
+			{0.f,-160.f},
+			{0.f,150.f}
+		};
+
+		pos_tutorial_2 = {
+			{-1080.f,0.f},
+			{-910.f,0.f},
+		};
+
+		tuto_1 = std::make_shared<Rectangulo>(CE::WIDTH,CE::HEIGHT,sf::Color(0,0,0,200),sf::Color::Transparent);
+		tuto_2 = std::make_shared<Rectangulo>(CE::WIDTH,CE::HEIGHT,sf::Color(0,0,0,200),sf::Color::Transparent);
+
+		hattie = std::make_shared<Rectangulo>(300.f,300.f,sf::Color::Transparent,sf::Color::Transparent);
+
+		hattie->addComponente(std::make_shared<CE::ISprite>(
+			CE::GestorAssets::Get().getTextura("hattie"),
+			300,300,
+			1.f
+		)
+		);
+
+		hattie->setPosicion(300.f,300.f);
+		hattie->getComponente<CE::ISprite>()->m_sprite.setPosition({CE::WIDTH/2 - 150.f,CE::HEIGHT/2 - 100.f});
+
+		texto_tutorial = std::make_shared<CE::ITexto>(
+			CE::GestorAssets::Get().getFont("Science"),
+			"Prueba"
+		);
+
+		texto_tutorial->m_texto.setCharacterSize(30.f);
+		texto_tutorial->m_texto.setFillColor(sf::Color::White);
+		texto_tutorial->m_texto.setPosition({CE::WIDTH/2 - 300.f,CE::HEIGHT/2});
 
 		progreso = std::make_shared<Rectangulo>((1300.f*0.6)-30,10+(200.f*0.5),sf::Color::Transparent,sf::Color::White);
 		progreso->setPosicion(160.f, 20.f); //200.f,20.f
@@ -243,6 +285,7 @@ namespace IVJ
 	void Escena_Menu::onFinal(){
 		//CE::GestorAssets::Get().getMusica("menu").pause();
 	}
+
 	void Escena_Menu::onUpdate(float dt)
 	{
 		auto textoDinero = iconoDinero->getComponente<CE::ITexto>();
@@ -260,12 +303,23 @@ namespace IVJ
 		}
 
 		mouse = false;
-		auto mousePos = CE::Render::Get().getMousePos();
+		mousePos = CE::Render::Get().getMousePos();
+
 		for(auto &f : objetos.getPool())
 		{
 			f->onUpdate(dt);
 		}
+		if(Jugador::Get().GetTutorial() && parrafo < cant_parrafos)
+		{
+			tutorial(dt);
+			return;
+		}
+		
+		game(dt);
+	}
 
+	void Escena_Menu::game(float dt)
+	{
 		if(Jugador::Get().GetDinosaurios().empty())
 		{
 			auto sprite = progreso->getComponente<CE::ISprite>();
@@ -413,6 +467,66 @@ namespace IVJ
 		//objetos.borrarPool();
 	}
 
+	void Escena_Menu::tutorial(float dt)
+	{
+		ec += dt*2;
+		SistemaFlotar(hattie,ec);
+
+		if(!algo)
+		{
+			texto_tutorial->m_texto.setString(IVJ::getTutorial("/Tutorial.txt",parrafo));
+			algo = true;
+		}
+
+		if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
+		{
+			mousePressed = true;
+		}
+				
+		if(mousePressed)
+		{
+			if(!sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
+			{
+				mousePressed = false;
+				mousePrev = true;
+			}
+		}
+
+		if(mousePrev)
+		{
+			parrafo++;
+			algo = false;
+			mousePrev = false;
+
+			switch(parrafo){
+				case 5:
+					tuto_1->setPosicion(pos_tutorial_1[1]);
+					tuto_2->setPosicion(pos_tutorial_2[1]);
+					hattie->getComponente<CE::ISprite>()->m_sprite.setPosition({CE::WIDTH/2 + 300.f,CE::HEIGHT/2 - 100.f});
+					texto_tutorial->m_texto.setPosition({CE::WIDTH/2,CE::HEIGHT/2});
+					break;
+				case 8:
+					tuto_1->setPosicion(pos_tutorial_1[2]);
+					tuto_2->setPosicion(pos_tutorial_2[0]);
+					hattie->getComponente<CE::ISprite>()->m_sprite.setPosition({CE::WIDTH/2 - 150.f,CE::HEIGHT/2 - 100.f});
+					texto_tutorial->m_texto.setPosition({CE::WIDTH/2 - 300.f,CE::HEIGHT/2});
+					break;
+				case 10:
+					tuto_1->setPosicion(pos_tutorial_1[3]);
+					tuto_2->setPosicion(pos_tutorial_2[0]);
+					break;
+				case 18:
+					tuto_1->setPosicion(pos_tutorial_1[4]);
+					tuto_2->setPosicion(pos_tutorial_2[0]);
+					break;	
+				case 21:
+					tuto_1->setPosicion({0.f,0.f});
+					tuto_2->setPosicion({0.f,0.f});
+					break;
+			}
+		}
+	}
+
 	void Escena_Menu::onInputs(const CE::Botones& accion)
 	{
 
@@ -455,6 +569,13 @@ namespace IVJ
 		{
 			CE::Render::Get().AddToDraw(*tooltip);
 			CE::Render::Get().AddToDraw(tooltip->getComponente<CE::ITexto>()->m_texto);
+		}
+
+		if(Jugador::Get().GetTutorial() && parrafo < cant_parrafos){
+			CE::Render::Get().AddToDraw(*tuto_1);
+			CE::Render::Get().AddToDraw(*tuto_2);
+			CE::Render::Get().AddToDraw(hattie->getComponente<CE::ISprite>()->m_sprite);
+			CE::Render::Get().AddToDraw(texto_tutorial->m_texto);
 		}
 	}
 }

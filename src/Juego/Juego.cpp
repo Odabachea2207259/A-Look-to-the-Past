@@ -41,6 +41,19 @@ namespace IVJ
         Jugador::Get().GetNivel() = 1;
         Recompensas::Get().GetRecompensa() = Recompensas::Rewards::NADA;
 
+		json tutorial;
+
+		std::ifstream in(ASSETS "/Tutorial.json");
+		in >> tutorial;
+
+		if(tutorial["tutorial"])
+		{
+            Jugador::Get().GetTutorial() = true;
+			tutorial["tutorial"] = false;
+			
+			std::ofstream out(ASSETS "/Tutorial.json");
+			out << tutorial;
+		}
 
         //DESCOMENTAR
         

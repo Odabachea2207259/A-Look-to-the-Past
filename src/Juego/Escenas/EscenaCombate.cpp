@@ -30,6 +30,38 @@ namespace IVJ
 			CE::GestorAssets::Get().agregarTextura("nubes",ASSETS "/textura/cloud.png",CE::Vector2D{0,0},CE::Vector2D{400,400});
 			CE::GestorAssets::Get().agregarTextura("noise",ASSETS "/textura/noise_texture.png",CE::Vector2D{0,0},CE::Vector2D{256,256});
 
+			tuto_1 = std::make_shared<Rectangulo>(CE::WIDTH,CE::HEIGHT,sf::Color(0,0,0,200),sf::Color::Transparent);
+			tuto_2 = std::make_shared<Rectangulo>(CE::WIDTH,CE::HEIGHT,sf::Color(0,0,0,200),sf::Color::Transparent);
+
+			pos_tutorial_1 = {
+				{0.f,0.f},
+				{0.f,-210.f},
+				{115.f,0.f},
+				{0.f,150.f},
+				{-1080.f,0.f}
+			};
+
+			hattie = std::make_shared<Rectangulo>(300.f,300.f,sf::Color::Transparent,sf::Color::Transparent);
+
+			hattie->addComponente(std::make_shared<CE::ISprite>(
+				CE::GestorAssets::Get().getTextura("hattie"),
+				300,300,
+				1.f
+			)
+			);
+
+			hattie->setPosicion(300.f,300.f);
+			hattie->getComponente<CE::ISprite>()->m_sprite.setPosition({CE::WIDTH/2 - 150.f,CE::HEIGHT/2 - 150.f});
+
+			texto_tutorial = std::make_shared<CE::ITexto>(
+				CE::GestorAssets::Get().getFont("Science"),
+				"Prueba"
+			);
+
+			texto_tutorial->m_texto.setCharacterSize(30.f);
+			texto_tutorial->m_texto.setFillColor(sf::Color::White);
+			texto_tutorial->m_texto.setPosition({CE::WIDTH/2 - 300.f,CE::HEIGHT/2});
+
 			//auto tam = CE::Render::Get().GetVentana().getSize();
 			CE::Vector2D tam = {CE::WIDTH,CE::HEIGHT};
 
@@ -216,8 +248,80 @@ namespace IVJ
 		}
 	}
 
-	void EscenaCombate::onFinal(){}
 	void EscenaCombate::onUpdate(float dt)
+	{
+		if(Jugador::Get().GetTutorial() && parrafo < cant_parrafos)
+		{
+			tutorial(dt);
+			return;
+		}
+
+		game(dt);
+	}
+
+	void EscenaCombate::onFinal(){}
+	void EscenaCombate::tutorial(float dt)
+	{
+		ec += dt*2;
+		SistemaFlotar(hattie,ec);
+
+		if(!algo)
+		{
+			texto_tutorial->m_texto.setString(IVJ::getTutorial("/TutorialCombate.txt",parrafo));
+			algo = true;
+		}
+
+		if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
+		{
+			mousePressed = true;
+		}
+				
+		if(mousePressed)
+		{
+			if(!sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
+			{
+				mousePressed = false;
+				mousePrev = true;
+			}
+		}
+
+		if(mousePrev)
+		{
+			parrafo++;
+			algo = false;
+			mousePrev = false;
+
+			switch(parrafo)
+			{
+				case 22:
+					hattie->getComponente<CE::ISprite>()->m_sprite.setPosition({CE::WIDTH + 200.f,CE::HEIGHT/ + 200.f});
+					texto_tutorial->m_texto.setPosition({CE::WIDTH + 200.f,CE::HEIGHT + 200.f});
+					break;
+				case 23:
+					hattie->getComponente<CE::ISprite>()->m_sprite.setPosition({CE::WIDTH/2 - 150.f,CE::HEIGHT/2 - 100.f});
+					texto_tutorial->m_texto.setPosition({CE::WIDTH/2 - 300.f,CE::HEIGHT/2});
+					break;
+				case 26:
+					tuto_1->setPosicion(pos_tutorial_1[1]);
+					tuto_2->setPosicion(pos_tutorial_1[4]);
+					break;
+				case 34:
+					tuto_1->setPosicion(pos_tutorial_1[2]);
+					tuto_2->setPosicion(pos_tutorial_1[4]);
+					break;
+				case 35:
+					tuto_1->setPosicion(pos_tutorial_1[3]);
+					tuto_2->setPosicion(pos_tutorial_1[4]);	
+					break;
+				case 36:
+					tuto_1->setPosicion(pos_tutorial_1[0]);
+					tuto_2->setPosicion(pos_tutorial_1[0]);	
+					break;		
+			}
+		}
+	}
+
+	void EscenaCombate::game(float dt)
 	{
 		IVJ::SistemaActualizarMedidor(Equipos::Get().GetDinoLider(),medidor);
 		if(!actual->estaVivo()) cambiarTurno();
@@ -590,6 +694,13 @@ namespace IVJ
 		{
 			CE::Render::Get().AddToDraw(*tooltip);
 			CE::Render::Get().AddToDraw(tooltip->getComponente<CE::ITexto>()->m_texto);
+		}
+
+		if(Jugador::Get().GetTutorial() && parrafo < cant_parrafos){
+			CE::Render::Get().AddToDraw(*tuto_1);
+			CE::Render::Get().AddToDraw(*tuto_2);
+			CE::Render::Get().AddToDraw(hattie->getComponente<CE::ISprite>()->m_sprite);
+			CE::Render::Get().AddToDraw(texto_tutorial->m_texto);
 		}
 	}
 }

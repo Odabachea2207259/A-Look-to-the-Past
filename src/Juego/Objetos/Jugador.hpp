@@ -16,6 +16,7 @@ namespace IVJ
             int& GetNivel(void);
             int& GetPeriodo(void);
             int& GetCheckpoint(void);
+            bool& GetTutorial(void);
             std::vector<std::shared_ptr<Dinosaurio>>& GetDinosaurios();
         private:
             Jugador();
@@ -25,5 +26,7 @@ namespace IVJ
             std::unique_ptr<int> periodo;
             std::unique_ptr<int> checkpoint;
             std::unique_ptr<std::vector<std::shared_ptr<Dinosaurio>>> dinosaurios;
+
+            std::unique_ptr<bool> tutorial;
     };
 }

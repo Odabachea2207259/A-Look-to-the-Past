@@ -69,10 +69,10 @@ namespace IVJ
 		int prob = rand() % 5;
 		//int prob = 1;
 		int cant = rand() % player->size() + 1;
-        cant = 3;
+        cant = 1;
 
         nivelJugador = 0.1;
-        prob = 4;
+        prob = 3;
 
 		switch(prob)
 		{
@@ -129,6 +129,12 @@ namespace IVJ
 
         IVJ::SistemaConfigurarStatsE(jefeA,10,20,1,10);
 
+        jefeA->addComponente(std::make_shared<CE::ISonido>());
+
+        auto sonidos = jefeA->getComponente<CE::ISonido>();
+        sonidos->muerte = "sonido_muerte";
+        sonidos->ataque = nombre->nombre + "_ataque";
+
         enemigos->push_back(jefeA);
 
         auto jefeC = std::make_shared<IVJ::Entidad>();
@@ -155,6 +161,12 @@ namespace IVJ
         IVJ::SistemaConfigurarStatsE(jefeC,20,1,1,1);
 
         jefeC->getComponente<CE::IPersonaje>()->target = jefeA;
+
+        jefeC->addComponente(std::make_shared<CE::ISonido>());
+
+        auto sonidos_c = jefeC->getComponente<CE::ISonido>();
+        sonidos_c->muerte = "sonido_muerte";
+        sonidos_c->ataque = nombre->nombre + "_ataque";
 
         enemigos->push_back(jefeC);
         
