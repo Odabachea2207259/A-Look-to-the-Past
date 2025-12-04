@@ -69,7 +69,6 @@ namespace IVJ
 
 	void enteVisto(const std::string& prefijo)
 	{
-		std::cout << prefijo << std::endl;
 		json descubiertos;
 
 		std::ifstream in(ASSETS "/Descubiertos.json");
@@ -95,37 +94,78 @@ namespace IVJ
 		return content;
 	}
 
+	void actualizarQuests()
+	{
+		std::ifstream in(ASSETS "/Quests.json");
+		json quests;
+
+		in >> quests;
+
+		for(auto& item :quests["Quests"])
+		{
+			if(item["estado"] == IVJ::States::DESCUBIERTO || item["estado"] == IVJ::States::EN_PROCESO)
+			{
+				item["estado"] = IVJ::States::EN_PROCESO;
+
+				IVJ::Quests::Get().addQuest(item["name"],IVJ::States::EN_PROCESO,item["texto"]);
+			}
+		}
+
+		std::ofstream out(ASSETS "/Quests.json");
+		out << quests;
+	}
+
+	void actualizarQuests(std::string quest, IVJ::States estado)
+	{
+		std::ifstream in(ASSETS "/Quests.json");
+		json quests;
+
+		in >> quests;
+
+		for(auto& item :quests["Quests"])
+		{
+			if(item["name"] == quest)
+			{
+				item["estado"] = estado;
+
+			}
+		}
+
+		std::ofstream out(ASSETS "/Quests.json");
+		out << quests;
+	}
+
 	std::string getTutorial(const std::string& ubicacion, int parrafo)
 	{
 		setlocale(LC_ALL, "");
 
 		std::ifstream input1(ASSETS + ubicacion, std::ios::binary);
 
-    	std::string line;
-    	std::string currentParagraph;
-    	int currentParagraphCount = 0;
-    	bool inParagraph = false;
+    	std::string linea;
+    	std::string parrafoActual;
+    	int num = 0;
+    	bool esParrafo = false;
 
-    	while (std::getline(input1, line)) {
-    	    if (line.find('-') != std::string::npos) {
-    	        if (inParagraph) {
-    	            currentParagraphCount++;
-    	            if (currentParagraphCount == parrafo) {
-    	                return currentParagraph;
+    	while (std::getline(input1, linea)) {
+    	    if (linea.find('-') != std::string::npos) {
+    	        if (esParrafo) {
+    	            num++;
+    	            if (num == parrafo) {
+    	                return parrafoActual;
     	            }
-    	            currentParagraph.clear();
-    	            inParagraph = false;
+    	            parrafoActual.clear();
+    	            esParrafo = false;
     	        }
     	    } else {
-    	        if (!inParagraph) {
-    	            inParagraph = true;
+    	        if (!esParrafo) {
+    	            esParrafo = true;
     	        }
-    	        currentParagraph += line + "\n";
+    	        parrafoActual += linea + "\n";
     	    }
     	}
 
-    	if (inParagraph && currentParagraphCount + 1 == parrafo) {
-    	    return currentParagraph;
+    	if (esParrafo && num + 1 == parrafo) {
+    	    return parrafoActual;
     	}
 
     	return "";

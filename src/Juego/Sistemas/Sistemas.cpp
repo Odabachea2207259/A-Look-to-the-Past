@@ -338,9 +338,6 @@ namespace IVJ
 			return a->getStats()->agi >= b->getStats()->agi;
 		});
 
-		for(auto& turno : turnos) std::cout << turno->getNombre()->nombre <<std::endl;
-		std::cout << std::endl;
-
 		return turnos;
 	}
 

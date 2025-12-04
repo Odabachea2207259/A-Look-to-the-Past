@@ -1,6 +1,8 @@
 #pragma once
 #include "../Maquinas/FSM.hpp"
 #include "../../Motor/Componentes/IComponentes.hpp"
+#include "../Objetos/Quests.hpp"
+#include "../Objetos/QuestStates.hpp"
 #include <nlohmann/json.hpp>
 #include <fstream>
 #include <locale.h>
@@ -30,4 +32,7 @@ namespace IVJ
 
 	std::wstring getInfo(const std::string& ubicacion);
 	std::string getTutorial(const std::string& ubicacion, int parrafo);
+
+	void actualizarQuests();
+	void actualizarQuests(std::string quest, IVJ::States estado);
 }

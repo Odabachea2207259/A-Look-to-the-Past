@@ -456,6 +456,7 @@ namespace IVJ
 				return;
 			case 1:
 				CE::GestorEscenas::Get().cambiarEscena("Victoria");
+				IVJ::Quests::Get().terminarQuest("JefesP");
 				return;
 		}
 

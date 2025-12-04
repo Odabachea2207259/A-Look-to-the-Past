@@ -6,6 +6,7 @@
 #include "../Habilidades/Habilidad.hpp"
 #include "../Dinosaurios/Dinosaurio.hpp"
 #include "../Objetos/Jugador.hpp"
+#include "../Objetos/Quests.hpp"
 #include <memory>
 #include <SFML/Graphics/Rect.hpp>
 #include <SFML/System/Vector2.hpp>

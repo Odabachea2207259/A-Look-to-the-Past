@@ -18,6 +18,15 @@ namespace IVJ
 	{
 		CE::GestorCamaras::Get().setCamaraActiva(0);
 
+		if(tutoEnd) tutoQuest = true;
+
+		if(IVJ::Quests::Get().GetCambios())
+		{
+			actualizarQuests();
+
+			IVJ::Quests::Get().GetCambios() = false;
+		}
+
 		if((Jugador::Get().GetPeriodo() - periodo_prev) > 0){
 			for(int i = 0; i < (Jugador::Get().GetPeriodo() - periodo_prev); i++){
 				cuello.push_back(std::make_shared<CE::ISprite>(CE::GestorAssets::Get().getTextura("cuello"),91,90,0.5f));
@@ -39,6 +48,8 @@ namespace IVJ
 		max_tiempo = 0.15f;
 		tiempo = max_tiempo;
 		ec = 0.f;
+
+		registrarBotones(sf::Keyboard::Scancode::Tab,"quests");
 
 		CE::GestorAssets::Get().agregarTextura("hattie", ASSETS "/Hatter.png", CE::Vector2D{0,0},CE::Vector2D{300,300});
 
@@ -64,7 +75,6 @@ namespace IVJ
 		CE::GestorAssets::Get().agregarTextura("coty",ASSETS "/enemigos/jefes/Coty/Coty_tex.png",CE::Vector2D{0,0},CE::Vector2D{1020,1722});
 		CE::GestorAssets::Get().agregarTextura("cabezaCoty",ASSETS "/enemigos/jefes/Coty/Cabeza.png",CE::Vector2D{0,0},CE::Vector2D{50,43});
 
-		CE::GestorAssets::Get().agregarFont("Byte",ASSETS "/fonts/Bytesized-Regular.ttf");
 		CE::GestorAssets::Get().agregarFont("Caveman",ASSETS "/fonts/Prehistoric Caveman.ttf");
 		CE::GestorAssets::Get().agregarFont("Shadows", ASSETS "/fonts/ShadowsIntoLight-Regular.ttf");
 		CE::GestorAssets::Get().agregarFont("Science", ASSETS "/fonts/Science.ttf");
@@ -313,6 +323,10 @@ namespace IVJ
 		{
 			tutorial(dt);
 			return;
+		} else if(tutoQuest)
+		{
+			tutorial(dt);
+			return;
 		}
 		
 		game(dt);
@@ -426,6 +440,7 @@ namespace IVJ
 						pais->desbloqueado = true;
 						Jugador::Get().GetDinosaurios().push_back(pais->dinosaurios.back());
 						pais->dinosaurios.pop_back();
+						if(Jugador::Get().GetDinosaurios().size() >= 4) IVJ::Quests::Get().terminarQuest("ConseguirDinos");
 					}
 				}
 			}
@@ -474,7 +489,10 @@ namespace IVJ
 
 		if(!algo)
 		{
-			texto_tutorial->m_texto.setString(IVJ::getTutorial("/Tutorial.txt",parrafo));
+			if(!tutoQuest)
+				texto_tutorial->m_texto.setString(IVJ::getTutorial("/Tutorial.txt",parrafo));
+			else
+				texto_tutorial->m_texto.setString(IVJ::getTutorial("/TutorialQuest.txt",parrafo-22));
 			algo = true;
 		}
 
@@ -497,6 +515,47 @@ namespace IVJ
 			parrafo++;
 			algo = false;
 			mousePrev = false;
+
+			if(tutoQuest)
+			{
+				switch (parrafo - 22)
+				{
+					case 3:
+						texto_tutorial->m_texto.setCharacterSize(10.f);
+						break;
+					case 4:
+						texto_tutorial->m_texto.setCharacterSize(30.f);
+						break;
+					case 6:
+						texto_tutorial->m_texto.setCharacterSize(50.f);
+						break;
+					case 7:
+						texto_tutorial->m_texto.setCharacterSize(30.f);
+						break;
+					case 10:
+						tuto_1->setPosicion({-60.f,0.f});
+						tuto_2->setPosicion({-1080.f,0.f});
+						break;
+					case 12:
+						tuto_1->setPosicion({-560.f,0.f});
+						tuto_2->setPosicion({-1080.f,0.f});
+
+						texto_tutorial->m_texto.setPosition({10.f,CE::HEIGHT/2});
+						break;
+					case 14:
+						texto_tutorial->m_texto.setFillColor(sf::Color::Green);
+						texto_tutorial->m_texto.setStyle(sf::Text::StrikeThrough);
+						break;
+					case 15:
+						texto_tutorial->m_texto.setFillColor(sf::Color::White);
+						texto_tutorial->m_texto.setStyle(sf::Text::Regular);
+						break;					
+					case 20:
+						tutoQuest = false;
+						tutoEnd = false;
+						break;
+				}
+			}
 
 			switch(parrafo){
 				case 5:
@@ -523,13 +582,52 @@ namespace IVJ
 					tuto_1->setPosicion({0.f,0.f});
 					tuto_2->setPosicion({0.f,0.f});
 					break;
+				case 23:
+					tutoEnd = true;
+					break;
 			}
 		}
 	}
 
 	void Escena_Menu::onInputs(const CE::Botones& accion)
 	{
+		if(accion.getTipo() == CE::Botones::TipoAccion::OnPress)
+		{
+			if(accion.getNombre() == "quests") keyPrev = true;
+		}
 
+		if(accion.getTipo() == CE::Botones::TipoAccion::OnRelease)
+		{
+			if(accion.getNombre() == "quests" && keyPrev)
+			{
+				keyPressed = true;
+				keyPrev = false;
+			}
+		}
+
+        if(keyPressed)
+		{
+			if(!IVJ::Quests::Get().GetAbierto())
+			{
+				IVJ::Quests::Get().rect_1->setPosicion(CE::WIDTH - 550.f,60.f);
+				IVJ::Quests::Get().rect_2->setPosicion(CE::WIDTH - 500.f,60.f);
+
+				IVJ::Quests::Get().rect_1->getComponente<CE::ISprite>()->m_sprite.setPosition({CE::WIDTH - 525.f,60+25.f});
+
+				IVJ::Quests::Get().GetAbierto() = true;
+			}
+			else
+			{
+				IVJ::Quests::Get().rect_1->setPosicion(CE::WIDTH - 50.f,60.f);
+				IVJ::Quests::Get().rect_2->setPosicion(CE::WIDTH,60.f);
+
+				IVJ::Quests::Get().rect_1->getComponente<CE::ISprite>()->m_sprite.setPosition({CE::WIDTH - 25.f,60+25.f});
+
+				IVJ::Quests::Get().GetAbierto() = false;
+			}
+			keyPressed = false;
+			return;
+		}
 	}
 
 	void Escena_Menu::onRender()
@@ -571,7 +669,19 @@ namespace IVJ
 			CE::Render::Get().AddToDraw(tooltip->getComponente<CE::ITexto>()->m_texto);
 		}
 
-		if(Jugador::Get().GetTutorial() && parrafo < cant_parrafos){
+		if(parrafo >= cant_parrafos + 2)
+		{
+			CE::Render::Get().AddToDraw(*IVJ::Quests::Get().rect_1);
+			CE::Render::Get().AddToDraw(IVJ::Quests::Get().rect_1->getComponente<CE::ISprite>()->m_sprite);
+			CE::Render::Get().AddToDraw(*IVJ::Quests::Get().rect_2);
+
+			if(IVJ::Quests::Get().GetAbierto()){
+				for(const auto & [key,quest] : IVJ::Quests::Get().GetQuests())
+					CE::Render::Get().AddToDraw(quest.first->m_texto);
+			}
+		}
+
+		if(Jugador::Get().GetTutorial() && parrafo < cant_parrafos || tutoQuest){
 			CE::Render::Get().AddToDraw(*tuto_1);
 			CE::Render::Get().AddToDraw(*tuto_2);
 			CE::Render::Get().AddToDraw(hattie->getComponente<CE::ISprite>()->m_sprite);

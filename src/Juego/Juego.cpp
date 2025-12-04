@@ -49,7 +49,7 @@ namespace IVJ
 		if(tutorial["tutorial"])
 		{
             Jugador::Get().GetTutorial() = true;
-			tutorial["tutorial"] = false;
+			//tutorial["tutorial"] = false;
 			
 			std::ofstream out(ASSETS "/Tutorial.json");
 			out << tutorial;
@@ -66,6 +66,9 @@ namespace IVJ
         CE::GestorEscenas::Get().registrarEscena("Derrota",std::make_shared<IVJ::EscenaDerrota>());
         CE::GestorEscenas::Get().registrarEscena("Mejora",std::make_shared<IVJ::EscenaMejora>());
         CE::GestorEscenas::Get().registrarEscena("Bestiario",std::make_shared<IVJ::EscenaBestiario>());
+
+        CE::GestorAssets::Get().agregarFont("Byte",ASSETS "/fonts/Bytesized-Regular.ttf");
+        CE::GestorAssets::Get().agregarTextura("tablet",ASSETS "/iconos/tabletQuest.png",CE::Vector2D{0,0},CE::Vector2D{512,512});
         
         CE::GestorAssets::Get().agregarMusica("menu", ASSETS "/musica/menu.mp3");
         CE::GestorAssets::Get().agregarMusica("oceano", ASSETS "/fondo/ocean.wav");

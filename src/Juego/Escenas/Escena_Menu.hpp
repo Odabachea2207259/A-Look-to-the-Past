@@ -5,6 +5,7 @@
 #include "../../Motor/Primitivos/Escena.hpp"
 #include "../../Motor/Primitivos/GestorAssets.hpp"
 #include "../../Motor/Componentes/IComponentes.hpp"
+#include "../Objetos/Quests.hpp"
 
 namespace IVJ
 {
@@ -23,7 +24,7 @@ namespace IVJ
 		private:
 			bool inicializar{true};
 			std::vector<std::shared_ptr<Pais>> paises;
-			bool mouse,mousePressed,mousePrev = false,mouseHover = false;
+			bool mouse,mousePressed,mousePrev = false,mouseHover = false,keyPressed = false,keyPrev = false;
 
 			std::shared_ptr<Rectangulo> tooltip;
 			std::shared_ptr<Rectangulo> iconoDinero;
@@ -57,6 +58,8 @@ namespace IVJ
 			std::vector<CE::Vector2D> pos_tutorial_1;
 			std::vector<CE::Vector2D> pos_tutorial_2;
 			bool algo = false;
+			bool tutoQuest = false;
+			bool tutoEnd = false;
 			int parrafo = 1;
 			int cant_parrafos{23};
 

@@ -165,7 +165,8 @@ namespace IVJ
 
 		//objetos.agregarPool(fondoDP);
 		//turnos = IVJ::SistemaOrdenarTurnos(Equipos::Get().GetPlayer(),Equipos::Get().GetPlayer());
-		actual = turnos.at(dinoTurno); //---->revisar
+		if(!Jugador::Get().GetTutorial()) actual = turnos.at(dinoTurno); //---->revisar
+		else actual = Equipos::Get().GetDinoLider();
 		stats = std::make_shared<CE::ITexto>(
 			CE::GestorAssets::Get().getFont("Caveman"),
 			""
@@ -250,7 +251,7 @@ namespace IVJ
 
 	void EscenaCombate::onUpdate(float dt)
 	{
-		if(Jugador::Get().GetTutorial() && parrafo < cant_parrafos)
+		if(Jugador::Get().GetTutorial() && parrafo < cant_parrafos && false) //cambiar
 		{
 			tutorial(dt);
 			return;
@@ -316,7 +317,10 @@ namespace IVJ
 				case 36:
 					tuto_1->setPosicion(pos_tutorial_1[0]);
 					tuto_2->setPosicion(pos_tutorial_1[0]);	
-					break;		
+					break;
+				case 37:
+					actual = turnos.at(dinoTurno);
+					break;	
 			}
 		}
 	}
@@ -696,7 +700,7 @@ namespace IVJ
 			CE::Render::Get().AddToDraw(tooltip->getComponente<CE::ITexto>()->m_texto);
 		}
 
-		if(Jugador::Get().GetTutorial() && parrafo < cant_parrafos){
+		if(Jugador::Get().GetTutorial() && parrafo < cant_parrafos && false){
 			CE::Render::Get().AddToDraw(*tuto_1);
 			CE::Render::Get().AddToDraw(*tuto_2);
 			CE::Render::Get().AddToDraw(hattie->getComponente<CE::ISprite>()->m_sprite);
