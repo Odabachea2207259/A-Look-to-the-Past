@@ -553,6 +553,7 @@ namespace IVJ
 					case 20:
 						tutoQuest = false;
 						tutoEnd = false;
+						Jugador::Get().GetTutorial() = false;
 						break;
 				}
 			}
@@ -669,7 +670,7 @@ namespace IVJ
 			CE::Render::Get().AddToDraw(tooltip->getComponente<CE::ITexto>()->m_texto);
 		}
 
-		if(parrafo >= cant_parrafos + 2)
+		if(parrafo >= cant_parrafos + 2 || !Jugador::Get().GetTutorial())
 		{
 			CE::Render::Get().AddToDraw(*IVJ::Quests::Get().rect_1);
 			CE::Render::Get().AddToDraw(IVJ::Quests::Get().rect_1->getComponente<CE::ISprite>()->m_sprite);

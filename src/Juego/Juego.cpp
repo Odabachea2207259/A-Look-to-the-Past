@@ -49,7 +49,7 @@ namespace IVJ
 		if(tutorial["tutorial"])
 		{
             Jugador::Get().GetTutorial() = true;
-			//tutorial["tutorial"] = false;
+			tutorial["tutorial"] = false;
 			
 			std::ofstream out(ASSETS "/Tutorial.json");
 			out << tutorial;

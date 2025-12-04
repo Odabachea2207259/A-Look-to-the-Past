@@ -207,7 +207,7 @@ namespace IVJ
         mousePrev = !isPressedNow && wasPressedLastFrame;
         wasPressedLastFrame = isPressedNow;
 
-		if(Jugador::Get().GetTutorial() && parrafo < cant_parrafos && false)
+		if(Jugador::Get().GetTutorial() && parrafo < cant_parrafos)
 		{
 			tutorial(dt);
 			return;
@@ -354,7 +354,7 @@ namespace IVJ
         for(auto & area : areas)
             CE::Render::Get().AddToDraw(*area);
         
-        if(Jugador::Get().GetTutorial() && parrafo < cant_parrafos && false){
+        if(Jugador::Get().GetTutorial() && parrafo < cant_parrafos){
 			CE::Render::Get().AddToDraw(*tuto_1);
 			CE::Render::Get().AddToDraw(*tuto_2);
 			CE::Render::Get().AddToDraw(hattie->getComponente<CE::ISprite>()->m_sprite);

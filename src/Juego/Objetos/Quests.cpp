@@ -16,6 +16,7 @@ namespace IVJ
 
     Quests::Quests()
     {
+        cant = 0;
         cambios = std::make_unique<bool>(true);
         abierto = std::make_unique<bool>(false);
         
@@ -66,6 +67,9 @@ namespace IVJ
             quest.first->m_texto.setPosition({CE::WIDTH - 490.f, 50.f + (30 * i)});
             i++;
 
+            std::string text(quest.first->m_texto.getString());
+            if(text.find('\n')  != std::string::npos) i++;
+
             if(quest.second == IVJ::States::COMPLETADO)
             {
                 quest.first->m_texto.setStyle(sf::Text::StrikeThrough);
@@ -76,8 +80,6 @@ namespace IVJ
 
     void Quests::addQuest(std::string name, IVJ::States estado, std::string texto)
     {
-        int cant = quests.size();
-
         auto textoQ = std::make_shared<CE::ITexto>(
             CE::GestorAssets::Get().getFont("Byte"),
             texto
@@ -86,8 +88,12 @@ namespace IVJ
         textoQ->m_texto.setPosition({CE::WIDTH - 490.f, 50.f + (30 * cant)});
         textoQ->m_texto.setCharacterSize(30.f);
         textoQ->m_texto.setFillColor(sf::Color::White);
+        textoQ->m_texto.setLineSpacing(0.5f);
 
         quests[name] = std::make_pair(textoQ,estado);
+
+        if(texto.find('\n')  != std::string::npos) cant++;
+        cant++;
 
         //ordenarTexto();
 

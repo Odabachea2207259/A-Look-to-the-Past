@@ -63,16 +63,12 @@ namespace IVJ
     void Equipos::crearEnemigosDefault()
     {
         enemigos->clear();
-		float nivelJugador = static_cast<int>(Jugador::Get().GetNivel() / 2);
-        if(nivelJugador < 1) nivelJugador = 1;
+		float nivelJugador = Jugador::Get().GetNivel() / 2;
+        if(nivelJugador < 1) nivelJugador = 0.5;
 
 		int prob = rand() % 5;
 		//int prob = 1;
 		int cant = rand() % player->size() + 1;
-        //cant = 1;
-
-        //nivelJugador = 1;
-        //prob = 3;
 
 		switch(prob)
 		{

@@ -32,6 +32,7 @@ namespace IVJ
             std::map<std::string,std::pair<std::shared_ptr<CE::ITexto>,States>> quests;
 
             static int id;
+            int cant;
             std::unique_ptr<bool> cambios;
             std::unique_ptr<bool> abierto;
     };
