@@ -70,6 +70,9 @@ namespace IVJ
 		//int prob = 1;
 		int cant = rand() % player->size() + 1;
 
+        prob = 0;
+        cant = 1;
+
 		switch(prob)
 		{
 			case 0:
@@ -117,7 +120,7 @@ namespace IVJ
         jefeA->addComponente(std::make_shared<CE::ISelectores>());
         jefeA->addComponente(std::make_shared<CE::IPersonaje>());
 
-        jefeA->getComponente<CE::IPersonaje>()->nivel = 10;
+        jefeA->getComponente<CE::IPersonaje>()->nivel = 0.2;
 
         auto &fsm_init = jefeA->getComponente<IVJ::IMaquinaEstado>()->fsm;
         fsm_init = std::make_shared<IVJ::IdleFSM>();
@@ -148,7 +151,7 @@ namespace IVJ
         jefeC->addComponente(std::make_shared<CE::ISelectores>());
         jefeC->addComponente(std::make_shared<CE::IPersonaje>());
 
-        jefeC->getComponente<CE::IPersonaje>()->nivel = 10;
+        jefeC->getComponente<CE::IPersonaje>()->nivel = 0.2;
 
         auto &fsm_init_2 = jefeC->getComponente<IVJ::IMaquinaEstado>()->fsm;
         fsm_init_2 = std::make_shared<IVJ::IdleFSM>();

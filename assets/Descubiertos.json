@@ -1,8 +1,1 @@
-{
-  "Anteosaurus": false,
-  "Carnotauro": false,
-  "Centrosaurus": false,
-  "Coty": false,
-  "Pachycephalosaurus": false,
-  "Parasaurolophus": false
-}
+{"Anteosaurus":true,"Carnotauro":false,"Centrosaurus":false,"Coty":true,"Pachycephalosaurus":true,"Parasaurolophus":false}

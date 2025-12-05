@@ -121,6 +121,7 @@ namespace IVJ
 		else
 		{
 			CE::GestorAssets::Get().getMusica("combate").setLooping(true);
+			CE::GestorAssets::Get().getMusica("combate").setVolume(50.f);
 			CE::GestorAssets::Get().getMusica("combate").play();
 		}
 	}

@@ -104,6 +104,7 @@ namespace IVJ
 
     void Quests::terminarQuest(std::string quest)
     {
+        if(!(quests.count(quest) > 0)) return;
         IVJ::actualizarQuests(quest,IVJ::States::COMPLETADO);
         quests[quest].second = IVJ::States::COMPLETADO;
         //quests.erase(quest);
